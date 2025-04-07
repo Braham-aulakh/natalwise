@@ -4,6 +4,11 @@
 @import "~select2/dist/css/select2.css";
 @import "~vue3-carousel/dist/carousel.css";
 @import 'form-wizard-vue3/dist/form-wizard-vue3.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --bs-accordion-btn-icon-width: 24px;
   --bs-breadcrumb-divider-color: white;
@@ -15845,3 +15850,11 @@ input[type=number]::placeholder {
 .add-wallet .carousel__next {
   display: none;
 }/*# sourceMappingURL=app.css.map */
+
+
+/* netal-wise styling */
+
+/* navbar */
+.navbar-brand .logo img{
+max-width:200px
+}

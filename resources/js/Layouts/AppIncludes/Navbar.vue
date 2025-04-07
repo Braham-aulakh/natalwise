@@ -1,127 +1,248 @@
 <template>
   <section>
-   <nav class="navbar navbar-expand-lg header-nav">
-        <div class="navbar-header">
-          <a id="mobile_btn" href="javascript:void(0);" @click="toggleMobileMenu">
-            <span class="bar-icon">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </a>
-          <a href="index.html" class="navbar-brand logo">
-            <img src="" class="img-fluid" alt="Logo" />
-          </a>
-        </div>
-        <div class="main-menu-wrapper" :class="{ 'menu-opened': isMobileMenuOpen }">
-          <div class="menu-header">
-            <a href="index.html" class="menu-logo">
-              <img src="assets/img/new-logo.png" class="img-fluid" alt="Logo" />
-            </a>
-            <a id="menu_close" class="menu-close" href="javascript:void(0);" @click="toggleMobileMenu">
-              <i class="fas fa-times"></i>
-            </a>
-          </div>
-          <ul class="main-nav">
-            <li class="has-submenu megamenu active">
-              <a class="btn btn-primary log-btn" href="start-here.html">Start Here</a>
-            </li>
-            <li class="has-submenu">
-              <a href="coming-soon.html">Shop</a>
-            </li>
+    <nav
+      class="navbar navbar-expand-lg"
+      style="background-color:#F9FCFF !important"
+      :class="{
+        'shadow-sm': !view.topOfPage,
+      }"
+    >
 
-            <li class="has-submenu megamenu" @mouseenter="openDropdown('her')" @mouseleave="closeDropdown('her')">
-              <a href="javascript:void(0);">
-                Her Well-Being <i class="fas fa-chevron-down"></i>
-              </a>
-              <ul class="submenu mega-submenu" v-if="dropdowns.her">
-                <li>
-                  <div class="megamenu-wrapper">
-                    <div class="row">
-                      <div class="col-lg-3" v-for="(section, i) in herWellBeing" :key="i">
-                        <div class="single-demo">
-                          <div class="demo-info">
-                            <h4 class="inner-demo-img">{{ section.title }}</h4>
-                            <ul class="mega-menu">
-                              <li v-for="(item, j) in section.links" :key="j">
-                                <a :href="item.href">{{ item.label }}</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
+    <div class="d-flex justify-content-around">
+      <div class="navbar-header">
+							<a id="mobile_btn" href="javascript:void(0);">
+								<span class="bar-icon">
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+							</a>
+              
+							<a href="index.html" class="navbar-brand logo">
+              
+								<img src="@/images/icons/new-logo.png" class="img-fluid" alt="Logo">
+							</a>
+						</div>
+            <div class="d-flex ">
+                <ul class="main-nav">
+    <li class="has-submenu megamenu active">
+      <a class="btn btn-primary log-btn" href="start-here.html">Start Here</a>
+    </li>
+    <li class="has-submenu">
+      <a href="coming-soon.html">Shop</a>
+    </li>
+
+    <!-- Her Well-Being Mega Menu -->
+    <li class="has-submenu megamenu">
+      <a href="javascript:void(0);">
+        Her Well-Being <i class="fas fa-chevron-down"></i>
+      </a>
+      <ul class="submenu mega-submenu">
+        <li>
+          <div class="megamenu-wrapper">
+            <div class="row">
+              <div class="col-lg-3" v-for="(category, index) in herWellBeing" :key="index">
+                <div class="single-demo">
+                  <div class="demo-info">
+                    <h4 class="inner-demo-img">{{ category.title }}</h4>
+                    <ul class="mega-menu">
+                      <li v-for="(item, i) in category.items" :key="i">
+                        <a :href="item.link">{{ item.name }}</a>
+                      </li>
+                    </ul>
                   </div>
-                </li>
-              </ul>
-            </li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </li>
 
-            <li class="has-submenu">
-              <a href="about.html">About Us</a>
-            </li>
-            <li class="has-submenu" @mouseenter="openDropdown('resources')" @mouseleave="closeDropdown('resources')">
-              <a href="javascript:void(0);">Resources <i class="fas fa-chevron-down"></i></a>
-              <ul class="submenu" v-if="dropdowns.resources">
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-                <li class="has-submenu">
-                  <a href="javascript:void(0);">Call</a>
-                  <ul class="submenu inner-submenu">
-                    <li><a href="voice-call.html">Voice Call</a></li>
-                    <li><a href="video-call.html">Video Call</a></li>
-                  </ul>
-                </li>
-                <li class="has-submenu">
-                  <a href="javascript:void(0);">Invoices</a>
-                  <ul class="submenu inner-submenu">
-                    <li><a href="invoices.html">Invoices</a></li>
-                    <li><a href="invoice-view.html">Invoice View</a></li>
-                  </ul>
-                </li>
-                <li class="has-submenu">
-                  <a href="javascript:void(0);">Authentication</a>
-                  <ul class="submenu inner-submenu">
-                    <li><a href="login-email.html">Login Email</a></li>
-                    <li><a href="login-phone.html">Login Phone</a></li>
-                    <li><a href="doctor-signup.html">Doctor Signup</a></li>
-                    <li><a href="patient-signup.html">Patient Signup</a></li>
-                    <li><a href="forgot-password.html">Forgot Password 1</a></li>
-                    <li><a href="forgot-password2.html">Forgot Password 2</a></li>
-                    <li><a href="login-email-otp.html">Email OTP</a></li>
-                    <li><a href="login-phone-otp.html">Phone OTP</a></li>
-                  </ul>
-                </li>
-                <li class="has-submenu">
-                  <a href="javascript:void(0);">Error Pages</a>
-                  <ul class="submenu inner-submenu">
-                    <li><a href="error-404.html">404 Error</a></li>
-                    <li><a href="error-500.html">500 Error</a></li>
-                  </ul>
-                </li>
-                <li><a href="blank-page.html">Starter Page</a></li>
-                <li><a href="pricing.html">Pricing Plan</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="maintenance.html">Maintenance</a></li>
-                <li><a href="coming-soon.html">Coming Soon</a></li>
-                <li><a href="terms-condition.html">Terms & Condition</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="components.html">Components</a></li>
-              </ul>
-            </li>
-            <li class="has-submenu"><a href="contact-us.html">Contact</a></li>
-            <li class="login-link"><a href="login.html">Login / Signup</a></li>
+    <li class="has-submenu"><a href="about.html">About Us</a></li>
+
+    <!-- Resources Dropdown -->
+    <li class="has-submenu">
+      <a href="javascript:void(0);">Resources <i class="fas fa-chevron-down"></i></a>
+      <ul class="submenu">
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+
+        <li class="has-submenu">
+          <a href="javascript:void(0);">Call</a>
+          <ul class="submenu inner-submenu">
+            <li><a href="voice-call.html">Voice Call</a></li>
+            <li><a href="video-call.html">Video Call</a></li>
           </ul>
-        </div>
+        </li>
 
-        <ul class="nav header-navbar-rht">
-          <li class="register-btn">
-            <a href="register.html" class="btn reg-btn"><i class="feather-user"></i>Register</a>
-          </li>
-          <li class="register-btn">
-            <a href="login.html" class="btn btn-primary log-btn"><i class="feather-lock"></i>Login</a>
-          </li>
-        </ul>
-      </nav>
+        <li class="has-submenu">
+          <a href="javascript:void(0);">Invoices</a>
+          <ul class="submenu inner-submenu">
+            <li><a href="invoices.html">Invoices</a></li>
+            <li><a href="invoice-view.html">Invoice View</a></li>
+          </ul>
+        </li>
+
+        <li class="has-submenu">
+          <a href="javascript:void(0);">Authentication</a>
+          <ul class="submenu inner-submenu">
+            <li><a href="login-email.html">Login Email</a></li>
+            <li><a href="login-phone.html">Login Phone</a></li>
+            <li><a href="doctor-signup.html">Doctor Signup</a></li>
+            <li><a href="patient-signup.html">Patient Signup</a></li>
+            <li><a href="forgot-password.html">Forgot Password 1</a></li>
+            <li><a href="forgot-password2.html">Forgot Password 2</a></li>
+            <li><a href="login-email-otp.html">Email OTP</a></li>
+            <li><a href="login-phone-otp.html">Phone OTP</a></li>
+          </ul>
+        </li>
+
+        <li class="has-submenu">
+          <a href="javascript:void(0);">Error Pages</a>
+          <ul class="submenu inner-submenu">
+            <li><a href="error-404.html">404 Error</a></li>
+            <li><a href="error-500.html">500 Error</a></li>
+          </ul>
+        </li>
+
+        <li><a href="blank-page.html">Starter Page</a></li>
+        <li><a href="pricing.html">Pricing Plan</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="maintenance.html">Maintenance</a></li>
+        <li><a href="coming-soon.html">Coming Soon</a></li>
+        <li><a href="terms-condition.html">Terms & Condition</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="components.html">Components</a></li>
+      </ul>
+    </li>
+
+   
+  </ul>
+    <div>
+      	<ul class="nav header-navbar-rht">
+							<li class="register-btn">
+								<a href="register.html" class="btn reg-btn"><i class="feather-user"></i>
+                  <Icon icon="lucide:user" width="20" height="20" class="feather-user" />Register</a>
+							</li>
+							<li class="register-btn">
+								<a href="login.html" class="btn btn-primary log-btn">
+                  <Icon icon="mynaui:lock" class="feather-lock" width="20" height="20" />
+                  Login</a>
+							</li>
+						</ul>
+    </div>
+            </div>
+    </div>
+      <!-- <div class="container px-md-0 nav-bar">
+        <div
+          class="collapse navbar-collapse bg-prim py-sm-3 py-md-0"
+          id="navbarSupportedContent"
+          style="flex-grow: inherit"
+        >
+        </div>
+        <Link class="navbar-brand mx-auto d-none d-md-block" :href="route('home')">
+          <img
+            v-if="$page.props && $page.props.settings && $page.props.settings.logo"
+            style="width: 200px"
+            :src="$page.props.settings.logo"
+            alt="logo"
+          />
+          <span v-else class="text-white mt-4">
+            {{
+              $page.props && $page.props.settings && $page.props.settings.site_title
+                ? $page.props.settings.site_title
+                : __("doctor consultant")
+            }}
+          </span>
+        </Link>
+        <li
+          class="nav-item list-unstyled d-none d-md-block"
+          v-if="$page.props.auth && $page.props.auth.logged_in_as != 'super_admin'"
+        >
+          <div>
+            <button
+              class="d-flex dropdown-toggle align-items-center nav-link position-relative bg-transparent border-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+            >
+              <div
+                v-if="
+                  $page.props.auth.user.patient
+                    ? $page.props.auth.user.patient
+                    : $page.props.auth.user.doctor
+                    ? $page.props.auth.user.doctor
+                    : $page.props.auth.user.clinic
+                "
+                class="avatar-icon me-3"
+              >
+                <img
+                  class="img-fluid rounded-circle"
+                  :src="
+                    $page.props.auth.user.patient
+                      ? $page.props.auth.user.patient.image
+                      : $page.props.auth.user.doctor
+                      ? $page.props.auth.user.doctor.image
+                      : $page.props.auth.user.clinic.image
+                  "
+                  alt=""
+                />
+              </div>
+              {{
+                $page.props.auth.logged_in_as != "super_admin" &&
+                $page.props.auth[$page.props.auth.logged_in_as].name
+              }}
+            </button>
+          </div>
+        </li>
+        <li
+          class="nav-item dropdown lang-dropdown list-unstyled me-md-4"
+          v-if="$page.props.translation_languages"
+        >
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="langDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ getSelectedLocate }}
+          </a>
+          <ul class="dropdown-menu mt-4" aria-labelledby="langDropdown">
+            <li v-for="lang in $page.props.translation_languages" :key="lang.id">
+              <div class="mb-2">
+                <Link
+                  class="dropdown-item"
+                  :href="route('language', { language: lang.code })"
+                >
+                  <img
+                    class="me-2"
+                    :src="'/assets/flags/' + lang.code + '.png'"
+                    height="20"
+                    width="25"
+                  />
+                  {{ lang.name }}
+                </Link>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <div class="d-none d-md-block">
+          <Link
+            v-if="!$page.props.auth"
+            :href="route('login')"
+            class="btn btn-outline-primary btn-padding fs-3 shadow-none rounded-3 fw-normal me-md-3"
+          >
+            <span class="">{{ __("Login/Sign up") }}</span></Link
+          >
+
+        </div>
+      </div> -->
+    </nav>
     <div class="profile-canvas" v-if="$page.props.auth">
       <div
         class="offcanvas offcanvas-end"
@@ -758,13 +879,50 @@
 <script>
 import { Link } from "@inertiajs/inertia-vue3";
 import CategoriesSkeleton from "@/Components/Skeleton/CategoriesSkeleton.vue";
+import "./navbar.css";
+import { Icon } from "@iconify/vue";
 export default {
   components: {
     Link,
     CategoriesSkeleton,
+    Icon,
   },
   data() {
     return {
+       herWellBeing: [
+        {
+          title: "Health",
+          items: [
+            { name: "Essentials", link: "essentials.html" },
+            { name: "Gynaecology", link: "gynecology.html" },
+            { name: "Physiotherapy", link: "physiotherapy.html" },
+          ],
+        },
+        {
+          title: "Natal",
+          items: [
+            { name: "Journey Begins", link: "#" },
+            { name: "Pre Natal", link: "Pre-&-post-natal.html" },
+            { name: "Post Natal", link: "Pre-&-post-natal.html" },
+          ],
+        },
+        {
+          title: "Evolve & Elevate",
+          items: [
+            { name: "Personal Growth", link: "Personal-growth.html" },
+            { name: "Style & Fashion", link: "Style-&-fashion.html" },
+            { name: "Future", link: "Future-insights.html" },
+          ],
+        },
+        {
+          title: "Complete Wellness",
+          items: [
+            { name: "Sexual Well Being", link: "sexual-wellbeing.html" },
+            { name: "Mental Well Being", link: "mental-wellbeing.html" },
+            { name: "Nutritional Well Being", link: "nutritional-wellbeing.html" },
+          ],
+        },
+      ],
       fetching: true,
       locale: this.$page.props.locale,
       doctor_main_categories: [],
@@ -912,5 +1070,11 @@ export default {
 
 .navbar-light {
   background-color: white !important;
+}
+.navbar-brand .logo img{
+max-width:200px
+}
+.img-fluid{
+  width:200px
 }
 </style>
