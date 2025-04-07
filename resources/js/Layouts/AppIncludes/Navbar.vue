@@ -1,438 +1,127 @@
 <template>
   <section>
-    <nav
-      class="navbar navbar-expand-lg"
-      style="background-color: #F6F6F9"
-      :class="{
-        'shadow-sm': !view.topOfPage,
-      }"
-    >
-      <div class="container px-md-0 nav-bar">
-        <button
-          class="btn btn-secondary rounded-4 d-block d-md-none"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasExample"
-          aria-controls="offcanvasExample"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="bi bi-list text-white fs-1"></i>
-        </button>
-        <div
-          class="collapse navbar-collapse bg-prim py-sm-3 py-md-0"
-          id="navbarSupportedContent"
-          style="flex-grow: inherit"
-        >
-          <ul class="navbar-nav py-3 py-md-0">
-            <li class="nav-item" :class="{ active: route().current('home') }">
-              <Link class="nav-link" :href="route('home')">
-                {{ __("Home") }}
-              </Link>
-            </li>
-            <!-- <li class="nav-item">
-              <Link class="nav-link" :href="route('company_pages.display', { slug: 'about' })">
-              {{ __("About") }}
-              </Link>
-            </li> -->
-            <li class="nav-item">
-              <div
-                class="dropdown department"
-                @mouseenter="showDropdown('department')"
-                @mouseleave="hideDropdown('department')"
-              >
-                <Link class="nav-link dropdown-toggle" :href="route('categories')">
-                  {{ __("departments") }}
-                </Link>
-                <!-- <ul class="dropdown-menu" v-if="fetching">
-                  <div class="container">
-                  <div class="row align-items-center">
-                  <div class="col-md-2 col-6">
-                      <categories-skeleton></categories-skeleton>
-                  </div>
-                  <div class="col-md-2 col-6">
-                      <categories-skeleton></categories-skeleton>
-                  </div>
-                  <div class="col-md-2 col-6">
-                      <categories-skeleton></categories-skeleton>
-                  </div>
-                  <div class="col-md-2 col-6">
-                      <categories-skeleton></categories-skeleton>
-                  </div>
-                  <div class="col-md-2 col-6">
-                      <categories-skeleton></categories-skeleton>
-                  </div>
-                  <div class="col-md-2 col-6">
-                      <categories-skeleton></categories-skeleton>
-                  </div>
-                  </div>
-              </div>
-                </ul> -->
-
-                <ul
-                  class="dropdown-menu dropdown-menu-center"
-                  :class="{ show: dropdowns.department }"
-                >
-                  <div class="container">
-                    <div class="row">
-                        <div class="d-flex justify-content-end">
-                            <Link
-                      :href="route('categories')"
-                      class="text-decoration-none text-primary fs-3 fw-normal"
-                      >{{ __("view all") }}</Link
-                    >
-                        </div>
-                      <div
-                        v-for="(category, index) in doctor_main_categories.slice(0, 12)"
-                        :key="index"
-                        class="col-2"
-                      >
-                        <Link
-                          class="text-decoration-none text-center"
-                          :href="`${route('doctors.listing')}?doctor_category_slug=${
-                            category.slug
-                          }`"
-                        >
-                          <div class="card py-4 text-center mb-3">
-                            <div class="d-flex justify-content-center mb-3">
-                              <span class="card-icon"
-                                ><img class="icon" :src="category.image" alt=""
-                              /></span>
-                            </div>
-                            <h4 class="card-title text-black mb-2 fs-3">
-                              {{ category.name }}
-                            </h4>
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
-
-                  </div>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <div
-                class="dropdown doctors"
-                @mouseenter="showDropdown('doctors')"
-                @mouseleave="hideDropdown('doctors')"
-              >
-                <Link class="nav-link dropdown-toggle" :href="route('doctors.listing')">
-                  {{ __("doctors") }}
-                </Link>
-                <ul
-                  class="dropdown-menu dropdown-menu-center"
-                  :class="{ show: dropdowns.doctors }"
-                >
-                  <div class="container">
-                    <div class="row">
-                        <div class="d-flex justify-content-end mb-3">
-                            <Link
-                      :href="route('doctors.listing')"
-                      class="text-decoration-none text-primary fs-3 fw-normal"
-                      >{{ __("view all") }}</Link
-                    >
-                        </div>
-                      <div
-                        class="col-md-3 px-0"
-                        v-for="doctor in all_doctors.slice(0, 4)"
-                        :key="doctor.id"
-                      >
-                        <Link
-                          class="text-decoration-none pt-2"
-                          :href="
-                            route('doctor.profile', {
-                              user_name: doctor.user_name,
-                            })
-                          "
-                        >
-                          <div class="card">
-                            <div class="doctor-profile rounded-4 overflow-hidden">
-                              <img class="img-fluid h-100 object-fit-cover" :src="doctor.image" alt="" />
-                            </div>
-                            <div class="card-body text-start text-black">
-                              <h3 class="fs-22px text-primary fw-bold">
-                                {{ doctor.name }}
-                              </h3>
-                              <h5 class="fs-3 text-black fw-normal">
-                                {{ __("Surgeon, Сardiologist") }}
-                              </h5>
-                              <div class="d-flex justify-content-start">
-                                <star-rating
-                                  :rating="doctor.rating"
-                                  :star-size="15"
-                                  :read-only="true"
-                                  :increment="0.01"
-                                  :show-rating="false"
-                                ></star-rating>
-                              </div>
-                            </div>
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
-
-                  </div>
-                </ul>
-              </div>
-            </li>
-
-            <!-- <li class="nav-item">
-              <Link class="nav-link" :href="route('events.listing')">
-              {{ __n("Events") }}
-              </Link>
-            </li> -->
-
-            <!-- <li class="nav-item">
-              <Link class="nav-link" :href="route('clinics.listing')">
-                {{ __n("clinics") }}
-              </Link>
-            </li> -->
-
-            <!-- <li class="nav-item dropdown" v-if="$page.props.company_pages && $page.props.company_pages.length > 0">
-
-              <a class="nav-link dropdown-toggle" href="#" id="companyPagesDropDown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                {{ __("Company Pages") }}
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="companyPagesDropDown">
-                <li v-for="company_page in $page.props.company_pages" :key="company_page.id">
-                  <Link class="dropdown-item" :href="route('company_pages.display', { slug: company_page.slug })">
-                  {{ company_page.name }}
-                  </Link>
-                </li>
-
-              </ul>
-            </li> -->
-
-            <!-- <li
-              class="nav-item dropdown position-relative"
-              v-if="$page.props.translation_languages"
-            >
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="langDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                {{ __(getSelectedLocate) }}
-              </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end position-absolute start-0 mt-2"
-                aria-labelledby="langDropdown"
-              >
-                <li
-                  v-for="(lang, index) in $page.props.translation_languages"
-                  :key="index"
-                >
-                  <Link
-                    class="dropdown-item"
-                    :href="route('language', { language: lang.code })"
-                  >
-                    {{ lang.name }}
-                  </Link>
-                </li>
-              </ul>
-            </li> -->
-
-            <li
-              class="nav-item list-unstyled d-block d-md-none"
-              v-if="$page.props.auth && $page.props.auth.logged_in_as != 'super_admin'"
-            >
-              <div>
-                <button
-                  class="d-flex align-items-center nav-link position-relative bg-transparent border-0"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasNavbar"
-                  aria-controls="offcanvasNavbar"
-                >
-                  <div
-                    v-if="
-                      $page.props.auth.user.patient
-                        ? $page.props.auth.user.patient
-                        : $page.props.auth.user.doctor
-                        ? $page.props.auth.user.doctor
-                        : $page.props.auth.user.clinic
-                    "
-                    class="avatar-icon me-3"
-                  >
-                    <img
-                      class="img-fluid rounded-circle"
-                      :src="
-                        $page.props.auth.user.patient
-                          ? $page.props.auth.user.patient.image
-                          : $page.props.auth.user.doctor
-                          ? $page.props.auth.user.doctor.image
-                          : $page.props.auth.user.clinic.image
-                      "
-                      alt=""
-                    />
-                  </div>
-                  <div v-else class="avatar-icon me-3">
-                    <img class="img-fluid" src="@/images/icons/user.png" alt="" />
-                  </div>
-
-                  <!-- <span
-                class="position-absolute badge rounded-pill bg-primary"
-                style="right: 8px; top: -10px"
-                >{{
-                  $page.props.auth.logged_in_as == "doctor"
-                    ? "doctor"
-                    : $page.props.auth.logged_in_as
-                }}</span
-              > -->
-                  {{
-                    $page.props.auth.logged_in_as != "super_admin" &&
-                    $page.props.auth[$page.props.auth.logged_in_as].name
-                  }}
-                  <img class="" src="@/images/icons/arrowdrop.png" alt="" width="30" />
-                </button>
-              </div>
-            </li>
-          </ul>
-          <div
-            class="d-sm-block d-md-none d-flex flex-column gap-3 justify-content-center align-items-center mb-3"
-          >
-            <Link
-              v-if="!$page.props.auth"
-              :href="route('login')"
-              class="btn btn-outline-primary btn-padding fs-3 shadow-none rounded-3 fw-normal me-md-4"
-            >
-              <span class="">{{ __("Login/Sign up") }}</span></Link
-            >
-            <!-- <Link
-              v-if="!$page.props.auth"
-              :href="route('register')"
-              class="btn btn-secondary fs-3 btn-padding shadow-none rounded-3 fw-normal"
-            >
-              <span>{{ __("Join as Doctor") }}</span></Link
-            > -->
-          </div>
-        </div>
-        <Link class="navbar-brand mx-auto d-none d-md-block" :href="route('home')">
-          <img
-            v-if="$page.props && $page.props.settings && $page.props.settings.logo"
-            style="width: 200px"
-            :src="$page.props.settings.logo"
-            alt="logo"
-          />
-          <span v-else class="text-white mt-4">
-            {{
-              $page.props && $page.props.settings && $page.props.settings.site_title
-                ? $page.props.settings.site_title
-                : __("doctor consultant")
-            }}
-          </span>
-        </Link>
-        <li
-          class="nav-item list-unstyled d-none d-md-block"
-          v-if="$page.props.auth && $page.props.auth.logged_in_as != 'super_admin'"
-        >
-          <div>
-            <button
-              class="d-flex dropdown-toggle align-items-center nav-link position-relative bg-transparent border-0"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar"
-            >
-              <div
-                v-if="
-                  $page.props.auth.user.patient
-                    ? $page.props.auth.user.patient
-                    : $page.props.auth.user.doctor
-                    ? $page.props.auth.user.doctor
-                    : $page.props.auth.user.clinic
-                "
-                class="avatar-icon me-3"
-              >
-                <img
-                  class="img-fluid rounded-circle"
-                  :src="
-                    $page.props.auth.user.patient
-                      ? $page.props.auth.user.patient.image
-                      : $page.props.auth.user.doctor
-                      ? $page.props.auth.user.doctor.image
-                      : $page.props.auth.user.clinic.image
-                  "
-                  alt=""
-                />
-              </div>
-              <div v-else class="avatar-icon me-3">
-                <img class="img-fluid" src="@/images/icons/user.png" alt="" />
-              </div>
-
-              <!-- <span
-                class="position-absolute badge rounded-pill bg-primary"
-                style="right: 8px; top: -10px"
-                >{{
-                  $page.props.auth.logged_in_as == "doctor"
-                    ? "doctor"
-                    : $page.props.auth.logged_in_as
-                }}</span
-              > -->
-              {{
-                $page.props.auth.logged_in_as != "super_admin" &&
-                $page.props.auth[$page.props.auth.logged_in_as].name
-              }}
-            </button>
-          </div>
-        </li>
-        <li
-          class="nav-item dropdown lang-dropdown list-unstyled me-md-4"
-          v-if="$page.props.translation_languages"
-        >
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="langDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            {{ getSelectedLocate }}
+   <nav class="navbar navbar-expand-lg header-nav">
+        <div class="navbar-header">
+          <a id="mobile_btn" href="javascript:void(0);" @click="toggleMobileMenu">
+            <span class="bar-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </a>
-          <ul class="dropdown-menu mt-4" aria-labelledby="langDropdown">
-            <li v-for="lang in $page.props.translation_languages" :key="lang.id">
-              <div class="mb-2">
-                <Link
-                  class="dropdown-item"
-                  :href="route('language', { language: lang.code })"
-                >
-                  <img
-                    class="me-2"
-                    :src="'/assets/flags/' + lang.code + '.png'"
-                    height="20"
-                    width="25"
-                  />
-                  {{ lang.name }}
-                </Link>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <div class="d-none d-md-block">
-          <Link
-            v-if="!$page.props.auth"
-            :href="route('login')"
-            class="btn btn-outline-primary btn-padding fs-3 shadow-none rounded-3 fw-normal me-md-3"
-          >
-            <span class="">{{ __("Login/Sign up") }}</span></Link
-          >
-
-          <!-- <Link
-            v-if="!$page.props.auth"
-            :href="route('register')"
-            class="btn btn-secondary fs-3 btn-padding shadow-none rounded-3 fw-normal"
-          >
-            <span>{{ __("Join as Doctor") }}</span></Link
-          > -->
+          <a href="index.html" class="navbar-brand logo">
+            <img src="" class="img-fluid" alt="Logo" />
+          </a>
         </div>
-      </div>
-    </nav>
+        <div class="main-menu-wrapper" :class="{ 'menu-opened': isMobileMenuOpen }">
+          <div class="menu-header">
+            <a href="index.html" class="menu-logo">
+              <img src="assets/img/new-logo.png" class="img-fluid" alt="Logo" />
+            </a>
+            <a id="menu_close" class="menu-close" href="javascript:void(0);" @click="toggleMobileMenu">
+              <i class="fas fa-times"></i>
+            </a>
+          </div>
+          <ul class="main-nav">
+            <li class="has-submenu megamenu active">
+              <a class="btn btn-primary log-btn" href="start-here.html">Start Here</a>
+            </li>
+            <li class="has-submenu">
+              <a href="coming-soon.html">Shop</a>
+            </li>
+
+            <li class="has-submenu megamenu" @mouseenter="openDropdown('her')" @mouseleave="closeDropdown('her')">
+              <a href="javascript:void(0);">
+                Her Well-Being <i class="fas fa-chevron-down"></i>
+              </a>
+              <ul class="submenu mega-submenu" v-if="dropdowns.her">
+                <li>
+                  <div class="megamenu-wrapper">
+                    <div class="row">
+                      <div class="col-lg-3" v-for="(section, i) in herWellBeing" :key="i">
+                        <div class="single-demo">
+                          <div class="demo-info">
+                            <h4 class="inner-demo-img">{{ section.title }}</h4>
+                            <ul class="mega-menu">
+                              <li v-for="(item, j) in section.links" :key="j">
+                                <a :href="item.href">{{ item.label }}</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+            <li class="has-submenu">
+              <a href="about.html">About Us</a>
+            </li>
+            <li class="has-submenu" @mouseenter="openDropdown('resources')" @mouseleave="closeDropdown('resources')">
+              <a href="javascript:void(0);">Resources <i class="fas fa-chevron-down"></i></a>
+              <ul class="submenu" v-if="dropdowns.resources">
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li class="has-submenu">
+                  <a href="javascript:void(0);">Call</a>
+                  <ul class="submenu inner-submenu">
+                    <li><a href="voice-call.html">Voice Call</a></li>
+                    <li><a href="video-call.html">Video Call</a></li>
+                  </ul>
+                </li>
+                <li class="has-submenu">
+                  <a href="javascript:void(0);">Invoices</a>
+                  <ul class="submenu inner-submenu">
+                    <li><a href="invoices.html">Invoices</a></li>
+                    <li><a href="invoice-view.html">Invoice View</a></li>
+                  </ul>
+                </li>
+                <li class="has-submenu">
+                  <a href="javascript:void(0);">Authentication</a>
+                  <ul class="submenu inner-submenu">
+                    <li><a href="login-email.html">Login Email</a></li>
+                    <li><a href="login-phone.html">Login Phone</a></li>
+                    <li><a href="doctor-signup.html">Doctor Signup</a></li>
+                    <li><a href="patient-signup.html">Patient Signup</a></li>
+                    <li><a href="forgot-password.html">Forgot Password 1</a></li>
+                    <li><a href="forgot-password2.html">Forgot Password 2</a></li>
+                    <li><a href="login-email-otp.html">Email OTP</a></li>
+                    <li><a href="login-phone-otp.html">Phone OTP</a></li>
+                  </ul>
+                </li>
+                <li class="has-submenu">
+                  <a href="javascript:void(0);">Error Pages</a>
+                  <ul class="submenu inner-submenu">
+                    <li><a href="error-404.html">404 Error</a></li>
+                    <li><a href="error-500.html">500 Error</a></li>
+                  </ul>
+                </li>
+                <li><a href="blank-page.html">Starter Page</a></li>
+                <li><a href="pricing.html">Pricing Plan</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="coming-soon.html">Coming Soon</a></li>
+                <li><a href="terms-condition.html">Terms & Condition</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="components.html">Components</a></li>
+              </ul>
+            </li>
+            <li class="has-submenu"><a href="contact-us.html">Contact</a></li>
+            <li class="login-link"><a href="login.html">Login / Signup</a></li>
+          </ul>
+        </div>
+
+        <ul class="nav header-navbar-rht">
+          <li class="register-btn">
+            <a href="register.html" class="btn reg-btn"><i class="feather-user"></i>Register</a>
+          </li>
+          <li class="register-btn">
+            <a href="login.html" class="btn btn-primary log-btn"><i class="feather-lock"></i>Login</a>
+          </li>
+        </ul>
+      </nav>
     <div class="profile-canvas" v-if="$page.props.auth">
       <div
         class="offcanvas offcanvas-end"
