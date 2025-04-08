@@ -315,7 +315,7 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom:0 !important;
 }
 
 ol ol,
@@ -13993,11 +13993,11 @@ body {
   background-color: rgba(55, 132, 166, 0.23);
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .container {
     max-width: 1190px;
   }
-}
+} */
 .section {
   background-repeat: no-repeat;
   background-size: cover;
@@ -15858,3 +15858,4 @@ input[type=number]::placeholder {
 .navbar-brand .logo img{
 max-width:200px
 }
+/* navbar */

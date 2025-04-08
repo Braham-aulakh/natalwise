@@ -1,248 +1,181 @@
 <template>
-  <section>
-    <nav
-      class="navbar navbar-expand-lg"
-      style="background-color:#F9FCFF !important"
-      :class="{
-        'shadow-sm': !view.topOfPage,
-      }"
-    >
-
-
-    <div class="d-flex justify-content-around">
-      <div class="navbar-header">
-							<a id="mobile_btn" href="javascript:void(0);">
-								<span class="bar-icon">
-									<span></span>
-									<span></span>
-									<span></span>
-								</span>
-							</a>
-              
-							<a href="index.html" class="navbar-brand logo">
-              
-								<img src="@/images/icons/new-logo.png" class="img-fluid" alt="Logo">
-							</a>
-						</div>
-            <div class="d-flex ">
-                <ul class="main-nav">
-    <li class="has-submenu megamenu active">
-      <a class="btn btn-primary log-btn" href="start-here.html">Start Here</a>
-    </li>
-    <li class="has-submenu">
-      <a href="coming-soon.html">Shop</a>
-    </li>
-
-    <!-- Her Well-Being Mega Menu -->
-    <li class="has-submenu megamenu">
-      <a href="javascript:void(0);">
-        Her Well-Being <i class="fas fa-chevron-down"></i>
-      </a>
-      <ul class="submenu mega-submenu">
-        <li>
-          <div class="megamenu-wrapper">
-            <div class="row">
-              <div class="col-lg-3" v-for="(category, index) in herWellBeing" :key="index">
-                <div class="single-demo">
-                  <div class="demo-info">
-                    <h4 class="inner-demo-img">{{ category.title }}</h4>
-                    <ul class="mega-menu">
-                      <li v-for="(item, i) in category.items" :key="i">
-                        <a :href="item.link">{{ item.name }}</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </li>
-
-    <li class="has-submenu"><a href="about.html">About Us</a></li>
-
-    <!-- Resources Dropdown -->
-    <li class="has-submenu">
-      <a href="javascript:void(0);">Resources <i class="fas fa-chevron-down"></i></a>
-      <ul class="submenu">
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
-
-        <li class="has-submenu">
-          <a href="javascript:void(0);">Call</a>
-          <ul class="submenu inner-submenu">
-            <li><a href="voice-call.html">Voice Call</a></li>
-            <li><a href="video-call.html">Video Call</a></li>
-          </ul>
-        </li>
-
-        <li class="has-submenu">
-          <a href="javascript:void(0);">Invoices</a>
-          <ul class="submenu inner-submenu">
-            <li><a href="invoices.html">Invoices</a></li>
-            <li><a href="invoice-view.html">Invoice View</a></li>
-          </ul>
-        </li>
-
-        <li class="has-submenu">
-          <a href="javascript:void(0);">Authentication</a>
-          <ul class="submenu inner-submenu">
-            <li><a href="login-email.html">Login Email</a></li>
-            <li><a href="login-phone.html">Login Phone</a></li>
-            <li><a href="doctor-signup.html">Doctor Signup</a></li>
-            <li><a href="patient-signup.html">Patient Signup</a></li>
-            <li><a href="forgot-password.html">Forgot Password 1</a></li>
-            <li><a href="forgot-password2.html">Forgot Password 2</a></li>
-            <li><a href="login-email-otp.html">Email OTP</a></li>
-            <li><a href="login-phone-otp.html">Phone OTP</a></li>
-          </ul>
-        </li>
-
-        <li class="has-submenu">
-          <a href="javascript:void(0);">Error Pages</a>
-          <ul class="submenu inner-submenu">
-            <li><a href="error-404.html">404 Error</a></li>
-            <li><a href="error-500.html">500 Error</a></li>
-          </ul>
-        </li>
-
-        <li><a href="blank-page.html">Starter Page</a></li>
-        <li><a href="pricing.html">Pricing Plan</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="maintenance.html">Maintenance</a></li>
-        <li><a href="coming-soon.html">Coming Soon</a></li>
-        <li><a href="terms-condition.html">Terms & Condition</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="components.html">Components</a></li>
-      </ul>
-    </li>
-
-   
-  </ul>
     <div>
-      	<ul class="nav header-navbar-rht">
-							<li class="register-btn">
-								<a href="register.html" class="btn reg-btn"><i class="feather-user"></i>
-                  <Icon icon="lucide:user" width="20" height="20" class="feather-user" />Register</a>
-							</li>
-							<li class="register-btn">
-								<a href="login.html" class="btn btn-primary log-btn">
-                  <Icon icon="mynaui:lock" class="feather-lock" width="20" height="20" />
-                  Login</a>
-							</li>
-						</ul>
-    </div>
-            </div>
-    </div>
-      <!-- <div class="container px-md-0 nav-bar">
-        <div
-          class="collapse navbar-collapse bg-prim py-sm-3 py-md-0"
-          id="navbarSupportedContent"
-          style="flex-grow: inherit"
-        >
-        </div>
-        <Link class="navbar-brand mx-auto d-none d-md-block" :href="route('home')">
-          <img
-            v-if="$page.props && $page.props.settings && $page.props.settings.logo"
-            style="width: 200px"
-            :src="$page.props.settings.logo"
-            alt="logo"
-          />
-          <span v-else class="text-white mt-4">
-            {{
-              $page.props && $page.props.settings && $page.props.settings.site_title
-                ? $page.props.settings.site_title
-                : __("doctor consultant")
-            }}
-          </span>
-        </Link>
-        <li
-          class="nav-item list-unstyled d-none d-md-block"
-          v-if="$page.props.auth && $page.props.auth.logged_in_as != 'super_admin'"
-        >
-          <div>
-            <button
-              class="d-flex dropdown-toggle align-items-center nav-link position-relative bg-transparent border-0"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar"
-            >
-              <div
-                v-if="
-                  $page.props.auth.user.patient
-                    ? $page.props.auth.user.patient
-                    : $page.props.auth.user.doctor
-                    ? $page.props.auth.user.doctor
-                    : $page.props.auth.user.clinic
-                "
-                class="avatar-icon me-3"
-              >
-                <img
-                  class="img-fluid rounded-circle"
-                  :src="
-                    $page.props.auth.user.patient
-                      ? $page.props.auth.user.patient.image
-                      : $page.props.auth.user.doctor
-                      ? $page.props.auth.user.doctor.image
-                      : $page.props.auth.user.clinic.image
-                  "
-                  alt=""
-                />
-              </div>
-              {{
-                $page.props.auth.logged_in_as != "super_admin" &&
-                $page.props.auth[$page.props.auth.logged_in_as].name
-              }}
-            </button>
-          </div>
-        </li>
-        <li
-          class="nav-item dropdown lang-dropdown list-unstyled me-md-4"
-          v-if="$page.props.translation_languages"
-        >
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="langDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            {{ getSelectedLocate }}
+    <div class="">
+      <nav
+        class="navbar navbar-expand-lg"
+        style="background-color:#F9FCFF !important"
+        :class="{ 'shadow-sm': !view.topOfPage }"
+      >
+      <div class="d-flex container " >
+        <!-- Left: Logo & Mobile Button -->
+        <div class="d-flex align-items-center navbar-header me-4">
+          <a id="mobile_btn" href="javascript:void(0);" class="me-3">
+            <span class="bar-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </a>
-          <ul class="dropdown-menu mt-4" aria-labelledby="langDropdown">
-            <li v-for="lang in $page.props.translation_languages" :key="lang.id">
-              <div class="mb-2">
-                <Link
-                  class="dropdown-item"
-                  :href="route('language', { language: lang.code })"
-                >
-                  <img
-                    class="me-2"
-                    :src="'/assets/flags/' + lang.code + '.png'"
-                    height="20"
-                    width="25"
-                  />
-                  {{ lang.name }}
-                </Link>
-              </div>
+          <a href="index.html" class="navbar-brand logo">
+            <img src="@/images/icons/new-logo.png" class="img-fluid" alt="Logo" />
+          </a>
+        </div>
+
+        <!-- Center: Navigation Menu -->
+        <div class="flex-grow-1 d-flex justify-content-center align-items-start">
+          <ul class="main-nav">
+            <li class="has-submenu megamenu active">
+              <a class="btn log-btn " href="start-here.html">Start Here</a>
+            </li>
+            <li class="has-submenu"><a href="coming-soon.html">Shop</a></li>
+
+            <!-- Her Well-Being Mega Menu -->
+            <li class="has-submenu megamenu">
+              <a href="javascript:void(0);">
+                <span>Her Well-Being</span>
+                <Icon icon="icon-park-outline:down" width="20" height="20" />
+              </a>
+
+              <ul class="submenu mega-submenu">
+                <li>
+                  <div class="megamenu-wrapper">
+                    <div class="row">
+                      <div
+                        class="col-lg-3"
+                        v-for="(category, index) in herWellBeing"
+                        :key="index"
+                      >
+                        <div class="single-demo">
+                          <div class="demo-info">
+                            <h4 class="inner-demo-title">{{ category.title }}</h4>
+                            <ul class="mega-menu">
+                              <li v-for="(item, i) in category.items" :key="i">
+                                <a :href="item.link">{{ item.name }}</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+            <li class="has-submenu">
+              <a href="javascript:void(0);">
+                <span>About Us</span>
+                <Icon icon="icon-park-outline:down" width="20" height="20" />
+              </a>
+              <ul class="submenu mega-menu">
+                <li><a href="pharmacy-index.html">Pharmacy</a></li>
+                <li><a href="pharmacy-details.html">Pharmacy Details</a></li>
+                <li><a href="pharmacy-search.html">Pharmacy Search</a></li>
+                <li><a href="product-all.html">Product</a></li>
+                <li><a href="product-description.html">Product Description</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="product-checkout.html">Product Checkout</a></li>
+                <li><a href="payment-success.html">Payment Success</a></li>
+                <li><a href="pharmacy-register.html">Pharmacy Register</a></li>
+              </ul>
+            </li>
+
+            <!-- Resources -->
+            <li class="has-submenu">
+              <a href="javascript:void(0);">Resources</a>
+              <Icon icon="icon-park-outline:down" width="20" height="20" />
+              <ul class="submenu mega-menu">
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li class="submenu mega-menu">
+                  <a href="javascript:void(0);">Call</a>
+                  <ul class="submenu inner-submenu">
+                    <li><a href="voice-call.html">Voice Call</a></li>
+                    <li><a href="video-call.html">Video Call</a></li>
+                  </ul>
+                </li>
+                <li class="submenu mega-menu">
+                  <a href="javascript:void(0);">Invoices</a>
+                  <ul class="submenu inner-submenu">
+                    <li><a href="invoices.html">Invoices</a></li>
+                    <li><a href="invoice-view.html">Invoice View</a></li>
+                  </ul>
+                </li>
+                <li class="submenu mega-menu">
+                  <a href="javascript:void(0);">Authentication</a>
+                  <ul class="submenu inner-submenu">
+                    <li><a href="login-email.html">Login Email</a></li>
+                    <li><a href="login-phone.html">Login Phone</a></li>
+                    <li><a href="doctor-signup.html">Doctor Signup</a></li>
+                    <li><a href="patient-signup.html">Patient Signup</a></li>
+                    <li><a href="forgot-password.html">Forgot Password 1</a></li>
+                    <li><a href="forgot-password2.html">Forgot Password 2</a></li>
+                    <li><a href="login-email-otp.html">Email OTP</a></li>
+                    <li><a href="login-phone-otp.html">Phone OTP</a></li>
+                  </ul>
+                </li>
+                <li class="has-submenu">
+                  <a href="javascript:void(0);">Error Pages</a>
+                  <ul class="submenu inner-submenu">
+                    <li><a href="error-404.html">404 Error</a></li>
+                    <li><a href="error-500.html">500 Error</a></li>
+                  </ul>
+                </li>
+                <li><a href="blank-page.html">Starter Page</a></li>
+                <li><a href="pricing.html">Pricing Plan</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="maintenance.html">Maintenance</a></li>
+                <li><a href="coming-soon.html">Coming Soon</a></li>
+                <li><a href="terms-condition.html">Terms & Condition</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="components.html">Components</a></li>
+              </ul>
             </li>
           </ul>
-        </li>
-        <div class="d-none d-md-block">
-          <Link
-            v-if="!$page.props.auth"
-            :href="route('login')"
-            class="btn btn-outline-primary btn-padding fs-3 shadow-none rounded-3 fw-normal me-md-3"
-          >
-            <span class="">{{ __("Login/Sign up") }}</span></Link
-          >
-
         </div>
-      </div> -->
-    </nav>
+
+        <!-- Right: Login/Register Buttons -->
+        <div class="d-flex align-items-center">
+          <ul class="nav header-navbar-rht">
+            <li class="register-btn" style="margin-right: 10px;">
+              <a href="register.html" class="btn reg-btn d-flex align-items-center gap-1">
+                <Icon icon="lucide:user" width="18" height="18" class="feather-user" />
+                Register
+              </a>
+            </li>
+            <li class="register-btn">
+              <a href="login.html" class="btn btn-primary log-btn d-flex align-items-center gap-1">
+                <Icon icon="mynaui:lock" class="feather-lock" width="18" height="18" />
+                Login
+              </a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="banner-content aos" data-aos="fade-up">
+              <h1>Natalwise: Your <br>All-in-One Wellness Hub<br> for Every female, Every <br>Stage of Life!</h1>
+              <p>Health | Fashion | Relationships | Lifestyle  More</p>
+              <a href="booking.html" class="btn">Schedule Appointment</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="banner-img aos" data-aos="fade-up">
+              <div class="img-hero">
+                <img src="@/images/icons/hero-ft.png" class="banner-image img-fluid" alt="..." />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="profile-canvas" v-if="$page.props.auth">
       <div
         class="offcanvas offcanvas-end"
@@ -873,13 +806,16 @@
         </ul>
       </div>
     </div>
-  </section>
+    </div>
 </template>
+
 
 <script>
 import { Link } from "@inertiajs/inertia-vue3";
 import CategoriesSkeleton from "@/Components/Skeleton/CategoriesSkeleton.vue";
 import "./navbar.css";
+
+
 import { Icon } from "@iconify/vue";
 export default {
   components: {
@@ -889,40 +825,42 @@ export default {
   },
   data() {
     return {
-       herWellBeing: [
-        {
-          title: "Health",
-          items: [
-            { name: "Essentials", link: "essentials.html" },
-            { name: "Gynaecology", link: "gynecology.html" },
-            { name: "Physiotherapy", link: "physiotherapy.html" },
-          ],
-        },
-        {
-          title: "Natal",
-          items: [
-            { name: "Journey Begins", link: "#" },
-            { name: "Pre Natal", link: "Pre-&-post-natal.html" },
-            { name: "Post Natal", link: "Pre-&-post-natal.html" },
-          ],
-        },
-        {
-          title: "Evolve & Elevate",
-          items: [
-            { name: "Personal Growth", link: "Personal-growth.html" },
-            { name: "Style & Fashion", link: "Style-&-fashion.html" },
-            { name: "Future", link: "Future-insights.html" },
-          ],
-        },
-        {
-          title: "Complete Wellness",
-          items: [
-            { name: "Sexual Well Being", link: "sexual-wellbeing.html" },
-            { name: "Mental Well Being", link: "mental-wellbeing.html" },
-            { name: "Nutritional Well Being", link: "nutritional-wellbeing.html" },
-          ],
-        },
+  herWellBeing: [
+    {
+      title: "Health",
+      items: [
+        { name: "Essentials", link: "essentials.html" },
+        { name: "Gynaecology", link: "gynecology.html" },
+        { name: "Physiotherapy", link: "physiotherapy.html" },
       ],
+    },
+    {
+      title: "Natal",
+      items: [
+        { name: "Journey Begins", link: "#" },
+        { name: "Pre Natal", link: "pre-and-post-natal.html" },
+        { name: "Post Natal", link: "pre-and-post-natal.html" },
+      ],
+    },
+    {
+      title: "Evolve & Elevate",
+      items: [
+        { name: "Personal Growth", link: "personal-growth.html" },
+        { name: "Style & Fashion", link: "style-and-fashion.html" },
+        { name: "Future", link: "future-insights.html" },
+      ],
+    },
+    {
+      title: "Complete Wellness",
+      items: [
+        { name: "Sexual Well Being", link: "sexual-wellbeing.html" },
+        { name: "Mental Well Being", link: "mental-wellbeing.html" },
+        { name: "Nutritional Well Being", link: "nutritional-wellbeing.html" },
+      ],
+    },
+  ],
+
+
       fetching: true,
       locale: this.$page.props.locale,
       doctor_main_categories: [],
