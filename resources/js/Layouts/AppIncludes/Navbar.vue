@@ -30,11 +30,12 @@
             <li class="has-submenu"><a href="coming-soon.html">Shop</a></li>
 
             <!-- Her Well-Being Mega Menu -->
-            <li class="has-submenu megamenu">
-              <a href="javascript:void(0);">
+             
+            <li class="has-submenu megamenu active">
+              <div >
                 <span>Her Well-Being</span>
                 <Icon icon="icon-park-outline:down" width="20" height="20" />
-              </a>
+              </div>
 
               <ul class="submenu mega-submenu">
                 <li>
@@ -63,10 +64,10 @@
             </li>
 
             <li class="has-submenu">
-              <a href="javascript:void(0);">
+              <div >
                 <span>About Us</span>
                 <Icon icon="icon-park-outline:down" width="20" height="20" />
-              </a>
+              </div>
               <ul class="submenu mega-menu">
                 <li><a href="pharmacy-index.html">Pharmacy</a></li>
                 <li><a href="pharmacy-details.html">Pharmacy Details</a></li>
@@ -82,13 +83,14 @@
 
             <!-- Resources -->
             <li class="has-submenu">
-              <a href="javascript:void(0);">Resources</a>
+              <div >Resources
               <Icon icon="icon-park-outline:down" width="20" height="20" />
+              </div>
               <ul class="submenu mega-menu">
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="contact-us.html">Contact Us</a></li>
                 <li class="submenu mega-menu">
-                  <a href="javascript:void(0);">Call</a>
+                  <a >Call</a>
                   <ul class="submenu inner-submenu">
                     <li><a href="voice-call.html">Voice Call</a></li>
                     <li><a href="video-call.html">Video Call</a></li>
@@ -337,20 +339,6 @@
                 ><i class="bi bi-currency-dollar"></i>{{ __("subscription") }}
               </Link>
             </li>
-            <!-- <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                $page.props.auth.logged_in_as == 'patient'
-              "
-              class="nav-items"
-            >
-              <Link
-                :href="route('pricing', { type: 'patient' })"
-                class="dropdown-item d-flex gap-3"
-                ><i class="bi bi-currency-dollar"></i>{{ __("subscription") }}
-              </Link>
-            </li> -->
-
             <li
               v-if="
                 parseInt(this.$page.props.settings.enable_wallet_system) &&
@@ -401,95 +389,7 @@
               >
             </li>
 
-            <!-- <Link :href="route('logout')" class="dropdown-item">
-                    <i class="bi bi-box-arrow-in-left"></i>
-                      {{__("logout")}}
-                    </Link> -->
-            <!-- <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                hasRole('doctor') &&
-                $page.props.auth.logged_in_as != 'doctor'
-              "
-              class="nav-items"
-            >
-              <button
-                @click="switchRole('doctor')"
-                class="dropdown-item new1 d-flex gap-3"
-              >
-                <img src="@/images/icons/userdoctor.svg" width="18" alt="" />
-                {{ __("switch to doctor") }}
-              </button>
-            </li>
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                !hasRole('doctor') &&
-                $page.props.auth.logged_in_as != 'doctor'
-              "
-              class="nav-items"
-            >
-              <button @click="becomeDoctor()" class="dropdown-item new1 d-flex gap-3">
-                <img src="@/images/icons/userdoctor.svg" width="18" alt="" />
-                {{ __("become a doctor") }}
-              </button>
-            </li>
-
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                hasRole('patient') &&
-                $page.props.auth.logged_in_as != 'patient'
-              "
-              class="nav-items"
-            >
-              <button
-                @click="switchRole('patient')"
-                class="dropdown-item new1 d-flex gap-3"
-              >
-                <i class="bi bi-person-circle"></i> {{ __("switch to user") }}
-              </button>
-            </li>
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                !hasRole('patient') &&
-                $page.props.auth.logged_in_as != 'patient'
-              "
-              class="nav-items"
-            >
-              <button @click="becomeUser()" class="dropdown-item new1 d-flex gap-3">
-                <i class="bi bi-person-circle"></i>{{ __("become a user") }}
-              </button>
-            </li>
-
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                hasRole('clinic') &&
-                $page.props.auth.logged_in_as != 'clinic'
-              "
-              class="nav-items"
-            >
-              <button
-                @click="switchRole('clinic')"
-                class="dropdown-item new1 d-flex gap-3"
-              >
-                <i class="bi bi-hospital"></i>{{ __("switch to clinic") }}
-              </button>
-            </li>
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                !hasRole('clinic') &&
-                $page.props.auth.logged_in_as != 'clinic'
-              "
-              class="nav-items"
-            >
-              <button @click="becomeClinic()" class="dropdown-item new1 d-flex gap-3">
-                <i class="bi bi-hospital"></i>{{ __("become a clinic") }}
-              </button>
-            </li> -->
+         
             <li class="nav-items">
               <button
                 style="cursor: pointer"
@@ -814,8 +714,6 @@
 import { Link } from "@inertiajs/inertia-vue3";
 import CategoriesSkeleton from "@/Components/Skeleton/CategoriesSkeleton.vue";
 import "./navbar.css";
-
-
 import { Icon } from "@iconify/vue";
 export default {
   components: {
