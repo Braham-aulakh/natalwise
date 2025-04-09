@@ -1,286 +1,157 @@
 <template>
-  <div class="bg-white">
-    <div class="container layer-slider">
-      <div class="row">
-        <div class="col-md-12">
-          <swiper
-            ref="swiperRef"
-            :slides-per-view="1"
-            @slideChangeTransitionStart="onSlideChange"
-            :modules="[Navigation]"
-            navigation
-          >
-            <swiper-slide v-for="(slide, index) in slides" :key="index">
-              <div class="slide-content">
-                <div class="row align-items-center pt-3">
-                  <div class="col-md-5 heading-slide">
-                    <div
-                      class="slide-text"
-                      :class="{ 'animate-text': activeSlide === index }"
-                    >
-                      <div
-                        v-if="
-                          getPageContentType('main_heading_slide_1') ==
-                          'textarea'
-                        "
-                        class="text-start"
-                      >
-                        <div
-                          class="text-dark"
-                          v-html="getPageContent('main_heading_slide_1')"
-                        ></div>
-                      </div>
+  <div class="bg-light">
+    <!-- Banner Section -->
+    <section class="banner-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Content -->
+          <div class="col-lg-6 text-start">
+            <div class="banner-content" data-aos="fade-up">
+              <h1>
+                Natalwise: Your <br />
+                All-in-One Wellness Hub<br />
+                for Every female, Every <br />
+                Stage of Life!
+              </h1>
+              <p>Health | Fashion | Relationships | Lifestyle & More</p>
+              <a href="booking.html" class="btn schedule-btn">
+                Schedule Appointment
+              </a>
+            </div>
+          </div>
 
-                      <div
-                        v-else-if="
-                          getPageContentType('main_heading_slide_1') == 'text'
-                        "
-                      >
-                        <p>
-                          {{ getPageContent("main_heading_slide_1") ?? "-" }}
-                        </p>
-                      </div>
-                      <div v-else>
-                        <h1 class="text-white display-6">
-                          <small
-                            class="d-block fs-2 text-capitalize fw-bold text-black"
-                            >{{
-                              __("Your Legal Solution Just A Click Away")
-                            }}</small
-                          >
-                          {{ __("Online Consultation") }}
-                        </h1>
-                        <p class="text-white py-3 fs-6">
-                          <span class="fw-bold">
-                            <span class="text-primary"
-                              >{{ __("27/7 Video") }}
-                            </span>
-                            {{ __("Consultations, ") }}
-                            <span class="text-primary">{{ __("Audio") }} </span>
-
-                            {{ __("Calls + ") }}
-
-                            <span class="text-primary">{{ __("Chat") }} </span>
-
-                            {{ __("Consultation") }}
-                          </span>
-                        </p>
-                      </div>
-
-                      <div
-                        v-if="
-                          getPageContentType('header_content_slide_1') ==
-                          'textarea'
-                        "
-                      >
-                        <div
-                          class="text-white"
-                          v-html="getPageContent('header_content_slide_1')"
-                        ></div>
-                      </div>
-                      <div
-                        v-else-if="
-                          getPageContentType('header_content_slide_1') == 'text'
-                        "
-                      >
-                        <p>
-                          {{ getPageContent("header_content_slide_1") ?? "-" }}
-                        </p>
-                      </div>
-                      <p v-else class="mb-0 text-primary mt-3 pe-md-4">
-                        Get professional legal advice from the comfort of your
-                        home with our virtual consultations. Connect with
-                        experienced doctors online and find the answers you need
-                        for your legal matters. Convenient, confidential, and
-                        just a click away
-                      </p>
-                      <span class="d-flex justify-content-start mt-5">
-                        <Link
-                          :href="route('doctors.listing')"
-                          data-aos-duration="1500"
-                          class="fw-bold btn btn-secondary fs-2 shadow-find rounded-4 text-white text-decoration-none"
-                          >{{ __("Find The Doctors") }}
-                          <img
-                            class="ms-4"
-                            src="@/images/icons/loginbtnicon.png"
-                            style="width: 30px"
-                            alt="icon-login"
-                        /></Link>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="col-md-7">
-                    <div class="d-flex flex-column">
-                      <div class="slide-svg position-relative">
-                        <div
-                          class="svg1"
-                          :class="{ 'animate-svg1': activeSlide === index }"
-                        >
-                          <img :src="slide.svg[0]" alt="Slide SVG 1" />
-                        </div>
-                        <div
-                          class="svg2 position-absolute"
-                          :class="{ 'animate-svg2': activeSlide === index }"
-                        >
-                          <img :src="slide.svg[1]" alt="Slide SVG 2" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-          </swiper>
+          <!-- Right Image -->
+          <div class="col-lg-6 text-center">
+            <div class="banner-img" data-aos="fade-up">
+              <img
+                src="@/images/icons/hero-ft.png"
+                class="banner-image img-fluid"
+                alt="hero image"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Advice Section + FindDoctorBar -->
+  
   </div>
 </template>
 
-
-    <script>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation } from "swiper/modules";
-import "swiper/swiper-bundle.css";
-import cardSvg from "@/images/home/card.svg";
-import headerSvg from "@/images/home/headerimg.svg";
+<script>
 import { Link } from "@inertiajs/inertia-vue3";
+import FindDoctorBar from "@/Components/Doctors/FindDoctorBar.vue";
 
 export default {
   components: {
-    Swiper,
-    SwiperSlide,
     Link,
-  },
-  data() {
-    return {
-      activeSlide: 0,
-      slides: [
-        {
-          title: "Slide 1",
-          description: "This is the first slide.",
-          svg: [headerSvg, cardSvg],
-        },
-        {
-          title: "Slide 2",
-          description: "This is the second slide.",
-          svg: [headerSvg, cardSvg],
-        },
-      ],
-    };
-  },
-  setup() {
-    return {
-      Navigation,
-    };
-  },
-  methods: {
-    onSlideChange(swiper) {
-      this.activeSlide = swiper.activeIndex;
-    },
+    FindDoctorBar,
   },
 };
 </script>
 
 
-  <style scoped>
-.custom-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+<style scoped>
+.bg-light {
+  background-color: #fff6f3; /* Light peach background from the screenshot */
+}
+.banner-content h1 {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #404040;}
+
+.banner-section {
+  padding-top: 10px;
+  padding-bottom: 0;
+  position: relative;
+  background: #fbf2ed;
 }
 
-.prev-btn,
-.next-btn {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.prev-btn:hover,
-.next-btn:hover {
-  background-color: #444;
-}
-
-.slide-content {
-  display: flex;
+/* Optional: Add decorative background layer if you want */
+.banner-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 120%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
 }
 
-.slide-text {
-  flex: 1;
-  opacity: 0;
-  transform: translateY(-200px); /* Start text off the top */
-  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
-  backface-visibility: hidden;
-  will-change: transform, opacity;
+
+.banner-content h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.4;
 }
 
-.slide-svg {
-  display: flex;
-  justify-content: space-around;
-  flex: 1;
+.banner-content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 25px;
 }
 
-.svg1,
-.svg2 {
-  opacity: 0;
-  transform: translateY(200px); /* Start SVGs off the bottom */
-  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
-  backface-visibility: hidden;
-  will-change: transform, opacity;
+.schedule-btn {
+  background-color: #ffd6e0;
+  color: #ff4d88;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid #ffd6e0;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+  text-decoration: none;
 }
 
-.svg1 {
-  width: 700px;
+.schedule-btn:hover {
+  background-color: #ff4d88;
+  color: #fff;
+  border-color: #ff4d88;
 }
 
-.svg2 {
-  right: 11px;
-  top: 103px;
+.banner-image {
+  max-width: 450px;
+  width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.animate-text {
-  opacity: 1;
-  transform: translateY(0); /* Move text to original position */
+.banner-image:hover {
+  transform: scale(1.05);
 }
 
-.animate-svg1 {
-  opacity: 1;
-  transform: translateY(0); /* Move SVG1 to original position */
+section.banner-section {
+    background: #fbf2ed;
 }
 
-.animate-svg2 {
-  opacity: 1;
-  transform: translateY(0); /* Move SVG2 to original position */
-  transition-delay: 0.3s; /* Delayed animation for second SVG */
-}
 
-.swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
-}
-
-.svg2 > img {
-  width: 200px;
-}
 
 @media screen and (max-width: 768px) {
-  .svg1 > img {
-    width: 350px;
-    margin-top: 35px;
+  .banner-content h1 {
+    font-size: 2rem;
   }
 
-  .svg2 {
-    right: 0px;
-    top: 50px;
+  .banner-content p {
+    font-size: 1rem;
   }
 
-  .svg2 > img {
-    width: 158px;
+  .schedule-btn {
+    font-size: 0.95rem;
+    padding: 10px 20px;
   }
+
+  .banner-image {
+    max-width: 100%;
+  }
+  
 }
 </style>
