@@ -14,20 +14,24 @@
                 Stage of Life!
               </h1>
               <p>Health | Fashion | Relationships | Lifestyle & More</p>
-              <a href="booking.html" class="btn schedule-btn">
+              <a href="booking.html" class="btn ">
                 Schedule Appointment
               </a>
             </div>
           </div>
 
           <!-- Right Image -->
+          <!-- <div class="col-lg-6 text-center">
+							<div class="banner-img aos" data-aos="fade-up">
+								<div class="img-hero">
+								<img src="assets/img/hero-ft.png" class="img-fluid" alt="patient-image"></div>
+								
+							</div>
+						</div> -->
+
           <div class="col-lg-6 text-center">
-            <div class="banner-img" data-aos="fade-up">
-              <img
-                src="@/images/icons/hero-ft.png"
-                class="banner-image img-fluid"
-                alt="hero image"
-              />
+            <div class="banner-img aos" data-aos="fade-up">
+              <img src="@/images/icons/hero-ft.png" class=" img-fluid" alt="hero image" />
             </div>
           </div>
         </div>
@@ -35,7 +39,7 @@
     </section>
 
     <!-- Advice Section + FindDoctorBar -->
-  
+
   </div>
 </template>
 
@@ -54,50 +58,47 @@ export default {
 
 <style scoped>
 .bg-light {
-  background-color: #fff6f3; /* Light peach background from the screenshot */
+  background-color: #fff6f3;
+  /* Light peach background from the screenshot */
 }
-.banner-content h1 {
-    font-family: "Prata", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 48px;
-    margin-bottom: 15px;
-    color: #404040;}
 
-.banner-section {
-  padding-top: 10px;
-  padding-bottom: 0;
-  position: relative;
-  background: #fbf2ed;
+
+.banner-section{
+    background: #fbf2ed;
+    padding: 25px 0 0 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 /* Optional: Add decorative background layer if you want */
-.banner-section::after {
+/* .banner-section::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120%;
+  height: 100% !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
-}
-
+} */
 
 .banner-content h1 {
-  font-size: 2.8rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 20px;
-  line-height: 1.4;
+  font-family: "Prata", serif;
+  font-weight: 400 !important;
+  font-style: normal;
+  font-size:48px !important;
+  margin-bottom: 15px;
+  color: #404040;
 }
 
 .banner-content p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #374151;
 }
 
 .schedule-btn {
@@ -119,10 +120,28 @@ export default {
 }
 
 .banner-image {
-  max-width: 450px;
+  /* max-width: 450px; */
   width: 100%;
+  height: 100%;
+  max-height: 100vh;
   object-fit: contain;
   transition: transform 0.3s ease;
+}
+
+.banner-img {
+  position: relative;
+  text-align: right;
+  /* top: 260px; */
+  left: -20px;
+  -webkit-animation: float 2s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
+}
+
+.banner-img {
+  /* top: 260px; */
+  left: -20px;
+  -webkit-animation: float 2s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .banner-image:hover {
@@ -130,7 +149,7 @@ export default {
 }
 
 section.banner-section {
-    background: #fbf2ed;
+  background: #fbf2ed;
 }
 
 
@@ -152,6 +171,47 @@ section.banner-section {
   .banner-image {
     max-width: 100%;
   }
-  
+
 }
+
+[data-aos^=fade][data-aos^=fade].aos-animate {
+  opacity: 1;
+  transform: none !important;
+}
+
+[data-aos^=fade][data-aos^=fade].aos-animate img {
+  transform: none !important;
+}
+
+.banner-content .btn {
+  font-weight: 500;
+  border-radius: 8px;
+  margin: 0;
+  padding: 12px 31px;
+  min-width: 214px;
+  display: inline-block;
+  border: 1px solid #fc9fbc;
+  color: #fc9fbc;
+  font-size: 20px;
+  box-shadow: inset 0 0 0 0 #ffffff;
+  -webkit-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.banner-content .btn:hover {
+  color: #fc9fbc;
+  border-color: #fc9fbc;
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 50px #ffffff;
+  /* -webkit-transition: 0.5s; */
+  /* -ms-transition: 0.5s; */
+  transition: 0.5s;
+}
+
+.banner-content {
+  padding: 50px 0;
+  position: relative;
+}
+
 </style>

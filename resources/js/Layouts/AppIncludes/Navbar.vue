@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="">
-      <nav class="navbar navbar-expand-lg" style="background-color:#F9FCFF !important"
+      <nav class="navbar navbar-expand-lg header-nav" style="background-color:#F9FCFF !important"
         :class="{ 'shadow-sm': !view.topOfPage }">
         <div class="d-flex container ">
           <!-- Left: Logo & Mobile Button -->

@@ -1,74 +1,66 @@
 <template>
-  <div
-    class="bar-search-doctor d-flex flex-column justify-content-center"
-    v-if="home"
-  >
-    <div class="container">
+  <div class="bar-search-doctor d-flex flex-column justify-content-center" v-if="home">
+    <div class="container search_section">
       <!-- Title Section -->
       <div class="search-section mx-auto text-center px-3 mb-5">
-        <h2 class="fs-1 fw-bold mb-4" style="color: #fc9fbc;">
+        <h2 class="fs-1 fw-bold mb-4 section-title" style="color: #fc9fbc;">
           {{ __(title) }}
         </h2>
 
         <!-- Search Bar Section -->
-        <div class="row mx-2 mx-md-0 py-md-0 align-items-left bg-white rounded-4 bar">
-          <div class="col-md-5">
-            <!-- Optional: Location input or filter -->
-          </div>
-
-          <div class="col-12 col-md-7 pe-md-2">
+        <!-- Wrapper: Centered Row -->
+        <div class="d-flex justify-content-center">
+          <div class="search_bar bg-white rounded-4">
             <div
-              class="d-flex doctor-search flex-column flex-md-row align-items-md-center align-items-start justify-content-start"
-            >
-              <input
-                v-model="form.search"
-                type="search"
-                @input="updateQuery"
-                :placeholder="__('Search Doctors')"
-                class="fs-3 border rounded shadow-none w-100 w-md-auto px-3 py-2 me-md-2 mb-3 mb-md-0"
-                style="border-color: #ced4da; max-width: 400px;"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              />
-
-              <button
-                @click="searchData"
-                type="button"
-                :disabled="isLoading"
-                class="btn log-btn"
-              >
+              class="d-flex doctor-search flex-column flex-md-row align-items-md-center align-items-start justify-content-start">
+              <input v-model="form.search" type="search" @input="updateQuery" :placeholder="__('Search Doctors')"
+                class="fs-3 border rounded shadow-none w-100 px-3 py-2 mb-3 mb-md-0 me-md-2"
+                style="border-color: #ced4da;" data-bs-toggle="dropdown" aria-expanded="false" />
+              <button @click="searchData" type="button" :disabled="isLoading" class="btn log-btn">
                 <SpinnerLoader v-if="isLoading" />
                 {{ getPageContent("general_search_btn_text") ?? __("search") }}
               </button>
             </div>
           </div>
         </div>
+
       </div>
 
       <!-- Advice Section -->
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <div class="advic-heading" data-aos="fade-up">
-            <h3 class="advic-headings">
-              Discover personalized advice tailored to every stage of your
-              journey—health, relationships, career, fashion, and so much more.
-            </h3>
-          </div>
-        </div>
+      <div>
+        <section class="advice-section">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="advic-heading" data-aos="fade-up">
 
-        <div class="col-lg-6">
-          <div class="advic-cont aos" data-aos="fade-up">
-            <p class="advice-p">
-              Natalwise is dedicated to providing every woman with personalized,
-              compassionate guidance. Our platform seamlessly connects you with expert
-              professionals via video consultations, delivering bespoke advice across
-              health, relationships, career, fashion, and personal development.
-              Empowering women to flourish at every stage of life, Natalwise is your
-              trusted companion for living with confidence, grace, and boldness.
-            </p>
+                  <h3 class="advic-headings">Discover personalized advice
+                    tailored to every stage of your journey—health, relationships,
+                    career, fashion, and so much more.</h3>
+
+                </div>
+
+              </div>
+
+              <div class="col-lg-6">
+                <div class="advic-cont aos" data-aos="fade-up">
+                  <div>
+                    <p class="advice-p"> Natalwise is dedicated to providing every woman with personalized,
+                      compassionate guidance. Our platform seamlessly connects you with expert professionals via video
+                      consultations, delivering bespoke advice across health, relationships, career, fashion, and
+                      personal development. Empowering women to flourish at every stage of life, Natalwise is your
+                      trusted companion for living with confidence, grace, and boldness.
+
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
+
     </div>
   </div>
 </template>
@@ -166,16 +158,13 @@ export default defineComponent({
   background-color: #fefefe;
   padding: 2rem 0;
 }
-.advic-headings {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #333;
-}
+
 .advice-p {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
 }
+
 .btn.log-btn {
   background-color: #fc9fbc;
   color: #fff;
@@ -185,7 +174,75 @@ export default defineComponent({
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
 }
+
 .btn.log-btn:hover {
   background-color: #ff77a9;
 }
+
+.advic-headings {
+  font-family: montserrat;
+  font-size: 35px !important;
+  font-weight: 500 !important;
+}
+
+.advice-p {
+  font-size: 18px;
+  font-family: montserrat;
+  text-align: right;
+}
+
+/* .search_section {
+  padding: 50px 0;
+} */
+.advic-cont.aos.aos-init.aos-animate {
+  padding: 0 70px;
+}
+
+.search_bar {
+  width: 100%;
+  max-width: 960px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
 </style>
+
+
+
+
+
+
+<!-- 
+	<section class="advice-section">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="advic-heading" data-aos="fade-up">
+
+								<h3 class="advic-headings">Discover personalized advice
+									tailored to every stage of your journey—health, relationships,
+									career, fashion, and so much more.</h3>
+
+							</div>
+
+						</div>
+						
+						<div class="col-lg-6">
+							<div class="advic-cont aos" data-aos="fade-up">
+								<div >
+									<p class="advice-p"> Natalwise is dedicated to providing every woman with personalized, compassionate guidance. Our platform seamlessly connects you with expert professionals via video consultations, delivering bespoke advice across health, relationships, career, fashion, and personal development. Empowering women to flourish at every stage of life, Natalwise is your trusted companion for living with confidence, grace, and boldness.
+									
+									</p>
+								
+							</div>
+						</div>
+						
+
+					</div>
+					
+					
+
+					
+				</div>
+			</section> -->

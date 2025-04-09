@@ -3991,7 +3991,7 @@ textarea.form-control-lg {
     }
   }
 
-  > .container,
+  /* > .container,
   > .container-fluid,
   > .container-sm,
   > .container-md,
@@ -4003,7 +4003,7 @@ textarea.form-control-lg {
     align-items: center;
     justify-content: space-between;
   }
-}
+} */
 
 .navbar-brand {
   padding-top: var(--bs-navbar-brand-padding-y);
@@ -12146,12 +12146,12 @@ textarea.form-control-lg {
   border-radius: 15px;
 }
 
-.bar-search-doctor {
+/* .bar-search-doctor {
   height: 246px;
 }
 .bar-search-doctor .bar {
   height: 64px;
-}
+} */
 
 .fs-custom-1 {
   font-size: 36px;
@@ -12899,12 +12899,12 @@ input::placeholder {
   .profile {
     height: 250px;
   }
-  .bar-search-doctor {
+  /* .bar-search-doctor {
     height: 450px;
   }
   .bar-search-doctor .bar {
     height: 250px;
-  }
+  } */
   .mb-6 {
     margin-bottom: 50px;
   }
