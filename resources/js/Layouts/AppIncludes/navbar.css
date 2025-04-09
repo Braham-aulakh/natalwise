@@ -57,7 +57,7 @@
   display: none;
   position: absolute;
   background: #fff;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   z-index: 999;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   min-width: 200px;
@@ -208,8 +208,6 @@
   object-fit: cover;
   /* Or 'contain' based on your goal */
   border-radius: 1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  /* Optional for extra effect */
 }
 
 

@@ -158,7 +158,7 @@
     </div>
 
     <!-- Banner Section -->
-    <section class="banner-section">
+    <!-- <section class="banner-section">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
@@ -177,7 +177,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <div class="profile-canvas" v-if="$page.props.auth">
       <div
         class="offcanvas offcanvas-end"
