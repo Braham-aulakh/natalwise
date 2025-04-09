@@ -33,22 +33,24 @@
 }
 
 .header-one .main-menu-wrapper .main-nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;}
-
-    
-.header-one .header-nav {
-    background-color: transparent;
-    border: 0;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 100px;
-    -webkit-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
+
+.header-one .header-nav {
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  -webkit-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
 /* Submenu Styles */
 .main-nav .submenu,
 .main-nav .inner-submenu {
@@ -77,21 +79,9 @@
 }
 
 
-/* Fix nested li relative positioning */
-.main-nav .submenu .has-submenu {
-  position: relative;
-}
-
-/* Margin for submenu items */
-/* .submenu li,
-.inner-submenu li,
-.mega-menu li {
-  margin-bottom: 6px;
-} */
-
 /* Extra button styles */
-.regist-btn{
-  align-items:center;
+.regist-btn {
+  align-items: center;
 }
 
 .btn.reg-btn {
@@ -102,15 +92,17 @@
   box-shadow: inset 0 0 0 0 #fbf2ed;
   transition: 0.7s;
 }
+
 .btn.reg-btn:hover {
-    color: #ffffff !important;
-    background-color: #fc9fbc !important;
-    border: 1px solid #fc9fbc !important;
-    box-shadow: inset 0 0 0 50px #fc9fbc;
-    -webkit-transition: 0.7s !important;
-    -ms-transition: 0.7s !important;
-    transition: 0.7s !important;
+  color: #ffffff !important;
+  background-color: #fc9fbc !important;
+  border: 1px solid #fc9fbc !important;
+  box-shadow: inset 0 0 0 50px #fc9fbc;
+  -webkit-transition: 0.7s !important;
+  -ms-transition: 0.7s !important;
+  transition: 0.7s !important;
 }
+
 .btn.log-btn {
   min-width: 87px;
   color: #ffffff;
@@ -119,15 +111,17 @@
   box-shadow: inset 0 0 0 0 #ffffff;
   transition: 0.7s;
 }
+
 .btn.log-btn:hover {
-    color: black !important;
-    background-color: #fbf2ed !important;
-    border: 1px solid #fbf2ed !important;
-    box-shadow: inset 0 0 0 50px #fbf2ed !important;
-    -webkit-transition: 0.7s !important;
-    -ms-transition: 0.7s !important;
-    transition: 0.7s !important;
+  color: black !important;
+  background-color: #fbf2ed !important;
+  border: 1px solid #fbf2ed !important;
+  box-shadow: inset 0 0 0 50px #fbf2ed !important;
+  -webkit-transition: 0.7s !important;
+  -ms-transition: 0.7s !important;
+  transition: 0.7s !important;
 }
+
 .header-navbar-rht li .btn {
   color: #ffffff;
   font-weight: 600;
@@ -139,9 +133,9 @@
 /* Her Well-Being Mega Dropdown Container */
 .main-nav .mega-submenu {
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  top: 64px !important;
+  right: 0px !important;
+  left: -350px;
   background-color: #fff;
   width: 100%;
   padding: 30px 40px;
@@ -153,18 +147,9 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Mega menu layout */
-.megamenu-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
 
-/* Column style */
-.megamenu-wrapper .col-lg-3 {
-  flex: 1 1 20%;
-  min-width: 180px;
-}
+
+
 
 /* Section title */
 .single-demo .inner-demo-img {
@@ -175,7 +160,7 @@
 }
 
 /* Menu items */
-/* .mega-menu {
+.mega-menu {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -194,6 +179,7 @@
 .mega-menu a:hover {
   color: #f99db8;
 }
+
 .submenu.mega-menu a {
   font-family: 'YourMainFont', sans-serif;
   font-weight: 500;
@@ -206,52 +192,245 @@
 .submenu.mega-menu a:hover {
   color: #e91e63;
   background-color: #f8f8f8;
-} */
+}
 
 .banner-main-image {
   max-width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 1rem; /* Optional: rounded corners */
+  border-radius: 1rem;
+  /* Optional: rounded corners */
 }
+
 .banner-image {
   max-width: 100%;
   height: auto;
-  object-fit: cover; /* Or 'contain' based on your goal */
+  object-fit: cover;
+  /* Or 'contain' based on your goal */
   border-radius: 1rem;
-  /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); Optional for extra effect */
 }
 
 
-.main-nav li a{
-padding: 23px 0 28px !important;
-        line-height: normal;
-        font-size: 15px;
-    font-weight: 500;
-    color: #1F2937;
-    /* display: block; */
-    position:relative;
+.main-nav li a {
+  padding: 23px 0 28px !important;
+  line-height: normal;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1F2937;
+  /* display: block; */
+  position: relative;
 }
 
 .main-nav li .btn {
-    /* color: #ffffff; */
-    font-weight: 600;
-    font-size: 14px;
-    padding: 7px 8px !important;
-    /* border: 1px solid #0E82FD; */
-    border-radius: 6px;
+  /* color: #ffffff; */
+  font-weight: 600;
+  font-size: 14px;
+  padding: 7px 8px !important;
+  /* border: 1px solid #0E82FD; */
+  border-radius: 6px;
 }
 
 .main-nav li .btn:hover {
-    color: #1F2937 !important;
-    background-color: #fbf2ed !important;
-    border: 1px solid #fbf2ed !important;
-    box-shadow: inset 0 0 0 50px #fbf2ed;
-    -webkit-transition: 0.7s;
-    -ms-transition: 0.7s;
-    transition: 0.7s !important;
+  color: #1F2937 !important;
+  background-color: #fbf2ed !important;
+  border: 1px solid #fbf2ed !important;
+  box-shadow: inset 0 0 0 50px #fbf2ed;
+  -webkit-transition: 0.7s;
+  -ms-transition: 0.7s;
+  transition: 0.7s !important;
 }
 
-.main-nav > li > a:hover {
-    color: #FF00EF !important;
+.main-nav>li>a:hover {
+  color: #FF00EF !important;
+}
+
+
+
+
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* her well being css  */
+@media (min-width: 992px) {
+  .header.header-ten .main-menu-wrapper .main-nav>li.has-submenu:hover>.submenu {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+  }
+
+  .main-menu-wrapper .main-nav>li.has-submenu:hover>.submenu>li.has-submenu:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0;
+    margin-right: 0;
+  }
+}
+
+.main-nav li.has-submenu:hover .her-menu {
+  opacity: 1;
+  visibility: visible;
+
+
+  top: 240px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 992px) {
+
+  /* .main-nav li > ul.mega-submenu {
+    padding: 0;
+    border: 0;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    background: #002578;
+    min-width: 250px;
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    transform-origin: center top 0;
+    -webkit-transform-origin: center top 0;
+    -moz-transform-origin: center top 0;
+    -ms-transform-origin: center top 0;
+    -o-transform-origin: center top 0;
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    -webkit-box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    -ms-box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    -o-box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+  } */
+  .main-nav li.has-submenu:hover>.submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+  }
+
+  .main-nav li .submenu.mega-submenu::before {
+    display: none;
+  }
+}
+
+.main-nav>li .submenu>li.has-submenu>a::after {
+  content: "\f054";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 13px;
+  position: absolute;
+  top: 12px !important;
+  right: 15px;
+}
+
+@media (min-width: 992px) {
+  .main-nav>li.megamenu {
+    position: unset;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-nav li>ul.mega-submenu {
+    padding: 20px;
+    border: 0;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    /* background: #002578; */
+    min-width: 800px;
+    width: 100% !important;
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    transform-origin: center top 0;
+    -webkit-transform-origin: center top 0;
+    -moz-transform-origin: center top 0;
+    -ms-transform-origin: center top 0;
+    -o-transform-origin: center top 0;
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    -webkit-box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    -ms-box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    -o-box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+  }
+
+  .main-nav li.has-submenu:hover>.submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+  }
+
+  .main-nav li .submenu.mega-submenu::before {
+    display: none;
+  }
+}
+
+/* .megamenu-wrapper {
+  padding: 25px;
+  background: #fff;
+  height: auto;
+  overflow: visible; 
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100% !important;
+  max-width: 1200px; 
+  box-sizing: border-box;
+} */
+
+.megamenu-wrapper .row {
+  display: flex;
+  width: 100% !important;
+  /* avoid bootstrap row wrapping */
+}
+
+/* .megamenu-wrapper .col-lg-3 {
+  flex: 1;
+  min-width: 200px;
+} */
+
+/* .main-nav li > ul.mega-submenu {
+  width: 100% !important;
+  max-width: 100% !important; 
+  overflow: visible;
+  background: #fff; 
+} */
+
+
+.main-nav li .submenu a:hover {
+  color: #0E82FD !important;
+  letter-spacing: 0.5px;
 }
