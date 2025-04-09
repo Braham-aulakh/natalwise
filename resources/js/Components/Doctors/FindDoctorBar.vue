@@ -1,87 +1,71 @@
 <template>
   <div
-    class="bg-primary bar-search-doctor d-flex flex-column justify-content-center"
+    class="bar-search-doctor d-flex flex-column justify-content-center"
     v-if="home"
   >
     <div class="container">
-      <h2 class="text-center fs-1 fw-bold text-white mb-4">{{ __(title) }}</h2>
-      <div class="row mx-2 mx-md-0 py-md-0 align-items-center bg-white rounded-4 bar">
-        <div class="col-md-5">
-          <div class="input-group-from position-relative d-flex align-items-center">
-            <vue-google-autocomplete
-              id="map"
-              ref="address"
-              enable-geolocation
-              classname="form-control bg-transparent fs-3 border-0 shadow-none"
-              :placeholder="__('Enter Your Current Location')"
-              v-on:inputChange="updateLocation"
-              v-on:placechanged="getAddressData"
+      <!-- Title Section -->
+      <div class="search-section mx-auto text-center px-3 mb-5">
+        <h2 class="fs-1 fw-bold mb-4" style="color: #fc9fbc;">
+          {{ __(title) }}
+        </h2>
+
+        <!-- Search Bar Section -->
+        <div class="row mx-2 mx-md-0 py-md-0 align-items-left bg-white rounded-4 bar">
+          <div class="col-md-5">
+            <!-- Optional: Location input or filter -->
+          </div>
+
+          <div class="col-12 col-md-7 pe-md-2">
+            <div
+              class="d-flex doctor-search flex-column flex-md-row align-items-md-center align-items-start justify-content-start"
             >
-            </vue-google-autocomplete>
-            <button
-              type="button"
-              class="btn btn-info text-primary fs-2 d-flex align-items-center px-3 shadow-none rounded-3"
-              @click="getCurrentLocation()"
-            >
-              {{ __("Detect") }}
-              <img
-                src="@/images/icons/Gps_fixed.png"
-                class="ms-2"
-                style="width: 2.5rem"
-                alt="locationicon"
+              <input
+                v-model="form.search"
+                type="search"
+                @input="updateQuery"
+                :placeholder="__('Search Doctors')"
+                class="fs-3 border rounded shadow-none w-100 w-md-auto px-3 py-2 me-md-2 mb-3 mb-md-0"
+                style="border-color: #ced4da; max-width: 400px;"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               />
-            </button>
+
+              <button
+                @click="searchData"
+                type="button"
+                :disabled="isLoading"
+                class="btn log-btn"
+              >
+                <SpinnerLoader v-if="isLoading" />
+                {{ getPageContent("general_search_btn_text") ?? __("search") }}
+              </button>
+            </div>
           </div>
         </div>
-        <!-- <div class="col-12 col-md-4 mb-3 mb-md-0">
-          <div
-            class="d-flex flex-md-row flex-column location-select align-items-md-center align-items-start"
-          >
-            <div class="d-flex align-items-center">
-              <input
-                v-model="current_address"
-                type="text fw-medium"
-                class="form-control bg-transparent fs-3 border-0 shadow-none"
-                :placeholder="__('Enter your current location')"
-              />
-            </div>
-            <Button
-              type="button"
-              @click="getCurrentLocation()"
-              class="btn btn-info text-primary fs-2 d-flex align-items-center px-3 shadow-none rounded-3 ms-md-2"
-            >
-              {{ __("Detect") }}
-              <img
-                src="@/images/icons/Gps_fixed.png"
-                class="ms-2"
-                style="width: 2.5rem"
-                alt="locationicon"
-              />
-            </Button>
+      </div>
+
+      <!-- Advice Section -->
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="advic-heading" data-aos="fade-up">
+            <h3 class="advic-headings">
+              Discover personalized advice tailored to every stage of your
+              journey—health, relationships, career, fashion, and so much more.
+            </h3>
           </div>
-        </div> -->
-        <div class="col-12 col-md-7 pe-md-2">
-          <div
-            class="d-flex doctor-search flex-column flex-md-row align-items-md-center align-items-start justify-content-between"
-          >
-            <input
-              v-model="form.search"
-              type="search"
-              @input="updateQuery"
-              :placeholder="__('Search Doctors')"
-              class="bg-transparent fs-3 border-0 shadow-none w-100 mb-3 mb-md-0 ms-2 ms-md-0"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            />
-            <button
-              @click="searchData"
-              type="button"
-              :disabled="isLoading"
-              class="btn btn-secondary px-md-4 py-2 fs-2 fw-bold rounded-3"
-            >
-              <SpinnerLoader v-if="isLoading" />
-              {{ getPageContent("general_search_btn_text") ?? __("search") }}
-            </button>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="advic-cont aos" data-aos="fade-up">
+            <p class="advice-p">
+              Natalwise is dedicated to providing every woman with personalized,
+              compassionate guidance. Our platform seamlessly connects you with expert
+              professionals via video consultations, delivering bespoke advice across
+              health, relationships, career, fashion, and personal development.
+              Empowering women to flourish at every stage of life, Natalwise is your
+              trusted companion for living with confidence, grace, and boldness.
+            </p>
           </div>
         </div>
       </div>
@@ -90,27 +74,18 @@
 </template>
 
 <script>
-import { computed, defineComponent } from "vue";
-import ValidationErrors from "@/Components/ValidationErrors.vue";
-import { Link } from "@inertiajs/inertia-vue3";
+import { defineComponent } from "vue";
 import SpinnerLoader from "@/Components/Shared/SpinnerLoader.vue";
-import VueGoogleAutocomplete from "vue-google-autocomplete";
-import { Inertia } from "@inertiajs/inertia";
+import { Link } from "@inertiajs/inertia-vue3";
 
 export default defineComponent({
   components: {
-    ValidationErrors,
-    Link,
     SpinnerLoader,
-    VueGoogleAutocomplete,
+    Link,
   },
   props: {
-    title: {
-      type: String,
-    },
-    search: {
-      type: String,
-    },
+    title: String,
+    search: String,
     is_redirect: {
       type: Boolean,
       default: true,
@@ -124,8 +99,6 @@ export default defineComponent({
       default: false,
     },
   },
-  created() {},
-
   data() {
     return {
       form: {
@@ -134,46 +107,25 @@ export default defineComponent({
         longitude: "",
       },
       isLoading: false,
-      isClearLoading: false,
-      distanceOptions: [],
       current_address: "",
     };
   },
-
-  async mounted() {
-    await this.locatorButtonPressed();
-    // await this.$refs.address.update(this.$page.props.clinic.address_line_1);
-
-    if (this.$page.props.search) {
-      this.form.search = this.$page.props.search ?? "";
-      if (!this.form.location) {
-        this.form.latitude = this.location_data.lat ?? "";
-        this.form.longitude = this.location_data.lng ?? "";
-      }
-    }
-    if (this.$page.props.latitude && this.$page.props.longitude) {
-      this.getCurrentLocation();
+  mounted() {
+    this.getCurrentLocation();
+    if (this.$page?.props?.search) {
+      this.form.search = this.$page.props.search;
     }
   },
-
-  computed: {},
   methods: {
     callHref() {
       let url = this.route("doctors.listing");
-
       const params = new URLSearchParams();
-      if (this.form.search) {
-        params.append("search", encodeURIComponent(this.form.search));
-      }
-      if (this.form.latitude) {
-        params.append("latitude", encodeURIComponent(this.form.latitude));
-      }
-      if (this.form.longitude) {
-        params.append("longitude", encodeURIComponent(this.form.longitude));
-      }
-      if (params.toString()) {
-        url += "?" + params.toString();
-      }
+
+      if (this.form.search) params.append("search", this.form.search);
+      if (this.form.latitude) params.append("latitude", this.form.latitude);
+      if (this.form.longitude) params.append("longitude", this.form.longitude);
+
+      if (params.toString()) url += `?${params.toString()}`;
       return url;
     },
     searchData() {
@@ -183,64 +135,57 @@ export default defineComponent({
         this.$emit("updateFormData", this.form);
       }
     },
-    showInfo(info) {
-      this.form.latitude = info.latLng.lat();
-      this.form.longitude = info.latLng.lng();
-    },
     updateQuery() {
       const searchParams = new URLSearchParams(window.location.search);
+      if (this.form.search) searchParams.set("search", this.form.search);
+      else searchParams.delete("search");
 
-      if (this.form.search) {
-        searchParams.set("search", this.form.search);
-      }
-      if (!this.form.search) {
-        searchParams.delete("search");
-      }
       if (this.form.latitude && this.form.longitude) {
         searchParams.set("latitude", this.form.latitude);
         searchParams.set("longitude", this.form.longitude);
       }
+
       if (!this.current_address) {
-        searchParams.delete("latitude", this.form.latitude);
-        searchParams.delete("longitude", this.form.longitude);
+        searchParams.delete("latitude");
+        searchParams.delete("longitude");
       }
 
       const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
       window.history.pushState({}, "", newUrl);
     },
-    updateLocation(address) {
-      this.current_address = address.newVal;
-
-      this.updateQuery();
-    },
-
     async getCurrentLocation() {
-      this.form.latitude = this.location_data.lat ?? -34.6161385;
-      this.form.longitude = this.location_data.lng ?? -58.39748470000001;
-      if (this.form.latitude && this.form.longitude) {
-        var user_address = await this.getStreetAddressFrom(
-          this.form.latitude,
-          this.form.longitude
-        );
-        this.current_address = user_address;
-        this.$refs.address.update(user_address);
-      }
-    },
-
-    getAddressData: function (addressData, placeResultData, id) {
-      this.form.latitude = addressData.latitude;
-      this.form.longitude = addressData.longitude;
-      this.form.location = addressData.route;
-      // this.address = addressData;
-    },
-
-    searchTypeChanged() {
-      this.form.distance = "";
-      this.form.location = "";
-      this.form.country = "";
-      this.form.zip_code = "";
+      this.form.latitude = this.location_data?.lat ?? "";
+      this.form.longitude = this.location_data?.lng ?? "";
     },
   },
 });
 </script>
-<style src="@vueform/multiselect/themes/default.css"></style>
+
+<style scoped>
+.bar-search-doctor {
+  background-color: #fefefe;
+  padding: 2rem 0;
+}
+.advic-headings {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+}
+.advice-p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+.btn.log-btn {
+  background-color: #fc9fbc;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+.btn.log-btn:hover {
+  background-color: #ff77a9;
+}
+</style>

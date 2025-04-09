@@ -1,5 +1,6 @@
 <template>
   <div class="bg-light">
+    <!-- Banner Section -->
     <section class="banner-section">
       <div class="container">
         <div class="row align-items-center">
@@ -24,65 +25,66 @@
             <div class="banner-img" data-aos="fade-up">
               <img
                 src="@/images/icons/hero-ft.png"
-                   class="banner-image img-fluid"
-                  alt="hero image"
+                class="banner-image img-fluid"
+                alt="hero image"
               />
             </div>
           </div>
         </div>
       </div>
     </section>
-     <section class="advice-section">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Left Column: Heading -->
-        <div class="col-lg-6">
-          <div class="advic-heading" data-aos="fade-up">
-            <h3 class="advic-headings">
-              Discover personalized advice tailored to every stage of your
-              journey—health, relationships, career, fashion, and so much more.
-            </h3>
-          </div>
-        </div>
 
-        <!-- Right Column: Content -->
-        <div class="col-lg-6">
-          <div class="advic-cont aos" data-aos="fade-up">
-            <p class="advice-p">
-              Natalwise is dedicated to providing every woman with personalized,
-              compassionate guidance. Our platform seamlessly connects you with expert
-              professionals via video consultations, delivering bespoke advice across
-              health, relationships, career, fashion, and personal development.
-              Empowering women to flourish at every stage of life, Natalwise is your
-              trusted companion for living with confidence, grace, and boldness.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Advice Section + FindDoctorBar -->
+  
   </div>
 </template>
 
-
 <script>
 import { Link } from "@inertiajs/inertia-vue3";
+import FindDoctorBar from "@/Components/Doctors/FindDoctorBar.vue";
 
 export default {
   components: {
     Link,
+    FindDoctorBar,
   },
 };
 </script>
+
 
 <style scoped>
 .bg-light {
   background-color: #fff6f3; /* Light peach background from the screenshot */
 }
+.banner-content h1 {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #404040;}
 
 .banner-section {
-  padding : 60px 0;
+  padding-top: 10px;
+  padding-bottom: 0;
+  position: relative;
+  background: #fbf2ed;
 }
+
+/* Optional: Add decorative background layer if you want */
+.banner-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
 
 .banner-content h1 {
   font-size: 2.8rem;
@@ -131,6 +133,8 @@ section.banner-section {
     background: #fbf2ed;
 }
 
+
+
 @media screen and (max-width: 768px) {
   .banner-content h1 {
     font-size: 2rem;
@@ -148,5 +152,6 @@ section.banner-section {
   .banner-image {
     max-width: 100%;
   }
+  
 }
 </style>

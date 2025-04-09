@@ -238,11 +238,11 @@
       :title="'Discover and schedule appointments with top-rated doctors in your area'"
       :home="true"
     ></FindDoctorBar>
-    <home-statistics-bar></home-statistics-bar>
+    <!-- <home-statistics-bar></home-statistics-bar>
     <spotlight-doctor-section></spotlight-doctor-section>
     <home-static-cards-section></home-static-cards-section>
     <doctors-tabs-section></doctors-tabs-section>
-    <featured-clinic-section></featured-clinic-section>
+    <featured-clinic-section></featured-clinic-section> -->
 
     <!-- <PopularCoursesSection></PopularCoursesSection> -->
 
