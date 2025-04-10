@@ -3,7 +3,7 @@
     <div class="container search_section">
       <!-- Title Section -->
       <div class="search-section mx-auto text-center px-3 mb-5">
-        <h2 class="fs-1 fw-bold mb-4 section-title" style="color: #fc9fbc;">
+        <h2 class="fs-1 fw-bold mb-4 section-title " style="color: #fc9fbc !important; font-weight: 500; font-size: 33px !important;">
           {{ __(title) }}
         </h2>
 
