@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import url('https://example.com/path-to-shink-font.css');
@@ -13,6 +18,7 @@
     background-color: #ffffff;
     margin: 0;
 }
+
 .bg-color {
     background-image: url(../images//icons/exlopre.jpg);
     background-attachment: fixed;
@@ -20,20 +26,22 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .specialities-section-one {
     width: auto;
     -webkit-transition: 0.4s;
     -ms-transition: 0.4s;
     transition: 0.4s;
-  }
+}
 
-  /* Explore section  */
-  .Explore-section {
+/* Explore section  */
+.Explore-section {
     padding: 80px 0;
     display: inline-block;
     width: 100%;
     position: relative;
 }
+
 .exp-bg-img img {
     position: absolute;
     max-width: 420px;
@@ -42,67 +50,80 @@
     left: -59px;
     bottom: 0;
 }
+
 @media (min-width: 768px) {
     .col-md-12 {
         flex: 0 0 auto;
         width: 100%;
     }
 }
+
 .section-header-one {
     margin-bottom: 40px;
     text-align: center;
 }
+
 .section-header-one .section-title {
     display: inline-block;
     position: relative;
 }
+
 .section-title {
     font-family: Montserrat;
     font-weight: 600 !important;
-    font-size: 45px !important; 
+    font-size: 45px !important;
     color: #272b41 !important;
 }
+
 .color-pink {
     color: #fc9fbc !important;
 }
+
 .section-subtitle {
     font-size: 18px !important;
     font-family: "Montserrat", serif !important;
     text-align: center !important;
 }
+
 .explore-box.flex-fill {
     position: relative;
 }
+
 .explore-box span {
-	border: 1px solid #fb90b1;
-	box-shadow: 0px 7.5px 17.5px 0px rgba(0, 0, 0, 0.0509803922);
-	
-	border-radius: 6px;
-	display: flex;
-	text-align: center;
-	background-color: #fb90b1;
-	
-	align-items: center;
-	justify-content: center;
-  height: 300px;
+    border: 1px solid #fb90b1;
+    box-shadow: 0px 7.5px 17.5px 0px rgba(0, 0, 0, 0.0509803922);
+
+    border-radius: 6px;
+    display: flex;
+    text-align: center;
+    background-color: #fb90b1;
+
+    align-items: center;
+    justify-content: center;
+    height: 300px;
 }
+
 .explore-box span img {
-	max-width: 130px;
+    max-width: 130px;
 }
+
 .explore-box span img {
-	padding-bottom: 40px;
+    padding-bottom: 40px;
 }
+
 .explore-box:hover .cont-hide {
     opacity: 1;
     visibility: visible;
     -webkit-transition: 0.7s;
     -ms-transition: 0.7s;
     transition: 0.7s;
-  }
-  .explore-box.flex-fill {
-      position: relative;
-  }
-  .explore-heading {
+}
+
+.explore-box.flex-fill {
+    position: relative;
+}
+
+.explore-heading {
     bottom: 0;
     text-align: center;
     margin-top: -30px;
@@ -111,8 +132,9 @@
     background-color: white;
     padding: 4px 0;
 }
+
 .explore-heading h3 {
-    font-family:  Montserrat !important;
+    font-family: Montserrat !important;
     font-size: 16px;
     line-height: 30px;
     color: #272b41 !important;
@@ -144,6 +166,7 @@
     border: 1px solid #fc9fbc;
     border-radius: 6px;
 }
+
 .cont-hide .cont-hide-head {
     font-size: 20px !important;
     font-weight: 600 !important;
@@ -151,10 +174,12 @@
     margin-bottom: .5rem;
     line-height: 1.2;
 }
+
 .cont-hide .cont-hide-para {
     font-size: 15px !important;
     margin-bottom: 16px !important;
 }
+
 .cont-hide button {
     text-decoration: none;
     border: none;
@@ -168,33 +193,39 @@
     font-size: 12px;
     transition: all 0.4s ease;
 }
+
 @media (min-width: 992px) {
     .col-lg-3 {
         /* flex: 0 0 auto; */
         width: 212px !important;
     }
 }
+
 @media (min-width: 1200px) {
     .row-cols-xl-4>* {
         /* flex: 0 0 auto; */
         /* width: 25% !important; */
     }
 }
+
 @media (min-width: 1400px) {
     .col-xxl {
         flex: 1 0 0%;
     }
 }
+
 .Explore-section {
-	padding: 80px 0;
-	display: inline-block;
-	width: 100%;
-  position: relative;
+    padding: 80px 0;
+    display: inline-block;
+    width: 100%;
+    position: relative;
 }
+
 .explore_main a {
     text-decoration: none !important;
 }
-.service-sec-one{
+
+.service-sec-one {
     display: flex;
     justify-content: center;
     width: 100%;

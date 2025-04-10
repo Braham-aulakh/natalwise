@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-6">
           <div class="py-5 form-content">
-            <span class="d-flex justify-content-center mt-2">
+            <!-- <span class="d-flex justify-content-center mt-2">
               <Link :href="route('home')">
                 <img
                   v-if="$page.props && $page.props.settings && $page.props.settings.logo"
@@ -20,14 +20,14 @@
                   alt="logo"
                 /> 
               </Link>
-            </span>
+            </span> -->
 
             <h1 class="text-center pt-4 display-1 text-primary fw-bold">
-              {{ __("Hi") }}, {{ __("welcome back") }}!
+              {{ __("Login Doccure") }}!
             </h1>
-            <h3 class="text-center fs-1 fw-normal text-black">
-              {{ __("Login into your account") }}
-            </h3>
+            <!-- <h3 class="text-center fs-1 fw-normal text-black">
+              {{ __("Login Doccure") }}
+            </h3> -->
             <!-- <ul
               class="nav gap-3 my-5 nav-tabs login-btn justify-content-center"
               id="myTab"
