@@ -7,171 +7,117 @@
     aria-labelledby="patient-login-tab"
     tabindex="0"
   >
-    <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vestibulum metus,
-      sed ultrices tellus. Etiam finibus elit non condimentum auctor. </p>-->
     <form @submit.prevent="submit" class="loginForm">
-      <validation-errors class="mb-3" />
+      <validation-errors class="mb-3 px-4" />
 
       <div class="col-12">
         <div class="row">
           <div class="col-12">
-            <div
-              v-if="this.errors.email"
-              class="error-validation text-danger text-end px-md-5"
-            >
-              <span>{{ this.errors.email }}</span>
+            <!-- Email Field -->
+            <div v-if="errors.email" class="text-danger text-end pe-4 mb-1 small">
+              <span>{{ errors.email }}</span>
             </div>
-            <div class="input-group px-md-5 mb-4">
-              <div class="border border-3 rounded-3 w-100">
-                <div class="form-floating d-flex align-items-center rounded-3">
-                  <input
-                    id="email"
-                    class="form-control ps-4 bg-transparent"
-                    :placeholder="__('email address')"
-                    type="email"
-                    v-model="form.email"
+            <div class="input-wrapper mb-4">
+              <div class="form-control-wrapper w-100 position-relative">
+                <input
+                  id="email"
+                  class="form-control input-style"
+                  :placeholder="__('Email address')"
+                  type="email"
+                  v-model="form.email"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="input-icon"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
                   />
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="25"
-                    fill="black"
-                    class="bi bi-person me-3"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
-                    />
-                  </svg>
-                  <label class="text-muted ps-4" for="floatingInput">{{
-                    __("email address")
-                  }}</label>
-                </div>
+                </svg>
               </div>
             </div>
 
-            <div
-              v-if="this.errors.password"
-              class="error-validation text-danger text-end px-md-5"
-            >
-              <span>{{ this.errors.password }}</span>
+            <!-- Password Field -->
+            <div v-if="errors.password" class="text-danger text-end pe-4 mb-1 small">
+              <span>{{ errors.password }}</span>
             </div>
-            <div class="input-group px-md-5 mb-4">
-              <div class="border border-3 rounded-3 w-100">
-                <div class="form-floating d-flex align-items-center">
-                  <!-- <label for="password">{{ __('password') }}</label> -->
-                  <input
-                    id="pass_log_log"
-                    class="form-control ps-4"
-                    type="password"
-                    v-model="form.password"
-                    name="password"
-                    :placeholder="__('password')"
-                  />
-                  <label class="text-muted ps-4" for="floatingInput">{{
-                    __("password")
-                  }}</label>
-                  <span
-                    class="input-group-text bg-transparent d-flex gap-2"
-                    toggle="#password-field"
-                  >
-                    <Link
-                      class="fw-bold text-decoration-none me-3"
-                      :href="route('forgot_password')"
-                      >{{ __("Forgot") }}</Link
-                    >
-                    <img
-                      src="@/images/icons/Chield_alt.png"
-                      width="25"
-                      alt=""
-                    />
-                    <!-- <i class="bi bi-key field_icon toggle-password-log input-icon fs-5"></i> -->
-                  </span>
-                </div>
+            <div class="input-wrapper mb-4">
+              <div class="form-control-wrapper w-100 position-relative">
+                <input
+                  id="password"
+                  class="form-control input-style"
+                  type="password"
+                  v-model="form.password"
+                  :placeholder="__('Password')"
+                />
+                <span class="input-group-text end-icon">
+                  <Link class="text-link small" :href="route('forgot_password')">{{ __('Forgot') }}</Link>
+                  <img src="@/images/icons/Chield_alt.png" width="20" alt="icon" />
+                </span>
               </div>
             </div>
           </div>
         </div>
-        <div class="row px-md-5 align-items-center">
+
+        <!-- Submit Button -->
+        <div class="row px-4 align-items-center">
           <div class="col-md-12">
             <button
-              class="submit btn w-100 fs-2 fw-bold rounded-4 shadow-find btn-primary mb-3"
+              class="btn login-btn"
               :class="{ 'text-white-50': form.processing }"
               :disabled="form.processing"
             >
               <SpinnerLoader v-if="form.processing" />
-              {{ __("login") }}
-              <img
-                src="@/images/icons/loginbtnicon.png"
-                class="ms-2"
-                width="30"
-                alt=""
-              />
+              {{ __('Login') }}
+              <img src="@/images/icons/loginbtnicon.png" class="ms-2" width="25" alt="" />
             </button>
-          </div>
-          <div class="col-md-12 text-center my-3">
-            <p class="mb-0 fs-3 fw-normal">
-              {{ __("Dont have an account") }}?
-              <Link
-                :href="route('register', { tab: 'patient' })"
-                class="link ms-1 text-capitalize"
-                >{{ __("register") }}</Link
-              >
-            </p>
           </div>
         </div>
       </div>
     </form>
-    <hr />
+
+    <hr class="my-4" />
+
+    <!-- Social Login -->
     <div class="col-md-12">
       <div class="text-center">
-        <p class="fw-normal my-5 fs-3" style="color: #808080">
+        <p class="fw-normal fs-6 text-muted mb-4">
           {{ __("Login with social media accounts") }}
         </p>
-        <div class="d-flex align-items-center gap-3 justify-content-center">
-          <a
-            :href="
-              route('social_redirect', {
-                provider: 'google',
-                login_as: this.form.login_as,
-              })
-            "
-          >
-            <span class="icon"
-              ><img src="@/images/icons/google.png" alt=""
-            /></span>
+        <div class="d-flex justify-content-center gap-4">
+          <a :href="route('social_redirect', { provider: 'google', login_as: form.login_as })" class="social-icon-link">
+            <img src="@/images/icons/google.png" width="35" />
           </a>
+          <a :href="route('social_redirect', { provider: 'facebook', login_as: form.login_as })" class="social-icon-link">
+            <img src="@/images/icons/facebook.png" width="35" />
+          </a>
+          <a :href="route('social_redirect', { provider: 'twitter', login_as: form.login_as })" class="social-icon-link">
+            <img src="@/images/icons/twitter.png" width="35" />
+          </a>
+        </div>
 
-          <a
-            :href="
-              route('social_redirect', {
-                provider: 'facebook',
-                login_as: this.form.login_as,
-              })
-            "
-          >
-            <span class="icon"
-              ><img src="@/images/icons/facebook.png" alt=""
-            /></span>
-          </a>
-          <a
-            :href="
-              route('social_redirect', {
-                provider: 'twitter',
-                login_as: this.form.login_as,
-              })
-            "
-          >
-            <span class="icon"
-              ><img src="@/images/icons/twitter.png" alt=""
-            /></span>
-          </a>
+        <!-- Register Link Moved Below -->
+        <div class="text-center my-4">
+          <p class="mb-0 fs-6">
+            {{ __("Don't have an account") }}?
+            <Link
+              :href="route('register', { tab: 'patient' })"
+              class="fw-semibold text-decoration-none ms-1 text-capitalize"
+            >
+              {{ __("Register") }}
+            </Link>
+          </p>
         </div>
       </div>
     </div>
   </div>
 </template>
-    <script>
+
+<script>
 import { defineComponent } from "vue";
 import Button from "@/Components/Button.vue";
 import Input from "@/Components/Input.vue";
@@ -251,3 +197,79 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.input-wrapper {
+  padding: 0 1.5rem;
+}
+
+.form-control-wrapper {
+  position: relative;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.input-style {
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  background-color: #fff;
+  padding: 1rem 3rem 1rem 1.25rem;
+  font-size: 1rem;
+  box-shadow: none;
+}
+
+.input-style:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input-icon {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.end-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  gap: 0.25rem;
+}
+
+.text-link {
+  font-weight: 600;
+  color: #6c757d;
+}
+
+.login-btn {
+  width: 100%;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 0.875rem 1.5rem;
+  background-color: #dc356c;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(220, 53, 108, 0.3);
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #c72f61;
+}
+
+.social-icon-link img {
+  transition: transform 0.2s ease;
+}
+.social-icon-link:hover img {
+  transform: scale(1.1);
+}
+</style>

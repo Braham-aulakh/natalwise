@@ -15,6 +15,7 @@
       </div>
     </section>
     <ExploreStart></ExploreStart>
+    <WhyChooseUs></WhyChooseUs>
     <home-statistics-bar></home-statistics-bar>
     <spotlight-doctor-section></spotlight-doctor-section>
     <home-static-cards-section></home-static-cards-section>
@@ -477,6 +478,9 @@ import FeaturedClinicSection from "@/Components/Clinics/FeaturedClinicSection.vu
 import ContentSlider from "../Components/ContentSlider.vue";
 import CardSkeleton from "../Components/Skeleton/CardSkeleton.vue";
 import ExploreStart from "./ExploreStart.vue";
+import WhyChooseUs from './ourCommitment.vue';
+
+
 
 export default defineComponent({
   props: {
@@ -491,7 +495,7 @@ export default defineComponent({
     ContentSlider,
     Modal,
     AppLayout,
-
+WhyChooseUs,
     CardSkeleton,
     FindDoctorBar,
     FindClinicBar,
