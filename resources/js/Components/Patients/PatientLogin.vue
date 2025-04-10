@@ -1,29 +1,26 @@
 <template>
-  <div
-    class="tab-pane"
-    :class="{ active: active }"
-    id="patient-login-pane"
-    role="tabpanel"
-    aria-labelledby="patient-login-tab"
-    tabindex="0"
-  >
+  <div class="tab-pane" :class="{ active: active }" id="patient-login-pane" role="tabpanel"
+    aria-labelledby="patient-login-tab" tabindex="0">
     <!-- <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a vestibulum metus,
       sed ultrices tellus. Etiam finibus elit non condimentum auctor. </p>-->
     <form @submit.prevent="submit" class="loginForm">
       <validation-errors class="mb-3" />
 
-      <div class="col-12">
-        <div class="row">
-          <div class="col-12">
-            <div
-              v-if="this.errors.email"
-              class="error-validation text-danger text-end px-md-5"
-            >
-              <span>{{ this.errors.email }}</span>
+      <div class="border border-Borderlightgray rounded-md">
+        <div class="flex flex-col gap-6 w-full max-w-xl mx-auto items-start">
+          <!-- Header -->
+          <div class="text-left">
+            <h3 class="text-2xl font-semibold text-red-600">
+              Login <span class="text-pink-600">Doccure</span>
+            </h3>
+          </div>
+
+          <!-- Email Field -->
+          <div class="flex flex-col gap-1 ">
+            <div v-if="errors.email" class="text-red-600 text-sm text-end">
+              <span>{{ errors.email }}</span>
             </div>
-            <div class="input-group px-md-5 mb-4">
-              <div class="border border-3 rounded-3 w-100">
-                <div class="form-floating d-flex align-items-center rounded-3">
+            <div class="form-floating d-flex align-items-center rounded-3">
                   <input
                     id="email"
                     class="form-control ps-4 bg-transparent"
@@ -47,76 +44,43 @@
                     __("email address")
                   }}</label>
                 </div>
-              </div>
-            </div>
+          </div>
 
-            <div
-              v-if="this.errors.password"
-              class="error-validation text-danger text-end px-md-5"
-            >
-              <span>{{ this.errors.password }}</span>
+          <!-- Password Field -->
+          <div class="flex flex-col gap-1">
+            <div v-if="errors.password" class="text-red-600 text-sm text-end">
+              <span>{{ errors.password }}</span>
             </div>
-            <div class="input-group px-md-5 mb-4">
-              <div class="border border-3 rounded-3 w-100">
-                <div class="form-floating d-flex align-items-center">
-                  <!-- <label for="password">{{ __('password') }}</label> -->
-                  <input
-                    id="pass_log_log"
-                    class="form-control ps-4"
-                    type="password"
-                    v-model="form.password"
-                    name="password"
-                    :placeholder="__('password')"
-                  />
-                  <label class="text-muted ps-4" for="floatingInput">{{
-                    __("password")
-                  }}</label>
-                  <span
-                    class="input-group-text bg-transparent d-flex gap-2"
-                    toggle="#password-field"
-                  >
-                    <Link
-                      class="fw-bold text-decoration-none me-3"
-                      :href="route('forgot_password')"
-                      >{{ __("Forgot") }}</Link
-                    >
-                    <img
-                      src="@/images/icons/Chield_alt.png"
-                      width="25"
-                      alt=""
-                    />
-                    <!-- <i class="bi bi-key field_icon toggle-password-log input-icon fs-5"></i> -->
-                  </span>
-                </div>
+            <div class="relative border-2 border-gray-300 rounded-md flex items-center px-3 py-2">
+              <input id="pass_log_log" class="flex-1 h-[50px] outline-none bg-transparent text-gray-800 placeholder-gray-400"
+                type="password" v-model="form.password" name="password" :placeholder="__('password')" />
+              <div class="flex items-center gap-2 ml-3">
+                <Link class="text-sm text-pink-600 font-semibold hover:underline" :href="route('forgot_password')">
+                {{ __("Forgot") }}
+                </Link>
+                <img src="@/images/icons/Chield_alt.png" width="20" alt="key icon" />
               </div>
             </div>
           </div>
         </div>
+
+
+
+
         <div class="row px-md-5 align-items-center">
           <div class="col-md-12">
-            <button
-              class="submit btn w-100 fs-2 fw-bold rounded-4 shadow-find btn-primary mb-3"
-              :class="{ 'text-white-50': form.processing }"
-              :disabled="form.processing"
-            >
+            <button class="submit btn w-100 fs-2 fw-bold rounded-4 shadow-find btn-primary mb-3"
+              :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
               <SpinnerLoader v-if="form.processing" />
               {{ __("login") }}
-              <img
-                src="@/images/icons/loginbtnicon.png"
-                class="ms-2"
-                width="30"
-                alt=""
-              />
+              <img src="@/images/icons/loginbtnicon.png" class="ms-2" width="30" alt="" />
             </button>
           </div>
           <div class="col-md-12 text-center my-3">
             <p class="mb-0 fs-3 fw-normal">
               {{ __("Dont have an account") }}?
-              <Link
-                :href="route('register', { tab: 'patient' })"
-                class="link ms-1 text-capitalize"
-                >{{ __("register") }}</Link
-              >
+              <Link :href="route('register', { tab: 'patient' })" class="link ms-1 text-capitalize">{{ __("register") }}
+              </Link>
             </p>
           </div>
         </div>
@@ -129,49 +93,34 @@
           {{ __("Login with social media accounts") }}
         </p>
         <div class="d-flex align-items-center gap-3 justify-content-center">
-          <a
-            :href="
-              route('social_redirect', {
-                provider: 'google',
-                login_as: this.form.login_as,
-              })
-            "
-          >
-            <span class="icon"
-              ><img src="@/images/icons/google.png" alt=""
-            /></span>
+          <a :href="route('social_redirect', {
+            provider: 'google',
+            login_as: this.form.login_as,
+          })
+            ">
+            <span class="icon"><img src="@/images/icons/google.png" alt="" /></span>
           </a>
 
-          <a
-            :href="
-              route('social_redirect', {
-                provider: 'facebook',
-                login_as: this.form.login_as,
-              })
-            "
-          >
-            <span class="icon"
-              ><img src="@/images/icons/facebook.png" alt=""
-            /></span>
+          <a :href="route('social_redirect', {
+            provider: 'facebook',
+            login_as: this.form.login_as,
+          })
+            ">
+            <span class="icon"><img src="@/images/icons/facebook.png" alt="" /></span>
           </a>
-          <a
-            :href="
-              route('social_redirect', {
-                provider: 'twitter',
-                login_as: this.form.login_as,
-              })
-            "
-          >
-            <span class="icon"
-              ><img src="@/images/icons/twitter.png" alt=""
-            /></span>
+          <a :href="route('social_redirect', {
+            provider: 'twitter',
+            login_as: this.form.login_as,
+          })
+            ">
+            <span class="icon"><img src="@/images/icons/twitter.png" alt="" /></span>
           </a>
         </div>
       </div>
     </div>
   </div>
 </template>
-    <script>
+<script>
 import { defineComponent } from "vue";
 import Button from "@/Components/Button.vue";
 import Input from "@/Components/Input.vue";

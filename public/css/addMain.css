@@ -230,3 +230,13 @@
     justify-content: center;
     width: 100%;
 }
+
+/* login page */
+.login-header{
+    margin-bottom: 20px;
+}
+.login-header h3 {
+    font-size: 18px;
+    margin-bottom: 3px;
+    color: #272b41;
+  }

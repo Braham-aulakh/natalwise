@@ -1,4 +1,5 @@
 <template>
+  
   <guest-layout>
     <div class="container-fluid px-0" style="height: 100vh">
       <div class="row">
@@ -22,9 +23,9 @@
               </Link>
             </span> -->
 
-            <h1 class="text-center pt-4 display-1 text-primary fw-bold">
+            <!-- <h1 class="text-center pt-4 display-1 text-primary fw-bold">
               {{ __("Login Doccure") }}!
-            </h1>
+            </h1> -->
             <!-- <h3 class="text-center fs-1 fw-normal text-black">
               {{ __("Login Doccure") }}
             </h3> -->
@@ -88,7 +89,7 @@
                 :redirect_url="redirect_url"
               ></patient-login>
               <doctor-login :active="tab === 'doctor'"></doctor-login>
-              <clinic-login :active="tab === 'clinic'"></clinic-login>
+              <!-- <clinic-login :active="tab === 'clinic'"></clinic-login> -->
             </div>
           </div>
         </div>
