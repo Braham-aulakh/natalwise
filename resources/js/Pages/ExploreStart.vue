@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="col-12 d-flex col-xxl col-lg-3 col-sm-6 explore_main">
                                     <a href="Pre-&-post-natal.html" class="explore-box flex-fill">
-                                        <span>
+                        <span>
                                             <img src="../images//icons/pregnant.png" alt="heart-image">
                                         </span>
                                         <div class="explore-heading flex-fill">

@@ -119,7 +119,7 @@
               <li class="register-btn" style="margin-right: 10px;">
                 <a href="register.html" class="btn reg-btn d-flex align-items-center gap-1">
                   <Icon icon="lucide:user" width="18" height="18" class="feather-user" />
-                  Register
+          Register
                 </a>
               </li>
               <li class="register-btn">
@@ -128,33 +128,18 @@
                   Login
                 </a>
               </li>
+              <li class="register-btn ml-2">
+                <a href="/logout" class="btn btn-primary log-btn d-flex align-items-center gap-1">
+                  <Icon icon="mynaui:lock" class="feather-lock" width="18" height="18" />
+                  Logout
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
     </div>
 
-    <!-- Banner Section -->
-    <!-- <section class="banner-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="banner-content aos" data-aos="fade-up">
-              <h1>Natalwise: Your <br>All-in-One Wellness Hub<br> for Every female, Every <br>Stage of Life!</h1>
-              <p>Health | Fashion | Relationships | Lifestyle  More</p>
-              <a href="booking.html" class="btn">Schedule Appointment</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="banner-img aos" data-aos="fade-up">
-              <div class="img-hero">
-                <img src="@/images/icons/hero-ft.png" class="banner-image img-fluid" alt="..." />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
     <div class="profile-canvas" v-if="$page.props.auth">
       <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1"
         id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -707,5 +692,11 @@ export default {
 
 .img-fluid {
   width: 200px
+}
+@media (min-width: 992px) {
+    .col-lg-3 {
+        /* flex: 0 0 auto; */
+        width: 200px !important;
+    }
 }
 </style>

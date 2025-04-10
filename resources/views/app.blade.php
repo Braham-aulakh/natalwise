@@ -15,6 +15,8 @@
 
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <link rel="stylesheet" href="{{ asset('css/output.css') }}">
+
 
     @vite('resources/js/app.js')
     @inertiaHead
