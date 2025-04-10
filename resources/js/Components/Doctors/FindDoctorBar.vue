@@ -32,16 +32,12 @@
           <div class="container">
             <div class="row align-items-center">
               <div class="col-lg-6">
-                <div class="advic-heading" data-aos="fade-up">
-
+                <div class="advic-heading">
                   <h3 class="advic-headings">Discover personalized advice
                     tailored to every stage of your journey—health, relationships,
                     career, fashion, and so much more.</h3>
-
                 </div>
-
               </div>
-
               <div class="col-lg-6">
                 <div class="advic-cont aos" data-aos="fade-up">
                   <div>
@@ -50,9 +46,7 @@
                       consultations, delivering bespoke advice across health, relationships, career, fashion, and
                       personal development. Empowering women to flourish at every stage of life, Natalwise is your
                       trusted companion for living with confidence, grace, and boldness.
-
                     </p>
-
                   </div>
                 </div>
               </div>
@@ -202,7 +196,7 @@ export default defineComponent({
   width: 100%;
   max-width: 960px;
   padding: 0 30px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   margin: 0 auto;
 }

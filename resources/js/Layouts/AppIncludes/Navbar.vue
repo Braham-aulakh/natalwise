@@ -123,7 +123,7 @@
                 </a>
               </li>
               <li class="register-btn">
-                <a href="login.html" class="btn btn-primary log-btn d-flex align-items-center gap-1">
+                <a href="/login" class="btn btn-primary log-btn d-flex align-items-center gap-1">
                   <Icon icon="mynaui:lock" class="feather-lock" width="18" height="18" />
                   Login
                 </a>

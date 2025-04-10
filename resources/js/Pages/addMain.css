@@ -1,9 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://example.com/path-to-shink-font.css');
 
 .section-title {
     /* font-family: Montserrat !important ; */
     font-weight: 600 !important;
     font-size: 36px !important;
     color: #fc9fbc;
+}
+
+.specialities-section-one {
+    background-color: #ffffff;
+    margin: 0;
+}
+.bg-color {
+    background-image: url(../images//icons/exlopre.jpg);
+    background-attachment: fixed;
+    padding: 200px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.specialities-section-one {
+    width: auto;
+    -webkit-transition: 0.4s;
+    -ms-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  /* Explore section  */
+  .Explore-section {
+    padding: 80px 0;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+.exp-bg-img img {
+    position: absolute;
+    max-width: 420px;
+    top: -41px;
+    rotate: 71deg;
+    left: -59px;
+    bottom: 0;
+}
+@media (min-width: 768px) {
+    .col-md-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+.section-header-one {
+    margin-bottom: 40px;
+    text-align: center;
+}
+.section-header-one .section-title {
+    display: inline-block;
+    position: relative;
+}
+.section-title {
+    font-family: Montserrat;
+    font-weight: 600 !important;
+    font-size: 45px !important; 
+    color: #272b41 !important;
+}
+.color-pink {
+    color: #fc9fbc !important;
+}
+.section-header-one p {
+    font-size: 18px;
+}
+.explore-box.flex-fill {
+    position: relative;
+}
+.explore-box span img {
+    padding-bottom: 40px;
+    max-width: 130px;
 }

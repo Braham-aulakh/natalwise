@@ -5,15 +5,21 @@
         <content-slider></content-slider>
       </section>
     </template>
-    <FindDoctorBar
-      :title="'Discover and schedule appointments with top-rated doctors in your area'"
-      :home="true"
-    ></FindDoctorBar>
-    <!-- <home-statistics-bar></home-statistics-bar>
+    <FindDoctorBar :title="'Discover and schedule appointments with top-rated doctors in your area'" :home="true">
+    </FindDoctorBar>
+    <!-- Specialities Section -->
+    <section class="specialities-section-one">
+      <div class="bg-color">
+
+
+      </div>
+    </section>
+    <ExploreStart></ExploreStart>
+    <home-statistics-bar></home-statistics-bar>
     <spotlight-doctor-section></spotlight-doctor-section>
     <home-static-cards-section></home-static-cards-section>
     <doctors-tabs-section></doctors-tabs-section>
-    <featured-clinic-section></featured-clinic-section> -->
+    <featured-clinic-section></featured-clinic-section>
 
     <!-- <PopularCoursesSection></PopularCoursesSection> -->
 
@@ -24,16 +30,9 @@
         <div class="row">
           <div class="col-12">
             <div class="text-center">
-              <h1
-                data-aos="fade-down"
-                data-aos-duration="1500"
-                class="heading-fs"
-                v-html="getPageContent('doctor_quick_services_title')"
-              ></h1>
-              <p
-                v-html="getPageContent('doctor_quick_services')"
-                class="subheading-fs"
-              ></p>
+              <h1 data-aos="fade-down" data-aos-duration="1500" class="heading-fs"
+                v-html="getPageContent('doctor_quick_services_title')"></h1>
+              <p v-html="getPageContent('doctor_quick_services')" class="subheading-fs"></p>
             </div>
           </div>
         </div>
@@ -41,28 +40,11 @@
         <div class="row py-4">
           <!-- Loop through service categories -->
 
-          <div
-            class="col-md-4"
-            v-for="(category, index) in serviceCategories"
-            :key="category.id"
-          >
+          <div class="col-md-4" v-for="(category, index) in serviceCategories" :key="category.id">
             <div v-if="index <= 2" class="card border-0 mx-2 mb-3 mb-md-0">
-              <div
-                class="rounded-5 overflow-hidden image-container"
-                style="width: 100%; height: 280px"
-              >
-                <img
-                  v-if="category.image"
-                  class="h-100 objext-fit-cover"
-                  :src="category.image"
-                  alt="categoryimg"
-                />
-                <img
-                  v-else
-                  class="image"
-                  src="@/images/cardlaw.jpg"
-                  alt="categoryimg"
-                />
+              <div class="rounded-5 overflow-hidden image-container" style="width: 100%; height: 280px">
+                <img v-if="category.image" class="h-100 objext-fit-cover" :src="category.image" alt="categoryimg" />
+                <img v-else class="image" src="@/images/cardlaw.jpg" alt="categoryimg" />
               </div>
               <div class="card-body">
                 <div class="d-flex flex-column align-items-start">
@@ -71,9 +53,8 @@
                   </h3>
                   <h6 class="text-black fw-normal fs-3 mt-2 mb-4">
                     {{ __("Starting from") }}
-                    <span class="text-primary fs-3 fw-bold"
-                      >{{ getDisplayAmount(category.service_min_price ?? 5) }}</span
-                    >/{{ __("per 30 minute") }}
+                    <span class="text-primary fs-3 fw-bold">{{ getDisplayAmount(category.service_min_price ?? 5)
+                      }}</span>/{{ __("per 30 minute") }}
                   </h6>
                   <!-- <star-rating
                             :rating="category.rating"
@@ -84,15 +65,11 @@
                         ></star-rating> -->
                 </div>
                 <!-- <p class="fs-4 mt-3 fw-regular text-black lineclamp-2" v-html="category.description"></p> -->
-                <Link
-                  :href="
-                    route('services.listing', {
-                      service_category: category.slug,
-                    })
-                  "
-                  class="btn btn-secondary fs-3 fw-bold rounded-4 fw-bolder custom-padding"
-                  >{{ __("Consult Now") }}</Link
-                >
+                <Link :href="route('services.listing', {
+                  service_category: category.slug,
+                })
+                  " class="btn btn-secondary fs-3 fw-bold rounded-4 fw-bolder custom-padding">{{ __("Consult Now") }}
+                </Link>
               </div>
             </div>
           </div>
@@ -100,13 +77,11 @@
         </div>
         <div class="row pt-4 justify-content-center">
           <div class="col-md-3 d-flex justify-content-center">
-            <Link
-              :href="route('services.listing')"
-              class="btn btn-outline-primary fw-medium fs-3 px-md-5 px-3 rounded-4"
-            >
-              <span class="button-text">{{
-                getPageContent("general_view_more_btn_text") ?? __("view more")
-              }}</span>
+            <Link :href="route('services.listing')"
+              class="btn btn-outline-primary fw-medium fs-3 px-md-5 px-3 rounded-4">
+            <span class="button-text">{{
+              getPageContent("general_view_more_btn_text") ?? __("view more")
+            }}</span>
             </Link>
           </div>
         </div>
@@ -270,40 +245,22 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 position-relative">
-            <div
-              class="mobile-img text-end mb-4 mb-lg-0"
-              data-aos="fade-right"
-              data-aos-once="false"
-              data-aos-duration="1500"
-              data-aos-delay="500"
-            >
-              <img
-                src="@/images/home/appsection.png"
-                alt
-                class="img-fluid h-100"
-              />
+            <div class="mobile-img text-end mb-4 mb-lg-0" data-aos="fade-right" data-aos-once="false"
+              data-aos-duration="1500" data-aos-delay="500">
+              <img src="@/images/home/appsection.png" alt class="img-fluid h-100" />
             </div>
           </div>
           <div class="col-md-8">
-            <div
-              class="d-flex ps-md-4 justify-content-center p-0 flex-column h-100"
-              data-aos="fade-left"
-              data-aos-once="false"
-              data-aos-duration="1500"
-              data-aos-delay="800"
-            >
-              <div
-                v-if="
-                  getPageContentType('app_section_description') == 'textarea'
-                "
-              >
+            <div class="d-flex ps-md-4 justify-content-center p-0 flex-column h-100" data-aos="fade-left"
+              data-aos-once="false" data-aos-duration="1500" data-aos-delay="800">
+              <div v-if="
+                getPageContentType('app_section_description') == 'textarea'
+              ">
                 <div v-html="getPageContent('app_section_description')"></div>
               </div>
-              <div
-                v-else-if="
-                  getPageContentType('app_section_description') == 'text'
-                "
-              >
+              <div v-else-if="
+                getPageContentType('app_section_description') == 'text'
+              ">
                 <p>{{ getPageContent("app_section_description") ?? "-" }}</p>
               </div>
               <div v-else>
@@ -321,42 +278,26 @@
                 </p>
               </div>
 
-              <div
-                class="d-flex align-items-start flex-lg-row flex-column mt-3"
-              >
-                <a
-                  href="#"
-                  v-if="
-                    getPageContent('app_section_play_btn_text') != '' &&
-                    getPageContent('app_section_play_btn_text') != null
-                  "
+              <div class="d-flex align-items-start flex-lg-row flex-column mt-3">
+                <a href="#" v-if="
+                  getPageContent('app_section_play_btn_text') != '' &&
+                  getPageContent('app_section_play_btn_text') != null
+                "
                   class="btn bg-white rounded-4 border border-secondary border-3 px-4 d-flex align-items-center me-3 mb-2 mb-md-0"
-                  style="height: 70px"
-                >
-                  <img
-                    src="@/images/icons/playstore.png"
-                    width="40"
-                    class="me-2"
-                  />
+                  style="height: 70px">
+                  <img src="@/images/icons/playstore.png" width="40" class="me-2" />
                   <!-- <i class="bi bi-google-play fs-1 me-3"></i> -->
                   <div class="d-flex flex-column align-items-start">
-                    <div
-                      v-if="
-                        getPageContentType('app_section_play_btn_text') ==
-                        'textarea'
-                      "
-                    >
-                      <div
-                        class="text-start"
-                        v-html="getPageContent('app_section_play_btn_text')"
-                      ></div>
+                    <div v-if="
+                      getPageContentType('app_section_play_btn_text') ==
+                      'textarea'
+                    ">
+                      <div class="text-start" v-html="getPageContent('app_section_play_btn_text')"></div>
                     </div>
-                    <div
-                      v-else-if="
-                        getPageContentType('app_section_play_btn_text') ==
-                        'text'
-                      "
-                    >
+                    <div v-else-if="
+                      getPageContentType('app_section_play_btn_text') ==
+                      'text'
+                    ">
                       <p>
                         {{ getPageContent("app_section_play_btn_text") ?? "-" }}
                       </p>
@@ -368,33 +309,23 @@
                   </div>
                 </a>
 
-                <a
-                  v-if="
-                    getPageContent('app_section_app_store_btn_text') != '' &&
-                    getPageContent('app_section_app_store_btn_text') != null
-                  "
-                  href="#"
+                <a v-if="
+                  getPageContent('app_section_app_store_btn_text') != '' &&
+                  getPageContent('app_section_app_store_btn_text') != null
+                " href="#"
                   class="btn bg-white rounded-4 border border-secondary border-3 px-4 d-flex align-items-center"
-                  style="height: 70px"
-                >
+                  style="height: 70px">
                   <i class="bi bi-apple fs-1 me-3"></i>
-                  <div
-                    v-if="
-                      getPageContentType('app_section_app_store_btn_text') ==
-                      'textarea'
-                    "
-                  >
-                    <div
-                      class="text-start"
-                      v-html="getPageContent('app_section_app_store_btn_text')"
-                    ></div>
+                  <div v-if="
+                    getPageContentType('app_section_app_store_btn_text') ==
+                    'textarea'
+                  ">
+                    <div class="text-start" v-html="getPageContent('app_section_app_store_btn_text')"></div>
                   </div>
-                  <div
-                    v-else-if="
-                      getPageContentType('app_section_app_store_btn_text') ==
-                      'text'
-                    "
-                  >
+                  <div v-else-if="
+                    getPageContentType('app_section_app_store_btn_text') ==
+                    'text'
+                  ">
                     <p>
                       {{
                         getPageContent("app_section_app_store_btn_text") ?? "-"
@@ -420,18 +351,14 @@
       <div class="container">
         <div class="row">
           <div class="col-12 mb-5 text-center">
-            <div
-              v-if="
-                getPageContentType('faqs_section_description') == 'textarea'
-              "
-            >
+            <div v-if="
+              getPageContentType('faqs_section_description') == 'textarea'
+            ">
               <div v-html="getPageContent('faqs_section_description')"></div>
             </div>
-            <div
-              v-else-if="
-                getPageContentType('faqs_section_description') == 'text'
-              "
-            >
+            <div v-else-if="
+              getPageContentType('faqs_section_description') == 'text'
+            ">
               <p>{{ getPageContent("faqs_section_description") ?? "-" }}</p>
             </div>
             <div v-else>
@@ -453,36 +380,18 @@
           </div>
           <div class="col-md-7">
             <div class="accordion home-faqs-accord" id="accordionPanelsStayOpenExample">
-              <div
-                class="accordion-item rounded-4 mb-3 border-0 shadow"
-                v-for="item in faqs"
-                :key="item.id"
-              >
-                <h2
-                  class="accordion-header border-0"
-                  :id="`panelsStayOpen-headingOne${item.id}`"
-                >
-                  <button
-                    style="height: 4rem"
+              <div class="accordion-item rounded-4 mb-3 border-0 shadow" v-for="item in faqs" :key="item.id">
+                <h2 class="accordion-header border-0" :id="`panelsStayOpen-headingOne${item.id}`">
+                  <button style="height: 4rem"
                     class="accordion-button border-0 rounded-5 shadow-none overflow-hidden bg-white collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    :data-bs-target="`#panelsStayOpen-collapseOne${item.id}`"
-                    aria-expanded="false"
-                    :aria-controls="`panelsStayOpen-collapseOne${item.id}`"
-                  >
-                    <span
-                      class="fw-bold home-faqs-text"
-
-                      >{{ item.name }}</span
-                    >
+                    type="button" data-bs-toggle="collapse" :data-bs-target="`#panelsStayOpen-collapseOne${item.id}`"
+                    aria-expanded="false" :aria-controls="`panelsStayOpen-collapseOne${item.id}`">
+                    <span class="fw-bold home-faqs-text">{{ item.name }}</span>
                   </button>
                 </h2>
-                <div
-                  :id="`panelsStayOpen-collapseOne${item.id}`"
+                <div :id="`panelsStayOpen-collapseOne${item.id}`"
                   class="accordion-collapse border-top border-primary border-1 mx-3 collapse"
-                  :aria-labelledby="`panelsStayOpen-headingOne${item.id}`"
-                >
+                  :aria-labelledby="`panelsStayOpen-headingOne${item.id}`">
                   <div class="accordion-body subheading-fs fw-bold">
                     <div v-html="item.description"></div>
                   </div>
@@ -493,13 +402,10 @@
         </div>
         <div class="row pt-5 justify-content-center">
           <div class="col-md-3 d-flex justify-content-center">
-            <Link
-              :href="route('faqs')"
-              class="btn btn-outline-primary fw-medium fs-3 px-md-5 px-3 rounded-4"
-            >
-              <span class="button-text">{{
-                getPageContent("general_view_more_btn_text") ?? __("view more")
-              }}</span>
+            <Link :href="route('faqs')" class="btn btn-outline-primary fw-medium fs-3 px-md-5 px-3 rounded-4">
+            <span class="button-text">{{
+              getPageContent("general_view_more_btn_text") ?? __("view more")
+            }}</span>
             </Link>
           </div>
         </div>
@@ -570,6 +476,7 @@ import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import FeaturedClinicSection from "@/Components/Clinics/FeaturedClinicSection.vue";
 import ContentSlider from "../Components/ContentSlider.vue";
 import CardSkeleton from "../Components/Skeleton/CardSkeleton.vue";
+import ExploreStart from "./ExploreStart.vue";
 
 export default defineComponent({
   props: {
@@ -597,7 +504,7 @@ export default defineComponent({
     FeaturedEventSection,
     FeaturedTestimonialsSection,
     FeaturedClinicSection,
-
+    ExploreStart,
     ReviewSection,
     Carousel,
     Slide,
