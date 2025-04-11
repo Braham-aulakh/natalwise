@@ -89,7 +89,7 @@
             </div>
         
 
-            <div class="mb-3 ">
+            <!-- <div class="mb-3 ">
               <div v-if="this.errors.terms" class="invalid-feedback">
                 <span>{{ this.errors.terms }}</span>
               </div>
@@ -104,7 +104,7 @@
                     }}</a>
                 </label>
               </div>
-            </div>
+            </div> -->
 
             <div class="d-grid px-5 gap-2 mb-3">
               <button class="submit btn w-100 fs-2 fw-bold rounded-4 shadow-find btn-primary"
