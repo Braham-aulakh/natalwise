@@ -47,7 +47,11 @@
 
               <!-- Accordion -->
               <div class="accordion">
-                <div class="accordion-item mb-2" v-for="(item, index) in accordionItems" :key="index">
+                <div
+                  class="accordion-item mb-2"
+                  v-for="(item, index) in accordionItems"
+                  :key="index"
+                >
                   <h2 class="accordion-header">
                     <button
                       class="accordion-button"
@@ -65,27 +69,40 @@
                 </div>
               </div>
             </div>
-            <!-- Optional: Add a spacer or action button at bottom if desired -->
           </div>
         </div>
       </div>
 
       <!-- Stats Section -->
-      <div class="bookus-sec mt-5">
-        <div class="row g-4">
-          <div class="col-lg-4" v-for="(item, index) in stats" :key="index">
-            <div class="book-item p-4 bg-white rounded shadow text-center h-100">
-              <div class="book-info">
-                <span v-if="item.icon" class="d-block mb-3">
-                  <img :src="item.icon" :alt="item.alt" width="40" />
-                </span>
-                <h6 class="text-dark fs-4 fw-semibold">{{ item.value }}</h6>
-                <p class="fs-6 text-muted">{{ item.description }}</p>
-              </div>
-            </div>
-          </div>
+      <!-- Stats Section -->
+<div class="row justify-content-center text-center align-items-center flex-wrap mt-5">
+  <template v-for="(item, index) in stats" :key="index">
+    <!-- Stat Card -->
+    <div class="col-12 col-md-3 mb-4 d-flex justify-content-center">
+      <div class="d-flex flex-column align-items-center">
+        <div class="icon-square mb-3">
+          <img :src="item.icon" :alt="item.alt" class="stat-icon" />
         </div>
+        <h6 class="mb-1 fs-3 fw-bold text-dark">{{ item.value }}</h6>
+        <p class="mb-0 fs-14 text-muted">{{ item.description }}</p>
       </div>
+    </div>
+
+    <!-- Arrow Icon Between Cards -->
+    <div
+      v-if="index < stats.length - 1"
+      class="d-none d-md-flex col-md-1 align-items-center justify-content-center"
+      style="padding: 20px 0px;height: 140px;width: 150px;margin-bottom: 40px;;"
+    >
+      <img
+        src="/images/hompage/way-icon.svg"
+        alt="way"
+        class="way-icon"
+      />
+    </div>
+  </template>
+</div>
+
     </div>
   </div>
 </template>
@@ -139,78 +156,5 @@ export default {
 };
 </script>
 
-<style scoped>
-@font-face {
-  font-family: 'shink';
-  src: url('/fonts/shink.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+<style src="./addMain.css"></style>
 
-.section-bg {
-  background-color: #fdeeea;
-  font-family: 'Poppins', sans-serif;
-}
-
-.section-subtitle {
-  color: #e06b8d;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1e1e2f;
-}
-
-.section-description {
-  font-size: 1rem;
-  color: #444;
-}
-
-.accordion-button {
-  font-weight: 600;
-  color: #1e1e2f;
-  background-color: #f8d5dc;
-  border: none;
-  padding: 1rem;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.accordion-button.collapsed {
-  background-color: #f4a0b2;
-  color: #fff;
-}
-
-.accordion-body {
-  background-color: #fff;
-  color: #444;
-  padding: 1rem;
-  font-size: 0.95rem;
-  border-top: 1px solid #eee;
-}
-
-.text-pink {
-  color: #e06b8d;
-}
-
-.book-item {
-  transition: all 0.3s ease;
-}
-
-.book-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-}
-
-.section-subtitle {
-  font-weight: 600 !important;
-  font-size: 30px !important;
-  color: #FC9FBC !important;
-  font-family: 'shink' !important;
-}
-</style>
