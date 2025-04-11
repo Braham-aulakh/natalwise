@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <guest-layout>
     <!-- <div v-if="!selected_role">
       <select-role
@@ -9,70 +10,60 @@
         "
       ></select-role>
     </div> -->
-    <div class="container-fluid px-0">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="row h-100">
-            <div class="col-md-6">
-              <img class="login-image" src="@/images/common/login.png" alt="" />
+    <div class="tab-content mx-3 m-md-5">
+      <div class="container-fluid px-0">
+        <div class=" grid grid-cols-2 w-full mx-auto">
+          <div class="flex gap-4 justify-center">
+            <div class="w-1/2 ">
+              <img src="../../images/icons/login-banner.png" />
             </div>
-            <div class="col-md-6">
-              <div class="py-5 form-content">
-                <div class="d-flex justify-content-center mt-2">
-                  <Link :href="route('home')">
-                    <img
-                      v-if="$page.props && $page.props.settings && $page.props.settings.logo"
-                      style="width: 250px"
-                      :src="$page.props.settings.logo"
-                      alt="logo"
-                    /> 
-                  </Link>
-                </div>
+            <div class="w-1/2">
+              <div class="w-full ">
+                <div class=" login-right">
+                  <div class="form-content ">
+                    <div class="flex justify-between w-full items-center">
+                      <div class="login-header">
+                        <h3>
+                          {{ tab === 'patient' ? 'Patient Register' : tab === 'doctor' ? 'Doctor Register' : 'Register'
+                          }}
+                        </h3>
+                      </div>
+                      <div class="flex items-right">
+                        <ul class="nav gap-3 nav-tabs justify-content-center" id="myTab" role="tablist">
+                          <li class="nav-item" role="presentation" v-if="tab === 'doctor'">
+                            <button class="rounded-3 px-4 py-2 color-pink"
+                              :class="tab === 'patient' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-800'"
+                              @click.prevent="changeTab('patient', 0)" type="button" role="tab"
+                              aria-selected="tab === 'patient'">
+                              {{ __("Not A Doctor ?") }}
+                            </button>
+                          </li>
+                          <li class="nav-item" role="presentation" v-else-if="tab === 'patient'">
+                            <button class="rounded-3 px-4 py-2 color-pink"
+                              :class="tab === 'doctor' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-800'"
+                              @click.prevent="changeTab('doctor', 1)" type="button" role="tab"
+                              aria-selected="tab === 'doctor'">
+                              {{ __("Are You A Doctor ?") }}
+                            </button>
+                          </li>
 
-                <h1 class="text-center pt-4 display-1 text-primary fw-bold">
-                  {{ __("Register yourself") }}
-                </h1>
-                <h3 class="text-center fs-1 fw-semibold text-black">
-                  {{ __("Create your account") }}
-                </h3>
-                <ul
-                  class="nav gap-3 my-5 nav-tabs justify-content-center"
-                  id="myTab"
-                  role="tablist"
-                >
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="btn rounded-3 btn-outline-primary border-secondary border-1"
-                      :class="{ active: tab == 'patient' }"
-                      @click.prevent="changeTab('patient', 0)"
-                      id="patient-register-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#patient-register-pane"
-                      type="button"
-                      role="tab"
-                      aria-controls="patient-register-pane"
-                      aria-selected="true"
-                    >
-                      {{ __("Register as Patient") }}
-                    </button>
-                  </li>
-                  <!-- <li class="nav-item" role="presentation">
-                    <button
-                      class="btn rounded-3 btn-outline-primary border-secondary border-1"
-                      :class="{ active: tab == 'doctor' }"
-                      @click.prevent="changeTab('doctor', 1)"
-                      id="doctor-register-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#doctor-register-pane"
-                      type="button"
-                      role="tab"
-                      aria-controls="doctor-register-pane"
-                      aria-selected="false"
-                    >
-                      {{ __("Register as Doctor") }}
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
+                          <!-- <li class="nav-item" role="presentation">
+                          <button class="rounded-3 color-pink" :class="{ active: tab == 'patient' }"
+                            @click.prevent="changeTab('patient', 0)" id="patient-register-tab" data-bs-toggle="tab"
+                            data-bs-target="#patient-register-pane" type="button" role="tab"
+                            aria-controls="patient-register-pane" aria-selected="true">
+                            {{ __("Register as Patient") }}
+                          </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                      <button class="btn rounded-3 "
+                        :class="{ active: tab == 'doctor' }" @click.prevent="changeTab('doctor', 1)"
+                        id="doctor-register-tab" data-bs-toggle="tab" data-bs-target="#doctor-register-pane"
+                        type="button" role="tab" aria-controls="doctor-register-pane" aria-selected="false">
+                        {{ __("Register as Doctor") }}
+                      </button>
+                    </li> -->
+                          <!-- <li class="nav-item" role="presentation">
                     <button
                       class="btn rounded-3 btn-outline-primary border-secondary border-1"
                       :class="{ active: tab == 'clinic' }"
@@ -88,30 +79,33 @@
                       {{ __("Register as Clinic") }}
                     </button>
                   </li> -->
-                </ul>
+                        </ul>
+                      </div>
 
-                <div class="tab-content mx-3 m-md-5" id="myTabContent">
-                  <patient-register
-                    :active="tab == 'patient'"
-                    :redirectUrl="redirect_url"
-                    :selected_role="selected_role"
-                  ></patient-register>
-                  <doctor-register
-                    :active="tab == 'doctor'"
-                    :selected_role="selected_role"
-                  ></doctor-register>
-                  <clinic-register
-                    :active="tab == 'clinic'"
-                    :selected_role="selected_role"
-                  ></clinic-register>
+                    </div>
+
+
+                    <div class="w-full" id="myTabContent">
+                      <patient-register v-if="tab === 'patient'" :redirectUrl="redirect_url"
+                        :selected_role="selected_role" class="w-full"/>
+                      <doctor-register v-else-if="tab === 'doctor'" :selected_role="selected_role" class="w-full" />
+                      <!-- <patient-register v-if="tab === 'patient'" :redirectUrl="redirect_url"
+                        :selected_role="selected_role"></patient-register>
+                      <doctor-register v-else-if="tab === 'doctor'" :selected_role="selected_role"></doctor-register> -->
+                      <!-- <clinic-register :active="tab == 'clinic'" :selected_role="selected_role"></clinic-register> -->
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
+
   </guest-layout>
+  <Footer></Footer>
 </template>
 
 <script>
@@ -126,7 +120,8 @@ import { Head, Link } from "@inertiajs/inertia-vue3";
 import PatientRegister from "@/Components/Patients/PatientRegister.vue";
 import DoctorRegister from "@/Components/Doctors/DoctorRegister.vue";
 import ClinicRegister from "@/Components/Clinics/ClinicRegister.vue";
-
+import Navbar from "../../Layouts/AppIncludes/Navbar.vue";
+import Footer from "../../Layouts/AppIncludes/Footer.vue";
 // import SelectRole from "@/Components/SelectRole.vue";
 
 export default defineComponent({
@@ -142,6 +137,8 @@ export default defineComponent({
     DoctorRegister,
     ClinicRegister,
     Link,
+    Navbar,
+    Footer
   },
 
   props: {
@@ -152,6 +149,7 @@ export default defineComponent({
     return {
       currentSlide: 0,
       selected_role: route().params.tab ?? "patient",
+      tab: route().params.tab ?? "patient", // This line is important
     };
   },
   created() {
@@ -178,3 +176,8 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.login-header{
+  margin-bottom: 0px  !important ;
+}
+</style>

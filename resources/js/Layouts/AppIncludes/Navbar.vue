@@ -59,68 +59,22 @@
 
               <!-- Resources -->
               <li class="has-submenu">
-                <div>Resources
-                  <Icon icon="icon-park-outline:down" width="14" height="14" />
+                <div class="flex gap-2 items-center">Resources
+                  <!-- <Icon icon="icon-park-outline:down" width="14" height="14" /> -->
                 </div>
-                <ul class="submenu mega-menu">
-                  <li><a href="about-us.html">About Us</a></li>
-                  <li><a href="contact-us.html">Contact Us</a></li>
-                  <li class="submenu mega-menu">
-                    <a>Call</a>
-                    <ul class="submenu inner-submenu">
-                      <li><a href="voice-call.html">Voice Call</a></li>
-                      <li><a href="video-call.html">Video Call</a></li>
-                    </ul>
-                  </li>
-                  <li class="submenu mega-menu">
-                    <a href="javascript:void(0);">Invoices</a>
-                    <ul class="submenu inner-submenu">
-                      <li><a href="invoices.html">Invoices</a></li>
-                      <li><a href="invoice-view.html">Invoice View</a></li>
-                    </ul>
-                  </li>
-                  <li class="submenu mega-menu">
-                    <a href="javascript:void(0);">Authentication</a>
-                    <ul class="submenu inner-submenu">
-                      <li><a href="login-email.html">Login Email</a></li>
-                      <li><a href="login-phone.html">Login Phone</a></li>
-                      <li><a href="doctor-signup.html">Doctor Signup</a></li>
-                      <li><a href="patient-signup.html">Patient Signup</a></li>
-                      <li><a href="forgot-password.html">Forgot Password 1</a></li>
-                      <li><a href="forgot-password2.html">Forgot Password 2</a></li>
-                      <li><a href="login-email-otp.html">Email OTP</a></li>
-                      <li><a href="login-phone-otp.html">Phone OTP</a></li>
-                    </ul>
-                  </li>
-                  <li class="has-submenu">
-                    <a href="javascript:void(0);">Error Pages</a>
-                    <ul class="submenu inner-submenu">
-                      <li><a href="error-404.html">404 Error</a></li>
-                      <li><a href="error-500.html">500 Error</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="blank-page.html">Starter Page</a></li>
-                  <li><a href="pricing.html">Pricing Plan</a></li>
-                  <li><a href="faq.html">FAQ</a></li>
-                  <li><a href="maintenance.html">Maintenance</a></li>
-                  <li><a href="coming-soon.html">Coming Soon</a></li>
-                  <li><a href="terms-condition.html">Terms & Condition</a></li>
-                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                  <li><a href="components.html">Components</a></li>
-                </ul>
               </li>
               <li class="has-submenu"><a href="coming-soon.html">Contact</a></li>
             </ul>
           </div>
 
-          <!-- Right: Login/Register Buttons -->
-          <div class="d-flex align-items-center">
+
+          <div class="d-flex align-items-center" v-if="!$page.props.auth">
             <ul class="nav header-navbar-rht">
               <li class="register-btn" style="margin-right: 10px;">
-                <a href="register.html" class="btn reg-btn d-flex align-items-center gap-1">
+                <Link :href="route('register')"   class="btn reg-btn d-flex align-items-center gap-1">
                   <Icon icon="lucide:user" width="18" height="18" class="feather-user" />
-          Register
-                </a>
+                  Register
+                </Link>
               </li>
               <li class="register-btn">
                 <a href="/login" class="btn btn-primary log-btn d-flex align-items-center gap-1">
@@ -128,13 +82,52 @@
                   Login
                 </a>
               </li>
-              <li class="register-btn ml-2">
-                <a href="/logout" class="btn btn-primary log-btn d-flex align-items-center gap-1">
-                  <Icon icon="mynaui:lock" class="feather-lock" width="18" height="18" />
-                  Logout
-                </a>
-              </li>
+
             </ul>
+          </div>
+          <div v-else>
+            <li class="nav-item list-unstyled d-none d-md-block"
+              v-if="$page.props.auth && $page.props.auth.logged_in_as != 'super_admin'">
+              <div>
+                <button
+                  class="d-flex dropdown-toggle align-items-center nav-link position-relative bg-transparent border-0"
+                  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                  aria-controls="offcanvasNavbar">
+                  <div v-if="
+                    $page.props.auth.user.patient
+                      ? $page.props.auth.user.patient
+                      : $page.props.auth.user.doctor
+                        ? $page.props.auth.user.doctor
+                        : $page.props.auth.user.clinic
+                  " class="avatar-icon me-3">
+                    <img class="img-fluid rounded-circle" :src="$page.props.auth.user.patient
+                      ? $page.props.auth.user.patient.image
+                      : $page.props.auth.user.doctor
+                        ? $page.props.auth.user.doctor.image
+                        : $page.props.auth.user.clinic.image
+                      " alt="" />
+                  </div>
+                  <div v-else class="avatar-icon me-3">
+                    <img class="img-fluid" src="@/images/icons/user.png" alt="" />
+                  </div>
+
+                  <!-- <span
+                class="position-absolute badge rounded-pill bg-primary"
+                style="right: 8px; top: -10px"
+                >{{
+                  $page.props.auth.logged_in_as == "doctor"
+                    ? "doctor"
+                    : $page.props.auth.logged_in_as
+                }}</span
+              > -->
+                  {{
+                    $page.props.auth.logged_in_as != "super_admin" &&
+                    $page.props.auth[$page.props.auth.logged_in_as].name
+                  }}
+                </button>
+              </div>
+            </li>
+         
           </div>
         </div>
       </nav>
@@ -219,16 +212,16 @@
                 class="d-flex align-items-center gap-3 text-decoration-none"><i class="bi bi-journal-text"></i>{{ __("my
               appointments") }}</Link>
             </li> -->
-            <!-- <li v-if="
-   ($page.props.auth.user.email_verified_at &&
-     hasRole('patient') &&
-     $page.props.auth.logged_in_as == 'patient') ||
-   (hasRole('doctor') && $page.props.auth.logged_in_as == 'doctor') ||
-   (hasRole('clinic') && $page.props.auth.logged_in_as == 'clinic')
- " class="nav-items" :class="{ active: route().current('service_log') }">
-   <Link :href="route('service_log')" class="dropdown-item d-flex gap-3">
-   <i class="bi bi-briefcase"></i>{{ __("my services") }}</Link>
- </li> -->
+            <li v-if="
+              ($page.props.auth.user.email_verified_at &&
+                hasRole('patient') &&
+                $page.props.auth.logged_in_as == 'patient') ||
+              (hasRole('doctor') && $page.props.auth.logged_in_as == 'doctor') ||
+              (hasRole('clinic') && $page.props.auth.logged_in_as == 'clinic')
+            " class="nav-items" :class="{ active: route().current('service_log') }">
+              <Link :href="route('service_log')" class="dropdown-item d-flex gap-3">
+              <i class="bi bi-briefcase"></i>{{ __("my services") }}</Link>
+            </li>
             <li v-if="
               ($page.props.auth.user.email_verified_at &&
                 hasRole('doctor') &&
@@ -241,6 +234,7 @@
               <i class="bi bi-currency-dollar"></i>{{ __("subscription") }}
               </Link>
             </li>
+
             <li v-if="
               parseInt(this.$page.props.settings.enable_wallet_system) &&
               $page.props.auth.user.email_verified_at &&
@@ -269,7 +263,95 @@
               <i class="bi bi-clipboard2-pulse"></i>{{ __("Electronic Health Records") }}</Link>
             </li>
 
+            <!-- <Link :href="route('logout')" class="dropdown-item">
+                    <i class="bi bi-box-arrow-in-left"></i>
+                      {{__("logout")}}
+                    </Link> -->
+            <!-- <li
+              v-if="
+                $page.props.auth.user.email_verified_at &&
+                hasRole('doctor') &&
+                $page.props.auth.logged_in_as != 'doctor'
+              "
+              class="nav-items"
+            >
+              <button
+                @click="switchRole('doctor')"
+                class="dropdown-item new1 d-flex gap-3"
+              >
+                <img src="@/images/icons/userdoctor.svg" width="18" alt="" />
+                {{ __("switch to doctor") }}
+              </button>
+            </li>
+            <li
+              v-if="
+                $page.props.auth.user.email_verified_at &&
+                !hasRole('doctor') &&
+                $page.props.auth.logged_in_as != 'doctor'
+              "
+              class="nav-items"
+            >
+              <button @click="becomeDoctor()" class="dropdown-item new1 d-flex gap-3">
+                <img src="@/images/icons/userdoctor.svg" width="18" alt="" />
+                {{ __("become a doctor") }}
+              </button>
+            </li>
 
+            <li
+              v-if="
+                $page.props.auth.user.email_verified_at &&
+                hasRole('patient') &&
+                $page.props.auth.logged_in_as != 'patient'
+              "
+              class="nav-items"
+            >
+              <button
+                @click="switchRole('patient')"
+                class="dropdown-item new1 d-flex gap-3"
+              >
+                <i class="bi bi-person-circle"></i> {{ __("switch to user") }}
+              </button>
+            </li>
+            <li
+              v-if="
+                $page.props.auth.user.email_verified_at &&
+                !hasRole('patient') &&
+                $page.props.auth.logged_in_as != 'patient'
+              "
+              class="nav-items"
+            >
+              <button @click="becomeUser()" class="dropdown-item new1 d-flex gap-3">
+                <i class="bi bi-person-circle"></i>{{ __("become a user") }}
+              </button>
+            </li>
+
+            <li
+              v-if="
+                $page.props.auth.user.email_verified_at &&
+                hasRole('clinic') &&
+                $page.props.auth.logged_in_as != 'clinic'
+              "
+              class="nav-items"
+            >
+              <button
+                @click="switchRole('clinic')"
+                class="dropdown-item new1 d-flex gap-3"
+              >
+                <i class="bi bi-hospital"></i>{{ __("switch to clinic") }}
+              </button>
+            </li>
+            <li
+              v-if="
+                $page.props.auth.user.email_verified_at &&
+                !hasRole('clinic') &&
+                $page.props.auth.logged_in_as != 'clinic'
+              "
+              class="nav-items"
+            >
+              <button @click="becomeClinic()" class="dropdown-item new1 d-flex gap-3">
+                <i class="bi bi-hospital"></i>{{ __("become a clinic") }}
+              </button>
+            </li> -->
             <li class="nav-items">
               <button style="cursor: pointer" @click="logout()" class="dropdown-item new1 d-flex gap-3">
                 <i class="bi bi-box-arrow-in-left"></i> {{ __("logout") }}
@@ -643,6 +725,7 @@ export default {
     getDoctorMainCategories() {
       axios.get(this.route("getApiDoctorMainCategories")).then((res) => {
         this.doctor_main_categories = res.data.data;
+        console.log("hsdghsdg", this.doctor_main_categories)
         this.fetching = false;
       });
     },
@@ -693,10 +776,11 @@ export default {
 .img-fluid {
   width: 200px
 }
+
 @media (min-width: 992px) {
-    .col-lg-3 {
-        /* flex: 0 0 auto; */
-        width: 200px !important;
-    }
+  .col-lg-3 {
+    /* flex: 0 0 auto; */
+    width: 200px !important;
+  }
 }
 </style>

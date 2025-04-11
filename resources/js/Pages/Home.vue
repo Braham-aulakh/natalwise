@@ -10,8 +10,6 @@
     <!-- Specialities Section -->
     <section class="specialities-section-one">
       <div class="bg-color">
-
-
       </div>
     </section>
     <ExploreStart></ExploreStart>

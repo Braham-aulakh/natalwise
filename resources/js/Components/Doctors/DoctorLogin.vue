@@ -1,4 +1,107 @@
 <template>
+<div class=" container-fluid flex gap-4 ">
+    <div class="w-full ">
+      <div class="col-md-6 flex justify-right ">
+        <img class="img-fluid" src="../../images/icons/login-banner.png" alt="Image" />
+      </div>
+    </div>
+    <div
+    :class="{ active: active }"
+    id="doctor-login-pane"
+    role="tabpanel"
+    aria-labelledby="doctor-login-tab"
+    tabindex="0"
+    class="content top-space w-full " >
+      <div class="w-full">
+
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+
+            <!-- Login Tab Content -->
+            <div class="account-content">
+              <div class="row align-items-center justify-content-center">
+                <!-- <div class="col-md-7 col-lg-6 login-left">
+                <img src="assets/img/login-banner.png" class="img-fluid" alt="Doccure Login">
+              </div> -->
+                <div class="col-md-12 col-lg-6 login-right">
+                  <div class="login-header">
+                    <h3>Login <span>Doccure</span></h3>
+                  </div>
+                  <form @submit.prevent="submit">
+                    <validation-errors class="mb-3" />
+                    <div class="mb-3 form-focus">
+
+                      <input type="email" id="email" class="form-control floating" :placeholder="__('email address')"
+                        v-model="form.email" />
+                      <label class="focus-label" for="floatingInput">{{ __('email address') }}</label>
+                    </div>
+                    <div v-if="this.errors.email" class="error-validation text-danger text-end px-md-5">
+                      <span>{{this.errors.email}}</span>
+                    </div>
+                    <div class="mb-3 form-focus">
+
+                      <input type="password" class="form-control floating" id="pass_log_log" v-model="form.password"
+                        name="password" :placeholder="__('password')">
+                      <label class="focus-label" for="floatingInput">{{ __('password') }}</label>
+                    </div>
+                    <div v-if="this.errors.password" class="error-validation text-danger text-end px-md-5">
+                      <span>{{this.errors.password}}</span>
+                    </div>
+                    <div class="text-end">
+                      <Link class="forgot-link" :href="route('forgot_password')">{{ __("Forgot Password ?") }}
+                      </Link>
+
+                      <!-- <a class="" href="forgot-password.html">Forgot Password ?</a> -->
+                    </div>
+
+                    <button class="btn btn-primary w-100 btn-lg login-btn" :class="{ 'text-white-50': form.processing }"
+                      :disabled="form.processing">
+                      <SpinnerLoader v-if="form.processing" />
+                      {{ __("login") }}
+                      <!-- <img src="@/images/icons/loginbtnicon.png" class="ms-2" width="30" alt="" /> -->
+                    </button>
+                    <!-- <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Login</button> -->
+                    <div class="login-or">
+                      <span class="or-line"></span>
+                      <span class="span-or">or</span>
+                    </div>
+                    <div class="row social-login">
+                      <div class="col-6">
+                        <a :href="route('social_redirect', { provider: 'facebook', login_as: this.form.login_as })" class="btn btn-facebook w-100"><i class="fab fa-facebook-f me-1"></i> Login</a>
+                      </div>
+                      <div class="col-6">
+                        <a :href="route('social_redirect', { provider: 'google', login_as: this.form.login_as })" class="btn btn-google w-100"><i class="fab fa-google me-1"></i> Login</a>
+                      </div>
+                    </div>
+                    <div class="text-center dont-have">Don’t have an account?
+                      <Link :href="route('register',{tab:'patient'})" class="reg-link ms-1 text-capitalize">{{
+                        __("register") }}
+                      </Link>
+                    </div>
+
+                    <!-- <div class="col-md-12 text-center my-3">
+                    <p class="mb-0 fs-3 fw-normal">
+                      {{ __("Don’t have an account?") }}?
+                      <Link :href="route('register', { tab: 'patient' })" class="link ms-1 text-capitalize">{{
+                      __("register") }}
+                      </Link>
+                    </p>
+                  </div> -->
+                    <!-- <div class="text-center dont-have">Don’t have an account? <a href="register.html">Register</a></div> -->
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div
     class="tab-pane"
     :class="{ active: active }"

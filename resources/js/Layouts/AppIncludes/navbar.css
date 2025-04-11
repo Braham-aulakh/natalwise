@@ -42,7 +42,7 @@
 .header-nav {
   background-color: transparent;
   border: 0;
-  position: relative;
+  /* position: relative; */
   margin: 0;
   padding: 0;
   height: 100px;
@@ -146,7 +146,14 @@
   z-index: 999;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
+/* .navbar .navbar-expand-lg .header-nav {
+  position: fixed;
+  display: block;
+  width: 100%;
+  z-index: 99999;
+  box-shadow: inherit;
+  background: #F9FCFF;
+} */
 
 
 

@@ -1,37 +1,29 @@
 <template>
-
+  <Navbar />
   <guest-layout>
-    <div class="container-fluid px-0" style="height: 100vh">
-      <div class="row">
-        <div class="col-md-6">
-          <img class="login-image" src="@/images/common/login.png" alt="Image" />
-        </div>
-        <div class="col-md-6">
-          <div class="py-5 form-content">
-            <!-- <span class="d-flex justify-content-center mt-2">
+    <div class="container-fluid px-0">
+      <!-- <span class="d-flex justify-content-center mt-2">
               <Link :href="route('home')">
               <img v-if="$page.props && $page.props.settings && $page.props.settings.logo" style="width: 250px"
                 :src="$page.props.settings.logo" alt="logo" />
               </Link>
             </span> -->
-<!-- 
+      <!-- 
             <h1 class="text-center pt-4 display-1 text-primary fw-bold">
               {{ __("Hi") }}, {{ __("welcome back") }}!
             </h1>
             <h3 class="text-center fs-1 fw-normal text-black">
               {{ __("Login into your account") }}
             </h3> -->
-        
-            <div class="tab-content mx-3 m-md-5" id="myTabContent">
-              <patient-login :active="tab === 'patient'" :redirect_url="redirect_url"></patient-login>
-              <doctor-login :active="tab === 'doctor'"></doctor-login>
-              <!-- <clinic-login :active="tab === 'clinic'"></clinic-login> -->
-            </div>
-          </div>
-        </div>
+
+      <div class="tab-content mx-3 m-md-5" id="myTabContent">
+        <patient-login :active="tab === 'patient'" :redirect_url="redirect_url"></patient-login>
+        <doctor-login :active="tab === 'doctor'"></doctor-login>
+        <!-- <clinic-login :active="tab === 'clinic'"></clinic-login> -->
       </div>
     </div>
   </guest-layout>
+  <Footer></Footer>
 </template>
 
 <script>
@@ -39,14 +31,17 @@ import { defineComponent, ref } from "vue";
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import Navbar from '@/Layouts/AppIncludes/Navbar.vue';
 import PatientLogin from '@/Components/Patients/PatientLogin.vue';
-import { Link } from '@inertiajs/inertia-vue3';
+// import DoctorLogin from "../../Components/Doctors/DoctorLogin.vue";
 
+import { Link } from '@inertiajs/inertia-vue3';
+import Footer from "../../Layouts/AppIncludes/Footer.vue";
 export default defineComponent({
   components: {
     GuestLayout,
     Navbar,
     PatientLogin,
-    Link
+    Link,
+    Footer
   },
   props: {
     canResetPassword: Boolean,
@@ -55,8 +50,14 @@ export default defineComponent({
   },
   setup() {
     const tab = ref(route().params.tab ?? 'patient');
-    return { tab };
+    return { 
+      tab
+     };
   },
+  // created() {
+  //   this.tab = route().params.tab ?? "patient";
+  // },
+
   methods: {
     changeTab(newTab) {
       this.tab = newTab;

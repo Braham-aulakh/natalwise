@@ -8,7 +8,7 @@
             <!-- Main Image -->
             <div class="mb-3">
               <img
-                src="/images/hompage/oc2.jpg"
+                src="../images/icons/ourComit.jpg"
                 alt="Wellness Image"
                 class="img-fluid rounded shadow w-100"
               />
@@ -17,14 +17,14 @@
             <div class="row g-3">
               <div class="col-sm-6 aos" data-aos="fade-up">
                 <img
-                  src="/images/hompage/service-image19-copyright.jpg"
+                  src="../images/icons/ourComit-2.jpg"
                   alt="img"
                   class="img-fluid rounded shadow w-100"
                 />
               </div>
               <div class="col-sm-6 aos" data-aos="fade-up">
                 <img
-                  src="/images/hompage/service-image21-copyright.jpg"
+                  src="../images/icons/ourcomit-3.jpg"
                   alt="img"
                   class="img-fluid rounded shadow w-100"
                 />
