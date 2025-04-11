@@ -708,7 +708,7 @@
 
                                     <ul class="text-white" style="list-style-type: circle">
                                         <li><a href="{{ route('super_admin.pages_contents.get', 'elite_professional') }}"
-                                                class="nav-link-sub">Elite Medical Professional</a></li>
+                                                class="nav-link-sub">Our Experts</a></li>
                                     </ul>
                                     <ul class="text-white" style="list-style-type: circle">
                                         <li><a href="{{ route('super_admin.pages_contents.get', 'doctor_mian_category') }}"

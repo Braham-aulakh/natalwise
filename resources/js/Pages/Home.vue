@@ -16,7 +16,7 @@
     </section>
     <ExploreStart></ExploreStart>
     <WhyChooseUs></WhyChooseUs>
-    <home-statistics-bar></home-statistics-bar>
+    <!-- <home-statistics-bar></home-statistics-bar> -->
     <spotlight-doctor-section></spotlight-doctor-section>
     <home-static-cards-section></home-static-cards-section>
     <doctors-tabs-section></doctors-tabs-section>

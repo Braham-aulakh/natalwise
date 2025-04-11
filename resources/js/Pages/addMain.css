@@ -199,4 +199,107 @@
     justify-content: center;
     width: 100%;
 }
+/* homepage our commitment */
+@font-face {
+  font-family: 'shink';
+  src: url('/fonts/shink.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+.section-bg {
+  background-color: #fdeeea;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-subtitle {
+  color: #e06b8d;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e1e2f;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #444;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: #1e1e2f;
+  background-color: #f8d5dc;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-button.collapsed {
+  background-color: #f4a0b2;
+  color: #fff;
+}
+
+.accordion-body {
+  background-color: #fff;
+  color: #444;
+  padding: 1rem;
+  font-size: 0.95rem;
+  border-top: 1px solid #eee;
+}
+
+.bookus-img img {
+  border-radius: 20px !important;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.icon-square {
+  background-color: #e06b8d;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+
+.stat-icon[data-v-c61978b1] {
+    width: 50px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.way-icon {
+  width: 100%;
+  height: 40px;
+  object-fit: contain;
+}
+
+
+.section-subtitle {
+  font-weight: 600 !important;
+  font-size: 30px !important;
+  color: #FC9FBC !important;
+  font-family: 'shink' !important;
+}
+
+.doctor-card .card-img .hvr {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #e06b8d !important;
+  transition: height 0.3s ease-in-out; /* Add transition effect */
+  overflow: hidden;
+}
