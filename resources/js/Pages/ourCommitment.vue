@@ -80,7 +80,7 @@
     <!-- Stat Card -->
     <div class="col-12 col-md-3 mb-4 d-flex justify-content-center">
       <div class="d-flex flex-column align-items-center">
-        <div class="icon-square mb-3">
+        <div class="icon-square mb-3 p-2">
           <img :src="item.icon" :alt="item.alt" class="stat-icon" />
         </div>
         <h6 class="mb-1 fs-3 fw-bold text-dark">{{ item.value }}</h6>
@@ -95,7 +95,7 @@
       style="padding: 20px 0px;height: 140px;width: 150px;margin-bottom: 40px;;"
     >
       <img
-        src="/images/hompage/way-icon.svg"
+        src="/images/homes/way-icon.svg"
         alt="way"
         class="way-icon"
       />
@@ -128,19 +128,19 @@ export default {
       ],
       stats: [
         {
-          icon: '/images/hompage/guidance.png',
+          icon: '/images/homes/guidance.png',
           alt: 'heart-image',
           value: '10,000+',
           description: 'Talk to Doctor’s',
         },
         {
-          icon: '/images/hompage/star.png',
+          icon: '/images/homes/star.png',
           alt: 'star-icon',
           value: '4.9/5',
           description: 'Rated highly by our patients',
         },
         {
-          icon: '/images/hompage/hth.png',
+          icon: '/images/homes/hth.png',
           alt: 'health-icon',
           value: '100%',
           description: "Women's Health Consults",

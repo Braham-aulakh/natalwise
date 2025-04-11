@@ -87,6 +87,12 @@
     font-family: "Montserrat", serif !important;
     text-align: center !important;
 }
+.section-header-one p {
+    color:#6B7280 !important ;
+    font-size: 18px !important;
+    font-family: "Montserrat", serif !important ;
+    text-align: center !important;
+}
 
 .explore-box.flex-fill {
     position: relative;

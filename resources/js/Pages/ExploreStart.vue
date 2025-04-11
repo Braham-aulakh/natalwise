@@ -10,7 +10,7 @@
                     <div class="section-header-one section-header-slider">
                         <h2 class="section-title"> Explore, Evolve & Equip – <span class="color-pink">Your Journey
                                 Starts Here!</span></h2>
-                        <p class="section-subtitle">
+                        <p class="">
                             Natalwise offers non-judgmental one-on-one conversations, providing
                             expert guidance on health,<br />
                             relationships, lifestyle, and future insights—delivering the care you<br />
