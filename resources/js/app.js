@@ -1,7 +1,7 @@
 import './bootstrap';
 import "~select2/dist/js/select2.min.js";
 import '../sass/app.scss'
-import "../../public/css/addMain.css"
+import "../js/Pages/addMain.css"
 import 'bootstrap/dist/js/bootstrap.bundle'
 
 import { createApp, h } from 'vue';

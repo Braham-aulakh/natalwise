@@ -221,4 +221,4 @@ export default defineComponent({
   },
 });
 </script>
-<style src="C:\xampp\htdocs\careconnect\resources\js\Pages\addMain.css"></style>
+<!-- <style src="C:\xampp\htdocs\careconnect\resources\js\Pages\addMain.css"></style> -->
