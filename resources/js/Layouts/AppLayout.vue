@@ -17,7 +17,7 @@
       <slot name="header"> </slot>
     </header>
     <slot></slot>
-    <doctor-country-filter></doctor-country-filter>
+    <!-- <doctor-country-filter></doctor-country-filter> -->
     <Footer />
   </main>
   <!-- <div class="parallax bg-primary">

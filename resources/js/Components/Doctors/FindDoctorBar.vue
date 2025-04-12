@@ -2,13 +2,11 @@
   <div class="bar-search-doctor d-flex flex-column justify-content-center" v-if="home">
     <div class="container search_section">
       <!-- Title Section -->
-      <div class="search-section mx-auto text-center px-3 mb-5">
+      <!-- <div class="search-section mx-auto text-center px-3 mb-5">
         <h2 class="fs-1 fw-bold mb-4 section-title " style="color: #fc9fbc !important; font-weight: 500; font-size: 33px !important;">
           {{ __(title) }}
         </h2>
 
-        <!-- Search Bar Section -->
-        <!-- Wrapper: Centered Row -->
         <div class="d-flex justify-content-center">
           <div class="search_bar bg-white rounded-4">
             <div
@@ -24,7 +22,7 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
 
       <!-- Advice Section -->
       <div>

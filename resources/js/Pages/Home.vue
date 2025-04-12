@@ -5,7 +5,7 @@
         <content-slider></content-slider>
       </section>
     </template>
-    <FindDoctorBar :title="'Discover and schedule appointments with top-rated doctors in your area'" :home="true">
+    <FindDoctorBar :home="true">
     </FindDoctorBar>
     <!-- Specialities Section -->
     <section class="specialities-section-one">
@@ -15,228 +15,13 @@
     <ExploreStart></ExploreStart>
     <WhyChooseUs></WhyChooseUs>
     <!-- <home-statistics-bar></home-statistics-bar> -->
+
+    <!-- OUR EXperts -->
     <spotlight-doctor-section></spotlight-doctor-section>
-    <home-static-cards-section></home-static-cards-section>
-    <doctors-tabs-section></doctors-tabs-section>
-    <featured-clinic-section></featured-clinic-section>
 
-    <!-- <PopularCoursesSection></PopularCoursesSection> -->
+    <!-- How it Works 4 Easy Steps to Get the  Right Solution -->
 
-    <!-- Quick Buy Services -->
-
-    <div class="p-6 bg-white">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="text-center">
-              <h1 data-aos="fade-down" data-aos-duration="1500" class="heading-fs"
-                v-html="getPageContent('doctor_quick_services_title')"></h1>
-              <p v-html="getPageContent('doctor_quick_services')" class="subheading-fs"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row py-4">
-          <!-- Loop through service categories -->
-
-          <div class="col-md-4" v-for="(category, index) in serviceCategories" :key="category.id">
-            <div v-if="index <= 2" class="card border-0 mx-2 mb-3 mb-md-0">
-              <div class="rounded-5 overflow-hidden image-container" style="width: 100%; height: 280px">
-                <img v-if="category.image" class="h-100 objext-fit-cover" :src="category.image" alt="categoryimg" />
-                <img v-else class="image" src="@/images/cardlaw.jpg" alt="categoryimg" />
-              </div>
-              <div class="card-body">
-                <div class="d-flex flex-column align-items-start">
-                  <h3 class="fs-2 fw-bolder text-primary mb-0">
-                    {{ category.name }}
-                  </h3>
-                  <h6 class="text-black fw-normal fs-3 mt-2 mb-4">
-                    {{ __("Starting from") }}
-                    <span class="text-primary fs-3 fw-bold">{{ getDisplayAmount(category.service_min_price ?? 5)
-                      }}</span>/{{ __("per 30 minute") }}
-                  </h6>
-                  <!-- <star-rating
-                            :rating="category.rating"
-                            :star-size="18"
-                            :read-only="true"
-                            :increment="0.01"
-                            :show-rating="false"
-                        ></star-rating> -->
-                </div>
-                <!-- <p class="fs-4 mt-3 fw-regular text-black lineclamp-2" v-html="category.description"></p> -->
-                <Link :href="route('services.listing', {
-                  service_category: category.slug,
-                })
-                  " class="btn btn-secondary fs-3 fw-bold rounded-4 fw-bolder custom-padding">{{ __("Consult Now") }}
-                </Link>
-              </div>
-            </div>
-          </div>
-          <!-- End loop -->
-        </div>
-        <div class="row pt-4 justify-content-center">
-          <div class="col-md-3 d-flex justify-content-center">
-            <Link :href="route('services.listing')"
-              class="btn btn-outline-primary fw-medium fs-3 px-md-5 px-3 rounded-4">
-            <span class="button-text">{{
-              getPageContent("general_view_more_btn_text") ?? __("view more")
-            }}</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Quick Buy Services -->
-
-    <!-- Free Online Consultation -->
-
-    <!-- Find Nearest Doctor -->
-    <!-- <div class="section nearest-doctor mt-5 pt-5">
-      <div class="container">
-        <div class="row py-md-5 align-items-center">
-          <div class="col-lg-6 mb-4 mb-lg-0 text-center">
-            <img
-              class="img-fluid"
-              width="350"
-              src="@/images/home/group3.png"
-              alt="Image"
-            />
-          </div>
-
-          <div class="col-lg-6">
-            <div
-              v-if="
-                getPageContentType('find_nearest_doctor_description') ==
-                'textarea'
-              "
-            >
-              <div
-                v-html="getPageContent('find_nearest_doctor_description')"
-              ></div>
-            </div>
-            <div
-              v-else-if="
-                getPageContentType('find_nearest_doctor_description') == 'text'
-              "
-            >
-              <p>
-                {{ getPageContent("find_nearest_doctor_description") ?? "-" }}
-              </p>
-            </div>
-            <div v-else>
-              <span class="fs-3">{{ __("Find Your") }}</span>
-              <h2 class="display-6">
-                {{ __("Nearest Doctors") }}
-              </h2>
-
-              <p>
-                {{ __("resonance healing energy description") }}
-              </p>
-            </div>
-            <div>
-              <a :href="route('doctors.listing')" class="btn btn-primary">{{
-                getPageContent("find_nearest_doctor_button_text") ??
-                __("Find Nearest Doctors")
-              }}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Free Online Consultation -->
-    <!-- <div class="free-consulation pt-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img
-              src="@/images/home/27718-5-business-people-hd.png"
-              alt
-              style="margin-top: -100px"
-              class="img-fluid"
-              data-aos="fade-right"
-              data-aos-once="false"
-              data-aos-duration="1500"
-              data-aos-delay="800"
-            />
-          </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <div
-              class="py-5 my-3 text-capitalize"
-              data-aos="fade-left"
-              data-aos-once="false"
-              data-aos-duration="1500"
-              data-aos-delay="800"
-            >
-              <div
-                class="col-12"
-                v-if="
-                  getPageContentType('free_consultation_description') ==
-                  'textarea'
-                "
-              >
-                <div
-                  v-html="getPageContent('free_consultation_description')"
-                ></div>
-              </div>
-              <div
-                class="col-12"
-                v-else-if="
-                  getPageContentType('free_consultation_description') == 'text'
-                "
-              >
-                <p>
-                  {{ getPageContent("free_consultation_description") ?? "-" }}
-                </p>
-              </div>
-              <div v-else>
-                <h4 class="display-4 fw-bolder text-white">
-                  {{ __("Free online consultations") }}
-                </h4>
-                <p class="fs-2 fw-bolder text-white">
-                  {{ __("Starting at $15/month") }}
-                </p>
-              </div>
-              <span v-if="$page.props.auth">
-                <a
-                  v-if="$page.props.auth.logged_in_as == 'doctor'"
-                  :href="route('pricing', { type: 'doctor' })"
-                  class="btn btn-primary"
-                  type="button"
-                  >{{
-                    getPageContent("free_consultation_button") ??
-                    __("Get Membership")
-                  }}</a
-                >
-                <a
-                  v-if="$page.props.auth.logged_in_as == 'clinic'"
-                  :href="route('pricing', { type: 'clinic' })"
-                  class="btn btn-primary"
-                  type="button"
-                  >{{
-                    getPageContent("free_consultation_button") ??
-                    __("Get Membership")
-                  }}</a
-                >
-              </span>
-              <a
-                v-else
-                :href="route('register', { tab: 'doctor' })"
-                class="btn btn-primary"
-                type="button"
-                >{{
-                  getPageContent("free_consultation_button") ??
-                  __("Get Membership")
-                }}</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- Free Online Consultation -->
-    <!-- <featured-testimonials-section></featured-testimonials-section> -->
+    <!-- Our Blog -->
 
     <!-- App Section -->
 
@@ -343,8 +128,8 @@
       </div>
     </div>
 
-    <!-- App Section -->
-
+    <!-- Testimonials -->
+    <review-section></review-section>
     <!-- Faqs Section -->
     <div class="section stats p-6" v-if="faqs.length > 0">
       <div class="container">
@@ -422,32 +207,6 @@
         </div> -->
       </div>
     </div>
-
-    <review-section></review-section>
-    <featured-event-section findDoctors="true"></featured-event-section>
-
-    <!-- Faqs Section -->
-    <!-- <featured-tags-section class="bg-light"></featured-tags-section> -->
-
-    <!-- Button trigger modal -->
-    <!-- <Modal style="background-color: white !important" ref="modal" class="rounded-0" maxWidth="lg" :id="'newsletterModal'">
-
-            <div class="modal-content p-md-4">
-            <div class="modal-header border-0">
-                <h5 class="modal-title ms-2 text-primary fs-2 fw-bold" id="newsletterModalLabel"></h5>
-                <button :id="id+'close'" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body mx-md-3 d-flex align-items-center flex-column pb-md-5">
-                 <h2 class="fw-bold display-6 mb-3" style="color: #0B86CA">Sign up for our newsletter</h2>
-                 <p class="fs-4 px-md-5 text-center text-black">Join our mailing list! Get the latest updates on education, courses, events, and beyond in addition to special offers and useful tips sent directly to your inbox</p>
-                <div class="d-flex align-items-center  mt-3">
-                    <input class="newsletter-input me-2" type="email" placeholder="Add your email here"/>
-                    <button  class="btn btn-primary rounded-pill py-md-3">{{ __('Subscribe') }}</button>
-                 </div>
-                 <span class="text-start text-black fs-6 mt-3">We respect your privacy. We will not publish or share your email address in any way.</span>
-            </div>
-            </div>
-        </Modal> -->
   </app-layout>
 </template>
 
