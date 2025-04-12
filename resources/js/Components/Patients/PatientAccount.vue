@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="bg-primary">
+    <div class="Top-Border">
       <pages-heading
         :textwhite="'true'"
         :heading="'My Profile'"

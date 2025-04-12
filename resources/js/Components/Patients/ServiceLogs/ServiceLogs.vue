@@ -1,13 +1,13 @@
 <template>
   <section>
-    <div class="bg-primary">
+    <div class="Top-Border">
       <pages-heading
         :textwhite="'true'"
         :heading="'my services'"
         :breadcrums="breadcrums"
       ></pages-heading>
     </div>
-    <div class="stats p-6">
+    <div class="stats ">
       <div class="container mt-md-5 p-md-0">
         <div class="row align-items-center">
           <div class="col-md-7">

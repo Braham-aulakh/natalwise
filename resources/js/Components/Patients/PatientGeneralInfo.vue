@@ -6,60 +6,38 @@
           <div class="card shadow mb-4">
             <div class="card-body">
               <div class="d-flex flex-column">
-                <div
-                  class="img-container w-100 h-100 d-flex flex-column align-items-center justify-content-center"
-                >
+                <div class="img-container w-100 h-100 d-flex flex-column align-items-center justify-content-center">
                   <label for="doctor-image">
                     <div class="card-img1 rounded-circle position-relative">
-                      <img
-                        v-if="form.image || $page.props.patient.image"
-                        class="img-fluid rounded-circle"
-                        :src="form.image ? form.image : $page.props.patient.image"
-                        alt="logo"
-                      />
+                      <img v-if="form.image || $page.props.patient.image" class="img-fluid rounded-circle"
+                        :src="form.image ? form.image : $page.props.patient.image" alt="logo" />
                       <!-- <img
                         v-if="!form.image && $page.props.patient.image"
                         class="img-fluid rounded-circle"
                         :src="$page.props.patient.image"
                         alt="logo"
                       /> -->
+                      
                       <img
                         v-if="!form.image && !$page.props.patient.image"
                         class="img-fluid rounded-circle"
                         src="@/images/account/default_avatar_men.png"
                         alt="logo"
                       />
-                      <button
-                        class="border-0 position-absolute bg-transparent"
-                        style="right: 10px; top: 24px"
-                        @click="triggerFileInput"
-                        type="button"
-                      >
-                        <img src="@/images/icons/Group1.svg" alt="" width="35" />
+                      <button class="border-0 position-absolute bg-[#fc9fbc]" style="right: 10px; top: 24px"
+                        @click="triggerFileInput" type="button">
+                        <Icon icon="material-symbols:edit-outline" width="32" height="32"  style="color: #fff; background-color: #fc9fbc;
+                        padding:5px; border-radius: 50%;" />
                       </button>
                     </div>
 
-                    <button
-                      data-bs-toggle="modal"
-                      id="ImageCropperModalButton"
-                      data-bs-target="#imageCropModal"
-                      style="display: none"
-                    ></button>
-                    <ImageCropperModal
-                      :show="showImportModal"
-                      id="imageCropModal"
-                      :image_url="image_url"
-                      @cropImage="cropImage"
-                    >
+                    <button data-bs-toggle="modal" id="ImageCropperModalButton" data-bs-target="#imageCropModal"
+                      style="display: none"></button>
+                    <ImageCropperModal :show="showImportModal" id="imageCropModal" :image_url="image_url"
+                      @cropImage="cropImage">
                     </ImageCropperModal>
                   </label>
-                  <input
-                    id="doctor-image"
-                    ref="fileInput"
-                    style="display: none"
-                    @change="onFileChange"
-                    type="file"
-                  />
+                  <input id="doctor-image" ref="fileInput" style="display: none" @change="onFileChange" type="file" />
                   <!-- <input
                 id="doctor-cover-image"
                 style="display: none"
@@ -69,60 +47,40 @@
 
                   <div class="mt-5 card1 card p-4">
                     <div class="d-flex justify-content-between align-items-center">
-                      <h3 class="fw-bold text-primary fs-2">
+                      <h3 class="fw-bold text-blue fs-2">
                         {{ __("about") }}
                       </h3>
-                      <button
-                        class="border-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#aboutModal"
-                        type="button"
-                      >
-                        <img src="@/images/icons/Group1.svg" alt="" width="30" />
+                      <button class="border-0" data-bs-toggle="modal" data-bs-target="#aboutModal" type="button">
+                        <Icon icon="material-symbols:edit-outline" width="32" height="32"  style="color: #fff; background-color: #fc9fbc;
+                        padding:5px; border-radius: 50%;" />
                       </button>
                     </div>
 
                     <Modal :id="'aboutModal'" :aria-labelledby="'aboutModalLabel'">
                       <div class="modal-content p-4 radius-50">
                         <div class="modal-header border-0">
-                          <h1
-                            class="fs-2 fw-bold text-primary mb-0"
-                            id="exampleModalLabel"
-                          >
+                          <h1 class="fs-2 fw-bold text-blue mb-0" id="exampleModalLabel">
                             {{ __("about") }}
                           </h1>
                         </div>
                         <div class="modal-body">
-                          <textarea
-                            style="
+                          <textarea style="
                               border-radius: 20px;
                               min-height: 150px;
                               scrollbar-width: none;
-                            "
-                            class="form-control border p-4"
-                            id="exampleFormControlTextarea1"
-                            rows="3"
-                            v-model="form.description"
-                          ></textarea>
+                            " class="form-control border p-4" id="exampleFormControlTextarea1" rows="3"
+                            v-model="form.description"></textarea>
 
                           <div class="text-danger" v-if="form.errors.description">
                             {{ form.errors.description }}
                           </div>
                         </div>
                         <div class="modal-footer border-0">
-                          <button
-                            type="button"
-                            data-bs-dismiss="modal"
-                            class="btn btn-secondary"
-                            id="descriptionSave"
-                          >
+                          <button type="button" data-bs-dismiss="modal" class="btn btn-secondary" id="descriptionSave">
                             {{ __("close") }}
                           </button>
-                          <button
-                            type="button"
-                            @click.prevent="submit('description')"
-                            class="btn btn-primary fs-3 shadow-find"
-                          >
+                          <button type="button" @click.prevent="submit('description')"
+                            class="btn btn-primary fs-3 shadow-find">
                             {{ __("save") }}
                           </button>
                         </div>
@@ -143,81 +101,51 @@
             <div class="card shadow w-100 mb-4">
               <div class="card-body p-0">
                 <div
-                  class="d-flex justify-content-between align-items-center p-2 border-bottom border-primary pb-3 px-3 mt-3"
-                >
+                  class="d-flex justify-content-between align-items-center p-2 border-bottom border-primary pb-3 px-3 mt-3">
                   <h3 class="fw-bold fs-3 mb-0 ms-md-4">
                     {{ __("Personal information") }}
                   </h3>
-                  <button
-                    type="button"
+                  <button type="button"
                     class="btn btn-primary fs-3 me-md-3 rounded-4 shadow px-3 py-2 fw-bold d-flex justify-content-center align-items-center"
-                    data-bs-toggle="modal"
-                    data-bs-target="#personalInformationModel"
-                  >
+                    data-bs-toggle="modal" data-bs-target="#personalInformationModel">
                     <img class="me-2" src="@/images/icons/pen.svg" alt="" />
                     {{ __("Edit") }}
                   </button>
-                  <Modal
-                    :id="'personalInformationModel'"
-                    tabindex="-1"
-                    :aria-labelledby="'personalInformationModelLabel'"
-                  >
+                  <Modal :id="'personalInformationModel'" tabindex="-1"
+                    :aria-labelledby="'personalInformationModelLabel'">
                     <div class="modal-content" style="border-radius: 20px">
                       <div class="modal-header p-4">
                         <h5 class="modal-title" :id="'personalInformationModelLabel'">
                           {{ __("Personal information") }}
                         </h5>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <!-- <validation-errors></validation-errors> -->
                         <div class="form-group mb-3">
-                          <label for="first_name"
-                            >{{ __("first name")
-                            }}<span class="text-danger">*</span></label
-                          >
-                          <input
-                            v-model="form.first_name"
-                            class="form-control px-3 fw-bold text-black"
-                            :placeholder="__('Please Enter')"
-                            type="text"
-                          />
+                          <label for="first_name">{{ __("first name")
+                          }}<span class="text-danger">*</span></label>
+                          <input v-model="form.first_name" class="form-control px-3 fw-bold text-black"
+                            :placeholder="__('Please Enter')" type="text" />
                           <div class="text-danger" v-if="form.errors.first_name">
                             {{ form.errors.first_name }}
                           </div>
                         </div>
 
                         <div class="form-group mb-3">
-                          <label for="last_name"
-                            >{{ __("last name")
-                            }}<span class="text-danger">*</span></label
-                          >
-                          <input
-                            v-model="form.last_name"
-                            class="form-control px-3 fw-bold text-black"
-                            :placeholder="__('Please Enter')"
-                            type="text"
-                          />
+                          <label for="last_name">{{ __("last name")
+                          }}<span class="text-danger">*</span></label>
+                          <input v-model="form.last_name" class="form-control px-3 fw-bold text-black"
+                            :placeholder="__('Please Enter')" type="text" />
                           <div class="text-danger" v-if="form.errors.last_name">
                             {{ form.errors.last_name }}
                           </div>
                         </div>
                         <div class="form-group dob-picker mb-3">
-                          <label for="dob"
-                            >{{ __("Date of Birth")
-                            }}<span class="text-danger">*</span></label
-                          >
+                          <label for="dob">{{ __("Date of Birth")
+                          }}<span class="text-danger">*</span></label>
                           <div class="dob-pick">
-                            <VueDatePicker
-                              v-model="form.dob"
-                              is24="false"
-                              format="dd/MM/yyyy"
-                            ></VueDatePicker>
+                            <VueDatePicker v-model="form.dob" is24="false" format="dd/MM/yyyy"></VueDatePicker>
                           </div>
                           <div class="text-danger" v-if="form.errors.dob">
                             {{ form.errors.dob }}
@@ -225,59 +153,35 @@
                         </div>
 
                         <div class="form-group mb-3">
-                          <label for="user_name"
-                            >{{ __("username") }}<span class="text-danger">*</span></label
-                          >
-                          <input
-                            v-model="form.user_name"
-                            class="form-control px-3 fw-bold text-black"
-                            :placeholder="__('Please Enter')"
-                            type="text"
-                          />
+                          <label for="user_name">{{ __("username") }}<span class="text-danger">*</span></label>
+                          <input v-model="form.user_name" class="form-control px-3 fw-bold text-black"
+                            :placeholder="__('Please Enter')" type="text" />
                           <div class="text-danger" v-if="form.errors.user_name">
                             {{ form.errors.user_name }}
                           </div>
                         </div>
 
                         <div class="form-group mb-3">
-                          <label for="user_name"
-                            >{{ __("Father Name")
-                            }}<span class="text-danger">*</span></label
-                          >
-                          <input
-                            class="form-control px-3 fw-bold text-black"
-                            :placeholder="__('Please Enter')"
-                            v-model="form.father_name"
-                            type="text"
-                          />
+                          <label for="user_name">{{ __("Father Name")
+                          }}<span class="text-danger">*</span></label>
+                          <input class="form-control px-3 fw-bold text-black" :placeholder="__('Please Enter')"
+                            v-model="form.father_name" type="text" />
                           <div class="text-danger" v-if="form.errors.father_name">
                             {{ form.errors.father_name }}
                           </div>
                         </div>
                         <div class="form-group mb-3">
-                          <label for="user_name"
-                            >{{ __("blood group")
-                            }}<span class="text-danger">*</span></label
-                          >
-                          <input
-                            class="form-control px-3 fw-bold text-black"
-                            :placeholder="__('Please Enter')"
-                            v-model="form.blood_group"
-                            type="text"
-                          />
+                          <label for="user_name">{{ __("blood group")
+                          }}<span class="text-danger">*</span></label>
+                          <input class="form-control px-3 fw-bold text-black" :placeholder="__('Please Enter')"
+                            v-model="form.blood_group" type="text" />
                           <div class="text-danger" v-if="form.errors.blood_group">
                             {{ form.errors.blood_group }}
                           </div>
                         </div>
                         <div class="form-group mb-3">
-                          <label for="user_name"
-                            >{{ __("gender") }}<span class="text-danger">*</span></label
-                          >
-                          <select
-                            v-model="form.gender"
-                            class="form-select"
-                            aria-label="Default select example"
-                          >
+                          <label for="user_name">{{ __("gender") }}<span class="text-danger">*</span></label>
+                          <select v-model="form.gender" class="form-select" aria-label="Default select example">
                             <option value="" disabled selected>
                               {{ __("Select gender") }}
                             </option>
@@ -291,19 +195,10 @@
                         </div>
                       </div>
                       <div class="modal-footer border-0 pt-0">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          id="close"
-                          data-bs-dismiss="modal"
-                        >
+                        <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">
                           {{ __("close") }}
                         </button>
-                        <button
-                          type="button"
-                          @click="submit('personal_info')"
-                          class="btn btn-primary"
-                        >
+                        <button type="button" @click="submit('personal_info')" class="btn btn-primary">
                           {{ __("save") }}
                         </button>
                       </div>
@@ -313,51 +208,29 @@
                 <div class="row mt-3 p-3 ms-md-1">
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        for="first_name"
-                        >{{ __("first name") }}</label
-                      >
-                      <input
-                        v-model="form.first_name"
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" for="first_name">{{ __("first name")
+                        }}</label>
+                      <input v-model="form.first_name"
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 py-1 fs-3 fw-bold text-black"
-                        :placeholder="__('Please Enter')"
-                        disabled
-                        type="text"
-                      />
+                        :placeholder="__('Please Enter')" disabled type="text" />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        for="last_name"
-                        >{{ __("last name") }}</label
-                      >
-                      <input
-                        v-model="form.last_name"
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" for="last_name">{{ __("last name")
+                        }}</label>
+                      <input v-model="form.last_name"
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 py-1 fs-3 fw-bold text-black"
-                        :placeholder="__('Please Enter')"
-                        disabled
-                        type="text"
-                      />
+                        :placeholder="__('Please Enter')" disabled type="text" />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        disabled
-                        for="user_name"
-                        >{{ __("username") }}</label
-                      >
-                      <input
-                        v-model="form.user_name"
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" disabled for="user_name">{{
+                        __("username") }}</label>
+                      <input v-model="form.user_name"
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 py-1 fs-3 fw-bold text-black"
-                        disabled
-                        :placeholder="__('Please Enter')"
-                        type="text"
-                      />
+                        disabled :placeholder="__('Please Enter')" type="text" />
                     </div>
                   </div>
                   <!-- <div class="col-md-4">
@@ -378,47 +251,29 @@
                   </div> -->
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        for="user_name"
-                        >{{ __("Father Name") }}</label
-                      >
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" for="user_name">{{ __("Father Name")
+                        }}</label>
                       <input
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 py-1 fs-3 fw-bold text-black"
-                        v-model="form.father_name"
-                        disabled
-                        type="text"
-                      />
+                        v-model="form.father_name" disabled type="text" />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        for="user_name"
-                        >{{ __("Date of Birth") }}</label
-                      >
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" for="user_name">{{ __("Date of Birth")
+                        }}</label>
                       <input
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 py-1 fs-3 fw-bold text-black"
-                        v-model="form.dob"
-                        disabled
-                        type="text"
-                      />
+                        v-model="form.dob" disabled type="text" />
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        for="user_name"
-                        >{{ __("blood group") }}</label
-                      >
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" for="user_name">{{ __("blood group")
+                        }}</label>
                       <input
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 py-1 fs-3 fw-bold text-black"
-                        v-model="form.blood_group"
-                        disabled
-                        type="text"
-                      />
+                        v-model="form.blood_group" disabled type="text" />
                     </div>
                   </div>
                 </div>
@@ -427,35 +282,22 @@
             <div class="card shadow w-100 group-address mb-4">
               <div class="card-body p-0">
                 <div
-                  class="d-flex justify-content-between align-items-center p-2 border-bottom border-primary pb-3 px-3 mt-3"
-                >
+                  class="d-flex justify-content-between align-items-center p-2 border-bottom border-primary pb-3 px-3 mt-3">
                   <h3 class="fw-bold mb-0 fs-3 ms-md-4">{{ __("address") }}</h3>
 
-                  <button
-                    type="button"
+                  <button type="button"
                     class="btn btn-primary fs-3 me-md-3 rounded-4 shadow px-3 py-2 fw-bold d-flex justify-content-center align-items-center"
-                    data-bs-toggle="modal"
-                    data-bs-target="#addressModel"
-                  >
+                    data-bs-toggle="modal" data-bs-target="#addressModel">
                     <img class="me-2" src="@/images/icons/pen.svg" alt="" />
                     {{ __("Edit") }}
                   </button>
-                  <Modal
-                    :id="'addressModel'"
-                    tabindex="-1"
-                    :aria-labelledby="'addressModelLabel'"
-                  >
+                  <Modal :id="'addressModel'" tabindex="-1" :aria-labelledby="'addressModelLabel'">
                     <div class="modal-content" style="border-radius: 20px">
                       <div class="modal-header p-4">
                         <h5 class="modal-title" :id="'addressModelLabel'">
                           {{ __("address") }}
                         </h5>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <div class="row">
@@ -463,20 +305,12 @@
                             <div class="form-group mb-3">
                               <label for="country">{{ __("country") }}</label>
 
-                              <select
-                                v-model="form.country_id"
-                                @change="getStates()"
-                                class="form-select fw-bold text-black"
-                                aria-label="country"
-                              >
+                              <select v-model="form.country_id" @change="getStates()"
+                                class="form-select fw-bold text-black" aria-label="country">
                                 <option value="null" selected>
                                   {{ __("country") }}
                                 </option>
-                                <option
-                                  v-for="country in this.countries"
-                                  :key="country.id"
-                                  :value="country.id"
-                                >
+                                <option v-for="country in this.countries" :key="country.id" :value="country.id">
                                   {{ country.name }}
                                 </option>
                               </select>
@@ -486,20 +320,12 @@
                             <div class="form-group mb-3">
                               <label for="state">{{ __("state") }}</label>
 
-                              <select
-                                v-model="form.state_id"
-                                @change="getCities()"
-                                class="form-select fw-bold text-black"
-                                aria-label="state"
-                              >
+                              <select v-model="form.state_id" @change="getCities()"
+                                class="form-select fw-bold text-black" aria-label="state">
                                 <option value="null" selected>
                                   {{ __("state") }}
                                 </option>
-                                <option
-                                  v-for="state in this.states"
-                                  :key="state.id"
-                                  :value="state.id"
-                                >
+                                <option v-for="state in this.states" :key="state.id" :value="state.id">
                                   {{ state.name }}
                                 </option>
                               </select>
@@ -508,19 +334,11 @@
                           <div class="col-md-4">
                             <div class="form-group mb-3">
                               <label for="city">{{ __("city") }}</label>
-                              <select
-                                v-model="form.city_id"
-                                class="form-select"
-                                aria-label="city"
-                              >
+                              <select v-model="form.city_id" class="form-select" aria-label="city">
                                 <option value="null" selected>
                                   {{ __("city") }}
                                 </option>
-                                <option
-                                  v-for="city in this.cities"
-                                  :key="city.id"
-                                  :value="city.id"
-                                >
+                                <option v-for="city in this.cities" :key="city.id" :value="city.id">
                                   {{ city.name }}
                                 </option>
                               </select>
@@ -529,44 +347,24 @@
                           <div class="col-md-4">
                             <div class="form-group mb-3">
                               <label for="zip_code">{{ __("Postal Code") }}</label>
-                              <input
-                                v-model="form.zip_code"
-                                class="form-control px-3 fw-bold text-black"
-                                :placeholder="__('Please Enter')"
-                                type="number"
-                              />
+                              <input v-model="form.zip_code" class="form-control px-3 fw-bold text-black"
+                                :placeholder="__('Please Enter')" type="number" />
                             </div>
                           </div>
 
                           <div class="form-group mb-3">
-                            <label for="address"
-                              >{{ __("address line") }} 1<span class="text-danger"
-                                >*</span
-                              ></label
-                            >
-                            <textarea
-                              v-model="form.address_line_1"
-                              class="form-control px-3 fw-bold text-black"
-                              :placeholder="__('Please Enter')"
-                              type="text"
-                            ></textarea>
+                            <label for="address">{{ __("address line") }} 1<span class="text-danger">*</span></label>
+                            <textarea v-model="form.address_line_1" class="form-control px-3 fw-bold text-black"
+                              :placeholder="__('Please Enter')" type="text"></textarea>
                             <div class="text-danger" v-if="form.errors.address_line_1">
                               {{ form.errors.address_line_1 }}
                             </div>
                           </div>
 
                           <div class="form-group mb-3">
-                            <label for="address"
-                              >{{ __("address line") }} 2<span class="text-danger"
-                                >*</span
-                              ></label
-                            >
-                            <textarea
-                              v-model="form.address_line_2"
-                              class="form-control px-3 fw-bold text-black"
-                              :placeholder="__('Please Enter')"
-                              type="text"
-                            ></textarea>
+                            <label for="address">{{ __("address line") }} 2<span class="text-danger">*</span></label>
+                            <textarea v-model="form.address_line_2" class="form-control px-3 fw-bold text-black"
+                              :placeholder="__('Please Enter')" type="text"></textarea>
                             <div class="text-danger" v-if="form.errors.address_line_2">
                               {{ form.errors.address_line_2 }}
                             </div>
@@ -574,19 +372,10 @@
                         </div>
                       </div>
                       <div class="modal-footer border-0 pt-0">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                          id="address_close"
-                        >
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="address_close">
                           {{ __("close") }}
                         </button>
-                        <button
-                          type="button"
-                          @click="submit('address')"
-                          class="btn btn-primary"
-                        >
+                        <button type="button" @click="submit('address')" class="btn btn-primary">
                           {{ __("save") }}
                         </button>
                       </div>
@@ -596,27 +385,15 @@
                 <div class="row mt-3 p-3 ms-md-1">
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-2 fs-3 fw-normal"
-                        for="country"
-                        >{{ __("country") }}</label
-                      >
+                      <label class="text-black opacity-50 ms-2 fs-3 fw-normal" for="country">{{ __("country") }}</label>
 
-                      <select
-                        v-model="form.country_id"
-                        @change="getStates()"
-                        class="form-select bg-transparent rounded-3 fs-3 fw-bold text-black"
-                        aria-label="country"
-                        disabled
-                      >
+                      <select v-model="form.country_id" @change="getStates()"
+                        class="form-select bg-transparent rounded-3 fs-3 fw-bold text-black" aria-label="country"
+                        disabled>
                         <option value="null" selected disabled>
                           {{ __("country") }}
                         </option>
-                        <option
-                          v-for="country in this.countries"
-                          :key="country.id"
-                          :value="country.id"
-                        >
+                        <option v-for="country in this.countries" :key="country.id" :value="country.id">
                           {{ country.name }}
                         </option>
                       </select>
@@ -624,26 +401,13 @@
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-2 fs-3 fw-normal"
-                        for="state"
-                        >{{ __("state") }}</label
-                      >
-                      <select
-                        v-model="form.state_id"
-                        @change="getCities()"
-                        disabled
-                        class="form-select bg-transparent rounded-3 fs-3 fw-bold text-black"
-                        aria-label="state"
-                      >
+                      <label class="text-black opacity-50 ms-2 fs-3 fw-normal" for="state">{{ __("state") }}</label>
+                      <select v-model="form.state_id" @change="getCities()" disabled
+                        class="form-select bg-transparent rounded-3 fs-3 fw-bold text-black" aria-label="state">
                         <option value="null" selected disabled>
                           {{ __("state") }}
                         </option>
-                        <option
-                          v-for="state in this.states"
-                          :key="state.id"
-                          :value="state.id"
-                        >
+                        <option v-for="state in this.states" :key="state.id" :value="state.id">
                           {{ state.name }}
                         </option>
                       </select>
@@ -651,25 +415,13 @@
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-2 fs-3 fw-normal"
-                        for="city"
-                        >{{ __("city") }}</label
-                      >
-                      <select
-                        v-model="form.city_id"
-                        disabled
-                        class="form-select bg-transparent rounded-3 fs-3 fw-bold text-black"
-                        aria-label="city"
-                      >
+                      <label class="text-black opacity-50 ms-2 fs-3 fw-normal" for="city">{{ __("city") }}</label>
+                      <select v-model="form.city_id" disabled
+                        class="form-select bg-transparent rounded-3 fs-3 fw-bold text-black" aria-label="city">
                         <option value="null" selected disabled>
                           {{ __("city") }}
                         </option>
-                        <option
-                          v-for="city in this.cities"
-                          :key="city.id"
-                          :value="city.id"
-                        >
+                        <option v-for="city in this.cities" :key="city.id" :value="city.id">
                           {{ city.name }}
                         </option>
                       </select>
@@ -677,51 +429,30 @@
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        for="zip_code"
-                        >{{ __("Postal Code") }}</label
-                      >
-                      <input
-                        v-model="form.zip_code"
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" for="zip_code">{{ __("Postal Code")
+                        }}</label>
+                      <input v-model="form.zip_code"
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 fs-3 fw-bold text-black"
-                        disabled
-                        :placeholder="__('Please Enter')"
-                        type="number"
-                      />
+                        disabled :placeholder="__('Please Enter')" type="number" />
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        for="address"
-                        >{{ __("address line") }} 1</label
-                      >
-                      <textarea
-                        v-model="form.address_line_1"
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" for="address">{{ __("address line") }}
+                        1</label>
+                      <textarea v-model="form.address_line_1"
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 fs-3 fw-bold text-black"
-                        disabled
-                        :placeholder="__('Please Enter')"
-                        type="text"
-                      ></textarea>
+                        disabled :placeholder="__('Please Enter')" type="text"></textarea>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group mb-3">
-                      <label
-                        class="text-black opacity-50 ms-3 fs-3 fw-normal"
-                        for="address"
-                        >{{ __("address line") }} 2</label
-                      >
-                      <textarea
-                        v-model="form.address_line_2"
+                      <label class="text-black opacity-50 ms-3 fs-3 fw-normal" for="address">{{ __("address line") }}
+                        2</label>
+                      <textarea v-model="form.address_line_2"
                         class="w-100 form-control bg-transparent shadow-none rounded-3 px-3 fs-3 fw-bold text-black"
-                        disabled
-                        :placeholder="__('Please Enter')"
-                        type="text"
-                      ></textarea>
+                        disabled :placeholder="__('Please Enter')" type="text"></textarea>
                     </div>
                   </div>
                 </div>
@@ -1045,7 +776,7 @@ import SpinnerLoader from "@/Components/Shared/SpinnerLoader.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import axios from "axios";
 import Modal from "../Modal.vue";
-
+import { Icon } from "@iconify/vue/dist/iconify.js";
 export default defineComponent({
   components: {
     Head,
@@ -1054,6 +785,7 @@ export default defineComponent({
     ImageCropperModal,
     Link,
     Modal,
+    Icon
   },
   props: ["active"],
 

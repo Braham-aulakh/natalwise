@@ -1,5 +1,99 @@
 <template>
-  <footer class="footer pt-5">
+  <footer class="footer footer-one">
+    <div class="footer-top aos" data-aos="fade-up">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4">
+            <div class="footer-widget footer-about">
+              <div class="footer-logo">
+                <a href="index.html"><img src="../../images/icons/new-logo.png" alt="logo"></a>
+              </div>
+              <div class="footer-about-content">
+                <p>NatalWise is a unique platform crafted to help women of all ages achieve a vibrant and fulfilling
+                  life, offering exclusive support and guidance designed to meet their individual needs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="row">
+              <div class="col-lg-6 col-md-6">
+                <div class="footer-widget footer-menu">
+                  <h2 class="footer-title">Quick Links</h2>
+                  <ul>
+                    <li><a href="index.html">Her Well Being
+                      </a></li>
+                    <li><a href="search.html">Shop</a></li>
+                    <li><a href="About Us">About Us</a></li>
+                    <li><a href="video-call.html">Resources</a></li>
+                    <li><a href="video-call.html">Contact us</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="footer-widget footer-menu">
+                  <h2 class="footer-title">Support</h2>
+                  <ul>
+                    <li><a href="search.html">Privacy</a></li>
+                    <li><a href="search.html">Terms of use</a></li>
+
+                  </ul>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <div class="footer-widget">
+              <h2 class="footer-title">Contact Us</h2>
+              <div class="subscribe-form">
+
+
+                <button type="Book-an-Appointment
+											t" class="btn">Book an Appointment
+                </button>
+                <h6>Stay in Touch:</h6>
+
+              </div>
+              <div class="social-icon">
+                <ul>
+                  <li>
+                    <Link class="links"><Icon icon="ic:baseline-facebook" width="24" height="24" /></Link>
+                  </li>
+                  <li>
+                    <Link class="links"><Icon icon="mdi:instagram" width="24" height="24" /></Link >
+                  </li>
+                  <li>
+                    <Link class="links"><Icon icon="prime:twitter" width="20" height="20" /></Link >
+                  </li>
+                  <li>
+                    <Link class="links"><Icon icon="mdi:linkedin" width="24" height="24" /></Link >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <!-- Copyright -->
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-12 col-lg-12 text-center">
+              <div class="copyright-text">
+                <p class="mb-0">Copyright © 2025 Natal Wise. All Rights Reserved</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- /Copyright -->
+      </div>
+    </div>
+  </footer>
+  <!-- <footer class="footer pt-5">
     <div class="container-fluid px-6">
       <div class="row py-3 py-md-5">
         <div class="col-md-4 ps-md-0 pe-md-5 footer-margin">
@@ -14,7 +108,6 @@
               :src="$page.props.settings.dark_logo"
               alt="logo"
             />
-            <!-- <img  src="@/images/icons/footerlogo.png" width="200" alt="logo"> -->
             <span v-else class="mt-4">
               {{
                 $page.props &&
@@ -53,35 +146,22 @@
                 <h4 class="fw-bold mb-3 ps-3">{{ __("Company") }}</h4>
                 <ul>
                   <li>
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
                     <Link class="nav-link fs-3 mb-2" :href="route('home')">{{
                       __("Home")
                     }}</Link>
                   </li>
                   <li v-if="$page.props.auth == null">
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
-                    <!-- <Link class="nav-link fs-3 mb-2"
-                          :href="route('company_pages.display', { slug: 'about' })"> {{ __('About') }}</Link>
-                      </li> -->
                     <Link class="nav-link fs-3 mb-2" :href="route('login')">
                       {{ __("login") }}</Link
                     >
                   </li>
                   <li>
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
                     <Link
                       class="nav-link fs-3 mb-2"
                       :href="route('events.listing')"
                       >{{ __("Events Calendar") }}
                     </Link>
                   </li>
-                  <!-- <li>
-                    <Link
-                      class="nav-link fs-3 mb-2"
-                      :href="route('our-story')"
-                      >{{ __("our success stories") }}</Link
-                    >
-                  </li> -->
                   <li>
                     <Link
                       class="nav-link fs-3 mb-2"
@@ -96,21 +176,7 @@
                       >{{ __("Medical Appointments") }}
                     </Link>
                   </li>
-                  <!-- <li>
-
-                        <Link class="nav-link fs-3 mb-2" :href="route('clinics.listing')">
-                        {{ __("Clinics") }}</Link>
-                      </li>
-                      <li>
-
-                        <Link class="nav-link fs-3 mb-2" :href="route('doctors.listing')">
-                        {{ __("Doctors") }}</Link>
-                      </li>
-                      <li>
-
-                        <Link class="nav-link fs-3 mb-2" :href="route('archives.listing')">
-                        {{ __("Courses") }}</Link>
-                      </li> -->
+                
                 </ul>
               </div>
             </div>
@@ -124,7 +190,6 @@
                     </Link>
                   </li>
                   <li>
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
                     <Link
                       class="nav-link fs-3 mb-2"
                       :href="route('company_pages.display', { slug: 'terms' })"
@@ -132,7 +197,6 @@
                     >
                   </li>
                   <li>
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
                     <Link
                       class="nav-link fs-3 mb-2"
                       :href="
@@ -142,7 +206,6 @@
                     </Link>
                   </li>
                   <li>
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
                     <Link
                       class="nav-link fs-3 mb-2"
                       :href="
@@ -151,16 +214,6 @@
                       >{{ __("Cookies Policy") }}
                     </Link>
                   </li>
-                  <!-- <li>
-
-                    <Link
-                      class="nav-link fs-3 mb-2"
-                      :href="
-                        route('company_pages.display', { slug: 'disclaimer' })
-                      "
-                      >{{ __("Disclaimer") }}</Link
-                    >
-                  </li> -->
                 </ul>
               </div>
             </div>
@@ -169,51 +222,15 @@
               <div class="widget">
                 <h4 class="fw-bold mb-3 ps-3">{{ __("Resources") }}</h4>
                 <ul>
-                  <!-- <li>
-
-                        <Link :href="route('doctors.listing')" class="nav-link fs-3 mb-2">
-                        {{ __n('Doctor') }}</Link>
-                      </li> -->
                   <li>
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
                     <Link
                       class="nav-link fs-3 mb-2"
                       :href="route('doctors.listing')"
                       >{{ __("doctors") }}</Link
                     >
                   </li>
-                  <!-- <li>
-
-                    <Link
-                      class="nav-link fs-3 mb-2"
-                      v-if="
-                        $page.props.auth &&
-                        hasRole('doctor') &&
-                        $page.props.auth.logged_in_as == 'doctor'
-                      "
-                      :href="route('pricing', { type: 'doctor' })"
-                      >{{ __("pricing plan") }}</Link
-                    >
-                    <Link
-                      class="nav-link fs-3 mb-2"
-                      v-else-if="
-                        $page.props.auth &&
-                        hasRole('clinic') &&
-                        $page.props.auth.logged_in_as == 'clinic'
-                      "
-                      :href="route('pricing', { type: 'clinic' })"
-                      >{{ __("pricing plan") }}</Link
-                    >
-                    <Link
-                      class="nav-link fs-3 mb-2"
-                      v-else
-                      :href="route('pricing', { type: 'doctor' })"
-                    >
-                      {{ __("Pricing Plan") }}</Link
-                    >
-                  </li> -->
+                 
                   <li>
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
                     <Link
                       class="nav-link fs-3 mb-2"
                       :href="route('clinics.listing')"
@@ -221,7 +238,6 @@
                     >
                   </li>
                   <li>
-                    <!-- <img src="@/images/common/bullter-1.png" alt="icon"> -->
                     <Link class="nav-link fs-3 mb-2" :href="route('faqs')">{{
                       __("FAQ")
                     }}</Link>
@@ -248,8 +264,6 @@
                       ><span class="fs-3">Facebook</span></a
                     >
                   </li>
-                  <!-- <li v-if="$page.props.settings.web_youtube_link"><a target="_blank"
-                    :href="$page.props.settings.web_youtube_link"><i class="bi bi-youtube"></i></a></li> -->
                   <li
                     class="d-flex mb-2 ps-3 ps-md-0"
                     v-if="$page.props.settings.web_twitter_link"
@@ -274,18 +288,7 @@
                       ><span class="fs-3">Linkedin</span></a
                     >
                   </li>
-                  <!-- <li
-                    class="d-flex mb-2 ps-3 ps-md-0"
-                    v-if="$page.props.settings.web_whatsapp_link"
-                  >
-                    <a
-                      class="text-decoration-none text-white"
-                      target="_blank"
-                      :href="$page.props.settings.web_whatsapp_link"
-                      ><i class="bi bi-whatsapp me-3"></i
-                      ><span class="fs-3">Whatsapp</span></a
-                    >
-                  </li> -->
+                
                   <li
                     class="d-flex mb-2 ps-3 ps-md-0"
                     v-if="$page.props.settings.web_instagram_link"
@@ -299,42 +302,7 @@
                     >
                   </li>
 
-                  <!-- <li
-                    class="d-flex mb-2 ps-3 ps-md-0"
-                    v-if="$page.props.settings.web_tiktok_link"
-                  >
-                    <a
-                      class="text-decoration-none text-white"
-                      target="_blank"
-                      :href="$page.props.settings.web_tiktok_link"
-                      ><i class="bi bi-tiktok me-3"></i
-                      ><span class="fs-3">Tiktok</span></a
-                    >
-                  </li> -->
-                  <!-- <li
-                    class="d-flex mb-2 ps-3 ps-md-0"
-                    v-if="$page.props.settings.web_snapchat_link"
-                  >
-                    <a
-                      class="text-decoration-none text-white"
-                      target="_blank"
-                      :href="$page.props.settings.web_snapchat_link"
-                      ><i class="bi bi-snapchat me-3"></i
-                      ><span class="fs-3">Snapchat</span></a
-                    >
-                  </li> -->
-                  <!-- <li
-                    class="d-flex mb-2 ps-3 ps-md-0"
-                    v-if="$page.props.settings.web_pinterest_link"
-                  >
-                    <a
-                      class="text-decoration-none text-white"
-                      target="_blank"
-                      :href="$page.props.settings.web_pinterest_link"
-                      ><i class="bi bi-pinterest me-3"></i
-                      ><span class="fs-3">Pinterest</span></a
-                    >
-                  </li> -->
+                
                 </ul>
               </div>
             </div>
@@ -375,72 +343,22 @@
       </div>
     </div>
 
-    <!-- <ul>
-                      <li>
-
-                        <Link class="nav-link fs-3 mb-2 fw-semibold" :href="route('broadcasts.listing')">{{ __("Media") }}</Link>
-                      </li>
-                      <li>
-
-                        <Link class="nav-link fs-3 mb-2 fw-semibold"
-                          :href="route('blogs.listing')">{{ __('Blogs') }}</Link>
-                      </li>
-                      <li>
-
-                        <Link class="nav-link fs-3 mb-2 fw-semibold" :href="route('archives.listing')">{{ __("Courses")
-                        }}
-                        </Link>
-                      </li>
-
-                      <li>
-
-                        <Link class="nav-link fs-3 mb-2 fw-semibold" :href="route('podcasts.listing')">
-                        {{ __("Podcast") }}</Link>
-                      </li>
-                      <li>
-
-                        <Link class="nav-link fs-3 mb-2 fw-semibold" :href="route('contact')">
-                        {{ __("Contact") }}</Link>
-                      </li>
-                      <li>
-
-                        <Link class="nav-link fs-3 mb-2 fw-semibold" :href="route('company_pages.display', { slug: 'support-27' })">
-                        {{ __("Support") }}</Link>
-                      </li>
-                    </ul> -->
-
-    <!-- <div class="row mb-4 align-items-center">
-            <div class="col-md-12">
-              <h4 class="mb-0 text-white">{{__("crisis support")}}</h4>
-              <div class="d-flex align-items-center">
-                <p class="text-white mb-0" ><b> {{ __('dont use this site if')}}:</b> {{ __('crisis_support_statement') }}. <Link :href="route('company_pages.display',{slug:'crisis-support'})">{{ __('use these resources') }} </Link></p>
-                <Link :href="route('company_pages.display',{slug:'support'})" class="btn btn-sm ms-3 btn-primary">
-                  {{('support')}} <i class="bi bi-headset"></i>
-                </Link>
-              </div>
-
-            </div>
-
-          </div> -->
+   
     <div class="pb-4">
       <div class="container">
         <div class="row">
-          <!-- <div class="col-md-6">
-
-            <div class="d-flex justify-content-center justify-content-lg-end">
-
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
 </template>
 <script>
 import { Link } from "@inertiajs/inertia-vue3";
+import { Icon } from "@iconify/vue";
 export default {
   components: {
     Link,
+    Icon
   },
   data() {
     return {};
@@ -449,3 +367,11 @@ export default {
 };
 </script>
 
+<style scoped>
+@media (min-width: 992px) {
+  .col-lg-3 {
+    /* flex: 0 0 auto; */
+    width: 250px !important;
+  }
+}
+</style>

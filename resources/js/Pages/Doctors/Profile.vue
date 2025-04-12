@@ -1,6 +1,6 @@
 <template>
   <app-layout title="Profile">
-    <div class="bg-primary">
+    <div class="Top-Border">
       <pages-heading
         :textwhite="'true'"
         :heading="'Doctors Details'"

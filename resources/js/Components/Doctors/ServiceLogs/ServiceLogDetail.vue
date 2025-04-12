@@ -1,7 +1,7 @@
 <template>
     <div class="stats">
 
-        <div class="bg-primary">
+        <div class="Top-Border">
             <pages-heading :textwhite="'true'" :heading="'Service Log Detail'" :breadcrums="breadcrums">
             </pages-heading>
         </div>

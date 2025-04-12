@@ -2,7 +2,7 @@
   <div class="container-fluid px-0">
     <nav v-if="white" aria-label="breadcrumb">
       <ol
-        class="breadcrumb justify-content-start my-0 text-white fw-normal fs-3"
+        class="breadcrumb justify-content-start my-0 text-blue fw-normal fs-3"
       >
         <li
           class="breadcrumb-item mt-1"
@@ -11,11 +11,11 @@
         >
           <Link
             v-if="breadcrum.link"
-            class="text-decoration-none text-white"
+            class="text-decoration-none text-blue"
             :href="breadcrum.link"
             >{{ breadcrum.name }}</Link
           >
-          <span class="text-white" v-else> {{ breadcrum.name }}</span>
+          <span class="text-blue" v-else> {{ breadcrum.name }}</span>
         </li>
       </ol>
     </nav>
@@ -30,11 +30,11 @@
         >
           <Link
             v-if="breadcrum.link"
-            class="text-decoration-none text-grey"
+            class="text-decoration-none text-blue"
             :href="breadcrum.link"
             >{{ breadcrum.name }}</Link
           >
-          <span class="text-grey" v-else> {{ breadcrum.name }}</span>
+          <span class="text-blue" v-else> {{ breadcrum.name }}</span>
         </li>
       </ol>
     </nav>
@@ -63,6 +63,12 @@ export default defineComponent({
 <style scoped>
 .text-grey {
   color: #696868;
+}
+.breadcrums-item{
+  color: #272b41 !important ;
+}
+.breadcrumb-item + .breadcrumb-item::before{
+color: "#212529bf" !important ;
 }
 </style>
 

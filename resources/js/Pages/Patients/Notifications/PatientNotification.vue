@@ -1,7 +1,7 @@
 <template>
   <app-layout title="Notification">
     <template #default>
-      <div class="bg-primary">
+      <div class="Top-Border">
         <pages-heading
           :textwhite="'true'"
           :heading="'Notification'"
@@ -14,7 +14,7 @@
             <div class="col-md-12 mb-3">
               <h1
                 v-if="this.$page.props.notifications.length > 0"
-                class="fs-2 fw-bold mt-5 ms-5"
+                class="fs-2 fw-bold  ms-3"
               >
                 {{ __("Notifications") }}
               </h1>
