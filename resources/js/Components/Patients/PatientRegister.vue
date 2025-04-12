@@ -126,28 +126,37 @@
             <span class="span-or">or</span>
           </div>
           <div class="text-center">
-            <div class="row social-login">
-              <div class="col-6">
-                <Link :href="route('social_redirect', {
-                  provider: 'facebook',
-                  login_as: this.form.login_as,
-                })
-                  " class="btn btn-facebook w-100">
-                <Icon icon="line-md:facebook" width="24" height="24" /> Login</Link>
-              </div>
-              <div class="col-6">
-                <Link :href="route('social_redirect', {
-                  provider: 'google',
-                  login_as: this.form.login_as,
-                })" class="btn btn-google w-100">
-                <Icon icon="flowbite:google-solid" width="24" height="24" /> Login</Link>
-              </div>
-            </div>
-            <!-- <div class="d-flex align-items-center gap-3 justify-content-center">
-                
-                
-              </div> -->
-          </div>
+  <div class="row social-login">
+    <!-- Facebook Login -->
+    <div class="col-6 mb-2">
+      <Link 
+        :href="route('social_redirect', {
+          provider: 'facebook',
+          login_as: this.form.login_as,
+        })" 
+        class="btn btn-facebook w-100 d-flex align-items-center justify-content-center gap-2"
+      >
+        <Icon icon="line-md:facebook" width="18" height="18" />
+        <span>Login</span>
+      </Link>
+    </div>
+
+    <!-- Google Login -->
+    <div class="col-6 mb-2">
+      <Link 
+        :href="route('social_redirect', {
+          provider: 'google',
+          login_as: this.form.login_as,
+        })" 
+        class="btn btn-google w-100 d-flex align-items-center justify-content-center gap-2"
+      >
+        <Icon icon="flowbite:google-solid" width="18" height="18" />
+        <span>Login</span>
+      </Link>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
@@ -315,7 +324,7 @@ import Checkbox from "@/Components/Checkbox.vue";
 import Label from "@/Components/Label.vue";
 import ValidationErrors from "@/Components/ValidationErrors.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
-
+import { Icon } from "@iconify/vue";
 export default defineComponent({
   components: {
     Head,
@@ -325,6 +334,7 @@ export default defineComponent({
     Label,
     ValidationErrors,
     Link,
+    Icon
   },
 
   props: {

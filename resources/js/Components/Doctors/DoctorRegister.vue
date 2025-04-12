@@ -1,27 +1,17 @@
 <template>
-  <div
-    class="tab-pane"
-    :class="{ active: active }"
-    id="doctor-register-pane"
-    role="tabpanel"
-    aria-labelledby="doctor-register-pane"
-    tabindex="0"
-  >
-    <form @submit.prevent="submit" >
+  <div class="tab-pane" :class="{ active: active }" id="doctor-register-pane" role="tabpanel"
+    aria-labelledby="doctor-register-pane" tabindex="0">
+    <form @submit.prevent="submit">
       <validation-errors class="mb-3" />
 
       <div class="col-12">
         <div class="row">
           <div class="col-12">
-            <div
-              v-if="this.errors.first_name"
-              class="error-validation text-end px-md-5"
-            >
+            <div v-if="this.errors.first_name" class="error-validation text-end px-md-5">
               <span>{{ this.errors.first_name }}</span>
             </div>
             <div class="mb-3 form-focus">
-              <input type="text" class="form-control floating" :placeholder="__('first name')"
-               v-model="form.first_name"
+              <input type="text" class="form-control floating" :placeholder="__('first name')" v-model="form.first_name"
                 id="first_name" />
               <label class="focus-label">{{
                 __("first name")
@@ -43,10 +33,7 @@
                 </div>
               </div>
             </div> -->
-            <div
-              v-if="this.errors.last_name"
-              class="error-validation text-end px-md-5"
-            >
+            <div v-if="this.errors.last_name" class="error-validation text-end px-md-5">
               <span>{{ this.errors.last_name }}</span>
             </div>
             <div class="mb-3 form-focus">
@@ -73,10 +60,7 @@
               </div>
             </div> -->
 
-            <div
-              v-if="this.errors.user_name"
-              class="error-validation text-danger text-end px-md-5"
-            >
+            <div v-if="this.errors.user_name" class="error-validation text-danger text-end px-md-5">
               <span>{{ this.errors.user_name }}</span>
             </div>
             <div class="mb-3 form-focus">
@@ -119,13 +103,13 @@
                 </div>
               </div>
             </div> -->
-            
+
             <div class="mb-3 form-focus">
-              <input  id="zip_code" :placeholder="__('user name')" type="text" class="form-control floating"
-              v-model="form.zip_code" />
+              <input id="zip_code" :placeholder="__('user name')" type="text" class="form-control floating"
+                v-model="form.zip_code" />
               <label class="focus-label" for="floatingInput">{{
-                    __("zip code")
-                  }}</label>
+                __("zip code")
+              }}</label>
             </div>
             <!-- <div class="form-group px-5 mb-4">
               <div class="border border-3 rounded-3 w-100">
@@ -143,18 +127,15 @@
                 </div>
               </div>
             </div> -->
-            <div
-              v-if="this.errors.email"
-              class="error-validation text-danger text-end px-md-5"
-            >
+            <div v-if="this.errors.email" class="error-validation text-danger text-end px-md-5">
               <span>{{ this.errors.email }}</span>
             </div>
             <div class="mb-3 form-focus">
               <input id="email" type="email" class="form-control floating" :placeholder="__('email address')"
                 v-model="form.email" />
               <label class="focus-label" for="floatingInput">{{
-                    __("email address")
-                  }}</label>
+                __("email address")
+              }}</label>
             </div>
 
             <!-- <div class="input-group px-5 mb-4">
@@ -191,10 +172,7 @@
               </div>
             </div> -->
 
-            <div
-              v-if="this.errors.password"
-              class="error-validation text-danger text-end px-md-5"
-            >
+            <div v-if="this.errors.password" class="error-validation text-danger text-end px-md-5">
               <span>{{ this.errors.password }}</span>
             </div>
             <div class="mb-3 form-focus">
@@ -233,10 +211,7 @@
               </div>
             </div> -->
 
-            <div
-              v-if="this.errors.password_confirmation"
-              class="error-validation text-danger text-end px-md-5"
-            >
+            <div v-if="this.errors.password_confirmation" class="error-validation text-danger text-end px-md-5">
               <span>{{ this.errors.password_confirmation }}</span>
             </div>
             <div class="mb-3 form-focus">
@@ -275,50 +250,38 @@
             </div> -->
           </div>
         </div>
-        <div class="mb-3 px-md-5">
+        <div class="mb-3 ">
           <div v-if="this.errors.terms" class="invalid-feedback">
             <span>{{ this.errors.terms }}</span>
           </div>
 
-          <div class="form-check d-flex justify-content-center my-4">
-            <input
-              v-model="form.terms"
-              class="form-check-input me-2"
-              type="checkbox"
-              value=""
-              id="termsBoxRegister"
-              :class="{ 'is-invalid': form.errors.terms }"
-            />
+          <div class="form-check d-flex justify-content-left ">
+            <input v-model="form.terms" class="form-check-input me-2" type="checkbox" value="" id="termsBoxRegister"
+              :class="{ 'is-invalid': form.errors.terms }" />
             <label class="form-check-label" for="termsBoxRegister">
               {{ __("terms changes") }}
-              <a
-                :href="route('company_pages.display', { slug: 'terms' })"
-                target="_blank"
-                >{{ __("Terms of Use & Conditions") }}</a
-              >
+              <a class="color-pink" :href="route('company_pages.display', { slug: 'terms' })" target="_blank">{{
+                __("Terms of Use & Conditions") }}</a>
               {{ __("and the") }}
-              <a
-                :href="route('company_pages.display', { slug: 'privacy' })"
-                target="_blank"
-                >{{ __("privacy policy") }}</a
-              >
+              <a class="color-pink" :href="route('company_pages.display', { slug: 'privacy' })" target="_blank">{{
+                __("privacy policy") }}</a>
             </label>
           </div>
         </div>
         <div class="">
           <div class="d-grid gap-2">
-              <div class="text-end mb-0">
-                <Link :href="route('login', { tab: 'doctor' })" class="forgot-link">{{ __("Already have an account?")
-                }}</Link>
+            <div class="text-end mb-0">
+              <Link :href="route('login', { tab: 'doctor' })" class="forgot-link">{{ __("Already have an account?")
+              }}</Link>
 
-              </div>
-              <button class="submit btn w-100 fs-2 fw-bold rounded-4 shadow-find btn-primary"
-                :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
-                <SpinnerLoader v-if="form.processing" />
-                {{ __("Signup") }}
-                <!-- <img src="@/images/icons/loginbtnicon.png" class="ms-2" width="30" alt="" /> -->
-              </button>
             </div>
+            <button class="submit btn w-100 fs-2 fw-bold rounded-4 shadow-find btn-primary"
+              :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+              <SpinnerLoader v-if="form.processing" />
+              {{ __("Signup") }}
+              <!-- <img src="@/images/icons/loginbtnicon.png" class="ms-2" width="30" alt="" /> -->
+            </button>
+          </div>
           <!-- <div class="col-md-12 text-center my-3">
             <p class="mb-0 fs-3 fw-normal">
               {{ __("if you have already account") }}?
@@ -334,33 +297,36 @@
     </form>
 
     <div class="login-or">
-            <span class="or-line"></span>
-            <span class="span-or">or</span>
-          </div>
-          <div class="text-center">
-            <div class="row social-login">
-              <div class="col-6">
-                <Link :href="route('social_redirect', {
-                  provider: 'facebook',
-                  login_as: this.form.login_as,
-                })
-                  " class="btn btn-facebook w-100">
-                <Icon icon="line-md:facebook" width="24" height="24" /> Login</Link>
-              </div>
-              <div class="col-6">
-                <Link :href="route('social_redirect', {
-                  provider: 'google',
-                  login_as: this.form.login_as,
-                })" class="btn btn-google w-100">
-                <Icon icon="flowbite:google-solid" width="24" height="24" /> Login</Link>
-              </div>
-            </div>
-            <!-- <div class="d-flex align-items-center gap-3 justify-content-center">
-                
-                
-              </div> -->
-          </div>
-    
+      <span class="or-line"></span>
+      <span class="span-or">or</span>
+    </div>
+    <div class="text-center">
+      <div class="row social-login">
+        <!-- Facebook Login -->
+        <div class="col-6 mb-2">
+          <Link :href="route('social_redirect', {
+            provider: 'facebook',
+            login_as: this.form.login_as,
+          })" class="btn btn-facebook w-100 d-flex align-items-center justify-content-center gap-2">
+          <Icon icon="line-md:facebook" width="18" height="18" />
+          <span>Login</span>
+          </Link>
+        </div>
+
+        <!-- Google Login -->
+        <div class="col-6 mb-2">
+          <Link :href="route('social_redirect', {
+            provider: 'google',
+            login_as: this.form.login_as,
+          })" class="btn btn-google w-100 d-flex align-items-center justify-content-center gap-2">
+          <Icon icon="flowbite:google-solid" width="18" height="18" />
+          <span>Login</span>
+          </Link>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </template>
 <script>
@@ -371,7 +337,7 @@ import Checkbox from "@/Components/Checkbox.vue";
 import Label from "@/Components/Label.vue";
 import ValidationErrors from "@/Components/ValidationErrors.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
-
+import { Icon } from "@iconify/vue";
 export default defineComponent({
   components: {
     Head,
@@ -381,6 +347,7 @@ export default defineComponent({
     Label,
     ValidationErrors,
     Link,
+    Icon
   },
 
   props: {

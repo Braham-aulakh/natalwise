@@ -1,105 +1,113 @@
 <template>
-  <div class=" container-fluid flex gap-4 ">
-    <div class="w-full ">
-      <div class="col-md-6 flex justify-right ">
-        <img class="img-fluid" src="../../images/icons/login-banner.png" alt="Image" />
-      </div>
-    </div>
-    <div class="content top-space w-full " :class="{ active: active }" id="patient-login-pane" role="tabpanel"
-      aria-labelledby="patient-login-tab" tabindex="0">
-      <div class="w-full">
+  <div class="tab-content mx-3 m-md-5">
+    <div class="container-fluid px-0">
+      <div class="row  justify-content-center">
+        <!-- Left Image Section -->
+        <div class="col-md-7 col-lg-6 login-left">
+          <img class="img-fluid max-w-full" src="../../images/icons/login-banner.png" alt="Image" />
+        </div>
 
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
+        <!-- Right Login Form Section -->
+        <div class="col-lg-6 login-right" :class="{ active: active }" id="patient-login-pane" role="tabpanel"
+          aria-labelledby="patient-login-tab" tabindex="0">
+          <div class="w-full">
+            <div class="max-w-2xl mx-auto">
+              <div class="account-content">
+                <div class="flex justify-center">
+                  <div class="w-full">
+                    <div class="login-header text-left mb-6">
+                      <h3>Login <span>Doccure</span></h3>
+                    </div>
+                    <form @submit.prevent="submit">
+                      <validation-errors class="mb-3" />
 
-            <!-- Login Tab Content -->
-            <div class="account-content">
-              <div class="row align-items-center justify-content-center">
-                <!-- <div class="col-md-7 col-lg-6 login-left">
-                <img src="assets/img/login-banner.png" class="img-fluid" alt="Doccure Login">
-              </div> -->
-                <div class="col-md-12 col-lg-6 login-right">
-                  <div class="login-header">
-                    <h3>Login <span>Doccure</span></h3>
+                      <!-- Email -->
+                      <div class="mb-3 form-focus">
+                        <input type="email" class="form-control floating" :placeholder="__('email address')"
+                          v-model="form.email" />
+                        <label class="focus-label">{{ __("email address") }}</label>
+                      </div>
+                      <div v-if="errors.email" class="text-danger text-end px-md-5">
+                        <span>{{ errors.email }}</span>
+                      </div>
+
+                      <!-- Password -->
+                      <div class="mb-3 form-focus">
+                        <input type="password" class="form-control floating" v-model="form.password"
+                          :placeholder="__('password')" />
+                        <label class="focus-label">{{ __("password") }}</label>
+                      </div>
+                      <div v-if="errors.password" class="text-danger text-end px-md-5">
+                        <span>{{ errors.password }}</span>
+                      </div>
+
+                      <!-- Forgot Password -->
+                      <div class="text-end">
+                        <Link class="forgot-link" :href="route('forgot_password')">
+                        {{ __("Forgot Password ?") }}
+                        </Link>
+                      </div>
+
+                      <!-- Submit Button -->
+                      <button class="btn btn-primary w-full btn-lg login-btn"
+                        :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+                        <SpinnerLoader v-if="form.processing" />
+                        {{ __("login") }}
+                      </button>
+
+                      <!-- Or separator -->
+                      <div class="login-or my-4 text-center">
+                        <span class="or-line"></span>
+                        <span class="span-or">or</span>
+                      </div>
+
+                      <!-- Social Logins -->
+                      <div class="text-center">
+                        <div class="row social-login">
+                          <div class="col-6 mb-2">
+                            <Link :href="route('social_redirect', {
+                              provider: 'facebook',
+                              login_as: this.form.login_as,
+                            })" class="btn btn-facebook w-100 d-flex align-items-center justify-content-center gap-2">
+                            <Icon icon="line-md:facebook" width="18" height="18" />
+                            <span>Login</span>
+                            </Link>
+                          </div>
+                          <div class="col-6 mb-2">
+                            <Link :href="route('social_redirect', {
+                              provider: 'google',
+                              login_as: this.form.login_as,
+                            })" class="btn btn-google w-100 d-flex align-items-center justify-content-center gap-2">
+                            <Icon icon="flowbite:google-solid" width="18" height="18" />
+                            <span>Login</span>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Register Link -->
+                      <div class="d-grid gap-2">
+                        <div class="text-end mb-0 ">
+                          <div class="forgot-link">
+                            <span>Don’t have an account?</span>
+                            <Link :href="route('register', { tab: 'patient' })" class="reg-link ms-1 text-capitalize">
+                            {{ __("register") }}
+                            </Link>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    </form>
                   </div>
-                  <form @submit.prevent="submit">
-                    <validation-errors class="mb-3" />
-                    <div class="mb-3 form-focus">
-                      <input type="email" class="form-control floating" :placeholder="__('email address')"
-                        v-model="form.email" />
-                      <label class="focus-label">{{
-                        __("email address")
-                      }}</label>
-                    </div>
-                    <div v-if="this.errors.email" class="error-validation text-danger text-end px-md-5">
-                      <span>{{ this.errors.email }}</span>
-                    </div>
-                    <div class="mb-3 form-focus">
-                      <input type="password" class="form-control floating" id="pass_log_log" v-model="form.password"
-                        name="password" :placeholder="__('password')">
-                      <label class="focus-label">{{
-                        __("password")
-                      }}</label>
-                    </div>
-                    <div v-if="this.errors.password" class="error-validation text-danger text-end px-md-5">
-                      <span>{{ this.errors.password }}</span>
-                    </div>
-                    <div class="text-end">
-                      <Link class="forgot-link" :href="route('forgot_password')">{{ __("Forgot Password ?") }}
-                      </Link>
-
-                      <!-- <a class="" href="forgot-password.html">Forgot Password ?</a> -->
-                    </div>
-                    <button class="btn btn-primary w-100 btn-lg login-btn" :class="{ 'text-white-50': form.processing }"
-                      :disabled="form.processing">
-                      <SpinnerLoader v-if="form.processing" />
-                      {{ __("login") }}
-                      <!-- <img src="@/images/icons/loginbtnicon.png" class="ms-2" width="30" alt="" /> -->
-                    </button>
-                    <!-- <button class="btn btn-primary w-100 btn-lg login-btn" type="submit">Login</button> -->
-                    <div class="login-or">
-                      <span class="or-line"></span>
-                      <span class="span-or">or</span>
-                    </div>
-                    <div class="row social-login">
-                      <div class="col-6">
-                        <a href="#" class="btn btn-facebook w-100"><i class="fab fa-facebook-f me-1"></i> Login</a>
-                      </div>
-                      <div class="col-6">
-                        <a href="#" class="btn btn-google w-100"><i class="fab fa-google me-1"></i> Login</a>
-                      </div>
-                    </div>
-                    <div class="text-center dont-have">Don’t have an account?
-                      <Link :href="route('register', { tab: 'patient' })" class="reg-link ms-1 text-capitalize">{{
-                        __("register") }}
-                      </Link>
-                    </div>
-
-                    <!-- <div class="col-md-12 text-center my-3">
-                    <p class="mb-0 fs-3 fw-normal">
-                      {{ __("Don’t have an account?") }}?
-                      <Link :href="route('register', { tab: 'patient' })" class="link ms-1 text-capitalize">{{
-                      __("register") }}
-                      </Link>
-                    </p>
-                  </div> -->
-                    <!-- <div class="text-center dont-have">Don’t have an account? <a href="register.html">Register</a></div> -->
-                  </form>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
-
-
-
 </template>
 <script>
 import { defineComponent } from "vue";
@@ -110,6 +118,7 @@ import Label from "@/Components/Label.vue";
 import ValidationErrors from "@/Components/ValidationErrors.vue";
 import SpinnerLoader from "@/Components/Shared/SpinnerLoader.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
+import { Icon } from "@iconify/vue";
 
 export default defineComponent({
   components: {
@@ -120,6 +129,7 @@ export default defineComponent({
     Label,
     ValidationErrors,
     Link,
+    Icon
   },
 
   props: {
@@ -233,17 +243,7 @@ export default defineComponent({
   color: #6c757d;
 }
 
-/* .login-btn {
-  width: 100%;
-  font-size: 1.125rem;
-  font-weight: bold;
-  border-radius: 1rem;
-  padding: 0.875rem 1.5rem;
-  color: #fff;
-  border: none;
-  box-shadow: 0 4px 12px rgba(220, 53, 108, 0.3);
-  transition: all 0.3s ease;
-} */
+.btn:hover {
+  background-color: transparent !important;
+}
 </style>
-
-

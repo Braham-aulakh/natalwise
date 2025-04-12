@@ -32,7 +32,7 @@
                     <div class="flex items-right">
                       <ul class="nav gap-3 nav-tabs justify-content-center" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation" v-if="tab === 'doctor'">
-                          <button class="rounded-3 px-4 py-2 color-pink"
+                          <button class="rounded-3  py-2 color-pink"
                             :class="tab === 'patient' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-800'"
                             @click.prevent="changeTab('patient', 0)" type="button" role="tab"
                             aria-selected="tab === 'patient'">
@@ -40,7 +40,7 @@
                           </button>
                         </li>
                         <li class="nav-item" role="presentation" v-else-if="tab === 'patient'">
-                          <button class="rounded-3 px-4 py-2 color-pink"
+                          <button class="rounded-3  py-2 color-pink"
                             :class="tab === 'doctor' ? 'bg-pink-500 text-white' : 'bg-gray-200 text-gray-800'"
                             @click.prevent="changeTab('doctor', 1)" type="button" role="tab"
                             aria-selected="tab === 'doctor'">
