@@ -14,18 +14,23 @@
     </section>
     <ExploreStart></ExploreStart>
     <WhyChooseUs></WhyChooseUs>
+     <!-- OUR EXperts -->
+    <spotlight-doctor-section></spotlight-doctor-section>
+    <HowItWorksSection></HowItWorksSection>
     <!-- <home-statistics-bar></home-statistics-bar> -->
 
-    <!-- OUR EXperts -->
-    <spotlight-doctor-section></spotlight-doctor-section>
+   
 
     <!-- How it Works 4 Easy Steps to Get the  Right Solution -->
 
+<!-- <OurBlog></OurBlog> -->
     <!-- Our Blog -->
 
     <!-- App Section -->
 
-    <div class="section bg-primary student-app mt-5">
+    <div class="section pink-bg student-app mt-5">
+  
+
       <div class="container">
         <div class="row">
           <div class="col-lg-4 position-relative">
@@ -63,65 +68,54 @@
               </div>
 
               <div class="d-flex align-items-start flex-lg-row flex-column mt-3">
-                <a href="#" v-if="
-                  getPageContent('app_section_play_btn_text') != '' &&
-                  getPageContent('app_section_play_btn_text') != null
-                "
-                  class="btn bg-white rounded-4 border border-secondary border-3 px-4 d-flex align-items-center me-3 mb-2 mb-md-0"
-                  style="height: 70px">
-                  <img src="@/images/icons/playstore.png" width="40" class="me-2" />
-                  <!-- <i class="bi bi-google-play fs-1 me-3"></i> -->
-                  <div class="d-flex flex-column align-items-start">
-                    <div v-if="
-                      getPageContentType('app_section_play_btn_text') ==
-                      'textarea'
-                    ">
-                      <div class="text-start" v-html="getPageContent('app_section_play_btn_text')"></div>
-                    </div>
-                    <div v-else-if="
-                      getPageContentType('app_section_play_btn_text') ==
-                      'text'
-                    ">
-                      <p>
-                        {{ getPageContent("app_section_play_btn_text") ?? "-" }}
-                      </p>
-                    </div>
-                    <div v-else>
-                      <span class="btn-label">{{ __("Get it on") }}</span>
-                      <span class="btn-caption">{{ __("Google Store") }}</span>
-                    </div>
-                  </div>
-                </a>
+<a
+  href="#"
+  v-if="
+    getPageContent('app_section_play_btn_text') != '' &&
+    getPageContent('app_section_play_btn_text') != null
+  "
+  class="btn pink-btn rounded-4 border border-secondary border-3 px-4 d-flex align-items-center me-3 mb-2 mb-md-0"
+  style="height: 70px; background-color: #F4A0B2;"
+>
+  <img src="@/images/icons/playstore.png" width="40" class="me-2" />
+  <div class="d-flex flex-column align-items-start">
+    <div v-if="getPageContentType('app_section_play_btn_text') == 'textarea'">
+      <div class="text-start" v-html="getPageContent('app_section_play_btn_text')"></div>
+    </div>
+    <div v-else-if="getPageContentType('app_section_play_btn_text') == 'text'">
+      <p>{{ getPageContent("app_section_play_btn_text") ?? "-" }}</p>
+    </div>
+    <div v-else>
+      <span class="btn-label">{{ __("Get it on") }}</span>
+      <span class="btn-caption">{{ __("Google Store") }}</span>
+    </div>
+  </div>
+</a>
 
-                <a v-if="
-                  getPageContent('app_section_app_store_btn_text') != '' &&
-                  getPageContent('app_section_app_store_btn_text') != null
-                " href="#"
-                  class="btn bg-white rounded-4 border border-secondary border-3 px-4 d-flex align-items-center"
-                  style="height: 70px">
-                  <i class="bi bi-apple fs-1 me-3"></i>
-                  <div v-if="
-                    getPageContentType('app_section_app_store_btn_text') ==
-                    'textarea'
-                  ">
-                    <div class="text-start" v-html="getPageContent('app_section_app_store_btn_text')"></div>
-                  </div>
-                  <div v-else-if="
-                    getPageContentType('app_section_app_store_btn_text') ==
-                    'text'
-                  ">
-                    <p>
-                      {{
-                        getPageContent("app_section_app_store_btn_text") ?? "-"
-                      }}
-                    </p>
-                  </div>
-                  <div v-else>
-                    <span class="btn-label">{{ __("Download on the") }}</span>
-                    <span class="btn-caption">{{ __("App Store") }}</span>
-                  </div>
-                </a>
-              </div>
+<a
+  v-if="
+    getPageContent('app_section_app_store_btn_text') != '' &&
+    getPageContent('app_section_app_store_btn_text') != null
+  "
+  href="#"
+  class="btn pink-btn rounded-4 border border-secondary border-3 px-4 d-flex align-items-center"
+  style="height: 70px; background-color: #F4A0B2;"
+>
+  <i class="bi bi-apple fs-1 me-3"></i>
+  <div v-if="getPageContentType('app_section_app_store_btn_text') == 'textarea'">
+    <div class="text-start" v-html="getPageContent('app_section_app_store_btn_text')"></div>
+  </div>
+  <div v-else-if="getPageContentType('app_section_app_store_btn_text') == 'text'">
+    <p>{{ getPageContent("app_section_app_store_btn_text") ?? "-" }}</p>
+  </div>
+  <div v-else>
+    <span class="btn-label">{{ __("Download on the") }}</span>
+    <span class="btn-caption">{{ __("App Store") }}</span>
+  </div>
+</a>
+
+</div>
+
             </div>
           </div>
         </div>
@@ -236,7 +230,8 @@ import ContentSlider from "../Components/ContentSlider.vue";
 import CardSkeleton from "../Components/Skeleton/CardSkeleton.vue";
 import ExploreStart from "./ExploreStart.vue";
 import WhyChooseUs from './ourCommitment.vue';
-
+import HowItWorksSection from '../Components/worksection.vue';
+// import OurBlog from '../Components/ourblog.vue';
 
 
 export default defineComponent({
@@ -253,6 +248,8 @@ export default defineComponent({
     Modal,
     AppLayout,
 WhyChooseUs,
+HowItWorksSection,
+// OurBlog,
     CardSkeleton,
     FindDoctorBar,
     FindClinicBar,

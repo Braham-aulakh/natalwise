@@ -98,7 +98,7 @@
 
       <div class="row pt-md-5 justify-content-center">
         <div class="col-md-3 d-flex justify-content-center">
-          <Link
+  <Link
   :href="route('doctors.listing')"
   class="btn reg-btn pink-btn d-flex align-items-center gap-1"
 >

@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'shink';
+  src: url('@/../fonts/shink.ttf') format('truetype'); /* adjust if needed */
+  font-weight: normal;
+  font-style: normal;
+}
