@@ -19,35 +19,40 @@
           alt="doctor"
         />
 
-        <span
+        <!-- <span
           class="d-flex align-items-center mx-1 position-absolute end-0 p-3"
         >
           <img
             v-if="doctor.is_featured"
             src="@/images/icons/medal.svg"
             width="30"
-            class="mt-2"
+             class="mt-2 featured-icon"
             alt="featured"
+            
           />
-        </span>
+        </span> -->
 
         <div class="left-side">
           <div class="socialhvr">
-            <a
-              class="icon-container"
-              target="_blank"
-              v-if="doctor.doctor_settings.facebook_url"
-              :href="doctor.doctor_settings.facebook_url"
-              ><i
-                class="bi bi-facebook text-white"
-                :class="doctortab ? 'ms-1' : 'ms-0'"
-              ></i
-            ></a>
+          <a
+  class="icon-container"
+  target="_blank"
+  v-if="doctor.doctor_settings.facebook_url"
+  :href="doctor.doctor_settings.facebook_url"
+  style="background-color: #E06B8D"
+>
+  <i
+    class="bi bi-facebook text-white"
+    :class="doctortab ? 'ms-1' : 'ms-0'"
+  ></i>
+</a>
+
             <a
               class="icon-container"
               target="_blank"
               v-if="doctor.doctor_settings.twitter_url"
               :href="doctor.doctor_settings.twitter_url"
+               style="background-color: #E06B8D"
               ><i
                 class="bi bi-twitter text-white"
                 :class="doctortab ? 'ms-1' : 'ms-0'"
@@ -58,6 +63,7 @@
               target="_blank"
               v-if="doctor.doctor_settings.linkedin_url"
               :href="doctor.doctor_settings.linkedin_url"
+               style="background-color: #E06B8D"
               ><i
                 class="bi bi-linkedin text-white"
                 :class="doctortab ? 'ms-1' : 'ms-0'"

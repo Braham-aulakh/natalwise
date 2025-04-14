@@ -1164,3 +1164,29 @@ background-color: #fbf2ed;
     overflow: hidden;
   }
   
+  .carousel .carousel__prev,
+.carousel .carousel__next {
+  background-color: #fdeeea;
+  transition: 0.5s;
+}
+
+.carousel .carousel__prev:hover,
+.carousel .carousel__prev:focus,
+.carousel .carousel__next:hover,
+.carousel .carousel__next:focus {
+  background-color: #e06b8d !important;
+}
+
+.btn.reg-btn.pink-btn {
+  background-color: #E06B8D !important;
+  border-color: #E06B8D !important;
+  color: #fff !important;
+  transition: all 0.3s ease; /* Matches default */
+}
+
+.btn.reg-btn.pink-btn:hover,
+.btn.reg-btn.pink-btn:focus {
+  background-color: #d35b7e !important; /* Slightly darker pink */
+  border-color: #d35b7e !important;
+  color: #fff !important;
+}
