@@ -156,5 +156,3 @@ export default {
 };
 </script>
 
-<style src="./addMain.css"></style>
-
