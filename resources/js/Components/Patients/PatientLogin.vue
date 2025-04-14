@@ -4,7 +4,7 @@
       <div class="row  justify-content-center">
         <!-- Left Image Section -->
         <div class="col-md-7 col-lg-6 login-left">
-          <img class="img-fluid max-w-full" src="../../images/icons/login-banner.png" alt="Image" />
+          <img class="img-fluid max-w-full" src="../../../../public/images/homes/Patient-Register.jpg" alt="Image" />
         </div>
 
         <!-- Right Login Form Section -->

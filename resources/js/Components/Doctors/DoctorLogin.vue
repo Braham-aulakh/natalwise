@@ -2,7 +2,7 @@
 <div class=" container-fluid flex gap-4 ">
     <div class="w-full ">
       <div class="col-md-6 flex justify-right ">
-        <img class="img-fluid" src="../../images/icons/login-banner.png" alt="Image" />
+        <img class="img-fluid" src="../../../../public/images/homes/Patient-Register.jpg" alt="Image" />
       </div>
     </div>
     <div
