@@ -145,60 +145,6 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.bar-search-doctor {
-  background-color: #fefefe;
-  padding: 2rem 0;
-}
-
-.advice-p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
-}
-
-.btn.log-btn {
-  background-color: #fc9fbc;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn.log-btn:hover {
-  background-color: #ff77a9;
-}
-
-.advic-headings {
-  font-family: montserrat;
-  font-size: 35px !important;
-  font-weight: 500 !important;
-}
-
-.advice-p {
-  font-size: 18px;
-  font-family: montserrat;
-  text-align: right;
-}
-
-/* .search_section {
-  padding: 50px 0;
-} */
-.advic-cont.aos.aos-init.aos-animate {
-  padding: 0 70px;
-}
-
-.search_bar {
-  width: 100%;
-  max-width: 960px;
-  padding: 0 30px;
-  /* display: flex; */
-  justify-content: center;
-  margin: 0 auto;
-}
-</style>
 
 
 
