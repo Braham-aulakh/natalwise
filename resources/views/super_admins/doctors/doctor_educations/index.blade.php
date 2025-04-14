@@ -26,7 +26,7 @@ Doctor Educations
             </div>
             <div class="col-md-5">
                 <div class="d-flex justify-content-start justify-content-md-end">
-                    <a href="{{ route('super_admin.doctor_educations.create' , $doctor->id) }}" class="btn btn-secondary  ml-2">
+                    <a href="{{ route('super_admin.doctor_educations.create' , $doctor->id) }}" class="btn ml-2" style="background-color:#FC9FBC !important; color :white !important ; ">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i><span class="ml-2">Add Doctor Educations</span>
                     </a>
 

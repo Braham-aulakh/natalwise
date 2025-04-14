@@ -1,9 +1,11 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; {{ date('Y') }} <a style="color: #3784A6" href="#">CareConnect</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
+   <div style="color: black" style="text-align:center;"> 
+    <p> Copyright &copy; {{ date('Y') }} <a style="color: #FC9FBC" href="#">Natal Wise</a>.
+    All rights reserved.</p>
+    <!-- <div class="float-right d-none d-sm-inline-block">
         <b>Version</b>{{ $application_current_version->value ?? '1.0.0' }}
-    </div>
+    </div> -->
+</div>
 </footer>
 
 <!-- Control Sidebar -->

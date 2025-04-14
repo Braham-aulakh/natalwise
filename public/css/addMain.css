@@ -1160,8 +1160,35 @@ background-color: #fbf2ed;
     left: 0;
     width: 100%;
     height: 0;
-    background-color: #e06b8d !important;
+    background-color: #FC9FBC !important;
     transition: height 0.3s ease-in-out; /* Add transition effect */
     overflow: hidden;
   }
-  
+  .sidebar-mini .main-sidebar .nav-link-active{
+    background:#FC9FBC !important ;
+  }
+  [class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link-active {
+    background-color: #FC9FBC !important;
+}
+.navbar-white{
+    background-color:#fbf2ed !important ;
+}
+.navbar-light{
+    background-color:#fbf2ed !important ;
+}
+.btn .add_btn{
+    background-color:#FC9FBC !important ;
+    color: white !important;
+}
+.dropdown-item.active{
+    background-color:#FC9FBC  !important ;
+}
+.main-footer{
+        background-color: #fff;
+        border-top: 1px solid #dee2e6;
+        color: #869099;
+        padding: 1rem;
+        justify-content: space-between;
+        display: flex;
+        text-align: center;
+}

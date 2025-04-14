@@ -1,6 +1,6 @@
 <template>
     <AppLayout title="Bank">
-        <div class="bg-primary">
+        <div class="Top-Border">
             <pages-heading :textwhite="'true'" :heading="'Bank Accounts'"></pages-heading>
         </div>
         <div class="stats">

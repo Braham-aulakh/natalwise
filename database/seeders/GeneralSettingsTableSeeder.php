@@ -596,7 +596,7 @@ class GeneralSettingsTableSeeder extends Seeder
                 'id' => 61,
                 'name' => 'dark_logo',
                 'display_name' => 'Dark Logo',
-                'value' => '/images/settings/dark_logo.png',
+                'value' => '/images/settings/logo.png',
                 'is_specific' => 0,
                 'is_multilang' => 0,
                 'type' => 'image',

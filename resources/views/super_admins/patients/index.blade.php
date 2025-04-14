@@ -33,7 +33,7 @@ Patients
                     <button type="button" class="btn btn-light mx-2" data-toggle="modal" data-target="#importModal">
                         <i class="fa fa-download" aria-hidden="true"></i><span class="ml-2">Import</span>
                     </button>
-                    <a href="{{ route('super_admin.patients.create') }}" class="btn btn-secondary">
+                    <a href="{{ route('super_admin.patients.create') }}" class="btn" style="background-color:#FC9FBC !important; color :white !important ; "> 
                         <i class="fa fa-plus-circle" aria-hidden="true"></i><span class="ml-2">Add</span> </a>
                     <x-super-admin.import-modal importUrl="{{ route('super_admin.patients.import') }}">
 

@@ -1,7 +1,7 @@
 <template>
     <app-layout title="Wallet">
         <template #default>
-            <div class="bg-primary">
+            <div class="Top-Border">
                 <pages-heading :textwhite="'true'" :heading="'wallet'" :breadcrums="breadcrums">
                 </pages-heading>
             </div>
@@ -9,7 +9,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card bg-primary w-100 rounded-20 mt-5 position-relative">
+                            <div class="card Top-Border w-100 rounded-20 mt-5 position-relative">
                                 <img src="@/images/icons/waves.svg" class="position-absolute"
                                     style="right: 0; top: 85px" alt="" />
                                 <div class="card-body">
@@ -18,17 +18,17 @@
                                             <div class="d-flex align-items-center gap-3">
                                                 <div class="img-card rounded-circle d-flex align-items-center justify-content-center"
                                                     style="width: 110px;height: 102px;">
-                                                    <h1 class="display-5" style="color: #ffb703;">{{ getDefaultCurrencySymbol()}}</h1>
+                                                    <h1 class="display-5" style="color:white;">{{ getDefaultCurrencySymbol()}}</h1>
                                                 </div>
                                                 <div class="d-flex flex-column">
-                                                    <h6 class="fs-3 text-white fw-normal">
+                                                    <h6 class="fs-3 text-blue fw-normal">
                                                         {{ __("My Balance") }}
                                                     </h6>
-                                                    <h3 class="fs-1 text-white fw-bold">
+                                                    <h3 class="fs-1 text-blue fw-bold">
                                                         {{ getDefaultCurrencySymbol()
                                                         }}{{ current_balance }}
                                                     </h3>
-                                                    <h6 class="fs-3 text-white fw-normal">
+                                                    <h6 class="fs-3 text-blue fw-normal">
                                                         {{ __("Show account balance in") }}
                                                         <span style="color: #fec738">{{getDefaultCurrencyName() ?? ''}}</span>
                                                     </h6>
@@ -44,16 +44,18 @@
                                                 " class="btn bg-white text-primary fs-3 rounded-4 shadow-find px-4 fw-bold btn1 d-flex align-items-center"
                                                     data-bs-toggle="modal" :data-bs-target="'#withdrawAmountModal'"
                                                     :disabled="current_balance == 0">
+                                                    <Icon icon="zondicons:add-solid" width="12" height="12"  style="color: #fc9fbc " />
                                                     <img class="w2-icon me-2" src="@/images/icons/tick.svg"
                                                         alt="wallet-icon" />
                                                     {{ __("Withdraw") }}
                                                 </button>
                                                 <button v-if="$page.props.auth.logged_in_as == 'patient'"
-                                                    class="btn bg-white text-primary fs-3 rounded-4 shadow-find px-4 fw-bold btn1 d-flex align-items-center"
+                                                    class="btn bg-white text-blue fs-3 rounded-4 px-4 fw-bold btn1 d-flex align-items-center gap-2"
                                                     @click="renderCarousal" data-bs-toggle="modal"
                                                     :data-bs-target="'#walletAddModal'">
-                                                    <img class="w2-icon me-2" src="@/images/icons/tick.svg"
-                                                        alt="wallet-icon" />
+                                                    <Icon icon="zondicons:add-solid" width="24" height="24"  style="color: #fc9fbc " />
+                                                    <!-- <img class="w2-icon me-2" src="@/images/icons/tick.svg"
+                                                        alt="wallet-icon" /> -->
                                                     {{ __("Add top up") }}
                                                 </button>
                                             </div>
@@ -345,7 +347,7 @@
                                                                 form.gateway == gateway.code,
                                                         }" @click="this.form.gateway = gateway.code">
                                                             <img class="" :src="gateway.image" :alt="gateway.name" />
-                                                            <h5 class="">{{ gateway.name }}</h5>
+                                                            <p class="text-lg font-semibold">{{ gateway.name }}</p>
                                                         </div>
                                                     </Slide>
                                                     <template #addons>
@@ -449,6 +451,7 @@ import RoutePaginationMixin from "@/Mixins/RoutePaginationMixin.vue";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import PagesHeading from "@/Components/PagesHeading.vue";
 import Modal from "@/Components/Modal.vue";
+import { Icon } from "@iconify/vue";
 export default defineComponent({
     components: {
         Head,
@@ -461,6 +464,7 @@ export default defineComponent({
         Pagination,
         Navigation,
         PagesHeading,
+        Icon
     },
     props: [
         "current_balance",
@@ -606,5 +610,17 @@ table td {
 
 table th {
     vertical-align: middle;
+}
+.img-card{
+background-color:#fc9fbc;
+}
+.carousel__icon {
+    width: 23px !important;
+    height: 23px !important;
+    fill: black;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: white;
+    background-color: #fb90b1;
 }
 </style>

@@ -4,7 +4,7 @@
         <record-not-found></record-not-found>
       </div>
 
-      <div class="row mt-5">
+      <div class="row mt-3">
 
         <div
           v-for="(group, dateIndex) in groupedAppointments"
@@ -12,7 +12,7 @@
           class="col-lg-12 mb-3"
         >
 
-          <div class="fs-3 fw-bold mb-4 ms-5">
+          <div class="fs-3 fw-bold mb-2 ms-2">
             {{ dateIndex === 0 && isTodayMatched(group[0].date) ? 'Latest' : formatDate(group[0].date) }}
           </div>
 
@@ -20,7 +20,7 @@
           <div
             v-for="(appointment, index) in group"
             :key="index"
-            class="card rounded-6 shadow-none px-4 py-2 border-primary border mb-4"
+            class="card rounded-6 shadow-none px-4 py-2 border-borderColor border mb-4"
           >
             <div class="card-body p-0">
               <div class="row align-items-center">
@@ -30,7 +30,7 @@
 
                       <div
                         class="rounded-circle ms-1 overflow-hidden"
-                        style="width: 105px; height: 105px"
+                        style="width: 70px; height: 70px"
                       >
                         <img
                           v-if="appointment.doctor_image"
@@ -79,7 +79,8 @@
 
                    <div class="d-flex align-items-center justify-content-md-around justify-content-between">
                     <span class="d-flex align-items-center gap-2" v-if="appointment.appointment_type == 'video'">
-                        <i class="bi bi-play-circle-fill text-primary fs-2"></i>
+                        <!-- <i class="bi bi-play-circle-fill text-primary fs-2"></i> -->
+                        <Icon icon="ic:baseline-play-circle" width="32" height="32"  style="color: #fc9fbc " />
                         <h5 class="fs-3 mb-0">{{ __('Video Call') }}</h5>
                     </span>
                     <span class="d-flex align-items-center gap-2" v-else-if="appointment.appointment_type == 'audio'">
@@ -124,12 +125,13 @@
   import { defineComponent } from "vue";
   import { Head, Link } from "@inertiajs/inertia-vue3";
   import RecordNotFound from "../Shared/RecordNotFound.vue";
-
+  import { Icon } from "@iconify/vue";
   export default defineComponent({
     components: {
       Head,
       Link,
       RecordNotFound,
+      Icon
     },
     props: ["appointments"],
     data() {

@@ -34,7 +34,7 @@
                         <button type="button" class="btn btn-light ml-2" data-toggle="modal" data-target="#importModal">
                             <i class="fa fa-download" aria-hidden="true"></i><span class="ml-2">Import</span>
                         </button>
-                        <a href="{{ route('super_admin.doctors.create') }}" class="btn btn-secondary  ml-2">
+                        <a href="{{ route('super_admin.doctors.create') }}" class="btn ml-2" style="background-color:#FC9FBC !important; color :white !important ; " >
                             <i class="fa fa-plus-circle" aria-hidden="true"></i><span class="ml-2">Add</span></a>
                         <x-super-admin.import-modal importUrl="{{ route('super_admin.doctors.import') }}">
 

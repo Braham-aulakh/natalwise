@@ -13,14 +13,12 @@
             </div>
         </div>
     </div>
-
-
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-3">
                     <div class="card small-box h-100 py-4 "
-                        style="background-color: var(--primary);height: 240px !important;
+                        style="background-color: #FC9FBC !important ;height: 240px !important;
                     border-radius: 30px;">
                         <div class="card-body d-flex justify-content-center align-items-center h-100">
                             <div class="d-flex justify-content-start flex-column align-items-start flex-wrap w-100">

@@ -275,7 +275,7 @@
               }}</Link>
 
             </div>
-            <button class="submit btn w-100 fs-2 fw-bold rounded-4 shadow-find btn-primary"
+            <button class="submit btn w-100 fs-2 fw-bold rounded-4 btn-primary"
               :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
               <SpinnerLoader v-if="form.processing" />
               {{ __("Signup") }}

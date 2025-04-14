@@ -1,87 +1,51 @@
 <template>
-  <section>
+  <div class="stats">
     <div class="Top-Border">
-      <pages-heading
-        :textwhite="'true'"
-        :heading="'my services'"
-        :breadcrums="breadcrums"
-      ></pages-heading>
+      <pages-heading :textwhite="'true'" :heading="'My services DSD'" :breadcrums="breadcrums"></pages-heading>
     </div>
-    <div class="stats ">
-      <div class="container mt-md-5 p-md-0">
-        <div class="row align-items-center">
-          <div class="col-md-7">
-            <div
-              class="nav nav-pills appoint-navs gap-2 gap-md-3 fs-4 fw-bold"
-              id="v-pills-tab"
-              role="tablist"
-              aria-orientation="vertical"
-            >
-              <li
-                class="nav-item"
-                role="presentation"
-                @click="() => (currentTab = appIndex)"
-                v-for="(status, appIndex) in service_statuses"
-                :key="appIndex"
-              >
-                <button
-                  class="nav-link text-dark"
-                  :class="{
-                    active: currentTab === appIndex,
-                  }"
-                  :id="'pills-appointment-tab-' + appIndex"
-                  data-bs-toggle="pill"
-                  :data-bs-target="'#pills-home-' + appIndex"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-pending"
-                  aria-selected="true"
-                  @click="getPaginatedData(false, status.status_code)"
-                >
-                  <div>{{ __(status.display_name) }}</div>
-                </button>
-              </li>
-            </div>
+    <div class="container mt-md-5 p-md-0">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <div class="nav nav-pills appoint-navs gap-2 gap-md-3 fs-4 fw-bold" id="v-pills-tab" role="tablist"
+            aria-orientation="vertical">
+            <li class="nav-item" role="presentation" @click="() => (currentTab = appIndex)"
+              v-for="(status, appIndex) in service_statuses" :key="appIndex">
+              <button class="nav-link text-dark" :class="{
+                active: currentTab === appIndex,
+              }" :id="'pills-appointment-tab-' + appIndex" data-bs-toggle="pill"
+                :data-bs-target="'#pills-home-' + appIndex" type="button" role="tab" aria-controls="pills-pending"
+                aria-selected="true" @click="getPaginatedData(false, status.status_code)">
+                <div>{{ __(status.display_name) }}</div>
+              </button>
+            </li>
           </div>
-          <div class="col-md-5 right-side-bars p-md-0">
-            <div
-              class="d-flex mt-3 mt-md-0 gap-3 align-items-md-center flex-column flex-md-row"
-            >
-              <select
-                v-model="filter.column"
-                class="form-select shadow-none rounded-4 fs-3 text-black border-primary border"
-                aria-label="Select Filter"
-              >
-                <option value selected>
-                  {{ __("select") }}
-                  {{ __("filter") }}
-                </option>
-                <option v-for="col in this.columns" :key="col.id" :value="col.value">
-                  {{ col.name }}
-                </option>
-              </select>
-              <div v-if="filter.column == 'date'" class="form-group me-md-2">
-                <input
-                  type="date"
-                  v-model="filter.search"
-                  class="w-100 shadow-none rounded-4 border border-primary form-control px-3"
-                />
-              </div>
-              <div v-else-if="filter.column == 'start_time'" class="form-group me-2">
-                <input
-                  type="time"
-                  v-model="filter.search"
-                  class="w-100 shadow-none rounded-4 border border-primary form-control px-3"
-                />
-              </div>
-              <div v-else-if="filter.column == 'end_time'" class="form-group me-2">
-                <input
-                  type="time"
-                  v-model="filter.search"
-                  class="w-100 shadow-none rounded-4 border border-primary form-control px-3"
-                />
-              </div>
-              <!-- <div
+        </div>
+        <div class="col-md-5 right-side-bars p-md-0">
+          <div class="d-flex mt-3 mt-md-0 gap-3 align-items-md-center flex-column flex-md-row">
+            <select v-model="filter.column"
+              class="form-select shadow-none rounded-4 fs-3 text-black border-primary border"
+              aria-label="Select Filter">
+              <option value selected>
+                {{ __("select") }}
+                {{ __("filter") }}
+              </option>
+              <option v-for="col in this.columns" :key="col.id" :value="col.value">
+                {{ col.name }}
+              </option>
+            </select>
+            <div v-if="filter.column == 'date'" class="form-group me-md-2">
+              <input type="date" v-model="filter.search"
+                class="w-100 shadow-none rounded-4 border border-primary form-control px-3" />
+            </div>
+            <div v-else-if="filter.column == 'start_time'" class="form-group me-2">
+              <input type="time" v-model="filter.search"
+                class="w-100 shadow-none rounded-4 border border-primary form-control px-3" />
+            </div>
+            <div v-else-if="filter.column == 'end_time'" class="form-group me-2">
+              <input type="time" v-model="filter.search"
+                class="w-100 shadow-none rounded-4 border border-primary form-control px-3" />
+            </div>
+            <!-- <div
                 v-else-if="filter.column == 'is_paid'"
                 class="form-group me-2"
               >
@@ -95,48 +59,35 @@
                   <option value="0">{{ __("No") }}</option>
                 </select>
               </div> -->
-              <div v-else class="form-group me-md-1">
-                <input
-                  v-model="filter.search"
-                  class="w-100 fs-3 shadow-none form-control rounded-4 px-3 border-primary border"
-                  style="width: 300px"
-                  :placeholder="__('search')"
-                  type="text"
-                />
-              </div>
+            <div v-else class="form-group me-md-1">
+              <input v-model="filter.search"
+                class="w-100 fs-3 shadow-none form-control rounded-4 px-3 border-primary border" style="width: 300px"
+                :placeholder="__('search')" type="text" />
+            </div>
 
-              <div>
-                <button
-                  type="button"
-                  class="btn btn-primary d-flex px-4 rounded-4 me-2 w-100 fs-3"
-                  @click="getPaginatedData(false)"
-                >
-                  {{ __("search") }}
-                  <img
-                    src="@/images/icons/loginbtnicon.png"
-                    width="30"
-                    class="ms-3"
-                    alt=""
-                  />
-                </button>
-              </div>
+            <div>
+              <button type="button" class="btn btn-primary d-flex px-4 rounded-4 me-2 w-100 fs-3"
+                @click="getPaginatedData(false)">
+                {{ __("search") }}
+                <img src="@/images/icons/loginbtnicon.png" width="30" class="ms-3" alt="" />
+              </button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="container mt-5" v-if="fetching">
-          <SideTabsPageSkeleton></SideTabsPageSkeleton>
-        </div>
-        <div class="container py-4" v-else>
-          <patient-service-list-card :services="services"></patient-service-list-card>
-          <div class="col-12 mt-4">
-            <TablePagination @onPageChange="onPageChange" :meta="services.meta">
-            </TablePagination>
-          </div>
+      <div class="container mt-5" v-if="fetching">
+        <SideTabsPageSkeleton></SideTabsPageSkeleton>
+      </div>
+      <div class="container py-4" v-else>
+        <patient-service-list-card :services="services"></patient-service-list-card>
+        <div class="col-12 mt-4">
+          <TablePagination @onPageChange="onPageChange" :meta="services.meta" />
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
 </template>
 
 <script>
@@ -246,4 +197,14 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.stats {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container.mt-md-5.p-md-0 {
+  flex: 1;
+}
+</style>

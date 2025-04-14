@@ -1,5 +1,5 @@
 <template>
-    <div class="stats">
+    <div class="stats ">
         <div class="Top-Border">
             <pages-heading :textwhite="'true'" :heading="'appointment detail'" :breadcrums="breadcrums"></pages-heading>
         </div>
@@ -201,7 +201,7 @@
 
                             </div>
 
-                            <div class="row mt-5" v-if="appointment.appointment_status_code == 5 && !userRating">
+                            <div class="row" v-if="appointment.appointment_status_code == 5 && !userRating">
                                 <div class="col-md-6"></div>
                                 <div class="col-md-6 d-flex justify-content-end">
                                     <button type="updatenStatus" class="btn btn-primary rounded-4 px-5"
@@ -252,10 +252,6 @@
             </div>
         </div>
     </div>
-
-
-
-
 </template>
 
 <script>
