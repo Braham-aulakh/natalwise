@@ -252,7 +252,7 @@
         <div class="">
           <div class="d-grid gap-2 mb-3 px-5">
             <button
-              class="submit btn w-100 fs-2 fw-bold rounded-4 shadow-find btn-primary"
+              class="submit btn w-100 fs-2 fw-bold rounded-4 btn-primary"
               :class="{ 'text-white-50': form.processing }"
               :disabled="form.processing"
             >

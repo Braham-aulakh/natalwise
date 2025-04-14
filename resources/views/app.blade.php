@@ -36,13 +36,13 @@
     <script src="https://chatterpal.me/build/js/chatpal.js?8.3"
     integrity="sha384-+YIWcPZjPZYuhrEm13vJJg76TIO/g7y5B14VE35zhQdrojfD9dPemo7q6vnH44FR" crossorigin="anonymous"
     data-cfasync="false"></script>
-    <script>
+    <!-- <script>
     var chatPal = new ChatPal({
         embedId: 'RWvE8Za29KJL',
         remoteBaseUrl: 'https://chatterpal.me/',
         version: '8.3'
     });
-    </script>
+    </script> -->
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
 </body>

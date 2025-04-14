@@ -13,7 +13,7 @@
           <div class="col-md-7">
             <div
               class="nav nav-pills appoint-navs gap-2 gap-md-3 fs-4 fw-bold"
-              id="v-pills-tab"
+              id="v-pills-tab" 
               role="tablist"
               aria-orientation="vertical"
             >

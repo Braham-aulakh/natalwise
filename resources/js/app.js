@@ -1,7 +1,7 @@
 import './bootstrap';
 import "~select2/dist/js/select2.min.js";
 import '../sass/app.scss'
-// import "../../public/css/addMain.css"
+import "../../public/css/addMain.css"
 import 'bootstrap/dist/js/bootstrap.bundle'
 
 
