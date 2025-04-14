@@ -16,13 +16,13 @@
     <WhyChooseUs></WhyChooseUs>
      <!-- OUR EXperts -->
     <spotlight-doctor-section></spotlight-doctor-section>
-    <HowItWorksSection></HowItWorksSection>
+    
     <!-- <home-statistics-bar></home-statistics-bar> -->
 
    
 
     <!-- How it Works 4 Easy Steps to Get the  Right Solution -->
-
+    <HowItWorksSection></HowItWorksSection>
 <!-- <OurBlog></OurBlog> -->
     <!-- Our Blog -->
 

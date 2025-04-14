@@ -7,7 +7,7 @@
           <!-- Left Content -->
           <div class="col-lg-6 text-start">
             <div class="banner-content" data-aos="fade-up">
-              <h1>
+              <h1 class="banner-head">
                 Natalwise: Your <br />
                 All-in-One Wellness Hub<br />
                 for Every female, Every <br />

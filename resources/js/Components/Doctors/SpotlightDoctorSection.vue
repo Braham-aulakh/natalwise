@@ -100,7 +100,7 @@
         <div class="col-md-3 d-flex justify-content-center">
   <Link
   :href="route('doctors.listing')"
-  class="btn reg-btn pink-btn d-flex align-items-center gap-1"
+  class="btn  d-flex align-items-center gap-1 btn reg-btn pink-btn fw-medium fs-3 px-md-5 px-3 rounded-4"
 >
   <span class="button-text">
     {{ getPageContent("general_view_more_btn_text") ?? __("view more") }}

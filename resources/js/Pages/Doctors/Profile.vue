@@ -553,11 +553,11 @@
               </div> -->
             <div class="col-md-5">
               <div
-                class="card py-md-5 px-md-4 px-2 bg-primary"
+                class="card py-md-3 px-2 pink-bg"
                 style="position: sticky; top: 120px"
               >
                 <div class="card-body mb-2">
-                  <h1 class="text-start text-white mb-5">
+                  <h1 class="text-start text-white mb-4">
                     {{ __("Quick Profile") }}
                   </h1>
                   <div
