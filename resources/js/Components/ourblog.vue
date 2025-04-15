@@ -15,10 +15,18 @@
           </div>
           <div class="blog-grid-content">
             <h4><a href="blog-details.html">How Physiotherapy Can Help During Pregnancy</a></h4>
+             <div class="content-divider"></div>
             <p>Pregnancy is a wonderful phase in the life of a woman...</p>
             <div class="grid-footer">
-              <span><i class="feather-eye"></i>1k views</span>
-              <a href="blog-details.html">Read More<i class="feather-arrow-right-circle"></i></a>
+           <span class="view-count">
+  <Icon icon="feather:eye" width="18" height="18" />
+  1k views
+</span>
+             <a href="blog-details.html">
+  Read More
+  <Icon icon="feather:arrow-right-circle" width="18" height="18" />
+</a>
+
             </div>
           </div>
         </div>
@@ -31,10 +39,18 @@
           </div>
           <div class="blog-grid-content">
             <h4><a href="blog-details.html">What You Need To Know About Food Intolerance</a></h4>
+             <div class="content-divider"></div>
             <p>Have you ever enjoyed a great meal just to find yourself feeling uneasy a while later...</p>
             <div class="grid-footer">
-              <span><i class="feather-eye"></i>850 views</span>
-              <a href="blog-details.html">Read More<i class="feather-arrow-right-circle"></i></a>
+         <span class="view-count">
+  <Icon icon="feather:eye" width="18" height="18" />
+  1k views
+</span>
+     <a href="blog-details.html">
+  Read More
+  <Icon icon="feather:arrow-right-circle" width="18" height="18" />
+</a>
+
             </div>
           </div>
         </div>
@@ -48,9 +64,17 @@
           <div class="blog-grid-content">
             <h4><a href="blog-details.html">Suspecting PCOS? Here’s everything you need to..</a></h4>
             <p>Polycystic Ovary Syndrome or PCOS is one of the most common hormonal disorders affecting women...</p>
+             <div class="content-divider"></div>
             <div class="grid-footer">
-              <span><i class="feather-eye"></i>4.5k views</span>
-              <a href="blog-details.html">Read More<i class="feather-arrow-right-circle"></i></a>
+              <span class="view-count">
+  <Icon icon="feather:eye" width="18" height="18" />
+  1k views
+</span>
+              <a href="blog-details.html">
+  Read More
+  <Icon icon="feather:arrow-right-circle" width="18" height="18" />
+</a>
+
             </div>
           </div>
         </div>
@@ -65,8 +89,15 @@
             <h4><a href="blog-details.html">Adapting Homes for Aging Gracefully: Design Tips for Old Age Comfort</a></h4>
             <p>Explore practical design tips to make living spaces in old age homes adaptable and comfortable...</p>
             <div class="grid-footer">
-              <span><i class="feather-eye"></i>1k views</span>
-              <a href="blog-details.html">Read More<i class="feather-arrow-right-circle"></i></a>
+           <span class="view-count">
+  <Icon icon="feather:eye" width="18" height="18" />
+  1k views
+</span>
+             <a href="blog-details.html">
+  Read More
+  <Icon icon="feather:arrow-right-circle" width="18" height="18" />
+</a>
+
             </div>
           </div>
         </div>
