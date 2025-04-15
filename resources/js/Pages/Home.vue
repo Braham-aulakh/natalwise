@@ -23,7 +23,7 @@
 
     <!-- How it Works 4 Easy Steps to Get the  Right Solution -->
     <HowItWorksSection></HowItWorksSection>
-    <!-- <OurBlog></OurBlog> -->
+<OurBlog></OurBlog>
     <!-- Our Blog -->
 
     <!-- App Section -->
@@ -229,7 +229,7 @@ import CardSkeleton from "../Components/Skeleton/CardSkeleton.vue";
 import ExploreStart from "./ExploreStart.vue";
 import WhyChooseUs from './ourCommitment.vue';
 import HowItWorksSection from '../Components/worksection.vue';
-// import OurBlog from '../Components/ourblog.vue';
+import OurBlog from '../Components/ourblog.vue';
 
 
 export default defineComponent({
@@ -245,9 +245,9 @@ export default defineComponent({
     ContentSlider,
     Modal,
     AppLayout,
-    WhyChooseUs,
-    HowItWorksSection,
-    // OurBlog,
+WhyChooseUs,
+HowItWorksSection,
+OurBlog,
     CardSkeleton,
     FindDoctorBar,
     FindClinicBar,
