@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import url('https://example.com/path-to-shink-font.css');
 
+
 * {
     font-family: Montserrat !important;
 }
@@ -1480,4 +1481,253 @@ h6 {
 } */
 .review-card .card:hover{
     background-color:#ff77a9 !important ;
+}
+/* our blog */
+
+.our-blog-fourteen {
+  position: relative;
+  padding: 80px 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.section-bg img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-height: 300px;
+}
+
+.section-head-fourteen {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-head-fourteen h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-head-fourteen h2 span {
+  color: #f47aa7; /* Pink theme color */
+}
+
+.blog-grid-fourteen {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.blog-grid-fourteen:hover {
+  transform: translateY(-5px);
+}
+
+.blog-grid-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-grid-content {
+  padding: 20px;
+}
+
+.blog-grid-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.blog-grid-content h4 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-grid-content p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.grid-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #999;
+}
+
+.grid-footer a {
+  color: #f47aa7;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.grid-footer a i {
+  margin-left: 5px;
+}
+
+.owl-nav-button {
+  margin-top: 20px;
+}
+
+.owl-prev, .owl-next {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+.owl-prev:hover, .owl-next:hover {
+  background-color: #f0f0f0;
+}
+
+.owl-prev i, .owl-next i {
+  font-size: 20px;
+  color: #333;
+}
+/* how it works */
+.work-section {
+  background-color: #f9fbfd;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #1f2937;
+}
+
+.work-sub {
+  color: #f47aa7;
+  font-family: 'Pacifico', cursive;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.work-img img {
+  border-radius: 16px;
+}
+
+/* Heart container */
+/* Heart container */
+.heart {
+  position: relative;
+ width: 126px;
+    height: 80px; /* Increase the height for larger hearts */
+  background: #fc9fbc;
+  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.7s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin: 15px; /* Add margin for spacing between hearts */
+}
+
+/* Create the bottom "V" of the heart using pseudo-elements */
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 85px; /* Increase the size of the circles */
+  height: 85px; /* Match the height with the width for the circle */
+  background: #fc9fbc;
+  border-radius: 50%; /* Rounded circle shape */
+  top: -42px; /* Position the circles above the heart */
+}
+
+.heart::before {
+  left: -42px; /* Position the left circle */
+}
+
+.heart::after {
+  right: -42px; /* Position the right circle */
+}
+
+/* Icon inside the heart */
+
+
+.work-info h5 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.work-info p {
+  font-size: 15px;
+  margin-bottom: 0;
+  color: #4b5563;
+}
+.owl-nav-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center arrows horizontally */
+  align-items: center;
+}
+.owl-prev:hover,
+.owl-next:hover {
+  background-color: #F47AA7;
+  border-color: #F47AA7;
+}
+
+/* Optional: change icon color too */
+.owl-prev:hover svg,
+.owl-next:hover svg {
+  color: #fff; /* Makes icons white on pink background */
+  fill: #fff;
+}
+
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .work-sub {
+    text-align: center;
+  }
+
+  .work-details {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .work-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .work-content {
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
+}
+@media (min-width: 768px) {
+    .col-md-5 {
+        flex: 0 0 auto;
+        width: 33.666667%;
+    }
+}
+@media (min-width: 768px) {
+    .col-md-7 {
+        flex: 0 0 auto;
+        width: 63.333333%;
+    }
 }

@@ -5,7 +5,7 @@
         <!-- Left Image -->
         <div class="col-md-5  mb-4 mb-lg-0" v-aos="'fade-up'">
           <div class="work-img rounded overflow-hidden">
-            <img src="/images/homes/women-fighting-breast-cancer.png" class="img-fluid " alt="supportive women" />
+<img src="/images/hompage/hompage/hompage/women-fighting-breast-cancer.png" class="img-fluid" alt="supportive women" />
           </div>
         </div>
 
@@ -72,100 +72,4 @@
 
 
 
-<style scoped>
-.work-section {
-  background-color: #f9fbfd;
-}
 
-.section-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 40px;
-  color: #1f2937;
-}
-
-.work-sub {
-  color: #f47aa7;
-  font-family: 'Pacifico', cursive;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.work-img img {
-  border-radius: 16px;
-}
-
-.heart {
-  background: #fc9fbc;
-  border-radius: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.7s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-}
-.heart {
-    position: relative;
-    width: 100px;
-    height: 90px;
-    float: left;
-}
-.heart img {
-  width: 30px;
-  height: 30px;
-}
-
-.work-info h5 {
-  font-weight: 600;
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: #1f2937;
-}
-
-.work-info p {
-  font-size: 15px;
-  margin-bottom: 0;
-  color: #4b5563;
-}
-
-@media (max-width: 767px) {
-  .section-title {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  .work-sub {
-    text-align: center;
-  }
-
-  .work-details {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .work-info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .work-content {
-    margin-left: 0 !important;
-    margin-top: 10px;
-  }
-}
-@media (min-width: 768px) {
-    .col-md-5 {
-        flex: 0 0 auto;
-        width: 33.666667%;
-    }
-}
-@media (min-width: 768px) {
-    .col-md-7 {
-        flex: 0 0 auto;
-        width: 63.333333%;
-    }
-}
-
-
-</style>
