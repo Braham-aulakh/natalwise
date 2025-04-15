@@ -1673,11 +1673,13 @@ h6 {
   margin-bottom: 0;
   color: #4b5563;
 }
+
 .owl-nav-button {
   margin-top: 20px;
   display: flex;
   justify-content: center; /* Center arrows horizontally */
   align-items: center;
+  gap: 8px;
 }
 .owl-prev:hover,
 .owl-next:hover {
@@ -1730,4 +1732,28 @@ h6 {
         flex: 0 0 auto;
         width: 63.333333%;
     }
+}
+
+
+.view-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* space between icon and text */
+  color: #999; /* optional: match your design */
+  font-size: 13px;
+}
+.blog-grid-content h4 a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.blog-grid-content h4 a:hover {
+  color: #FC9FBC;
+}
+.content-divider {
+  border: none;
+  height: 1px;
+  background-color: #eee;
+  margin: 10px 0;
 }
