@@ -1482,6 +1482,18 @@ h6 {
 .review-card .card:hover{
     background-color:#ff77a9 !important ;
 }
+.nav-pills.account-tabs .nav-link{
+    background-color: #fbf2ed !important;
+    border: 1px solid #fbf2ed !important;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+      background-color: #fc9fbc !important;
+      border: 1px solid #fc9fbc !important;
+  }
+  /* .img-card{
+    background-color: #fbf2ed !important;
+  } */
+   
 /* our blog */
 
 .our-blog-fourteen {

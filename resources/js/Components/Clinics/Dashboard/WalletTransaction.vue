@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="col-md-12">
-            <div class="card bg-primary w-100 rounded-20 position-relative">
+            <div class="card pink-bg w-100 rounded-20 position-relative">
                 <img src="@/images/icons/waves.svg" class="position-absolute right-50" alt=""
                     style="right: 0px; top: 64px; width: 390px" />
                 <div class="card-body">

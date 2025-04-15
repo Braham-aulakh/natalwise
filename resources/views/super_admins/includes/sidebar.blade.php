@@ -174,7 +174,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link d-flex align-items-center justify-content-between @if (Route::is('super_admin.clinics.*') ||
                             Route::is('super_admin.clinic_categories.*') ||
                             Route::is('super_admin.clinic_main_categories.*') ||
@@ -234,11 +234,11 @@
                                             Route::is('super_admin.clinic_experiences.*') ||
                                             Route::is('super_admin.clinic_broadcasts.*') ||
                                             Route::is('super_admin.clinic_podcasts.*') ||
-                                            Route::is('super_admin.clinic_archives.*')) nav-link-sub-active @endif">Clinics</a>
+                                            Route::is('super_admin.clinic_archives.*')) nav-link-sub-active @endif">Clinics </a>
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center justify-content-between @if (Route::is('super_admin.events.*') || Route::is('super_admin.event_categories.*')) nav-link-active @endif"
                         data-toggle="collapse" href="#collapse106" role="button"
@@ -589,7 +589,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link d-flex align-items-center justify-content-between @if (Route::is('super_admin.archives.*') || Route::is('super_admin.archive_categories.*')) nav-link-active @endif"
                         data-toggle="collapse" href="#collapse104" role="button"
                         aria-expanded="@if (Route::is('super_admin.archives.*') || Route::is('super_admin.archive_categories.*')) @php echo 'true' @endphp@else@php echo 'false' @endphp @endif"
@@ -609,7 +609,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
                 {{-- <li class="nav-item">
                     <a href="{{ route('super_admin.users.index') }}" class="nav-link @if (Route::is('super_admin.users.*')) nav-link-active @endif">

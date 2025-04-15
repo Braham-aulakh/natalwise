@@ -1,6 +1,6 @@
 <template>
     <app-layout title="Dashboard">
-        <div class="bg-primary">
+        <div class="Top-Border">
             <pages-heading :dashboard="true" :textwhite="'true'" :heading="'Welcome As a Doctor'"
                 :breadcrums="breadcrums">
             </pages-heading>

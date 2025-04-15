@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="bg-primary">
+    <div class="Top-Border">
       <pages-heading
         :account="true"
         :textwhite="'true'"
@@ -171,7 +171,7 @@
                     </div>
                   </div>
                   <div class="col-md-5">
-                    <div class="card rounded-20 p-4 ms-md-3" style="background: #f0f7fa">
+                    <div class="card bg-lightPink rounded-20 p-4 ms-md-3" style="background: #fbf2ed">
                       <div class="d-flex gap-3 align-items-center about-modal">
                         <h3 class="fw-bold text-primary fs-2 mb-0">
                           {{ __("about") }}
@@ -898,3 +898,14 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.nav-pills.account-tabs .nav-link{
+  background-color: #fbf2ed !important;
+  border: 1px solid #fbf2ed !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #fc9fbc !important;
+    border: 1px solid #fc9fbc !important;
+}
+
+</style>

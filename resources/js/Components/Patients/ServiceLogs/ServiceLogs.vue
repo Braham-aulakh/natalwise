@@ -1,7 +1,7 @@
 <template>
   <div class="stats">
     <div class="Top-Border">
-      <pages-heading :textwhite="'true'" :heading="'My services DSD'" :breadcrums="breadcrums"></pages-heading>
+      <pages-heading :textwhite="'true'" :heading="'My services'" :breadcrums="breadcrums"></pages-heading>
     </div>
     <div class="container mt-md-5 p-md-0">
       <div class="row align-items-center">

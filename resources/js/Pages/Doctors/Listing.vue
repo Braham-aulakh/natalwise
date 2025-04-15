@@ -1,10 +1,13 @@
 <template>
   <app-layout title="Doctors">
     <div class="stats">
-      <pages-heading
+      <div class="Top-Border">
+        <pages-heading
         :heading="'Find the Doctors'"
         :breadcrums="breadcrums"
       ></pages-heading>
+      </div>
+     
       <find-doctor-bar
         @updateFormData="updateFormData"
         :title="'Search Related Doctors near by you'"
