@@ -12,6 +12,8 @@ module.exports = {
         blue:"#4a91b0",
         borderColor:"#e8e8e8",
         navBg:"#fbf2ed",
+        pinkColor:"#FC9FBC",
+        lightPink:"#fbf2ed",
       },
     },
   },

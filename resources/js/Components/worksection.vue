@@ -5,7 +5,7 @@
         <!-- Left Image -->
         <div class="col-md-5  mb-4 mb-lg-0" v-aos="'fade-up'">
           <div class="work-img rounded overflow-hidden">
-            <img src="/images/homes/women-fighting-breast-cancer.png" class="img-fluid " alt="supportive women" />
+            <img src="../../../public/images/hompage/homes/women-fighting-breast-cancer.png" class="img-fluid " alt="supportive women" />
           </div>
         </div>
 

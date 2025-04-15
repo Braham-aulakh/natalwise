@@ -286,27 +286,27 @@
                                                                     <i class="fas fa-briefcase"
                                                                         aria-hidden="true"></i><span
                                                                         class="ml-2">Experiences</span></a>
-                                                                        <a class="dropdown-item"
+                                                                        <!-- <a class="dropdown-item"
                                                                     href="{{ route('super_admin.doctor_events.index', $doctor->id) }}"
                                                                     class="btn btn-primary  ml-2">
                                                                     <i class="fa fa-calendar" aria-hidden="true"></i><span
-                                                                        class="ml-2">Events</span></a>
+                                                                        class="ml-2">Events</span></a> -->
                                                                 <a class="dropdown-item"
                                                                     href="{{ route('super_admin.doctor_posts.index', $doctor->id) }}"
                                                                     class="btn btn-primary  ml-2">
                                                                     <i class="fa fa-rss" aria-hidden="true"></i><span
                                                                         class="ml-2">Blogs</span></a>
-                                                                <a class="dropdown-item"
+                                                                <!-- <a class="dropdown-item"
                                                                     href="{{ route('super_admin.doctor_broadcasts.index', $doctor->id) }}"
                                                                     class="btn btn-primary  ml-2">
                                                                     <i class="fas fa-camera" aria-hidden="true"></i><span
-                                                                        class="ml-2">Media</span></a>
-                                                                <a class="dropdown-item"
+                                                                        class="ml-2">Media</span></a> -->
+                                                                <!-- <a class="dropdown-item"
                                                                     href="{{ route('super_admin.doctor_podcasts.index', $doctor->id) }}"
                                                                     class="btn btn-primary  ml-2">
                                                                     <i class="fas fa-microphone"
                                                                         aria-hidden="true"></i><span
-                                                                        class="ml-2">Podcasts</span></a>
+                                                                        class="ml-2">Podcasts</span></a> -->
                                                                 <a class="dropdown-item"
                                                                     href="{{ route('super_admin.doctor_archives.index', $doctor->id) }}"
                                                                     class="btn btn-primary  ml-2">

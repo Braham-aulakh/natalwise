@@ -1,6 +1,6 @@
 <template>
   <app-layout title="Pricing Plan">
-    <div class="bg-primary">
+    <div class="Top-Border">
       <pages-heading
         :textwhite="'true'"
         :heading="'Electronic Health Records'"
@@ -875,4 +875,17 @@ export default defineComponent({
 .table > :not(caption) > * > * {
   padding: 1rem 0.6rem !important;
 }
+.card{
+  background-color: #fbf2ed !important;
+}
+.ehr-buttons .nav-pills .nav-link{
+  border: 1px solid #fbf2ed !important;
+}
+.ehr-buttons .nav-pills .nav-link{
+  color: #FC9FBC !important;
+}
+.ehr-buttons .nav-pills .nav-link.active, .ehr-buttons .nav-pills .show > .nav-link{
+  color: white !important;
+}
+
 </style>

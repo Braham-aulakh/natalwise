@@ -1,7 +1,7 @@
 <template>
   <app-layout title="Appointment">
     <div class="stats">
-      <div class="bg-primary">
+      <div class="Top-Border">
         <pages-heading
           :textwhite="'true'"
           :heading="this.appointment_type_name"
@@ -18,7 +18,7 @@
                     <div class="col-md-12 position-relative pt-7">
                       <div class="progress" style="background-color: #daeaf0">
                         <div
-                          class="progress-bar bg-primary rounded-pill"
+                          class="progress-bar pink-bg rounded-pill"
                           role="progressbar"
                           :style="{ width: progress + '%' }"
                           aria-valuenow="progress"

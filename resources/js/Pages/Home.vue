@@ -14,22 +14,22 @@
     </section>
     <ExploreStart></ExploreStart>
     <WhyChooseUs></WhyChooseUs>
-     <!-- OUR EXperts -->
+    <!-- OUR EXperts -->
     <spotlight-doctor-section></spotlight-doctor-section>
-    
+
     <!-- <home-statistics-bar></home-statistics-bar> -->
 
-   
+
 
     <!-- How it Works 4 Easy Steps to Get the  Right Solution -->
     <HowItWorksSection></HowItWorksSection>
-<!-- <OurBlog></OurBlog> -->
+    <!-- <OurBlog></OurBlog> -->
     <!-- Our Blog -->
 
     <!-- App Section -->
 
     <div class="section pink-bg student-app mt-5">
-  
+
 
       <div class="container">
         <div class="row">
@@ -68,64 +68,62 @@
               </div>
 
               <div class="d-flex align-items-start flex-lg-row flex-column mt-3">
-<a
-  href="#"
-  v-if="
-    getPageContent('app_section_play_btn_text') != '' &&
-    getPageContent('app_section_play_btn_text') != null
-  "
-  class="btn pink-btn rounded-4 border border-secondary border-3 px-4 d-flex align-items-center me-3 mb-2 mb-md-0"
-  style="height: 70px; background-color: #F4A0B2;"
->
-  <img src="@/images/icons/playstore.png" width="40" class="me-2" />
-  <div class="d-flex flex-column align-items-start">
-    <div v-if="getPageContentType('app_section_play_btn_text') == 'textarea'">
-      <div class="text-start" v-html="getPageContent('app_section_play_btn_text')"></div>
-    </div>
-    <div v-else-if="getPageContentType('app_section_play_btn_text') == 'text'">
-      <p>{{ getPageContent("app_section_play_btn_text") ?? "-" }}</p>
-    </div>
-    <div v-else>
-      <span class="btn-label">{{ __("Get it on") }}</span>
-      <span class="btn-caption">{{ __("Google Store") }}</span>
-    </div>
-  </div>
-</a>
+                <a href="#" v-if="
+                  getPageContent('app_section_play_btn_text') != '' &&
+                  getPageContent('app_section_play_btn_text') != null
+                " class="btn pink-btn rounded-4 border border-secondary border-3 px-4 d-flex align-items-center me-3 mb-2 mb-md-0"
+                  style="height: 70px; background-color: #F4A0B2;">
+                  <img src="@/images/icons/playstore.png" width="40" class="me-2" />
+                  <div class="d-flex flex-column align-items-start">
+                    <div v-if="getPageContentType('app_section_play_btn_text') == 'textarea'">
+                      <div class="text-start" v-html="getPageContent('app_section_play_btn_text')"></div>
+                    </div>
+                    <div v-else-if="getPageContentType('app_section_play_btn_text') == 'text'">
+                      <p>{{ getPageContent("app_section_play_btn_text") ?? "-" }}</p>
+                    </div>
+                    <div v-else>
+                      <span class="btn-label">{{ __("Get it on") }}</span>
+                      <span class="btn-caption">{{ __("Google Store") }}</span>
+                    </div>
+                  </div>
+                </a>
 
-<a
-  v-if="
-    getPageContent('app_section_app_store_btn_text') != '' &&
-    getPageContent('app_section_app_store_btn_text') != null
-  "
-  href="#"
-  class="btn pink-btn rounded-4 border border-secondary border-3 px-4 d-flex align-items-center"
-  style="height: 70px; background-color: #F4A0B2;"
->
-  <i class="bi bi-apple fs-1 me-3"></i>
-  <div v-if="getPageContentType('app_section_app_store_btn_text') == 'textarea'">
-    <div class="text-start" v-html="getPageContent('app_section_app_store_btn_text')"></div>
-  </div>
-  <div v-else-if="getPageContentType('app_section_app_store_btn_text') == 'text'">
-    <p>{{ getPageContent("app_section_app_store_btn_text") ?? "-" }}</p>
-  </div>
-  <div v-else>
-    <span class="btn-label">{{ __("Download on the") }}</span>
-    <span class="btn-caption">{{ __("App Store") }}</span>
-  </div>
-</a>
+                <a v-if="
+                  getPageContent('app_section_app_store_btn_text') != '' &&
+                  getPageContent('app_section_app_store_btn_text') != null
+                " href="#" class="btn pink-btn rounded-4 border border-secondary border-3 px-4 d-flex align-items-center"
+                  style="height: 70px; background-color: #F4A0B2;">
+                  <i class="bi bi-apple fs-1 me-3"></i>
+                  <div v-if="getPageContentType('app_section_app_store_btn_text') == 'textarea'">
+                    <div class="text-start" v-html="getPageContent('app_section_app_store_btn_text')"></div>
+                  </div>
+                  <div v-else-if="getPageContentType('app_section_app_store_btn_text') == 'text'">
+                    <p>{{ getPageContent("app_section_app_store_btn_text") ?? "-" }}</p>
+                  </div>
+                  <div v-else>
+                    <span class="btn-label">{{ __("Download on the") }}</span>
+                    <span class="btn-caption">{{ __("App Store") }}</span>
+                  </div>
+                </a>
 
-</div>
+              </div>
 
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <!-- <doctors-tabs-section></doctors-tabs-section> -->
+     
+     <!-- explore different sections -->
+    <home-static-cards-section></home-static-cards-section>
     <!-- Testimonials -->
     <review-section></review-section>
     <!-- Faqs Section -->
-    <div class="section stats p-6" v-if="faqs.length > 0">
+    <!-- <div class="section stats p-6" v-if="faqs.length > 0">  -->
+      
+      <div class="section stats p-6" v-show="faqs.length > 0">
+
       <div class="container">
         <div class="row">
           <div class="col-12 mb-5 text-center">
@@ -247,9 +245,9 @@ export default defineComponent({
     ContentSlider,
     Modal,
     AppLayout,
-WhyChooseUs,
-HowItWorksSection,
-// OurBlog,
+    WhyChooseUs,
+    HowItWorksSection,
+    // OurBlog,
     CardSkeleton,
     FindDoctorBar,
     FindClinicBar,
@@ -341,5 +339,8 @@ HowItWorksSection,
 <style scoped>
 .accordion-button:not(.collapsed) {
   color: #294481 !important;
+}
+.stats{
+  background-color: #f9fbfd !important;
 }
 </style>

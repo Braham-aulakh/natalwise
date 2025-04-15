@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-5 pr-0">
                     <div class="card-header h-100 p-0">
-                        <div class="h-100 bg-secondary d-flex align-items-center justify-content-center p-3">
+                        <div class="h-100 pink-bg d-flex align-items-center justify-content-center p-3">
                             <div class="text-center">
                                 <img width="200" class="mb-4"
                                     src="{{ $dark_site_logo && $dark_site_logo->value ? asset($dark_site_logo->value) : asset('images/logo.png') }}"

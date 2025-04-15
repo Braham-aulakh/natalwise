@@ -1,7 +1,7 @@
 <template>
   <app-layout title="Pricing Plan">
     <div class="stats">
-      <div class="bg-primary">
+      <div class="Top-Border">
         <pages-heading
           :textwhite="'true'"
           :heading="'EHR Detail'"
@@ -277,3 +277,8 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.card{
+  background-color: #fbf2ed !important;
+}
+</style>
