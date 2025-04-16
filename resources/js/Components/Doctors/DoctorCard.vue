@@ -32,7 +32,7 @@
           />
         </span> -->
 
-        <div class="left-side">
+        <!-- <div class="left-side">
           <div class="socialhvr">
           <a
   class="icon-container"
@@ -70,7 +70,7 @@
               ></i
             ></a>
           </div>
-        </div>
+        </div> -->
         <!-- <ul class="d-flex ps-0 mb-0 social flex-wrap flex-md-nowrap gap-1 gap-md-0 mt-2 mt-md-0">
                                         <li class="list-group-item border-0" v-if="doctor.doctor_settings.facebook_url
                                             ">

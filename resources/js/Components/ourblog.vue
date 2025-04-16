@@ -10,7 +10,7 @@
         <div class="blog-grid-fourteen" data-aos="fade-up" data-aos-delay="500">
           <div class="blog-grid-img">
             <a href="blog-details.html">
-              <img src="../../../public/images/homes/blog-1.png" alt="Img" />
+              <img src="/images/hompage/blog-01.jpg" alt="Img" />
             </a>
           </div>
           <div class="blog-grid-content">
@@ -37,11 +37,11 @@
         <div class="blog-grid-fourteen" data-aos="fade-up" data-aos-delay="600">
           <div class="blog-grid-img">
             <a href="blog-details.html">
-              <img src="../../../public/images/homes/blog-2.png" alt="Img" />
+              <img src="/images/hompage/blog-02.jpg" alt="Img" />
             </a>
           </div>
           <div class="blog-grid-content">
-             <h4><a href="blog-details.html">What You Need To Know About Food Intolerance</a></h4>
+            <h4><a href="blog-details.html">What You Need To Know About Food Intolerance</a></h4>
                 <p style="font-size: 0.9375rem;">Have you ever enjoyed a great meal just to find yourself feeling uneasy a while later...</p>
              <div class="content-divider"></div>
             <div class="grid-footer">
@@ -61,13 +61,11 @@
         <div class="blog-grid-fourteen" data-aos="fade-up" data-aos-delay="700">
           <div class="blog-grid-img">
             <a href="blog-details.html">
-              <img src="../../../public/images/homes/blog-3.png" alt="Img" />
+              <img src="/images/hompage/blog-03.jpg" alt="Img" />
             </a>
           </div>
           <div class="blog-grid-content">
-           <h4>
-  <a href="blog-details.html">Suspecting PCOS? Here’s everything you need to..</a>
-</h4>
+            <h4><a href="blog-details.html">Suspecting PCOS? Here’s everything you need to..</a></h4>
                <p style="font-size: 0.9375rem;">Polycystic Ovary Syndrome or PCOS is one of the most common hormonal disorders affecting women...</p>
              <div class="content-divider"></div>
             <div class="grid-footer">
@@ -87,11 +85,11 @@
         <div class="blog-grid-fourteen" data-aos="fade-up" data-aos-delay="800">
           <div class="blog-grid-img">
             <a href="blog-details.html">
-              <img src="../../../public/images/homes/blog-4.jpg" alt="Img" />
+              <img src="/images/hompage/blog-04.jpg" alt="Img" />
             </a>
           </div>
           <div class="blog-grid-content">
-              <h4 class="blog-title"><a href="blog-details.html">Adapting Homes for Aging Gracefully: Design Tips for Old Age Comfort</a></h4>
+            <h4><a href="blog-details.html">Adapting Homes for Aging Gracefully: Design Tips for Old Age Comfort</a></h4>
             <p>Explore practical design tips to make living spaces in old age homes adaptable and comfortable...</p>
             <div class="grid-footer">
            <span class="view-count">
