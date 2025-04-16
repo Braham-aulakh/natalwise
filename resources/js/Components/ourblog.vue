@@ -10,7 +10,7 @@
         <div class="blog-grid-fourteen" data-aos="fade-up" data-aos-delay="500">
           <div class="blog-grid-img">
             <a href="blog-details.html">
-              <img src="/images/hompage/blog-01.jpg" alt="Img" />
+              <img src="../../../public/images/homes/blog-1.png" alt="Img" />
             </a>
           </div>
           <div class="blog-grid-content">
@@ -37,7 +37,7 @@
         <div class="blog-grid-fourteen" data-aos="fade-up" data-aos-delay="600">
           <div class="blog-grid-img">
             <a href="blog-details.html">
-              <img src="/images/hompage/blog-02.jpg" alt="Img" />
+              <img src="../../../public/images/homes/blog-2.png" alt="Img" />
             </a>
           </div>
           <div class="blog-grid-content">
@@ -61,7 +61,7 @@
         <div class="blog-grid-fourteen" data-aos="fade-up" data-aos-delay="700">
           <div class="blog-grid-img">
             <a href="blog-details.html">
-              <img src="/images/hompage/blog-03.jpg" alt="Img" />
+              <img src="../../../public/images/homes/blog-3.png" alt="Img" />
             </a>
           </div>
           <div class="blog-grid-content">
@@ -87,7 +87,7 @@
         <div class="blog-grid-fourteen" data-aos="fade-up" data-aos-delay="800">
           <div class="blog-grid-img">
             <a href="blog-details.html">
-              <img src="/images/hompage/blog-04.jpg" alt="Img" />
+              <img src="../../../public/images/homes/blog-4.jpg" alt="Img" />
             </a>
           </div>
           <div class="blog-grid-content">
