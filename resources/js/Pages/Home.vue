@@ -33,7 +33,7 @@
     <!-- <doctors-tabs-section></doctors-tabs-section> -->
      
      <!-- explore different sections -->
-    <home-static-cards-section></home-static-cards-section>
+    <!-- <home-static-cards-section></home-static-cards-section> -->
     <!-- Testimonials -->
     <review-section></review-section>
     <!-- Faqs Section -->
