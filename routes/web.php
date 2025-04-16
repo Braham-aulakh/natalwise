@@ -393,6 +393,10 @@ Route::get('/shop', function () {
         return Inertia::render('Essentials');
     })->name('essentials');
 
+    Route::get('/gynecology', function () {
+        // dd('ok');
+        return Inertia::render('Gynecology');
+    })->name('gynecology');
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');
 
