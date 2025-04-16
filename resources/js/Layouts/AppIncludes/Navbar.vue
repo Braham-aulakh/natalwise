@@ -588,7 +588,7 @@ export default {
           title: "Health",
           items: [
             { name: "Essentials", link: route("essentials")  },
-            { name: "Gynaecology", link: "gynecology.html" },
+            { name: "Gynaecology", link: route("gynecology") },
             { name: "Physiotherapy", link: "physiotherapy.html" },
           ],
         },
