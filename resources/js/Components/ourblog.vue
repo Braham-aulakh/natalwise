@@ -66,7 +66,7 @@
           </div>
           <div class="blog-grid-content">
             <h4><a href="blog-details.html">Suspecting PCOS? Here’s everything you need to..</a></h4>
-               <p style="font-size: 0.9375rem;">Polycystic Ovary Syndrome or PCOS is one of the most common hormonal disorders affecting women...</p>
+            <p>Polycystic Ovary Syndrome or PCOS is one of the most common hormonal disorders affecting women...</p>
              <div class="content-divider"></div>
             <div class="grid-footer">
               <span class="view-count">

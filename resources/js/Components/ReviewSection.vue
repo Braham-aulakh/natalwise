@@ -215,6 +215,29 @@ h2 {
   color: #272b41 !important;
 }
 
+/* Hover Effect on Review Cards */
+.review-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+}
+
+.review-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+   background-color: #FC9FBC;
+}
+
+/* Hover Effect on Custom Carousel Nav Buttons */
+.custom-carousel-nav:hover {
+  background-color: #FC9FBC; /* Change background color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.custom-carousel-nav:active {
+  background-color: #e68eae; /* Darker shade on active click */
+}
+
 
 </style>
 
