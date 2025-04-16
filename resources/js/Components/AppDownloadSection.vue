@@ -14,25 +14,25 @@
                 <p>Scan the QR code to get the app now</p>
                 <img src="/images/hompage/scan-img.png" alt="scan-image">
               </div>
-         <div class="google-imgs aos" data-aos="fade-up">
-  <button type="button" class="store-btn">
-    <img src="/images/hompage/google-play-icon.svg" alt="Google Play">
-  </button>
-  <button type="button" class="store-btn">
-    <img src="/images/hompage/app-store-icon.svg" alt="App Store">
-  </button>
-</div>
+              <div class="google-imgs aos" data-aos="fade-up">
+                <button type="button" class="store-btn">
+                  <img src="/images/hompage/google-play-icon.svg" alt="Google Play">
+                </button>
+                <button type="button" class="store-btn">
+                  <img src="/images/hompage/app-store-icon.svg" alt="App Store">
+                </button>
+              </div>
 
 
             </div>
           </div>
 
           <!-- Right Image Section -->
-       <div class="col-lg-6 col-md-12 aos" data-aos="fade-up">
-  <div class="mobile-img">
-<!-- <img src="../../../public/images/homepage/mobile-img.png" class="img-fluid" alt="img"> -->
-  </div>
-</div>
+          <div class="col-lg-6 col-md-12 aos" data-aos="fade-up">
+            <div class="mobile-img">
+              <img src="../../../public/images/hompage/hompage/mobile-img.png" class="img-fluid" alt="img">
+            </div>
+          </div>
 
         </div>
       </div>
@@ -58,7 +58,9 @@ export default {
 
 .app-bg {
   background-color: #F4A0B2;
-  padding: 40px; /* optional */
-  border-radius: 15px; /* optional */
+  padding: 40px;
+  /* optional */
+  border-radius: 15px;
+  /* optional */
 }
 </style>

@@ -16,7 +16,7 @@
                 <div class="flex justify-center">
                   <div class="w-full">
                     <div class="login-header text-left mb-6">
-                      <h3>Login <span>Doccure</span></h3>
+                      <h3>Login </h3>
                     </div>
                     <form @submit.prevent="submit">
                       <validation-errors class="mb-3" />
@@ -246,4 +246,17 @@ export default defineComponent({
 .btn:hover {
   background-color: transparent !important;
 }
+@media (min-width: 992px) {
+    .col-lg-6 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+}
+@media (min-width: 768px) {
+    .col-md-7 {
+        flex: 0 0 auto;
+        width: 49% !important;
+    }
+}
+
 </style>
