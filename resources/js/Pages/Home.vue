@@ -27,92 +27,9 @@
     <!-- Our Blog -->
 
     <!-- App Section -->
-
-    <div class="section pink-bg student-app mt-5">
-
-
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 position-relative">
-            <div class="mobile-img text-end mb-4 mb-lg-0" data-aos="fade-right" data-aos-once="false"
-              data-aos-duration="1500" data-aos-delay="500">
-              <img src="@/images/home/appsection.png" alt class="img-fluid h-100" />
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="d-flex ps-md-4 justify-content-center p-0 flex-column h-100" data-aos="fade-left"
-              data-aos-once="false" data-aos-duration="1500" data-aos-delay="800">
-              <div v-if="
-                getPageContentType('app_section_description') == 'textarea'
-              ">
-                <div v-html="getPageContent('app_section_description')"></div>
-              </div>
-              <div v-else-if="
-                getPageContentType('app_section_description') == 'text'
-              ">
-                <p>{{ getPageContent("app_section_description") ?? "-" }}</p>
-              </div>
-              <div v-else>
-                <span class="fs-3">{{ __("Download") }}</span>
-                <h2 class="display-6">
-                  {{ __("Consultant App") }}
-                </h2>
-                <p>
-                  Our commitment to excellence extends to our commitment to
-                  integrity. We adhere to the highest ethical standards,
-                  treating each case with the utmost professionalism and
-                  confidentiality. We understand the gravity of the legal
-                  matters we handle, and we approach them with the respect and
-                  dedication they deserve.
-                </p>
-              </div>
-
-              <div class="d-flex align-items-start flex-lg-row flex-column mt-3">
-                <a href="#" v-if="
-                  getPageContent('app_section_play_btn_text') != '' &&
-                  getPageContent('app_section_play_btn_text') != null
-                " class="btn pink-btn rounded-4 border border-secondary border-3 px-4 d-flex align-items-center me-3 mb-2 mb-md-0"
-                  style="height: 70px; background-color: #F4A0B2;">
-                  <img src="@/images/icons/playstore.png" width="40" class="me-2" />
-                  <div class="d-flex flex-column align-items-start">
-                    <div v-if="getPageContentType('app_section_play_btn_text') == 'textarea'">
-                      <div class="text-start" v-html="getPageContent('app_section_play_btn_text')"></div>
-                    </div>
-                    <div v-else-if="getPageContentType('app_section_play_btn_text') == 'text'">
-                      <p>{{ getPageContent("app_section_play_btn_text") ?? "-" }}</p>
-                    </div>
-                    <div v-else>
-                      <span class="btn-label">{{ __("Get it on") }}</span>
-                      <span class="btn-caption">{{ __("Google Store") }}</span>
-                    </div>
-                  </div>
-                </a>
-
-                <a v-if="
-                  getPageContent('app_section_app_store_btn_text') != '' &&
-                  getPageContent('app_section_app_store_btn_text') != null
-                " href="#" class="btn pink-btn rounded-4 border border-secondary border-3 px-4 d-flex align-items-center"
-                  style="height: 70px; background-color: #F4A0B2;">
-                  <i class="bi bi-apple fs-1 me-3"></i>
-                  <div v-if="getPageContentType('app_section_app_store_btn_text') == 'textarea'">
-                    <div class="text-start" v-html="getPageContent('app_section_app_store_btn_text')"></div>
-                  </div>
-                  <div v-else-if="getPageContentType('app_section_app_store_btn_text') == 'text'">
-                    <p>{{ getPageContent("app_section_app_store_btn_text") ?? "-" }}</p>
-                  </div>
-                  <div v-else>
-                    <span class="btn-label">{{ __("Download on the") }}</span>
-                    <span class="btn-caption">{{ __("App Store") }}</span>
-                  </div>
-                </a>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <AppDownloadSection></AppDownloadSection>
+   
+ 
     <!-- <doctors-tabs-section></doctors-tabs-section> -->
      
      <!-- explore different sections -->
@@ -121,7 +38,7 @@
     <review-section></review-section>
     <!-- Faqs Section -->
     <!-- <div class="section stats p-6" v-if="faqs.length > 0">  -->
-      
+    
       <div class="section stats p-6" v-show="faqs.length > 0">
 
       <div class="container">
@@ -230,6 +147,7 @@ import ExploreStart from "./ExploreStart.vue";
 import WhyChooseUs from './ourCommitment.vue';
 import HowItWorksSection from '../Components/worksection.vue';
 import OurBlog from '../Components/ourblog.vue';
+import AppDownloadSection from '../Components/AppDownloadSection.vue';
 
 
 export default defineComponent({
@@ -248,6 +166,7 @@ export default defineComponent({
 WhyChooseUs,
 HowItWorksSection,
 OurBlog,
+AppDownloadSection,
     CardSkeleton,
     FindDoctorBar,
     FindClinicBar,

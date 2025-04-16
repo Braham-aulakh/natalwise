@@ -1573,11 +1573,13 @@ h6 {
 
 .grid-footer a {
   color: #f47aa7;
-  font-weight: 500;
   display: flex;
   align-items: center;
   text-decoration: none;
   transition: 0.3s ease;
+  gap:6px;
+  font-size: 20px;
+    font-weight: 600;
 }
 
 .grid-footer a i {
@@ -1681,26 +1683,44 @@ h6 {
   color: #4b5563;
 }
 
+.our-blog-fourteen .owl-nav button {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background: #EEEEF3;
+  border: 0;
+  margin: 10px;
+  color: #fc9fbc;
+
+  display: inline-flex; /* Makes the button size respect width/height */
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Ensure no extra space inside */
+  box-sizing: border-box; /* Respect width/height including border/padding */
+}
+
 .owl-nav-button {
+    
   margin-top: 20px;
   display: flex;
   justify-content: center; /* Center arrows horizontally */
   align-items: center;
   gap: 8px;
 }
-.owl-prev:hover,
-.owl-next:hover {
+
+
+.our-blog-fourteen .owl-prev:hover,
+.our-blog-fourteen .owl-next:hover {
   background-color: #F47AA7;
   border-color: #F47AA7;
 }
 
 /* Optional: change icon color too */
-.owl-prev:hover svg,
-.owl-next:hover svg {
+.our-blog-fourteen .owl-prev:hover svg,
+.our-blog-fourteen .owl-next:hover svg {
   color: #fff; /* Makes icons white on pink background */
   fill: #fff;
 }
-
 
 @media (max-width: 767px) {
   .section-title {
@@ -1753,14 +1773,80 @@ h6 {
   text-decoration: none;
   color: inherit;
   transition: color 0.3s ease;
+    
+    
 }
 
 .blog-grid-content h4 a:hover {
   color: #FC9FBC;
+
 }
 .content-divider {
   border: none;
   height: 1px;
   background-color: #eee;
   margin: 10px 0;
+}
+  
+  .view-count {
+    color: #374151;
+    font-size: 0.9375rem;
+  }
+ .store-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-right: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.store-btn img {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+.app-header h5 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.app-header h2 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0;
+    max-width: 565px;
+}
+
+.app-scan p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.app-scan img {
+  max-width: 100%;
+  height: auto;
+}
+.google-imgs img {
+  max-width: 100%;
+  height: auto;
+}
+.app-section {
+  font-family: "Montserrat", serif;
+  background-color: #ffffff;
+  font-size: 0.9375rem;
+  color: #6B7280;
+  line-height: 1.5;
+  font-optical-sizing: auto;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+/* Optional: Apply font weight if you want a base weight for this section */
+.app-section * {
+  font-weight: 400; /* Replace 400 with your desired weight */
 }
