@@ -17,6 +17,12 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <link rel="stylesheet" href="{{ asset('css/output.css') }}">
        <link rel="stylesheet" href="{{ asset('css/addMain.css') }}">
+       <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+
+
+
 
 
     @vite('resources/js/app.js')

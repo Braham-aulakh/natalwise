@@ -22,9 +22,9 @@
           <div class="flex-grow-1 d-flex justify-content-center align-items-start main-menu-wrapper">
             <ul class="main-nav">
               <li class="has-submenu megamenu active">
-                <a class="btn log-btn " href="start-here.html">Start Here</a>
+                <Link class="btn log-btn" :href="route('start.here')">Start Here</Link>
               </li>
-              <li class="has-submenu"><a href="coming-soon.html">Shop</a></li>
+              <li class="has-submenu"><Link :href="route('shop')">Shop</Link></li>
 
               <!-- Her Well-Being Mega Menu -->
 
@@ -587,7 +587,7 @@ export default {
         {
           title: "Health",
           items: [
-            { name: "Essentials", link: "essentials.html" },
+            { name: "Essentials", link: route("essentials")  },
             { name: "Gynaecology", link: "gynecology.html" },
             { name: "Physiotherapy", link: "physiotherapy.html" },
           ],

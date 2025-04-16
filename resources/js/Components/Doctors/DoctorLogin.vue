@@ -25,7 +25,7 @@
               </div> -->
                 <div class="col-md-12 col-lg-6 login-right">
                   <div class="login-header">
-                    <h3>Login <span>Doccure</span></h3>
+                    <h3>Login </h3>
                   </div>
                   <form @submit.prevent="submit">
                     <validation-errors class="mb-3" />

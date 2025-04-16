@@ -257,6 +257,7 @@ Route::get('/api_pricing_plans', [WebAPIController::class, 'getAllPricingPlans']
 Route::get('/api_service_related_doctors', [WebAPIController::class, 'getAllServiceDoctors'])->name('getApiAllServiceDoctors');
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/starthere', [HomeController::class, 'startHere'])->name('start.here');
 Route::get('/pricing/{type}', [PricingPlansController::class, 'index'])->name('pricing');
 Route::get('/pricing/{type}/{slug}', [PricingPlansController::class, 'show'])->name('pricing.show');
 Route::post('/subscription/{type}/{slug}', [PricingPlansController::class, 'subscription'])->name('pricing.subscription');
@@ -387,7 +388,10 @@ Route::get('/shop', function () {
     return Inertia::render('Shop');
 })->name('shop');
 // Route::get('/dashboard', function () {
-
+    Route::get('/essentials', function () {
+        // dd('ok');
+        return Inertia::render('Essentials');
+    })->name('essentials');
 
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');

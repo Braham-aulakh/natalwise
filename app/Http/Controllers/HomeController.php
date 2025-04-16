@@ -35,4 +35,8 @@ class HomeController extends Controller
         ];
         return Inertia::render('Home',['dashboard_data' => $data]);
     }
+    public function startHere(Request $request)
+    {
+        return Inertia::render('StartHere');
+    }
 }
