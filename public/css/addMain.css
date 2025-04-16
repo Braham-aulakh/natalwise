@@ -5,13 +5,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-@import url('https://example.com/path-to-shink-font.css');
 
 
 * {
     font-family: Montserrat !important;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 .section-title {
     /* font-family: Montserrat !important ; */
     font-weight: 600 !important;
@@ -1104,12 +1105,6 @@ h6 {
 }
 
 /* homepage our commitment */
-@font-face {
-    font-family: 'shink';
-    src: url('/fonts/shink.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 .section-bg {
     background-color: #fdeeea;
@@ -1194,7 +1189,7 @@ h6 {
     font-weight: 600 !important;
     font-size: 30px !important;
     color: #FC9FBC !important;
-    font-family: 'shink' !important;
+    font-family: 'Eagle Lake', cursive !important;
 }
 
 .doctor-card .card-img .hvr {
