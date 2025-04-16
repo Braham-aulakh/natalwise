@@ -1840,18 +1840,43 @@ h6 {
   max-width: 100%;
   height: auto;
 }
-.app-section {
-  font-family: "Montserrat", serif;
-  background-color: #ffffff;
-  font-size: 0.9375rem;
-  color: #6B7280;
-  line-height: 1.5;
-  font-optical-sizing: auto;
-  font-style: normal;
-  overflow-x: hidden;
+
+
+.container {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
 }
 
-/* Optional: Apply font weight if you want a base weight for this section */
-.app-section * {
-  font-weight: 400; /* Replace 400 with your desired weight */
+.app-section {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  background-color: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+.app-bg {
+    background: #FC9FBC;
+    background-image: url(../img/aap-img-bg.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    padding: 40px 50px;}
+
+    .align-items-end {
+    align-items: flex-end !important;
+}
+
+@media (max-width: 1199.98px) {
+    .app-bg {
+        margin: 0;
+        padding: 30px;
+    }
 }
