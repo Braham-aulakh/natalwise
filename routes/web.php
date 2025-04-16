@@ -397,6 +397,16 @@ Route::get('/shop', function () {
         // dd('ok');
         return Inertia::render('Gynecology');
     })->name('gynecology');
+    Route::get('/physiotherapy', function () {
+        // dd('ok');
+        return Inertia::render('Physiotherapy');
+    })->name('physiotherapy');
+
+    Route::get('/pre-postal', function () {
+        // dd('ok');
+        return Inertia::render('PrePostal');
+    })->name('pre-postal');
+
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');
 

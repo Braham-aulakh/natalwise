@@ -229,6 +229,7 @@ h2 {
 
 /* Hover Effect on Custom Carousel Nav Buttons */
 .custom-carousel-nav:hover {
+color: white !important;
   background-color: #FC9FBC; /* Change background color */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
   cursor: pointer; /* Change cursor to pointer */

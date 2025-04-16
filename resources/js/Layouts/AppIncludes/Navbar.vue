@@ -589,15 +589,15 @@ export default {
           items: [
             { name: "Essentials", link: route("essentials")  },
             { name: "Gynaecology", link: route("gynecology") },
-            { name: "Physiotherapy", link: "physiotherapy.html" },
+            { name: "Physiotherapy", link: route("physiotherapy") },
           ],
         },
         {
           title: "Natal",
           items: [
             { name: "Journey Begins", link: "#" },
-            { name: "Pre Natal", link: "pre-and-post-natal.html" },
-            { name: "Post Natal", link: "pre-and-post-natal.html" },
+            { name: "Pre Natal", link: route("pre-postal") },
+            { name: "Post Natal", link: route("pre-postal") },
           ],
         },
         {
