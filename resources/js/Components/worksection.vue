@@ -22,7 +22,8 @@
             <div class="col-sm-6" v-aos="'fade-up'">
               <div class="work-info d-flex">
                 <div class="work-icon heart d-flex align-items-center justify-content-center">
-                  <img src="/images/hompage/search-1.png" alt="search-icon" />
+                     <img src="../../../public/images/homes/search-1.png" alt="search-icon"/>
+                  <!-- <img src="/images/hompage/search-1.png" alt="search-icon" /> -->
                 </div>
                 <div class="work-content ms-3">
                   <h5>Search Experts</h5>
@@ -33,7 +34,8 @@
             <div class="col-sm-6" v-aos="'fade-up'">
               <div class="work-info d-flex">
                 <div class="work-icon heart d-flex align-items-center justify-content-center">
-                  <img src="/images/hompage/Profile.png" alt="profile-icon" />
+                  <img src="../../../public/images/homes/Profile.png" alt="profile-icon"/>
+                  <!-- <img src="/images/hompage/Profile.png" alt="profile-icon" /> -->
                 </div>
                 <div class="work-content ms-3">
                   <h5>Check Expert Profiles</h5>
@@ -44,7 +46,9 @@
             <div class="col-sm-6" v-aos="'fade-up'">
               <div class="work-info d-flex">
                 <div class="work-icon heart d-flex align-items-center justify-content-center">
-                  <img src="/images/hompage/work-03.png" alt="calendar-icon" />
+                  <img src="../../../public/images/homes/work-03.png" alt="calendar-icon" />
+
+                  <!-- <img src="/images/hompage/work-03.png" alt="calendar-icon" /> -->
                 </div>
                 <div class="work-content ms-3">
                   <h5>Schedule Appointment</h5>
@@ -55,7 +59,9 @@
             <div class="col-sm-6" v-aos="'fade-up'">
               <div class="work-info d-flex">
                 <div class="work-icon heart d-flex align-items-center justify-content-center">
-                  <img src="/images/hompage/idea-1.png" alt="solution-icon" />
+                  <img src="../../../public/images/homes/idea-1.png" alt="solution-icon" />
+
+                  <!-- <img src="/images/hompage/idea-1.png" alt="solution-icon" /> -->
                 </div>
                 <div class="work-content ms-3">
                   <h5>Get Your Solution</h5>

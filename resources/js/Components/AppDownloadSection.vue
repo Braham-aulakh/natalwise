@@ -32,7 +32,7 @@
           <!-- Right Image Section -->
           <div class=" col-lg-6">
             <div class="mobile-img text-center">
-              <img src="/images/hompage/mobile-img.png" alt="App Preview">
+              <img src="../../../public/images/homes/mobile-img.png" alt="App Preview">
             </div>
           </div>
 
