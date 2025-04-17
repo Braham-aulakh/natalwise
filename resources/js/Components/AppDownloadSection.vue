@@ -4,7 +4,7 @@
       <div class="app-bg">
         <div class="row">
           <!-- Left Content Section -->
-          <div class="left-col">
+          <div class="left-col col-lg-6">
             <div class="app-content">
               <div class="app-header">
                 <h5>Working for Your Better Health.</h5>
@@ -30,9 +30,9 @@
           </div> <!-- .left-col -->
 
           <!-- Right Image Section -->
-          <div class="right-col">
+          <div class="col-lg-6  aos aos-init aos-animate">
             <div class="mobile-img text-center">
-              <img src="/images/hompage/mobile-img.png" alt="App Preview">
+              <img src="../../../public/images/homes/mobile-img.png" alt="App Preview">
             </div>
           </div>
 
@@ -112,5 +112,9 @@ export default {
         margin: 0;
         padding: 30px;
     }
+}
+.mobile-img {
+    position: relative;
+    bottom: 0;
 }
 </style>

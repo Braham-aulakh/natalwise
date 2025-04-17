@@ -603,7 +603,7 @@ export default {
         {
           title: "Evolve & Elevate",
           items: [
-            { name: "Personal Growth", link: "personal-growth.html" },
+            { name: "Personal Growth", link: route("personal-growth") },
             { name: "Style & Fashion", link: "style-and-fashion.html" },
             { name: "Future", link: "future-insights.html" },
           ],

@@ -22,7 +22,7 @@
                 <div class="row ">
                     <div class="col-lg-6">
                         <div class="pre-post-img" data-aos="fade-up">
-<img src="../../../public/images/homes/post-natal.jpg" />
+                            <img src="../../../public/images/homes/post-natal.jpg" />
                             <!-- <img src="  assets/img/post-natal.jpg" /> -->
 
                         </div>
@@ -107,87 +107,139 @@
         </section>
         <!-- Services Section -->
         <div class="features-section-sixteen">
-
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-header-sixteen text-center">
-
-                            <h2 class="book-heading">Empower Your Life <span class="color-pink
-									">Grow, Heal, Thrivees</span></h2>
-                            <p>Build confidence, embrace creativity, stay active, nurture relationships, and age
-                                gracefully with a positive mindset.</p>
+                            <h2 class="book-heading">
+                                Empower Your Life
+                                <span class="color-pink">Grow, Heal, Thrivees</span>
+                            </h2>
+                            <p>
+                                Build confidence, embrace creativity, stay active, nurture relationships, and age
+                                gracefully with a positive mindset.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="owl-carousel features-slider-sixteen owl-theme">
+
+                <div class="owl-carousel features-slider-sixteen owl-theme flex">
+                    <!-- Card 1 -->
                     <div class="feature-sixteen-main">
                         <div class="feature-six-img">
-                            <img src="../../../public/images/homes/Journey-Begins.jpg" alt="Feature" class="img-fluid"/>
-                            
-                            <div class="feature-content-six">
-                                <div class="feature-content-one">
-                                    <h5>Journey Begins</h5>
-                                    <span><i class="fa-solid fa-angle-up"></i></span>
-                                </div>
-                                <div class="feature-content-two">
-                                    <h5>Journey Begins</h5>
-                                    <p>Expert support to help women start their motherhood journey with confidence,
-                                        providing essential guidance for a healthy transition.</p>
-                                    <a href="booking.html" class="read-more-btn" tabindex="0">Read More</a>
-                                    <span><i class="fa-solid fa-angle-down"></i></span>
-                                </div>
+                            <img src="../../../public/images/homes/Journey-Begins.jpg" alt="Pre-Natal"
+                                class="img-fluid" />
+
+                            <!-- Always visible title -->
+                            <div class="feature-content-one">
+                                <h5>Journey Begins</h5>
+                                <span><i class="fa-solid fa-angle-up"></i></span>
+                            </div>
+
+                            <!-- Hidden content on hover -->
+                            <div class="feature-content-two">
+                                <h5>Journey Begins</h5>
+                                <p>Expert support to help women start their motherhood journey with confidence,
+                                    providing essential guidance for a healthy transition.</p>
+                                <a href="booking.html" class="read-more-btn">Read More
+                                </a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Card 2 -->
                     <div class="feature-sixteen-main">
                         <div class="feature-six-img">
-                            <img src="../../../public/images/homes/pre-natal-2.jpg" alt="Feature" class="img-fluid"/>
+                            <img src="../../../public/images/homes/pre-natal-2.jpg" alt="Pre-Natal" class="img-fluid" />
+
+                            <!-- Always visible title -->
+                            <div class="feature-content-one">
+                                <h5>Pre-Natal</h5>
+                                <span><i class="fa-solid fa-angle-up"></i></span>
+                            </div>
+
+                            <!-- Hidden content on hover -->
+                            <div class="feature-content-two">
+                                <h5>Pre-Natal</h5>
+                                <p>Comprehensive care focusing on maternal health, baby development, and emotional
+                                    well-being for a smooth and joyful pregnancy.</p>
+                                <a href="booking.html" class="read-more-btn">Read More
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="feature-sixteen-main">
+                        <div class="feature-six-img hover-wrapper">
+                            <img src="../../../public/images/homes/pre-natal-2.jpg" alt="Pre-Natal" class="img-fluid" />
                             <div class="feature-content-six">
                                 <div class="feature-content-one">
-                                    <h5>Pre-Natal </h5>
+                                    <h5>Pre-Natal</h5>
                                     <span><i class="fa-solid fa-angle-up"></i></span>
                                 </div>
                                 <div class="feature-content-two">
-                                    <h5>Pre-Natal </h5>
+                                    <h5>Pre-Natal</h5>
                                     <p>Comprehensive care focusing on maternal health, baby development, and emotional
                                         well-being for a smooth and joyful pregnancy.</p>
-                                    <a href="booking.html" class="read-more-btn" tabindex="0">Read More</a>
+                                    <a href="booking.html" class="read-more-btn">Read More</a>
                                     <span><i class="fa-solid fa-angle-down"></i></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
+                    <!-- Card 3 -->
                     <div class="feature-sixteen-main">
                         <div class="feature-six-img">
-                            <img src="../../../public/images/homes/Post-Natal-3.jpg" alt="Feature" class="img-fluid"/>
+                            <img src="../../../public/images/homes/Post-Natal-3.jpg" alt="Pre-Natal"
+                                class="img-fluid" />
+
+                            <!-- Always visible title -->
+                            <div class="feature-content-one">
+                                <h5>Post-Natal</h5>
+                                <span><i class="fa-solid fa-angle-up"></i></span>
+                            </div>
+
+                            <!-- Hidden content on hover -->
+                            <div class="feature-content-two">
+                                <h5>Post-Natal</h5>
+                                <p>Recovery support, newborn care, and emotional well-being to help mothers regain
+                                    strength and confidence.</p>
+                                <a href="booking.html" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="feature-sixteen-main">
+                        <div class="feature-six-img hover-wrapper">
+                            <img src="../../../public/images/homes/Post-Natal-3.jpg" alt="Post-Natal"
+                                class="img-fluid" />
                             <div class="feature-content-six">
                                 <div class="feature-content-one">
-                                    <h5>Post-Natal
-                                    </h5>
+                                    <h5>Post-Natal</h5>
                                     <span><i class="fa-solid fa-angle-up"></i></span>
                                 </div>
                                 <div class="feature-content-two">
                                     <h5>Post-Natal</h5>
                                     <p>Recovery support, newborn care, and emotional well-being to help mothers regain
                                         strength and confidence.</p>
-                                    <a href="booking.html" class="read-more-btn" tabindex="0">Read More</a>
+                                    <a href="booking.html" class="read-more-btn">Read More</a>
                                     <span><i class="fa-solid fa-angle-down"></i></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </div> -->
                 </div>
             </div>
         </div>
+
         <!-- /Services Section -->
 
         <!-- Facts Services -->
         <div class="facts-section-sixteen">
             <div class="bg-img" data-aos="fade-up">
-                <img src="../../../public/images/homes/Beige and Brown Product Launch Countdown Pre-Order Instagram Post(1).png" alt="Feature" class="img-fluid"/>
-                
+                <img src="../../../public/images/homes/Beige and Brown Product Launch Countdown Pre-Order Instagram Post(1).png"
+                    alt="Feature" class="sec-vector" />
+
             </div>
             <div class="container">
                 <div class="facts-section-all">
@@ -201,9 +253,15 @@
                             parenting guidance to make the transition into motherhood seamless. Take care of your
                             well-being and your baby's health with compassionate, expert-led care.
                         </p>
-                        <a href="#">Read More<i class="fa-solid fa-chevron-right ms-2"></i></a>
-                        <div class="bg-img">  
-                <!-- <img src="../../../public/images/homes/vector-bg-04.png" alt="Img" /> -->
+                        <div class="flex gap-2">
+                            <a class="flex gap-2 items-center" href="#">Read More
+                                <Icon icon="iconamoon:arrow-right-2-duotone" width="18" height="18"
+                                    style="color:#ffffff " />
+                            </a>
+
+                        </div>
+                        <div class="bg-img">
+                            <!-- <img src="../../../public/images/homes/vector-bg-04.png" alt="Img" /> -->
 
                         </div>
                     </div>
@@ -211,6 +269,8 @@
                         <ul>
                             <li>
                                 <div class="facts-sixteen-img">
+                                    <img src="../../../public/images/homes/pregnant_26198946.png" alt="Facts" />
+
                                     <!-- <img src="../../../public/images/homes/pregnant_26198946.png" alt="Facts" /> -->
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
@@ -228,7 +288,7 @@
                             </li>
                             <li>
                                 <div class="facts-sixteen-img">
-                                    <!-- <img src="../../../public/images/prenatal-care_8123466.png" alt="Facts" /> -->
+                                    <img src="../../../public/images/homes/prenatal-care_8123466.png" alt="Facts" />
 
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
@@ -247,8 +307,8 @@
                             </li>
                             <li>
                                 <div class="facts-sixteen-img">
-                                    <!-- <img src="../../../public/images/care_1807792.png" alt="Facts" /> -->
-                                    
+                                    <img src="../../../public/images/homes/care_1807792.png" alt="Facts" />
+
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
                                             <h5>Postpartum Recovery <i class="fa-solid fa-angle-right ms-2"></i></h5>
@@ -266,7 +326,8 @@
                             </li>
                             <li>
                                 <div class="facts-sixteen-img">
-                                    <!-- <img src="../../../public/images/adoption_15317104.png" alt="Facts" /> -->
+
+                                    <img src="../../../public/images/homes/adoption_15317104.png" alt="Facts" />
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
                                             <h5>Postpartum Sexual Health<i class="fa-solid fa-angle-right ms-2"></i>
@@ -285,7 +346,7 @@
                             </li>
                             <li>
                                 <div class="facts-sixteen-img">
-                                    <img src="assets/img/day_10878142.png" alt="Facts">
+                                    <img src="../../../public/images/homes/day_10878142.png" alt="Facts" />
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
                                             <h5> Maternal Mental Health<i class="fa-solid fa-angle-right ms-2"></i></h5>
@@ -303,7 +364,8 @@
                             </li>
                             <li>
                                 <div class="facts-sixteen-img">
-                                    <img src="assets/img/apple_9225150.png" alt="Facts">
+                                    <img src="../../../public/images/homes/day_10878142.png" alt="Facts" />
+
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
                                             <h5>Maternal Nutrition <i class="fa-solid fa-angle-right ms-2"></i></h5>
@@ -327,7 +389,12 @@
                     class="sec-vector" alt="Img">
             </div>
         </div>
+        <spotlight-doctor-section></spotlight-doctor-section>
+        <OurBlog></OurBlog>
 
+
+        <!-- Testimonials Sections  -->
+        <review-section></review-section>
     </app-layout>
 
 </template>
@@ -338,12 +405,15 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 import SpotlightDoctorSection from "@/Components/Doctors/SpotlightDoctorSection.vue";
 import OurBlog from '../Components/ourblog.vue';
 import ReviewSection from "@/Components/ReviewSection.vue";
+
+import { Icon } from "@iconify/vue";
 export default {
     components: {
         AppLayout,
         SpotlightDoctorSection,
         OurBlog,
-        ReviewSection
+        ReviewSection,
+        Icon
     }
 }
 </script>
@@ -355,4 +425,59 @@ export default {
     overflow: hidden;
     z-index: 1;
 }
+
+.banner-content h1 {
+    font-family: "Prata", serif !important;
+    font-weight: 400 !important;
+    font-style: normal;
+    font-size: 48px !important;
+    margin-bottom: 15px !important;
+    color: #404040 !important;
+}
+
+.pre-post {
+    padding-top: 80px;
+}
+
+.pre-post-img img {
+    border-radius: 100px 0 100px 0;
+    box-shadow: rgb(251, 242, 237) -5px 5px, rgb(255, 184, 206) -10px 10px, rgba(252, 159, 188, 0.48) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+.pre-post-cont h3 {
+    font-size: 35px !important;
+    font-weight: 600 !important;
+}
+
+.pre-post-cont p {
+    font-size: 18px !important;
+    padding-top: 10px !important;
+    color: #6B7280 !important;
+}
+
+.post-natal {
+    padding: 80px;
+}
+
+.features-section-sixteen {
+    position: relative;
+    z-index: 1;
+    padding: 80px 0;
+    background: #F8FBFF;
+}
+
+.owl-carousel {
+    display: flex;
+    width: 100%;
+    min-height: 100px;
+    justify-content: center;
+    /* adjust as needed */
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
 </style>
