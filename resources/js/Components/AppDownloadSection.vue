@@ -2,7 +2,7 @@
   <section class="app-section pt-0">
     <div class="container">
       <div class="app-bg">
-        <div class="row">
+        <div class="row align-items-end">
           <!-- Left Content Section -->
           <div class="left-col col-lg-6">
             <div class="app-content">
@@ -30,7 +30,7 @@
           </div> <!-- .left-col -->
 
           <!-- Right Image Section -->
-          <div class="col-lg-6  aos aos-init aos-animate">
+          <div class=" col-lg-6">
             <div class="mobile-img text-center">
               <img src="../../../public/images/homes/mobile-img.png" alt="App Preview">
             </div>
@@ -49,6 +49,9 @@ export default {
 </script>
 
 <style scoped>
+    .app-section {
+        padding: 0 0 80px;}
+
 .app-header h5 {
     font-size: 24px;
     font-weight: 600;
@@ -75,37 +78,32 @@ export default {
   height: auto;
 }
 .google-imgs img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    }
+
+.mobile-img {
+    position: relative;
+    top: 40px;
+    max-width: 120%;
+        width: 470px;
 }
 
-
-.app-section {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  line-height: inherit;
-  background-color: inherit;
-  font-weight: inherit;
-  font-style: inherit;
+.custom-container {
+  --gutter-x: 1.5rem;
+  --gutter-y: 0;
+  width: 100%;
+  max-width: 1140px; /* or whatever size you want */
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.app-bg {
-    background: #FC9FBC;
-    background-image: url(../img/aap-img-bg.png);
-    background-position: right top;
-    background-repeat: no-repeat;
-    border-radius: 6px;
-    padding: 40px 50px;}
-
-    .align-items-end {
+.align-items-end {
     align-items: flex-end !important;
-
-  background-color: #F4A0B2;
-  padding: 40px;
-  /* optional */
-  border-radius: 15px;
-  /* optional */}
+}
 
 @media (max-width: 1199.98px) {
     .app-bg {
@@ -113,8 +111,27 @@ export default {
         padding: 30px;
     }
 }
-.mobile-img {
-    position: relative;
-    bottom: 0;
+
+.app-bg {
+    background: #FC9FBC;
+    background-image: url('/images/homes/aap-img-bg.png');
+    background-position: right top;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+      padding: 40px  50px;
+}
+.app-scan {
+    padding-bottom: 40px;
+}
+@media (min-width: 992px) {
+    .col-lg-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+@media (max-width: 1199.98px) {
+    .mobile-img img {
+        max-width: 370px;
+    }
 }
 </style>

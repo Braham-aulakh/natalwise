@@ -41,80 +41,57 @@
     
       <div class="section stats p-6" v-show="faqs.length > 0">
 
-      <div class="container">
-        <div class="row">
-          <div class="col-12 mb-5 text-center">
-            <div v-if="
-              getPageContentType('faqs_section_description') == 'textarea'
-            ">
-              <div v-html="getPageContent('faqs_section_description')"></div>
-            </div>
-            <div v-else-if="
-              getPageContentType('faqs_section_description') == 'text'
-            ">
-              <p>{{ getPageContent("faqs_section_description") ?? "-" }}</p>
-            </div>
-            <div v-else>
-              <span class="fs-3">{{ __("Find some ") }}</span>
-              <h2 class="5">{{ __("Answer Questions") }}</h2>
-              <p>
-                When you choose Elite Legal Services, you are choosing a trusted
-                partner dedicated to your success. Here are some frequently
-                asked questions by some users. Feel free to add your questions
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-5">
-            <div class="rounded-5 mb-4 mb-md-0 overflow-hidden">
-              <img class="faq-img" src="@/images/home/faq.png" alt="" />
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="accordion home-faqs-accord" id="accordionPanelsStayOpenExample">
-              <div class="accordion-item rounded-4 mb-3 border-0 shadow" v-for="item in faqs" :key="item.id">
-                <h2 class="accordion-header border-0" :id="`panelsStayOpen-headingOne${item.id}`">
-                  <button style="height: 4rem"
-                    class="accordion-button border-0 rounded-5 shadow-none overflow-hidden bg-white collapsed"
-                    type="button" data-bs-toggle="collapse" :data-bs-target="`#panelsStayOpen-collapseOne${item.id}`"
-                    aria-expanded="false" :aria-controls="`panelsStayOpen-collapseOne${item.id}`">
-                    <span class="fw-bold home-faqs-text">{{ item.name }}</span>
-                  </button>
-                </h2>
-                <div :id="`panelsStayOpen-collapseOne${item.id}`"
-                  class="accordion-collapse border-top border-primary border-1 mx-3 collapse"
-                  :aria-labelledby="`panelsStayOpen-headingOne${item.id}`">
-                  <div class="accordion-body subheading-fs fw-bold">
-                    <div v-html="item.description"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row pt-5 justify-content-center">
-          <div class="col-md-3 d-flex justify-content-center">
-            <Link :href="route('faqs')" class="btn btn-outline-primary fw-medium fs-3 px-md-5 px-3 rounded-4">
-            <span class="button-text">{{
-              getPageContent("general_view_more_btn_text") ?? __("view more")
-            }}</span>
-            </Link>
-          </div>
-        </div>
-        <!-- <div class="row pt-4 justify-content-center">
-          <div class="col-md-3 d-flex justify-content-center">
-            <Link href="#" class="learn-more btn position-relative">
-              <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-              </span>
-              <span class="button-text">{{
-                getPageContent("general_view_more_btn_text") ?? __("view more")
-              }}</span>
-            </Link>
-          </div>
-        </div> -->
+    <div class="container">
+  <div class="row">
+    <div class="col-12 mb-5 text-center">
+      <div v-if="getPageContentType('faqs_section_description') == 'textarea'">
+        <div v-html="getPageContent('faqs_section_description')"></div>
       </div>
+      <div v-else-if="getPageContentType('faqs_section_description') == 'text'">
+        <p>{{ getPageContent("faqs_section_description") ?? "-" }}</p>
+      </div>
+      <div v-else>
+        <span class="fs-3">{{ __("Find some ") }}</span>
+        <h2 class="5">{{ __("Answer Questions") }}</h2>
+        <p>
+          When you choose Elite Legal Services, you are choosing a trusted
+          partner dedicated to your success. Here are some frequently
+          asked questions by some users. Feel free to add your questions.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5">
+      <div class="rounded-5 mb-4 mb-md-0 overflow-hidden">
+        <img class="faq-img" src="/images/homes/faq-img.png" alt="FAQ Image" />
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="accordion home-faqs-accord" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item rounded-4 mb-3 border-0 shadow" v-for="item in faqs" :key="item.id">
+          <h2 class="accordion-header border-0" :id="`panelsStayOpen-headingOne${item.id}`">
+            <button style="height: 4rem"
+              class="accordion-button border-0 rounded-5 shadow-none overflow-hidden bg-white collapsed"
+              type="button" data-bs-toggle="collapse" :data-bs-target="`#panelsStayOpen-collapseOne${item.id}`"
+              aria-expanded="false" :aria-controls="`panelsStayOpen-collapseOne${item.id}`">
+              <span class="fw-bold home-faqs-text">{{ item.name }}</span>
+            </button>
+          </h2>
+          <div :id="`panelsStayOpen-collapseOne${item.id}`"
+            class="accordion-collapse border-top border-primary border-1 mx-3 collapse"
+            :aria-labelledby="`panelsStayOpen-headingOne${item.id}`">
+            <div class="accordion-body subheading-fs fw-bold">
+              <div v-html="item.description"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
   </app-layout>
 </template>
@@ -255,11 +232,4 @@ AppDownloadSection,
   },
 });
 </script>
-<style scoped>
-.accordion-button:not(.collapsed) {
-  color: #294481 !important;
-}
-.stats{
-  background-color: #f9fbfd !important;
-}
-</style>
+

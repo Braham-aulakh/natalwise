@@ -5,14 +5,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://example.com/path-to-shink-font.css');
 
 
 * {
     font-family: Montserrat !important;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 .section-title {
     /* font-family: Montserrat !important ; */
     font-weight: 600 !important;
@@ -1105,6 +1104,12 @@ h6 {
 }
 
 /* homepage our commitment */
+@font-face {
+    font-family: 'shink';
+    src: url('/fonts/shink.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .section-bg {
     background-color: #fdeeea;
@@ -1189,20 +1194,27 @@ h6 {
     font-weight: 600 !important;
     font-size: 30px !important;
     color: #FC9FBC !important;
-    font-family: 'Eagle Lake', cursive !important;
+    font-family: 'shink' !important;
+}
+.doctor-card .card-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-card .card-img {
+  position: relative;
+  overflow: hidden;
 }
 
 .doctor-card .card-img .hvr {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: #f281b4 !important;
-    transition: height 0.3s ease-in-out;
-    /* Add transition effect */
-    overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 19%; /* Fully visible */
+  background-color: #f281b4 !important;
 }
+
 .spotlight-carousel .carousel .carousel__prev {
     background-color: #fbf2ed !important;
     padding: 0.8rem;
@@ -1321,41 +1333,30 @@ h6 {
     color: #2d2d2d;
     font-family: 'Poppins', sans-serif;
 }
-
-/* Work Items */
-.work-info {
-    display: flex;
-    align-items: center;
-    /* margin-bottom: 30px; */
-}
-
-/* .work-icon {
-    margin-right: 20px;
-} */
-
 .heart {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 150px;
-    background-color: #f281b4;
-    position: relative;
-    clip-path: path('M35 62s-30-20-30-37c0-10 8-18 18-18 6 0 11 3 14 7 3-4 8-7 14-7 10 0 18 8 18 18 0 17-30 37-30 37z');
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease;
-    /* Smooth rotation */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 160px;
+  background-color: #f281b4;
+  position: relative;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(0deg); /* Initially straight */
+  transition: transform 0.5s ease;
+  clip-path: path("M35 62s-30-20-30-37c0-10 8-18 18-18 6 0 11 3 14 7 3-4 8-7 14-7 10 0 18 8 18 18 0 17-30 37-30 37z");
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .heart:hover {
-    transform: rotate(90deg);
+  transform: rotate(90deg); /* Rotate on hover */
 }
 
 .heart img {
-    width: 26px;
-    height: 26px;
+ max-width: 100%;
+    height: auto;
+  object-fit: contain;
 }
-
 
 
 /* Content */
@@ -1577,11 +1578,14 @@ h6 {
   align-items: center;
   text-decoration: none;
   transition: 0.3s ease;
-  gap:6px;
-  font-size: 20px;
-    font-weight: 600;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
+.grid-footer a:hover {
+  color: #e05f8f; /* a slightly darker shade for hover effect */
+}
 .grid-footer a i {
   margin-left: 5px;
 }
@@ -1658,6 +1662,138 @@ h6 {
   border-radius: 50%; /* Rounded circle shape */
   top: -42px; /* Position the circles above the heart */
 }
+
+.heart::before {
+  left: -42px; /* Position the left circle */
+}
+
+.heart::after {
+  right: -42px; /* Position the right circle */
+}
+.heart {
+  position: relative;
+ width: 126px;
+    height: 80px; /* Increase the height for larger hearts */
+  background: #fc9fbc;
+  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.7s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin: 15px; /* Add margin for spacing between hearts */
+}
+
+/* Create the bottom "V" of the heart using pseudo-elements */
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 85px; /* Increase the size of the circles */
+  height: 85px; /* Match the height with the width for the circle */
+  background: #fc9fbc;
+  border-radius: 50%; /* Rounded circle shape */
+  top: -42px; /* Position the circles above the heart */
+}
+
+.heart::before {
+  left: -42px; /* Position the left circle */
+}
+
+.heart::after {
+  right: -42px; /* Position the right circle */
+}
+.heart {
+  position: relative;
+ width: 126px;
+    height: 80px; /* Increase the height for larger hearts */
+  background: #fc9fbc;
+  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.7s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin: 15px; /* Add margin for spacing between hearts */
+}
+
+/* Create the bottom "V" of the heart using pseudo-elements */
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 85px; /* Increase the size of the circles */
+  height: 85px; /* Match the height with the width for the circle */
+  background: #fc9fbc;
+  border-radius: 50%; /* Rounded circle shape */
+  top: -42px; /* Position the circles above the heart */
+}
+
+.heart::before {
+  left: -42px; /* Position the left circle */
+}
+
+.heart::after {
+  right: -42px; /* Position the right circle */
+}
+.heart {
+  position: relative;
+ width: 126px;
+    height: 80px; /* Increase the height for larger hearts */
+  background: #fc9fbc;
+  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.7s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin: 15px; /* Add margin for spacing between hearts */
+}
+
+/* Create the bottom "V" of the heart using pseudo-elements */
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 85px; /* Increase the size of the circles */
+  height: 85px; /* Match the height with the width for the circle */
+  background: #fc9fbc;
+  border-radius: 50%; /* Rounded circle shape */
+  top: -42px; /* Position the circles above the heart */
+}
+
+.heart::before {
+  left: -42px; /* Position the left circle */
+}
+
+.heart::after {
+  right: -42px; /* Position the right circle */
+}
+.heart {
+  position: relative;
+ width: 126px;
+    height: 80px; /* Increase the height for larger hearts */
+  background: #fc9fbc;
+  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.7s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin: 15px; /* Add margin for spacing between hearts */
+}
+
+/* Create the bottom "V" of the heart using pseudo-elements */
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 85px; /* Increase the size of the circles */
+  height: 85px; /* Match the height with the width for the circle */
+  background: #fc9fbc;
+  border-radius: 50%; /* Rounded circle shape */
+  top: -42px; /* Position the circles above the heart */
+} 
 
 .heart::before {
   left: -42px; /* Position the left circle */
@@ -1836,16 +1972,6 @@ h6 {
   height: auto;
 }
 
-
-.container {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
-    margin-right: auto;
-    margin-left: auto;
-}
 
 .app-section {
   font-family: inherit;
@@ -2280,4 +2406,61 @@ h6 {
     text-transform: capitalize !important;
     color: #000000 !important;
     margin-bottom: 0;
+}
+/* FAQ Image Styling */
+.faq-img {
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0.5rem !important;
+}
+
+/* Accordion Button Styling */
+.accordion-button {
+    font-weight: 600 !important;
+    color: #1e1e2f !important;
+    background-color: #f8d5dc !important;
+    border: none !important;
+    padding: 1rem !important;
+    width: 100% !important;
+    text-align: left !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.accordion-button.collapsed {
+    background-color: #f4a0b2 !important;
+    color: #fff !important;
+}
+
+.accordion-body {
+    background-color: #fff !important;
+    color: #444 !important;
+    padding: 1rem !important;
+    font-size: 0.95rem !important;
+    border-top: 1px solid #eee !important;
+}
+
+/* Accordion Item Customizations */
+.accordion-item {
+    border-radius: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.accordion-header {
+    padding: 0 !important;
+}
+
+.accordion-collapse {
+    padding: 0 !important;
+}
+
+/* Optional: For a more defined separation of accordion sections */
+.accordion-item:not(:last-child) .accordion-header {
+    border-bottom: 1px solid #eee !important;
+}
+
+/* Apply shadow effect for improved visual hierarchy */
+.accordion-button,
+.accordion-item {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }

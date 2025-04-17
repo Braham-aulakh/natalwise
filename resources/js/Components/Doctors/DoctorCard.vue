@@ -19,6 +19,8 @@
           alt="doctor"
         />
 
+        
+
         <!-- <span
           class="d-flex align-items-center mx-1 position-absolute end-0 p-3"
         >
@@ -128,20 +130,21 @@
                                         </li>
                                     </ul> -->
 
-        <div v-if="!doctortab" class="hvr px-4">
-          <div class="d-flex flex-column align-items-center mb-1">
-            <Link
-              class="text-decoration-none pt-2"
-              :href="route('doctor.profile', { user_name: doctor.user_name })"
-            >
-              <h2 class="card-title fs-2 fw-bold mb-2">{{ doctor.name }}</h2>
-            </Link>
+      <div v-if="!doctortab" class="hvr px-4">
+  <div class="d-flex flex-column align-items-center mb-1">
+    <Link
+      class="text-decoration-none pt-2"
+      :href="route('doctor.profile', { user_name: doctor.user_name })"
+    >
+      <h2 class="card-title fs-2 fw-bold mb-2">{{ doctor.name }}</h2>
+    </Link>
 
-            <h6 class="fs-3 card-subtitle">
-              {{ getCategoryNames(doctor.doctor_categories) }}
-            </h6>
-          </div>
-        </div>
+    <h6 class="fs-3 card-subtitle">
+      {{ getCategoryNames(doctor.doctor_categories) }}
+    </h6>
+  </div>
+</div>
+
       </div>
       <!-- Doctor Tabs -->
       <div v-if="doctortab" class="card-body">

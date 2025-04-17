@@ -49,15 +49,15 @@
                 </p>
               </div>
 
-              <!-- <div class="position-absolute top-0" style="right: 15%;">
-
+              <div class="position-absolute top-0" style="right: 15%;">
+<!-- 
                 <button @click="prev" class="btn">
                   <i class="bi bi-chevron-left"></i>
                 </button>
                 <button @click="next" class="btn">
                   <i class="bi bi-chevron-right"></i>
-                </button>
-              </div> -->
+                </button> -->
+              </div>
             </div>
           </div>
         </div>
