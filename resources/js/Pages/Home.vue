@@ -61,35 +61,52 @@
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-5">
-      <div class="rounded-5 mb-4 mb-md-0 overflow-hidden">
-        <img class="faq-img" src="/images/homes/faq-img.png" alt="FAQ Image" />
-      </div>
+  
+<div class="row">
+  <div class="col-md-5">
+    <div class="rounded-5 mb-4 mb-md-0 overflow-hidden">
+      <img class="faq-img" src="/images/homes/faq-img.png" alt="FAQ Image" />
     </div>
-    <div class="col-md-7">
-      <div class="accordion home-faqs-accord" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item rounded-4 mb-3 border-0 shadow" v-for="item in faqs" :key="item.id">
-          <h2 class="accordion-header border-0" :id="`panelsStayOpen-headingOne${item.id}`">
-            <button style="height: 4rem"
-              class="accordion-button border-0 rounded-5 shadow-none overflow-hidden bg-white collapsed"
-              type="button" data-bs-toggle="collapse" :data-bs-target="`#panelsStayOpen-collapseOne${item.id}`"
-              aria-expanded="false" :aria-controls="`panelsStayOpen-collapseOne${item.id}`">
-              <span class="fw-bold home-faqs-text">{{ item.name }}</span>
-            </button>
-          </h2>
-          <div :id="`panelsStayOpen-collapseOne${item.id}`"
-            class="accordion-collapse border-top border-primary border-1 mx-3 collapse"
-            :aria-labelledby="`panelsStayOpen-headingOne${item.id}`">
-            <div class="accordion-body subheading-fs fw-bold">
-              <div v-html="item.description"></div>
-            </div>
-          </div>
-        </div>
+  </div>
+
+  <div class="col-md-7">
+  <div class="accordion" id="faqAccordion">
+  <div
+    class="accordion-item mb-2"
+    v-for="(item, index) in faqs"
+    :key="item.id"
+  >
+    <h2 class="accordion-header" :id="`heading-${index}`">
+      <button
+        class="accordion-button"
+        :class="{ collapsed: activeIndex !== index }"
+        type="button"
+        @click="toggle(index)"
+        :aria-expanded="activeIndex === index"
+        :aria-controls="`collapse-${index}`"
+      >
+        <span class="fw-bold home-faqs-text">{{ item.name }}</span>
+      </button>
+    </h2>
+
+    <div
+      :id="`collapse-${index}`"
+      class="accordion-collapse collapse"
+      :class="{ show: activeIndex === index }"
+      :aria-labelledby="`heading-${index}`"
+    >
+      <div class="accordion-body subheading-fs fw-bold">
+        <div v-html="item.description"></div>
       </div>
     </div>
   </div>
+</div>
+
+  </div>
+</div>
+
+
+
 </div>
 
     </div>
@@ -174,6 +191,7 @@ AppDownloadSection,
     faqs: [],
     serviceCategories: [],
     // carousel settings
+    activeIndex: null,
     settings: {
       itemsToShow: 1,
       snapAlign: "start",
@@ -210,26 +228,197 @@ AppDownloadSection,
         moreText.style.display = "inline";
       }
     },
-    getFAQS() {
-      axios.get(this.route("getApiFaqs")).then((res) => {
-        this.faqs = res.data.data;
-      });
-    },
-    getServiceCategories() {
-      axios.get(this.route("getApiServiceCategories")).then((res) => {
-        this.serviceCategories = res.data.data;
-      });
-    },
-
-    launchModal() {
-      const modalButton = document.querySelector(
-        '[data-bs-target="#newsletterModal"]'
-      );
-      if (modalButton) {
-        modalButton.click();
-      }
-    },
+   
+  getFAQS() {
+    axios.get(this.route("getApiFaqs")).then((res) => {
+      this.faqs = res.data.data;
+    });
   },
+  getServiceCategories() {
+    axios.get(this.route("getApiServiceCategories")).then((res) => {
+      this.serviceCategories = res.data.data;
+    });
+  },
+  launchModal() {
+    const modalButton = document.querySelector(
+      '[data-bs-target="#newsletterModal"]'
+    );
+    if (modalButton) {
+      modalButton.click();
+    }
+  },
+  toggle(index) {
+    this.activeIndex = this.activeIndex === index ? null : index;
+  }
+},
+
 });
 </script>
 
+<style scoped>
+/* Accordion Button */
+.accordion-button {
+  background-color: #f4a0b2 !important;
+  color: #fff !important;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f29cbf !important; /* When not collapsed */
+  color: #fff !important;
+}
+
+.accordion-button.collapsed {
+  background-color: #f4a0b2 !important; /* Collapsed state */
+  color: #fff !important;
+}
+
+.accordion-button:hover {
+  background-color: #ec8da3 !important;
+}
+
+.accordion-button:focus {
+  outline: none;
+}
+
+/* Accordion Body */
+.accordion-body {
+  background-color: #fff !important;
+  color: #444 !important;
+  padding: 1rem !important;
+  font-size: 0.95rem !important;
+  border-top: 1px solid #eee !important;
+  display: block;
+}
+
+.accordion-body p {
+  margin: 0;
+}
+
+.accordion-header {
+  padding: 0;
+  margin: 0;
+}
+
+/* Accordion Collapse */
+.accordion-collapse {
+  transition: max-height 0.3s ease;
+}
+
+/* Focus on first accordion button */
+.accordion-button:first-of-type {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.accordion-button:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Styling the FAQ section container */
+.faq-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.section {
+  padding: 3rem 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.home-faqs-text {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Special Container for accordion */
+.accordion-item {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.accordion-item + .accordion-item {
+  margin-top: 10px;
+}
+
+.accordion-header {
+  background-color: #f4a0b2;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.accordion-header .accordion-button {
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.accordion-body {
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Hover Effect */
+.accordion-button:hover {
+  background-color: #ec8da3 !important;
+  cursor: pointer;
+}
+
+.accordion-collapse {
+  padding: 0;
+}
+
+/* General Styles for FAQ Text */
+.faqs-section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Styling for FAQ description text */
+.accordion-body .subheading-fs {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Styling for paragraphs in FAQ body */
+.accordion-body .subheading-fs p {
+  margin: 0;
+}
+
+/* Styling for the accordion container */
+.accordion {
+  margin-top: 20px;
+}
+
+.accordion-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.accordion-item .accordion-button {
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+
+/* Accordion collapse when clicked */
+.accordion-collapse.show {
+  display: block;
+}
+
+.accordion-collapse {
+  display: none;
+}
+
+</style>
