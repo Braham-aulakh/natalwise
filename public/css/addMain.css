@@ -719,7 +719,7 @@ a.btn.btn-facebook.w-100:hover {
   } */
 
 .banner-content .banner-head {
-    font-family: Montserrat !important;
+    font-family: "Prata", serif !important;
     font-weight: 400 !important;
     font-style: normal;
     font-size: 48px !important;
@@ -2295,7 +2295,7 @@ h6 {
     flex: 0 1 calc(33.333% - 20px);
     /* 3 per row with gap */
     max-width: 322px;
-    min-width: 280px;
+    min-width: 308px;
     height: 165px;
     border: 1px solid #E9EBF1;
     overflow: hidden;
@@ -2318,9 +2318,8 @@ h6 {
     flex-direction: column;
     align-items: center;
     padding: 10px 15px;
-    /* reduce padding */
+    gap: 15px;
     height: auto;
-    /* prevent forced stretching */
     text-align: center;
 }
 
@@ -2401,7 +2400,7 @@ h6 {
 }
 
 .facts-section-sixteen .facts-section-all .facts-content-all ul li .facts-sixteen-img .facts-content-sixteen .facts-content-one h5 {
-    font-size: 18px !important;
+    font-size: 16px !important;
     font-weight: 500 !important;
     text-transform: capitalize !important;
     color: #000000 !important;
@@ -2463,4 +2462,56 @@ h6 {
 .accordion-button,
 .accordion-item {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+.About-banner {
+    background: #fbf2ed;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.banner-content h1 {
+    font-family: "Prata", serif !important;
+    font-weight: 400 !important;
+    font-style: normal;
+    font-size: 48px !important;
+    margin-bottom: 15px !important;
+    color: #404040 !important;
+}
+
+.section-header-sixteen h2 {
+    margin-bottom: 5px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.book-heading {
+    font-size: 45px !important;
+    font-weight: 600 !important;
+}
+.section-header-sixteen p {
+    font-size: 18px !important;
+    color: #6B7280 !important;
+}
+.section-header-sixteen {
+    margin-bottom: 50px;
+}
+.features-section-sixteen {
+    z-index: 1;
+    padding: 80px 0;
+    background: #F8FBFF;
+}
+
+.owl-carousel {
+    display: flex !important;
+    width: 100%;
+    min-height: 100px;
+    justify-content: center;
+    /* adjust as needed */
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
 }

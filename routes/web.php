@@ -412,6 +412,15 @@ Route::get('/shop', function () {
         return Inertia::render('PersonalGrowth');
     })->name('personal-growth');
 
+    Route::get('/style-fashion', function () {
+        // dd('ok');
+        return Inertia::render('Style&Fashion');
+    })->name('style-fashion');
+
+    Route::get('/futureinsights', function () {
+        // dd('ok');
+        return Inertia::render('Futureinsights');
+    })->name('futureinsights');
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');
 

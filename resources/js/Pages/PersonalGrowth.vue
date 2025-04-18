@@ -89,13 +89,17 @@
                             <div class="feature-sixteen-main">
                                 <div class="feature-six-img">
                                     <img :src="feature.img" alt="Feature" class="img-fluid" />
-                                    <h5 class="feature-content-one">{{ feature.title }}</h5>
+                                    <h5 class="feature-content-one ">
+                                        {{ feature.title }} </h5>
 
                                     <div class="feature-content-six">
-                                        <div class="feature-content-two">
+                                        <div
+                                            class="feature-content-two flex flex-col items-center justify-center gap-2">
                                             <h5>{{ feature.title }}</h5>
                                             <p>{{ feature.description }}</p>
                                             <a href="/personal-growth2" class="read-more-btn">Read More</a>
+                                            <Icon icon="meteor-icons:angle-down" width="24" height="24"
+                                                style="color: #ffffff " />
                                         </div>
                                     </div>
                                 </div>
@@ -104,16 +108,189 @@
                     </Carousel>
 
 
-                    <div class="carousel-nav text-center mt-3">
-                        <button class="dot" @click="goPrev">◀</button>
-                        <button class="dot" @click="goNext">▶</button>
+                    <div class="carousel-nav text-center mb-3 ">
+                        <button class="dot custom-icon-btn" @click="goPrev">
+                            <Icon icon="iconamoon:arrow-left-2" width="24" height="24" class="custom-icon" />
+                        </button>
+
+                        <button class="dot custom-icon-btn" @click="goNext">
+                            <Icon icon="iconamoon:arrow-right-2-light" width="24" height="24" class="custom-icon" />
+                        </button>
                     </div>
                 </div>
 
             </div>
         </div>
+        <div class="facts-section-sixteen">
+            <div class="bg-img" data-aos="fade-up">
+                <img src="../../../public/images/homes/Beige and Brown Product Launch Countdown Pre-Order Instagram Post(1).png"
+                    alt="Feature" class="sec-vector" />
 
+            </div>
+            <div class="container">
+                <div class="facts-section-all">
+                    <div class="facts-main-sixteen" data-aos="fade-up">
 
+                        <h2>Build Confidence, Creativity & Relationships</h2>
+                        <p>
+                            From prenatal care of gynecology, nutrition, and physiotherapy to postpartum recovery,
+                            newborn care, and mental well-being, our experts are there at every stage. Receive pregnancy
+                            health support, preparation for labor, lactation help, postpartum recovery support, and
+                            parenting guidance to make the transition into motherhood seamless. Take care of your
+                            well-being and your baby's health with compassionate, expert-led care.
+                        </p>
+                        <div class="flex gap-2">
+                            <a class="flex gap-2 items-center" href="#">Read More
+                                <Icon icon="iconamoon:arrow-right-2-duotone" width="18" height="18"
+                                    style="color:#ffffff " />
+                            </a>
+
+                        </div>
+                        <div class="bg-img">
+                            <!-- <img src="../../../public/images/homes/vector-bg-04.png" alt="Img" /> -->
+
+                        </div>
+                    </div>
+                    <div class="facts-content-all" data-aos="fade-up">
+                        <ul>
+                            <li>
+                                <div class="facts-sixteen-img">
+                                    <img src="../../../public/images/homes/motivation_14942135.png" alt="Facts" />
+
+                                    <div class="facts-content-sixteen">
+                                        <div class="facts-content-one">
+                                            <h5 class="flex gap-1">Building Confidence
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+                                            </h5>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="facts-content-two facts-content-two-solid">
+                                    <h6 class="color-pink">"Step into Your True Power" </h6>
+                                    <p>
+                                        Overcome self-doubt and develop lifelong confidence to achieve your dreams and
+                                        aspirations.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="facts-sixteen-img">
+                                    <img src="../../../public/images/homes/massage-therapist_8404327.png" alt="Facts" />
+
+                                    <div class="facts-content-sixteen">
+                                        <div class="facts-content-one">
+                                            <h5 class="flex gap-1">Recovery through Art Therapy
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="facts-content-two facts-content-two-solid">
+                                    <h6 class="color-pink">"Unleash Your Inner Artist" </h6>
+                                    <p>
+                                        Tap into the therapeutic power of art to release feelings and reduce stress.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="facts-sixteen-img">
+                                    <img src="../../../public/images/homes/spa_4515224.png" alt="Facts" />
+
+                                    <div class="facts-content-sixteen">
+                                        <div class="facts-content-one">
+                                            <h5 class="flex gap-1">Aging Gracefully 
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="facts-content-two facts-content-two-solid">
+                                    <h6 class="color-pink">"Embracing Life Phases" </h6>
+                                    <p>
+                                        Feel strong and alive while you take care of yourself at every stage and age.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="facts-sixteen-img">
+
+                                    <img src="../../../public/images/homes/calendar_8968622.png" alt="Facts" />
+                                    <div class="facts-content-sixteen">
+                                        <div class="facts-content-one">
+                                            <h5 class="flex gap-1">Fitness Programs for All align-items-end 
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="facts-content-two facts-content-two-solid">
+                                    <h6 class="color-pink"> "Stay Active, Stay Strong" </h6>
+                                    <p>
+                                        Exercise regimens tailored to your age, helping you maintain a healthy and
+                                        active lifestyle at every stage.
+
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="facts-sixteen-img">
+                                    <img src="../../../public/images/homes/empathy_5201418.png" alt="Facts" />
+                                    <div class="facts-content-sixteen">
+                                        <div class="facts-content-one">
+                                            <h5 class="flex gap-1">Positive Relationship building
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="facts-content-two facts-content-two-solid">
+                                    <h6 class="color-pink"> "Form Healthy Relationships"</h6>
+                                    <p>
+                                        Improve your relationships with the help of emotional fulfillment tools and
+                                        techniques.
+
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="facts-sixteen-img">
+                                    <img src="../../../public/images/homes/analysis_9827205.png" alt="Facts" />
+
+                                    <div class="facts-content-sixteen">
+                                        <div class="facts-content-one">
+                                            <h5 class="flex gap-1 ">Self-Discovery and growth 
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="facts-content-two facts-content-two-solid">
+                                    <h6 class="color-pink"> "Unlock Your True Potential "</h6>
+                                    <p>
+                                        Take a journey of self-betterment and self-enrichment to live a meaningful life.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-img-2" data-aos="fade-up">
+                <img src="assets/img/Beige and Brown Product Launch Countdown Pre-Order Instagram Post(1).png"
+                    class="sec-vector" alt="Img">
+            </div>
+        </div>
+        <!-- Our Experts -->
+        <spotlight-doctor-section></spotlight-doctor-section>
+
+        <!-- Testimonials Sections  -->
+        <review-section></review-section>
+
+        <!-- our blogs  -->
+        <OurBlog></OurBlog>
     </app-layout>
 </template>
 
@@ -123,11 +300,19 @@ import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Icon } from "@iconify/vue";
+import SpotlightDoctorSection from "@/Components/Doctors/SpotlightDoctorSection.vue";
+import OurBlog from '../Components/ourblog.vue';
+import ReviewSection from "@/Components/ReviewSection.vue";
 export default {
     components: {
         Carousel,
         Slide,
-        AppLayout
+        AppLayout,
+        Icon,
+        SpotlightDoctorSection,
+        OurBlog,
+        ReviewSection
     },
     data() {
         return {
@@ -210,21 +395,23 @@ export default {
 .personal-img.aos-init.aos-animate img {
     border-radius: 100px 0px 100px 0;
     box-shadow: rgba(19, 18, 24, 0.52) -5px 5px, rgba(255, 199, 168, 0.32) -10px 10px, rgba(255, 205, 178, 0.28) -15px 15px, rgba(250, 203, 176, 0.23) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
-} 
-.feature-content-one {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  text-align: center;
-  color: #fff;
-  font-size: 22px !important;
-  font-weight: 500 !important;
-  font-family: "Montserrat", serif !important;
-  white-space: nowrap !important;
-  pointer-events: none;
 }
+
+.feature-content-one {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    font-size: 22px !important;
+    font-weight: 500 !important;
+    font-family: "Montserrat", serif !important;
+    white-space: nowrap !important;
+    pointer-events: none;
+}
+
 .features-slider-sixteen {
     margin-top: 2rem;
 }
@@ -292,6 +479,12 @@ export default {
     opacity: 1;
 }
 
+.feature-content-two {
+    display: flex;
+    flex-direction: column;
+}
+
+
 .feature-content-two h5 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
@@ -303,7 +496,7 @@ export default {
     line-height: 1.4;
 }
 
-.read-more-btn {
+/* .read-more-btn {
     display: inline-block;
     margin-top: 0.5rem;
     color: #fff;
@@ -312,11 +505,20 @@ export default {
     text-decoration: none;
     border-radius: 6px;
     transition: background-color 0.3s ease;
+} */
+.read-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #FC9FBC;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
-.read-more-btn:hover {
+/* .read-more-btn:hover {
     background-color: #c2185b;
-}
+} */
 
 .features-section-sixteen .feature-sixteen-main .feature-six-img::after {
     position: absolute;
@@ -326,5 +528,33 @@ export default {
     content: "";
     transition: 0.5s;
     background: none !important;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.custom-icon-btn {
+    background-color: #EEEEF3;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-icon {
+    color: #fc9fbc;
+    transition: color 0.3s ease;
+}
+
+.custom-icon-btn:hover {
+    background-color: #fc9fbc;
+}
+
+.custom-icon-btn:hover .custom-icon {
+    color: #ffffff;
 }
 </style>

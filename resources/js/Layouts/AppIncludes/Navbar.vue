@@ -604,8 +604,8 @@ export default {
           title: "Evolve & Elevate",
           items: [
             { name: "Personal Growth", link: route("personal-growth") },
-            { name: "Style & Fashion", link: "style-and-fashion.html" },
-            { name: "Future", link: "future-insights.html" },
+            { name: "Style & Fashion", link: route("style-fashion")},
+            { name: "Future", link: route("futureinsights") },
           ],
         },
         {

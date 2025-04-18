@@ -66,8 +66,6 @@
             <div class="container">
 
                 <div class="row ">
-
-
                     <div class="col-lg-6">
                         <div data-aos="fade-up">
                             <div class="pre-post-cont">
@@ -95,12 +93,8 @@
                             <img src="../../../public/images/homes/pre-netel.jpg" />
 
                         </div>
-
                     </div>
-
                 </div>
-
-
             </div>
 
 
@@ -169,24 +163,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="feature-sixteen-main">
-                        <div class="feature-six-img hover-wrapper">
-                            <img src="../../../public/images/homes/pre-natal-2.jpg" alt="Pre-Natal" class="img-fluid" />
-                            <div class="feature-content-six">
-                                <div class="feature-content-one">
-                                    <h5>Pre-Natal</h5>
-                                    <span><i class="fa-solid fa-angle-up"></i></span>
-                                </div>
-                                <div class="feature-content-two">
-                                    <h5>Pre-Natal</h5>
-                                    <p>Comprehensive care focusing on maternal health, baby development, and emotional
-                                        well-being for a smooth and joyful pregnancy.</p>
-                                    <a href="booking.html" class="read-more-btn">Read More</a>
-                                    <span><i class="fa-solid fa-angle-down"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                     <!-- Card 3 -->
                     <div class="feature-sixteen-main">
@@ -209,25 +185,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="feature-sixteen-main">
-                        <div class="feature-six-img hover-wrapper">
-                            <img src="../../../public/images/homes/Post-Natal-3.jpg" alt="Post-Natal"
-                                class="img-fluid" />
-                            <div class="feature-content-six">
-                                <div class="feature-content-one">
-                                    <h5>Post-Natal</h5>
-                                    <span><i class="fa-solid fa-angle-up"></i></span>
-                                </div>
-                                <div class="feature-content-two">
-                                    <h5>Post-Natal</h5>
-                                    <p>Recovery support, newborn care, and emotional well-being to help mothers regain
-                                        strength and confidence.</p>
-                                    <a href="booking.html" class="read-more-btn">Read More</a>
-                                    <span><i class="fa-solid fa-angle-down"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -274,7 +231,9 @@
                                     <!-- <img src="../../../public/images/homes/pregnant_26198946.png" alt="Facts" /> -->
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
-                                            <h5>Pregnancy Care<i class="fa-solid fa-angle-right ms-2"></i></h5>
+                                            <h5 class="flex gap-1">Pregnancy care
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+                                            </h5>
 
                                         </div>
                                     </div>
@@ -292,7 +251,8 @@
 
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
-                                            <h5>Pregnancy Physiotherapy <i class="fa-solid fa-angle-right ms-2"></i>
+                                            <h5 class="flex gap-1">Pregnancy Physiotherapy 
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
                                             </h5>
                                         </div>
                                     </div>
@@ -311,7 +271,9 @@
 
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
-                                            <h5>Postpartum Recovery <i class="fa-solid fa-angle-right ms-2"></i></h5>
+                                            <h5 class="flex gap-1">Postpartum Recovery 
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -330,7 +292,8 @@
                                     <img src="../../../public/images/homes/adoption_15317104.png" alt="Facts" />
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
-                                            <h5>Postpartum Sexual Health<i class="fa-solid fa-angle-right ms-2"></i>
+                                            <h5 class="flex gap-1">Postpartum Sexual Health
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
                                             </h5>
                                         </div>
                                     </div>
@@ -349,7 +312,9 @@
                                     <img src="../../../public/images/homes/day_10878142.png" alt="Facts" />
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
-                                            <h5> Maternal Mental Health<i class="fa-solid fa-angle-right ms-2"></i></h5>
+                                            <h5 class="flex gap-1">Maternal Mental Health
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -368,7 +333,9 @@
 
                                     <div class="facts-content-sixteen">
                                         <div class="facts-content-one">
-                                            <h5>Maternal Nutrition <i class="fa-solid fa-angle-right ms-2"></i></h5>
+                                            <h5 class="flex gap-1">Maternal Nutrition
+                                                <Icon icon="solar:alt-arrow-right-line-duotone" width="20" height="20"  style="color: #fc9fbc " />
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -459,25 +426,6 @@ export default {
     padding: 80px;
 }
 
-.features-section-sixteen {
-    position: relative;
-    z-index: 1;
-    padding: 80px 0;
-    background: #F8FBFF;
-}
 
-.owl-carousel {
-    display: flex;
-    width: 100%;
-    min-height: 100px;
-    justify-content: center;
-    /* adjust as needed */
-}
-
-.owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-}
 
 </style>
