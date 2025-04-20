@@ -421,6 +421,21 @@ Route::get('/shop', function () {
         // dd('ok');
         return Inertia::render('Futureinsights');
     })->name('futureinsights');
+
+    Route::get('/sexualwellbeing', function () {
+        // dd('ok');
+        return Inertia::render('SexualWellBeing');
+    })->name('sexualwellbeing');
+
+    Route::get('/mentalwellbeing', function () {
+        // dd('ok');
+        return Inertia::render('MentalWellBeing');
+    })->name('mentalwellbeing');
+
+    Route::get('/nutritionalwellbeing', function () {
+        // dd('ok');
+        return Inertia::render('NutritionalWellbeing');
+    })->name('nutritionalwellbeing');
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');
 

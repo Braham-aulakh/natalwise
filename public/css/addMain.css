@@ -84,9 +84,11 @@
     color: #fc9fbc !important;
     text-decoration: none !important;
 }
-.pink-bg{
+
+.pink-bg {
     background-color: #fc9fbc;
 }
+
 .section-subtitle {
     font-size: 18px !important;
     font-family: "Montserrat", serif !important;
@@ -1196,34 +1198,37 @@ h6 {
     color: #FC9FBC !important;
     font-family: 'shink' !important;
 }
+
 .doctor-card .card-img {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .doctor-card .card-img {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .doctor-card .card-img .hvr {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 19%; /* Fully visible */
-  background-color: #f281b4 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 19%;
+    /* Fully visible */
+    background-color: #f281b4 !important;
 }
 
 .spotlight-carousel .carousel .carousel__prev {
     background-color: #fbf2ed !important;
     padding: 0.8rem;
-  }
+}
 
-  .spotlight-carousel .carousel .carousel__next{
+.spotlight-carousel .carousel .carousel__next {
     background-color: #fbf2ed !important;
     padding: 0.8rem;
-  }
+}
+
 .sidebar-mini .main-sidebar .nav-link-active {
     background: #FC9FBC !important;
 }
@@ -1333,29 +1338,32 @@ h6 {
     color: #2d2d2d;
     font-family: 'Poppins', sans-serif;
 }
+
 .heart {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 160px;
-  background-color: #f281b4;
-  position: relative;
-  border-radius: 50% 50% 0 0;
-  transform: rotate(0deg); /* Initially straight */
-  transition: transform 0.5s ease;
-  clip-path: path("M35 62s-30-20-30-37c0-10 8-18 18-18 6 0 11 3 14 7 3-4 8-7 14-7 10 0 18 8 18 18 0 17-30 37-30 37z");
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 160px;
+    background-color: #f281b4;
+    position: relative;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(0deg);
+    /* Initially straight */
+    transition: transform 0.5s ease;
+    clip-path: path("M35 62s-30-20-30-37c0-10 8-18 18-18 6 0 11 3 14 7 3-4 8-7 14-7 10 0 18 8 18 18 0 17-30 37-30 37z");
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .heart:hover {
-  transform: rotate(90deg); /* Rotate on hover */
+    transform: rotate(90deg);
+    /* Rotate on hover */
 }
 
 .heart img {
- max-width: 100%;
+    max-width: 100%;
     height: auto;
-  object-fit: contain;
+    object-fit: contain;
 }
 
 
@@ -1449,6 +1457,7 @@ h6 {
 .btn-primary:hover {
     border: 1px solid black !important;
 }
+
 .profile-accordian .accordion-header .accordion-button.collapsed {
     background-color: #fbf2ed;
     border-radius: 20px;
@@ -1459,6 +1468,7 @@ h6 {
     padding-bottom: 20px;
     border: 1px solid #fbf2ed !important;
 }
+
 /* .work-details {
     padding-left: 60px;
     padding-bottom: 45px;
@@ -1475,421 +1485,488 @@ h6 {
     margin-bottom: 0 !important; 
     color: #374151 !important;
 } */
-.review-card .card:hover{
-    background-color:#ff77a9 !important ;
+.review-card .card:hover {
+    background-color: #ff77a9 !important;
 }
-.nav-pills.account-tabs .nav-link{
+
+.nav-pills.account-tabs .nav-link {
     background-color: #fbf2ed !important;
     border: 1px solid #fbf2ed !important;
-  }
-  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-      background-color: #fc9fbc !important;
-      border: 1px solid #fc9fbc !important;
-  }
-  /* .img-card{
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: #fc9fbc !important;
+    border: 1px solid #fc9fbc !important;
+}
+
+/* .img-card{
     background-color: #fbf2ed !important;
   } */
-   
+
 /* our blog */
 
 .our-blog-fourteen {
-  position: relative;
-  padding: 80px 0;
-  background-color: #fff;
-  overflow: hidden;
+    position: relative;
+    padding: 80px 0;
+    background-color: #fff;
+    overflow: hidden;
 }
 
 .section-bg img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  max-height: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    max-height: 300px;
 }
 
 .section-head-fourteen {
-  text-align: center;
-  margin-bottom: 50px;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .section-head-fourteen h2 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #333;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
 }
 
 .section-head-fourteen h2 span {
-  color: #f47aa7; /* Pink theme color */
+    color: #f47aa7;
+    /* Pink theme color */
 }
 
 .blog-grid-fourteen {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  margin: 10px;
-  transition: all 0.3s ease;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 10px;
+    transition: all 0.3s ease;
 }
 
 .blog-grid-fourteen:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .blog-grid-img img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
 }
 
 .blog-grid-content {
-  padding: 20px;
+    padding: 20px;
 }
 
 .blog-grid-content h4 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #222;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
 }
 
 .blog-grid-content h4 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .blog-grid-content p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 15px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
 }
 
 .grid-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  color: #999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #999;
 }
 
 .grid-footer a {
-  color: #f47aa7;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: 0.3s ease;
-  gap: 6px;
-  font-size: 15px;
-  font-weight: 600;
+    color: #f47aa7;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .grid-footer a:hover {
-  color: #e05f8f; /* a slightly darker shade for hover effect */
+    color: #e05f8f;
+    /* a slightly darker shade for hover effect */
 }
+
 .grid-footer a i {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
 .owl-nav-button {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
-.owl-prev, .owl-next {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  display: inline-block;
+.owl-prev,
+.owl-next {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
 }
 
-.owl-prev:hover, .owl-next:hover {
-  background-color: #f0f0f0;
+.owl-prev:hover,
+.owl-next:hover {
+    background-color: #f0f0f0;
 }
 
-.owl-prev i, .owl-next i {
-  font-size: 20px;
-  color: #333;
+.owl-prev i,
+.owl-next i {
+    font-size: 20px;
+    color: #333;
 }
+
 /* how it works */
 .work-section {
-  background-color: #f9fbfd;
+    background-color: #f9fbfd;
 }
 
 .section-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 40px;
-  color: #1f2937;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    color: #1f2937;
 }
 
 .work-sub {
-  color: #f47aa7;
-  font-family: 'Pacifico', cursive;
-  font-size: 22px;
-  margin-bottom: 10px;
+    color: #f47aa7;
+    font-family: 'Pacifico', cursive;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 .work-img img {
-  border-radius: 16px;
+    border-radius: 16px;
 }
 
 /* Heart container */
 /* Heart container */
 .heart {
-  position: relative;
- width: 126px;
-    height: 80px; /* Increase the height for larger hearts */
-  background: #fc9fbc;
-  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.7s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  margin: 15px; /* Add margin for spacing between hearts */
+    position: relative;
+    width: 126px;
+    height: 80px;
+    /* Increase the height for larger hearts */
+    background: #fc9fbc;
+    border-radius: 50px 50px 0 0;
+    /* Top rounded parts of the heart */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.7s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin: 15px;
+    /* Add margin for spacing between hearts */
 }
 
 /* Create the bottom "V" of the heart using pseudo-elements */
 .heart::before,
 .heart::after {
-  content: '';
-  position: absolute;
-  width: 85px; /* Increase the size of the circles */
-  height: 85px; /* Match the height with the width for the circle */
-  background: #fc9fbc;
-  border-radius: 50%; /* Rounded circle shape */
-  top: -42px; /* Position the circles above the heart */
+    content: '';
+    position: absolute;
+    width: 85px;
+    /* Increase the size of the circles */
+    height: 85px;
+    /* Match the height with the width for the circle */
+    background: #fc9fbc;
+    border-radius: 50%;
+    /* Rounded circle shape */
+    top: -42px;
+    /* Position the circles above the heart */
 }
 
 .heart::before {
-  left: -42px; /* Position the left circle */
+    left: -42px;
+    /* Position the left circle */
 }
 
 .heart::after {
-  right: -42px; /* Position the right circle */
+    right: -42px;
+    /* Position the right circle */
 }
+
 .heart {
-  position: relative;
- width: 126px;
-    height: 80px; /* Increase the height for larger hearts */
-  background: #fc9fbc;
-  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.7s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  margin: 15px; /* Add margin for spacing between hearts */
+    position: relative;
+    width: 126px;
+    height: 80px;
+    /* Increase the height for larger hearts */
+    background: #fc9fbc;
+    border-radius: 50px 50px 0 0;
+    /* Top rounded parts of the heart */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.7s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin: 15px;
+    /* Add margin for spacing between hearts */
 }
 
 /* Create the bottom "V" of the heart using pseudo-elements */
 .heart::before,
 .heart::after {
-  content: '';
-  position: absolute;
-  width: 85px; /* Increase the size of the circles */
-  height: 85px; /* Match the height with the width for the circle */
-  background: #fc9fbc;
-  border-radius: 50%; /* Rounded circle shape */
-  top: -42px; /* Position the circles above the heart */
+    content: '';
+    position: absolute;
+    width: 85px;
+    /* Increase the size of the circles */
+    height: 85px;
+    /* Match the height with the width for the circle */
+    background: #fc9fbc;
+    border-radius: 50%;
+    /* Rounded circle shape */
+    top: -42px;
+    /* Position the circles above the heart */
 }
 
 .heart::before {
-  left: -42px; /* Position the left circle */
+    left: -42px;
+    /* Position the left circle */
 }
 
 .heart::after {
-  right: -42px; /* Position the right circle */
+    right: -42px;
+    /* Position the right circle */
 }
+
 .heart {
-  position: relative;
- width: 126px;
-    height: 80px; /* Increase the height for larger hearts */
-  background: #fc9fbc;
-  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.7s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  margin: 15px; /* Add margin for spacing between hearts */
+    position: relative;
+    width: 126px;
+    height: 80px;
+    /* Increase the height for larger hearts */
+    background: #fc9fbc;
+    border-radius: 50px 50px 0 0;
+    /* Top rounded parts of the heart */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.7s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin: 15px;
+    /* Add margin for spacing between hearts */
 }
 
 /* Create the bottom "V" of the heart using pseudo-elements */
 .heart::before,
 .heart::after {
-  content: '';
-  position: absolute;
-  width: 85px; /* Increase the size of the circles */
-  height: 85px; /* Match the height with the width for the circle */
-  background: #fc9fbc;
-  border-radius: 50%; /* Rounded circle shape */
-  top: -42px; /* Position the circles above the heart */
+    content: '';
+    position: absolute;
+    width: 85px;
+    /* Increase the size of the circles */
+    height: 85px;
+    /* Match the height with the width for the circle */
+    background: #fc9fbc;
+    border-radius: 50%;
+    /* Rounded circle shape */
+    top: -42px;
+    /* Position the circles above the heart */
 }
 
 .heart::before {
-  left: -42px; /* Position the left circle */
+    left: -42px;
+    /* Position the left circle */
 }
 
 .heart::after {
-  right: -42px; /* Position the right circle */
+    right: -42px;
+    /* Position the right circle */
 }
+
 .heart {
-  position: relative;
- width: 126px;
-    height: 80px; /* Increase the height for larger hearts */
-  background: #fc9fbc;
-  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.7s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  margin: 15px; /* Add margin for spacing between hearts */
+    position: relative;
+    width: 126px;
+    height: 80px;
+    /* Increase the height for larger hearts */
+    background: #fc9fbc;
+    border-radius: 50px 50px 0 0;
+    /* Top rounded parts of the heart */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.7s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin: 15px;
+    /* Add margin for spacing between hearts */
 }
 
 /* Create the bottom "V" of the heart using pseudo-elements */
 .heart::before,
 .heart::after {
-  content: '';
-  position: absolute;
-  width: 85px; /* Increase the size of the circles */
-  height: 85px; /* Match the height with the width for the circle */
-  background: #fc9fbc;
-  border-radius: 50%; /* Rounded circle shape */
-  top: -42px; /* Position the circles above the heart */
+    content: '';
+    position: absolute;
+    width: 85px;
+    /* Increase the size of the circles */
+    height: 85px;
+    /* Match the height with the width for the circle */
+    background: #fc9fbc;
+    border-radius: 50%;
+    /* Rounded circle shape */
+    top: -42px;
+    /* Position the circles above the heart */
 }
 
 .heart::before {
-  left: -42px; /* Position the left circle */
+    left: -42px;
+    /* Position the left circle */
 }
 
 .heart::after {
-  right: -42px; /* Position the right circle */
+    right: -42px;
+    /* Position the right circle */
 }
+
 .heart {
-  position: relative;
- width: 126px;
-    height: 80px; /* Increase the height for larger hearts */
-  background: #fc9fbc;
-  border-radius: 50px 50px 0 0; /* Top rounded parts of the heart */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.7s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  margin: 15px; /* Add margin for spacing between hearts */
+    position: relative;
+    width: 126px;
+    height: 80px;
+    /* Increase the height for larger hearts */
+    background: #fc9fbc;
+    border-radius: 50px 50px 0 0;
+    /* Top rounded parts of the heart */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.7s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    margin: 15px;
+    /* Add margin for spacing between hearts */
 }
 
 /* Create the bottom "V" of the heart using pseudo-elements */
 .heart::before,
 .heart::after {
-  content: '';
-  position: absolute;
-  width: 85px; /* Increase the size of the circles */
-  height: 85px; /* Match the height with the width for the circle */
-  background: #fc9fbc;
-  border-radius: 50%; /* Rounded circle shape */
-  top: -42px; /* Position the circles above the heart */
-} 
+    content: '';
+    position: absolute;
+    width: 85px;
+    /* Increase the size of the circles */
+    height: 85px;
+    /* Match the height with the width for the circle */
+    background: #fc9fbc;
+    border-radius: 50%;
+    /* Rounded circle shape */
+    top: -42px;
+    /* Position the circles above the heart */
+}
 
 .heart::before {
-  left: -42px; /* Position the left circle */
+    left: -42px;
+    /* Position the left circle */
 }
 
 .heart::after {
-  right: -42px; /* Position the right circle */
+    right: -42px;
+    /* Position the right circle */
 }
 
 /* Icon inside the heart */
 
 
 .work-info h5 {
-  font-weight: 600;
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: #1f2937;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #1f2937;
 }
 
 .work-info p {
-  font-size: 15px;
-  margin-bottom: 0;
-  color: #4b5563;
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #4b5563;
 }
 
 .our-blog-fourteen .owl-nav button {
-  width: 45px;
-  height: 45px;
-  border-radius: 10px;
-  background: #EEEEF3;
-  border: 0;
-  margin: 10px;
-  color: #fc9fbc;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: #EEEEF3;
+    border: 0;
+    margin: 10px;
+    color: #fc9fbc;
 
-  display: inline-flex; /* Makes the button size respect width/height */
-  align-items: center;
-  justify-content: center;
-  padding: 0; /* Ensure no extra space inside */
-  box-sizing: border-box; /* Respect width/height including border/padding */
+    display: inline-flex;
+    /* Makes the button size respect width/height */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* Ensure no extra space inside */
+    box-sizing: border-box;
+    /* Respect width/height including border/padding */
 }
 
 .owl-nav-button {
-    
-  margin-top: 20px;
-  display: flex;
-  justify-content: center; /* Center arrows horizontally */
-  align-items: center;
-  gap: 8px;
+
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* Center arrows horizontally */
+    align-items: center;
+    gap: 8px;
 }
 
 
 .our-blog-fourteen .owl-prev:hover,
 .our-blog-fourteen .owl-next:hover {
-  background-color: #F47AA7;
-  border-color: #F47AA7;
+    background-color: #F47AA7;
+    border-color: #F47AA7;
 }
 
 /* Optional: change icon color too */
 .our-blog-fourteen .owl-prev:hover svg,
 .our-blog-fourteen .owl-next:hover svg {
-  color: #fff; /* Makes icons white on pink background */
-  fill: #fff;
+    color: #fff;
+    /* Makes icons white on pink background */
+    fill: #fff;
 }
 
 @media (max-width: 767px) {
-  .section-title {
-    font-size: 28px;
-    text-align: center;
-  }
+    .section-title {
+        font-size: 28px;
+        text-align: center;
+    }
 
-  .work-sub {
-    text-align: center;
-  }
+    .work-sub {
+        text-align: center;
+    }
 
-  .work-details {
-    padding-left: 0;
-    text-align: center;
-  }
+    .work-details {
+        padding-left: 0;
+        text-align: center;
+    }
 
-  .work-info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    .work-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-  .work-content {
-    margin-left: 0 !important;
-    margin-top: 10px;
-  }
+    .work-content {
+        margin-left: 0 !important;
+        margin-top: 10px;
+    }
 }
+
 @media (min-width: 768px) {
     .col-md-5 {
         flex: 0 0 auto;
         width: 33.666667%;
     }
 }
+
 @media (min-width: 768px) {
     .col-md-7 {
         flex: 0 0 auto;
@@ -1899,55 +1976,62 @@ h6 {
 
 
 .view-count {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px; /* space between icon and text */
-  color: #999; /* optional: match your design */
-  font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    /* space between icon and text */
+    color: #999;
+    /* optional: match your design */
+    font-size: 13px;
 }
+
 .blog-grid-content h4 a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease;
-    
-    
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+
+
 }
 
 .blog-grid-content h4 a:hover {
-  color: #FC9FBC;
+    color: #FC9FBC;
 
 }
+
 .content-divider {
-  border: none;
-  height: 1px;
-  background-color: #eee;
-  margin: 10px 0;
+    border: none;
+    height: 1px;
+    background-color: #eee;
+    margin: 10px 0;
 }
-  
-  .view-count {
+
+.view-count {
     color: #374151;
     font-size: 0.9375rem;
-  }
- .store-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  margin-right: 10px;
-  cursor: pointer;
-  margin-top: 10px;
+}
+
+.store-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 .store-btn img {
-  display: inline-block;
-  height: auto;
-  max-width: 100%;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
 }
+
 .app-header h5 {
     font-size: 24px;
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 10px;
 }
+
 .app-header h2 {
     font-size: 40px;
     font-weight: 600;
@@ -1964,23 +2048,24 @@ h6 {
 }
 
 .app-scan img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
+
 .google-imgs img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 
 .app-section {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  line-height: inherit;
-  background-color: inherit;
-  font-weight: inherit;
-  font-style: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    background-color: inherit;
+    font-weight: inherit;
+    font-style: inherit;
 }
 
 .app-bg {
@@ -1989,9 +2074,10 @@ h6 {
     background-position: right top;
     background-repeat: no-repeat;
     border-radius: 6px;
-    padding: 40px 50px;}
+    padding: 40px 50px;
+}
 
-    .align-items-end {
+.align-items-end {
     align-items: flex-end !important;
 }
 
@@ -2406,6 +2492,7 @@ h6 {
     color: #000000 !important;
     margin-bottom: 0;
 }
+
 /* FAQ Image Styling */
 .faq-img {
     width: 100% !important;
@@ -2463,6 +2550,7 @@ h6 {
 .accordion-item {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
+
 .About-banner {
     background: #fbf2ed;
     position: relative;
@@ -2489,13 +2577,16 @@ h6 {
     font-size: 45px !important;
     font-weight: 600 !important;
 }
+
 .section-header-sixteen p {
     font-size: 18px !important;
     color: #6B7280 !important;
 }
+
 .section-header-sixteen {
     margin-bottom: 50px;
 }
+
 .features-section-sixteen {
     z-index: 1;
     padding: 80px 0;
@@ -2514,4 +2605,187 @@ h6 {
     position: relative;
     overflow: hidden;
     -webkit-transform: translate3d(0, 0, 0);
+}
+
+.testimonial-section-ten.need-to-know-section {
+    background-color: #F8FAFC;
+    position: relative;
+    background-image: url(../../../public/images/homes/abstract-art-botanical-background-vector-260nw-1987327502.jpg) !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.page-breadcrumb ol li a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none !important;
+}
+
+.breadcrumb-item+.breadcrumb-item {
+    padding-left: 0.5rem;
+    color: #6B7280 !important;
+}
+
+.faq-sec-fourteen {
+    margin: 0;
+    padding-top: 80px;
+    z-index: 1;
+    position: relative;
+}
+
+.faq-cont {
+    position: sticky;
+    top: 200px;
+}
+
+.faq-cont h2 {
+    font-size: 45px;
+    font-weight: 600 !important;
+    color: #272b41;
+}
+
+.faq-cont p {
+    font-size: 18px;
+    padding-bottom: 30px;
+    color: #6B7280 !important;
+}
+
+.book-now {
+    background-color: #fc9fbc;
+    padding: 10px 30px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    text-decoration: none !important;
+}
+
+.faq-card {
+    background: #ffffff;
+    box-shadow: 0px 7.5px 17.5px 0px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    padding: 24px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.faq-title {
+    cursor: pointer;
+}
+
+.faq-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #fc9fbc6e;
+    color: #fc9fbc;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 15px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active-icon {
+    background: #fc9fbc;
+    color: white;
+}
+
+.faq-content h6 {
+    padding-top: 10px;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 500 !important;
+    margin-bottom: 0;
+}
+
+.drop-wellbeing {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.drop-wellbeing li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.drop-wellbeing li span {
+    margin-right: 10px;
+}
+
+.drop-wellbeing li:first-child {
+    margin-top: 20px;
+}
+
+
+
+.way-section {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0 0 80px;
+}
+
+.way-section .way-bg {
+    background: #FC9FBC;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.way-section .way-bg .way-shapes-img {
+    position: relative;
+}
+
+.way-section .way-bg .way-shapes-img .way-shapes-left {
+    position: absolute !important;
+    top: 60px !important;
+    right: 200px !important;
+}
+
+.way-section .way-bg .way-shapes-img .way-shapes-right {
+    position: absolute;
+    right: 0;
+}
+.way-inner-header {
+    margin: 0;
+    padding: 60px;
+}
+
+.way-inner-header h2 {
+    color: #ffffff !important;
+    margin-bottom: 29px !important;
+}
+
+.section-inner-header h2 {
+    font-weight: 600 !important;
+    font-size: 40px !important;
+    color: #1F2937 ;
+}
+.way-inner-header .btn {
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    padding: 11px 16px !important;
+    color: #FC9FBC !important;
+    background: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: inset 0 0 0 0 #FC9FBC !important;
+}
+.way-img {
+    position: relative;
+    top: 10px;
+}
+.way-inner-header p {
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 40px;
 }

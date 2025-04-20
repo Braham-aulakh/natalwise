@@ -611,9 +611,9 @@ export default {
         {
           title: "Complete Wellness",
           items: [
-            { name: "Sexual Well Being", link: "sexual-wellbeing.html" },
-            { name: "Mental Well Being", link: "mental-wellbeing.html" },
-            { name: "Nutritional Well Being", link: "nutritional-wellbeing.html" },
+            { name: "Sexual Well Being", link: route("sexualwellbeing") },
+            { name: "Mental Well Being", link: route("mentalwellbeing") },
+            { name: "Nutritional Well Being", link: route("nutritionalwellbeing")},
           ],
         },
       ],
