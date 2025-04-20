@@ -1,5 +1,6 @@
 <template>
     <app-layout title="Futureinsights">
+        
         <section class="About-banner">
             <div class="container">
                 <div class="row align-items-center">
