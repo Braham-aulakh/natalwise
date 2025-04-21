@@ -6,35 +6,22 @@
           <div class="col-12">
             <div class="position-relative text-center">
               <!-- <img src="@/images/home/premium.png" alt="" class="img-fluid mb-3" /> -->
-              <div
-                class="col-12"
-                v-if="
-                  getPageContentType('premium_doctors_description') ==
-                  'textarea'
-                "
-              >
-                <div
-                  v-html="getPageContent('premium_doctors_description')"
-                ></div>
+              <div class="col-12" v-if="
+                getPageContentType('premium_doctors_description') ==
+                'textarea'
+              ">
+                <div v-html="getPageContent('premium_doctors_description')"></div>
               </div>
-              <div
-                class="col-12"
-                v-else-if="
-                  getPageContentType('premium_doctors_description') == 'text'
-                "
-              >
+              <div class="col-12" v-else-if="
+                getPageContentType('premium_doctors_description') == 'text'
+              ">
                 <p>
                   {{ getPageContent("premium_doctors_description") ?? "-" }}
                 </p>
               </div>
               <div v-else>
-                <h2
-                  class="text-center display-6"
-                  data-aos="fade-down"
-                  data-aos-once="false"
-                  data-aos-duration="1500"
-                  data-aos-delay="200"
-                >
+                <h2 class="text-center display-6" data-aos="fade-down" data-aos-once="false" data-aos-duration="1500"
+                  data-aos-delay="200">
                   {{ __("Premium Doctors") }}
                 </h2>
 
@@ -50,7 +37,7 @@
               </div>
 
               <div class="position-absolute top-0" style="right: 15%;">
-<!-- 
+                <!-- 
                 <button @click="prev" class="btn">
                   <i class="bi bi-chevron-left"></i>
                 </button>
@@ -63,16 +50,8 @@
         </div>
       </div>
 
-      <div
-        class="container spotlight-carousel px-0"
-        v-if="!fetching && premium_doctors.length > 0"
-      >
-        <Carousel
-          :wrapAround="true"
-          :breakpoints="breakpoints"
-          ref="carousel"
-          v-model="currentSlide"
-        >
+      <div class="container spotlight-carousel px-0" v-if="!fetching && premium_doctors.length > 0">
+        <Carousel :wrapAround="true" :breakpoints="breakpoints" ref="carousel" v-model="currentSlide">
           <Slide v-for="doctor in premium_doctors" :key="doctor.id">
             <!-- <doctor-spotlight-card :doctor="doctor"></doctor-spotlight-card> -->
             <doctor-card :doctor="doctor"></doctor-card>
@@ -98,14 +77,12 @@
 
       <div class="row pt-md-5 justify-content-center">
         <div class="col-md-3 d-flex justify-content-center">
-  <Link
-  :href="route('doctors.listing')"
-  class="btn  d-flex align-items-center gap-1 btn reg-btn pink-btn fw-medium fs-3 px-md-5 px-3 rounded-4"
->
-  <span class="button-text">
-    {{ getPageContent("general_view_more_btn_text") ?? __("view more") }}
-  </span>
-</Link>
+          <Link :href="route('doctors.listing')"
+            class="btn  d-flex align-items-center gap-1 btn reg-btn pink-btn fw-medium fs-3 px-md-5 px-3 rounded-4">
+          <span class="button-text">
+            {{ getPageContent("general_view_more_btn_text") ?? __("view more") }}
+          </span>
+          </Link>
 
         </div>
       </div>
@@ -172,7 +149,7 @@ export default defineComponent({
         this.premium_doctors = res.data.data;
       });
     },
-    submit() {},
+    submit() { },
 
     next() {
       this.$refs.carousel.next();

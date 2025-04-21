@@ -151,14 +151,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.testimonial-section-ten.need-to-know-section {
-  background-color: #F8FAFC;
-  position: relative;
-  background-image: url(../../../public/images/homes/flowerTestimonial.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
+
 
 .review-carousel {
   padding: 0 0.5rem;

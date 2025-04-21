@@ -135,7 +135,7 @@
                                 <h5>Journey Begins</h5>
                                 <p>Expert support to help women start their motherhood journey with confidence,
                                     providing essential guidance for a healthy transition.</p>
-                                <a href="booking.html" class="read-more-btn">Read More
+                                <a href="doctors" class="read-more-btn">Read More
                                 </a>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                                 <h5>Pre-Natal</h5>
                                 <p>Comprehensive care focusing on maternal health, baby development, and emotional
                                     well-being for a smooth and joyful pregnancy.</p>
-                                <a href="booking.html" class="read-more-btn">Read More
+                                <a href="doctors" class="read-more-btn">Read More
 
                                 </a>
                             </div>
@@ -181,7 +181,7 @@
                                 <h5>Post-Natal</h5>
                                 <p>Recovery support, newborn care, and emotional well-being to help mothers regain
                                     strength and confidence.</p>
-                                <a href="booking.html" class="read-more-btn">Read More</a>
+                                <a href="doctors" class="read-more-btn">Read More</a>
                             </div>
                         </div>
                     </div>

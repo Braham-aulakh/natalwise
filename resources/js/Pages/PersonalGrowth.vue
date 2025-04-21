@@ -97,7 +97,7 @@
                                             class="feature-content-two flex flex-col items-center justify-center gap-2">
                                             <h5>{{ feature.title }}</h5>
                                             <p>{{ feature.description }}</p>
-                                            <a href="/personal-growth2" class="read-more-btn">Read More</a>
+                                            <a href="/personal-confidence-building" class="read-more-btn">Read More</a>
                                             <Icon icon="meteor-icons:angle-down" width="24" height="24"
                                                 style="color: #ffffff " />
                                         </div>
@@ -140,7 +140,7 @@
                             well-being and your baby's health with compassionate, expert-led care.
                         </p>
                         <div class="flex gap-2">
-                            <a class="flex gap-2 items-center" href="#">Read More
+                            <a class="flex gap-2 items-center"  href="#">Read More
                                 <Icon icon="iconamoon:arrow-right-2-duotone" width="18" height="18"
                                     style="color:#ffffff " />
                             </a>

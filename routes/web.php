@@ -436,6 +436,21 @@ Route::get('/shop', function () {
         // dd('ok');
         return Inertia::render('NutritionalWellbeing');
     })->name('nutritionalwellbeing');
+
+    Route::get('/completewellness', function () {
+        // dd('ok');
+        return Inertia::render('CompleteWellness');
+    })->name('completewellness');
+
+    Route::get('/health', function () {
+        // dd('ok');
+        return Inertia::render('Health');
+    })->name('health');
+
+    Route::get('/personal-confidence-building', function () {
+        // dd('ok');
+        return Inertia::render('PersonalConfidence');
+    })->name('personal-confidence-building');
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');
 

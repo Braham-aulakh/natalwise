@@ -14,9 +14,9 @@
                 Stage of Life!
               </h1>
               <p>Health | Fashion | Relationships | Lifestyle & More</p>
-              <a href="booking.html" class="btn ">
+              <Link :href="route('doctors.listing')" class="btn ">
                 Schedule Appointment
-              </a>
+              </Link>
             </div>
           </div>
 

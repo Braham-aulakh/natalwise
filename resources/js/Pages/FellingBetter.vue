@@ -16,7 +16,7 @@
                                 <h2>Be on Your Way to Feeling Better with Natalwise</h2>
                                 <p>Reach out and nurture your journey with us—each conversation plants a seed for a
                                     vibrant tomorrow.</p>
-                                <a href="contact-us.html" class="btn btn-primary">Contact Us</a>
+                                <a href="contact" class="btn btn-primary">Contact Us</a>
                             </div>
                         </div>
                         <div class="col-lg-5 ">

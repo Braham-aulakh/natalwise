@@ -1988,15 +1988,27 @@ h6 {
     margin-bottom: 12px;
 }
 
-.read-more-btn {
+/* .read-more-btn {
     background-color: #ff69b4;
     color: #fff;
     padding: 8px 18px;
     text-decoration: none;
     border-radius: 4px;
     font-weight: 500;
-}
+    cursor: pointer;
+} */
 
+.read-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #FC9FBC;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer !important;
+}
 /* Optional icon spacing */
 .feature-content-six span {
     display: block;
@@ -2065,15 +2077,7 @@ h6 {
     opacity: 0;
 }
 
-.read-more-btn {
-    display: inline-block;
-    margin-top: 10px;
-    background: #FC9FBC;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-}
+
 
 .features-section-sixteen .feature-sixteen-main .feature-six-img::after {
     position: absolute;
@@ -2490,16 +2494,14 @@ h6 {
     overflow: hidden;
     -webkit-transform: translate3d(0, 0, 0);
 }
-
 .testimonial-section-ten.need-to-know-section {
     background-color: #F8FAFC;
     position: relative;
-    background-image: url(../../../public/images/homes/abstract-art-botanical-background-vector-260nw-1987327502.jpg) !important;
+    background-image: url(../images/homes/flowerTestimonial.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
-
+  }
 .page-breadcrumb ol li a {
     color: #000;
     font-size: 14px;
@@ -2743,4 +2745,71 @@ margin-top: 60px;
 
 .heart img{
     background-image: url(../images/homes/pngwing.png);
+}
+
+
+.services-section-thirteen {
+    background-color: #FBF2ED;
+    padding: 80px 0;
+}
+
+.section-header-thirteen {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-header-thirteen h2 {
+    font-size: 45px;
+    font-weight: 600;
+    font-family: "Montserrat", serif !important;
+    /* font-size: 36px; */
+    color: #000000;
+    /* font-weight: 600; */
+    margin-bottom: 0;
+}
+
+.service-thirteen-main {
+    border-radius: 20px;
+    margin: 0 0 24px 0;
+    padding: 8px;
+    transition: 0.5s;
+    box-shadow: 0 0 6px -3px;
+}
+
+.service-thirteen-all {
+    /* display: flex; */
+    display: -webkit-flex;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px dashed #ffffff;
+}
+
+.service-img-thirteen {
+    margin-right: 15px !important;
+}
+
+.service-img-thirteen img {
+    max-width: 120px !important;
+}
+
+.service-thirteen-main:hover {
+    background: #ffffff !important;
+    box-shadow: 0px 11px 21px 10px rgba(14, 130, 253, 0.0784313725);
+    transition: 0.5s !important;
+    transform: translateY(-5px) !important;
+}
+
+.service-inner-contents h5 {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+}
+
+.service-inner-contents h6 {
+    font-size: 15px !important;
+    color: #fc9fbc !important;
+    font-weight: 500 !important;
+}
+
+.service-inner-contents p {
+    color: #6B7280 !important;
 }

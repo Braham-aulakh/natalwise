@@ -26,7 +26,7 @@
                             <div
                                 class="row row-cols-7 row-cols-xxl-7 row-cols-xl-4 row-cols-lg-4 row-cols-md-6 justify-content-center w-100 ">
                                 <div class="col-12 d-flex col-xxl col-lg-3 col-sm-6 explore_main">
-                                    <a href="complete-wellness.html" class="explore-box  flex-fill">
+                                    <a href="completewellness" class="explore-box  flex-fill">
                                         <span>
                                             <img src="../images//icons/Wellness.png" alt="heart-image">
                                         </span>
@@ -38,7 +38,7 @@
                                             <h3 class="cont-hide-head">Complete Wellness</h3>
                                             <p class="cont-hide-para">Get personalized advice on self-care, mental well-being, and overall
                                                 wellness to help you feel your best at every stage.</p>
-                                            <button herf="complete-wellness.html">Read More
+                                            <button herf="completewellness">Read More
                                                 <Icon icon="iconamoon:arrow-right-2" width="16" height="16" />
                                              </button>
 
@@ -48,9 +48,9 @@
 
                                 </div>
                                 <div class="col-12 d-flex col-xxl col-lg-3 col-sm-6 explore_main">
-                                    <a href="health.html" class="explore-box  flex-fill">
+                                    <a href="health" class="explore-box  flex-fill">
                                         <span>
-                                            <img src="../images//icons/heart.png" alt="heart-image">
+                                            <img src="../images/icons/heart.png" alt="heart-image">
                                         </span>
                                         <div class="explore-heading flex-fill">
                                             <h3>Health</h3>
@@ -59,12 +59,12 @@
                                             <h3>Health</h3>
                                             <p>Receive expert guidance on physical health, fitness, and nutrition to
                                                 support a balanced and healthy lifestyle. </p>
-                                            <button herf="health.html">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
+                                            <button herf="health">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-12 d-flex col-xxl col-lg-3 col-sm-6 explore_main">
-                                    <a href="Style-&-fashion.html" class="explore-box flex-fill">
+                                    <a href="style-fashion" class="explore-box flex-fill">
                                         <span>
                                             <img src="../images/icons/drass.png" alt="heart-image">
                                         </span>
@@ -75,12 +75,12 @@
                                             <h3>Style & Fashion</h3>
                                             <p>Stay confident with expert fashion, beauty, and style tips tailored to
                                                 your personality, body type, and lifestyle.</p>
-                                            <button herf="Style-&-fashion.html">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
+                                            <button herf="style-fashion">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-12 d-flex col-xxl col-lg-3 col-sm-6 explore_main">
-                                    <a href="Personal-growth.html" class="explore-box flex-fill">
+                                    <a href="personal-growth" class="explore-box flex-fill">
                                         <span>
                                             <img src="../images/icons/idea.png" alt="heart-image">
                                         </span>
@@ -91,12 +91,12 @@
                                             <h3>Personal Growth</h3>
                                             <p>Unlock your potential with career, relationships, and self-improvement
                                                 insights.</p>
-                                            <button herf="Personal-growth.html">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
+                                            <button herf="personal-growth">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-12 d-flex col-xxl col-lg-3 col-sm-6 explore_main">
-                                    <a href="Future-insights.html" class="explore-box flex-fill">
+                                    <a href="futureinsights" class="explore-box flex-fill">
                                         <span>
                                             <img src="../images/icons/eye.png" alt="heart-image">
                                         </span>
@@ -107,12 +107,12 @@
                                             <h3>Future Insights</h3>
                                             <p>Plan ahead with expert guidance on finances, life transitions, and
                                                 well-being.</p>
-                                            <button herf="Future-insights.html">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
+                                            <button herf="futureinsights">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-12 d-flex col-xxl col-lg-3 col-sm-6 explore_main">
-                                    <a href="Pre-&-post-natal.html" class="explore-box flex-fill">
+                                    <a href="pre-postal" class="explore-box flex-fill">
                         <span>
                                             <img src="../images//icons/pregnant.png" alt="heart-image">
                                         </span>
@@ -123,7 +123,7 @@
                                             <h3>Pre & Post Natal</h3>
                                             <p>Expert guidance for pregnancy and postpartum health, recovery, self-care,
                                                 and emotional well-being.</p>
-                                            <button herf="Pre-&-post-natal.html">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
+                                            <button herf="pre-postal">Read More  <Icon icon="iconamoon:arrow-right-2" width="16" height="16" /></button>
                                         </div>
                                     </a>
                                 </div>
