@@ -1,169 +1,83 @@
 <template>
   <app-layout title="Contact">
-    <div class="bg-primary">
-      <pages-heading
-        :textwhite="'true'"
-        :heading="'Contact us'"
-        :breadcrums="breadcrums"
-      >
+    <div class="Top-Border">
+      <pages-heading :textwhite="'true'" :heading="'Contact us'" :breadcrums="breadcrums">
       </pages-heading>
     </div>
-    <div class="stats">
-      <div class="page section py-0">
-        <div class="py-3">
-          <div class="container">
-            <div class="row"></div>
-          </div>
+    <section class="contact-section">
+      <div class="container">
+        <div class="section-header-one aos aos-init aos-animate" data-aos="fade-up">
+          <h5 class="faq-heading"> {{ __("Get in Touch") }}</h5>
+          <h2 class="fqz-heading">Have Any Questions</h2>
         </div>
-        <div class="container">
-          <div class="row justify-content-center py-5">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card">
-                    <validation-errors class="mb-3" />
-                    <div class="card-body p-md-4">
-                      <div class="p-3">
-                        <div>
-                          <h3 class="fs-3 ms-1 fw-bold text-primary">
-                            {{ __("Get in Touch") }}
-                          </h3>
-                        </div>
-                        <div>
-                          <h2 class="display-5 fw-bold">
-                            {{ __("Let's Chat,Reach Out") }}<br />
-                            {{ __("to Us") }}
-                          </h2>
-                        </div>
-                        <div>
-                          <p class="fs-3 text-paragraphcolor">
-                            {{
-                              __(
-                                "Have questions or feedback?We're here to help.Send us a message,and we'll respond within 24hours"
-                              )
-                            }}
-                          </p>
-                        </div>
-                      </div>
-                      <hr class="pb-4" />
+        <div class="row">
 
-                      <div
-                        class="col-md-12 d-flex justify-content-center gap-3 px-1"
-                      >
-                        <div class="col-md-6 mb-4">
-                          <div class="">
-                            <label
-                              for="exampleFormControlInput0"
-                              class="form-label fs-4 text-black fw-medium"
-                              >{{ __("whats your name?") }}</label
-                            >
-                            <input
-                              type="text"
-                              class="form-control border rounded-4"
-                              id="exampleFormControlInput0"
-                              v-model="form.name"
-                              :placeholder="__('Please Enter')"
-                            />
+          <div class="col-lg-7 ">
+            <div class="cont-img">
+              <img src="../../../public/images/homes/contact us img.jpg" />
+            </div>
+          </div>
+          <div class="col-lg-5  d-flex">
+            <div class="card contact-form-card w-100">
+              <div class="card-body">
+                <form action="#">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="mb-2">{{ __("whats your name?") }}</label>
+                        <input type="text" class="form-control" placeholder="Enter Your Name"
+                          id="exampleFormControlInput0" v-model="form.name" :placeholder="__('Please Enter')">
+
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label class="mb-2">{{ __("email address") }}</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" v-model="form.email"
+                          placeholder="name@example.com" />
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <label class="mb-2">Phone Number</label>
+                        <input type="text" class="form-control" placeholder="Enter Phone Number"
+                          id="exampleFormControlInput2" v-model="form.phone" />
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-6">
+												<div class="mb-3">
+													<label class="mb-2">Services</label>
+													<input type="text" class="form-control" placeholder="Enter Services">
+												</div>
+											</div> -->
+                    <div class="col-md-12">
+                      <div class="mb-3">
+                        <label class="mb-2">Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" v-model="form.message" rows="3"
+                          placeholder="Enter your comments"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group-btn mb-0">
+                        <button type="submit" @click="submit()"
+                          class="btn btn-primary prime-btn d-flex align-items-center justify-content-center gap-2"
+                          :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+                          <div v-if="form.processing" class="spinner-border spinner-border-sm text-light" role="status">
+                            <span class="visually-hidden">{{ __('Loading') }}...</span>
                           </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                          <div class="">
-                            <label
-                              for="exampleFormControlInput1"
-                              class="form-label fs-4 text-black fw-medium"
-                              >{{ __("email address") }}</label
-                            >
-                            <input
-                              type="email"
-                              class="form-control border rounded-4"
-                              id="exampleFormControlInput1"
-                              v-model="form.email"
-                              placeholder="name@example.com"
-                            />
-                          </div>
-                        </div>
+                          <span v-else>{{ __('Send Message') }}</span>
+                        </button>
                       </div>
-                      <div class="mb-4">
-                        <label
-                          for="exampleFormControlInput2"
-                          class="form-label fs-4 text-black fw-medium"
-                          >{{
-                            __("what phone number can we reach you at?")
-                          }}</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control border rounded-4"
-                          id="exampleFormControlInput2"
-                          v-model="form.phone"
-                          :placeholder="__('Please Enter')"
-                        />
-                      </div>
-                      <div class="mb-4">
-                        <label
-                          for="exampleFormControlTextarea1"
-                          class="form-label fs-4 text-black fw-medium"
-                          >{{ __("how can we help?write us a message") }}</label
-                        >
-                        <textarea
-                          class="form-control border rounded-4"
-                          id="exampleFormControlTextarea1"
-                          v-model="form.message"
-                          rows="3"
-                        ></textarea>
-                      </div>
-                      <button
-                        @click="submit()"
-                        :class="{ 'text-white-50': form.processing }"
-                        :disabled="form.processing"
-                        class="btn rounded-4 btn-primary w-100 fw-bold"
-                      >
-                        <div
-                          v-show="form.processing"
-                          class="spinner-border spinner-border-sm"
-                        >
-                          <span class="visually-hidden"
-                            >{{ __("loading") }}...</span
-                          >
-                        </div>
-                        {{ __("send message") }}
-                      </button>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-md-6 ps-md-5 ps-0">
-                  <img
-                    class="rounded-5 contact-img"
-                    src="@/images/icons/Contact.svg"
-                    alt="contact-img"
-                  />
-                  <div
-                    class="card p-4 mt-3"
-                    v-if="
-                      getPageContentType('contact_page_description') ==
-                      'textarea'
-                    "
-                  >
-                    <div
-                      v-html="getPageContent('contact_page_description')"
-                    ></div>
-                  </div>
-                  <p
-                    v-else-if="
-                      getPageContentType('contact_page_description') == 'text'
-                    "
-                  >
-                    {{ getPageContent("contact_page_description") ?? __(" ") }}
-                  </p>
-                  <div v-else>-------------------------------------</div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
   </app-layout>
 </template>
 <script>
@@ -215,11 +129,70 @@ export default defineComponent({
   },
 });
 </script>
-<style>
-input {
-  background-color: #f4f9fd !important;
+<style scoped>
+.contact-section {
+  margin: 0;
+  padding: 80px 0 55px;
 }
-textarea {
-  background-color: #f4f9fd !important;
+
+.section-header-one {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.faq-heading {
+  font-weight: 600 !important;
+  font-size: 30px !important;
+  color: #FC9FBC !important;
+  font-family: 'Great Vibes', cursive !important;
+  /* font-family: 'Corinthia', cursive !important; */
+  /* font-family: 'Pacifico', cursive !important; */
+  margin-bottom: 12PX;
+}
+
+.fqz-heading {
+  font-size: 45px !important;
+  font-weight: 600 !important;
+  color: #272b41;
+}
+
+.cont-img img {
+  box-shadow: 0 0 13px -1px;
+  border-radius: 60px;
+}
+
+.contact-form-card {
+  background: #F8FBFF;
+  border-radius: 10px;
+  border: 0;
+}
+
+.contact-form-card .card-body {
+  margin: 0;
+  padding: 30px;
+}
+
+.contact-form-card .form-group-btn {
+  margin-top: 25px;
+}
+
+.contact-form-card .form-group-btn .btn {
+  border-radius: 5px;
+  min-width: 150px;
+  margin: 0;
+  padding: 10px 15px;
+  font-weight: 500;
+}
+
+.prime-btn:focus,
+.prime-btn:hover,
+.prime-btn:active,
+.prime-btn.active {
+  color: #fc9fbc;
+  background-color: #ffffff;
+  border-color: #fc9fbc;
+  box-shadow: inset 0 0 0 50px #ffffff;
+  -ms-transition: 0.7s;
+  transition: 0.7s;
 }
 </style>

@@ -55,7 +55,11 @@
                   </li>
                 </ul>
               </li>
-              <li class="has-submenu"><a href="coming-soon.html">About Us</a></li>
+              <li class="has-submenu">
+                <Link :href="route('about')">
+                  About Us
+                </Link>
+                </li>
 
               <!-- Resources -->
               <li class="has-submenu">
