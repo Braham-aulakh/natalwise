@@ -185,7 +185,7 @@
 }
 
 .cont-hide .cont-hide-head {
-    font-size: 20px !important;
+    font-size: 18px !important;
     font-weight: 600 !important;
     color: #272b41 !important;
     margin-bottom: .5rem;
@@ -193,7 +193,7 @@
 }
 
 .cont-hide .cont-hide-para {
-    font-size: 15px !important;
+    font-size: 14px !important;
     margin-bottom: 16px !important;
 }
 
@@ -209,6 +209,12 @@
     border-radius: 5px;
     font-size: 12px;
     transition: all 0.4s ease;
+}
+.cont-hide h3 {
+font-size: 18px !important;
+}
+.cont-hide p {
+font-size: 15px !important;
 }
 
 @media (min-width: 992px) {
@@ -811,7 +817,7 @@ section.banner-section {
 
 [data-aos^=fade][data-aos^=fade].aos-animate {
     opacity: 1;
-    transform: none !important;
+ 
 }
 
 [data-aos^=fade][data-aos^=fade].aos-animate img {
@@ -1311,8 +1317,8 @@ h6 {
 }
 
 .work-img img {
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+   
     max-width: 100%;
     height: auto;
 }
@@ -1338,34 +1344,6 @@ h6 {
     color: #2d2d2d;
     font-family: 'Poppins', sans-serif;
 }
-
-.heart {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 160px;
-    background-color: #f281b4;
-    position: relative;
-    border-radius: 50% 50% 0 0;
-    transform: rotate(0deg);
-    /* Initially straight */
-    transition: transform 0.5s ease;
-    clip-path: path("M35 62s-30-20-30-37c0-10 8-18 18-18 6 0 11 3 14 7 3-4 8-7 14-7 10 0 18 8 18 18 0 17-30 37-30 37z");
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.heart:hover {
-    transform: rotate(90deg);
-    /* Rotate on hover */
-}
-
-.heart img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
 
 /* Content */
 .work-content h5 {
@@ -1481,8 +1459,8 @@ h6 {
     margin-bottom: 14px !important ;
 }
 .work-info .work-content p {
-    font-size: 16px !important; 
-    margin-bottom: 0 !important; 
+    font-size: 16px !important;
+    margin-bottom: 0 !important;
     color: #374151 !important;
 } */
 .review-card .card:hover {
@@ -1652,228 +1630,43 @@ h6 {
     margin-bottom: 10px;
 }
 
-.work-img img {
-    border-radius: 16px;
-}
+
 
 /* Heart container */
 /* Heart container */
-.heart {
-    position: relative;
-    width: 126px;
-    height: 80px;
-    /* Increase the height for larger hearts */
-    background: #fc9fbc;
-    border-radius: 50px 50px 0 0;
-    /* Top rounded parts of the heart */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.7s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    margin: 15px;
-    /* Add margin for spacing between hearts */
-}
 
 /* Create the bottom "V" of the heart using pseudo-elements */
-.heart::before,
+/* .heart::before,
 .heart::after {
-    content: '';
-    position: absolute;
-    width: 85px;
-    /* Increase the size of the circles */
-    height: 85px;
-    /* Match the height with the width for the circle */
-    background: #fc9fbc;
-    border-radius: 50%;
-    /* Rounded circle shape */
-    top: -42px;
-    /* Position the circles above the heart */
-}
+  content: '';
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  background: #fc9fbc;
+  border-radius: 50%;
+  top: -42px;
+} */
 
-.heart::before {
-    left: -42px;
-    /* Position the left circle */
-}
+/* .heart::before {
+  left: -42px;
+} */
 
-.heart::after {
-    right: -42px;
-    /* Position the right circle */
-}
-
-.heart {
-    position: relative;
-    width: 126px;
+/* .heart::after {
+  right: -42px;
+} */
+/* .heart {
+  position: relative;
+ width: 126px;
     height: 80px;
-    /* Increase the height for larger hearts */
-    background: #fc9fbc;
-    border-radius: 50px 50px 0 0;
-    /* Top rounded parts of the heart */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.7s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    margin: 15px;
-    /* Add margin for spacing between hearts */
-}
-
-/* Create the bottom "V" of the heart using pseudo-elements */
-.heart::before,
-.heart::after {
-    content: '';
-    position: absolute;
-    width: 85px;
-    /* Increase the size of the circles */
-    height: 85px;
-    /* Match the height with the width for the circle */
-    background: #fc9fbc;
-    border-radius: 50%;
-    /* Rounded circle shape */
-    top: -42px;
-    /* Position the circles above the heart */
-}
-
-.heart::before {
-    left: -42px;
-    /* Position the left circle */
-}
-
-.heart::after {
-    right: -42px;
-    /* Position the right circle */
-}
-
-.heart {
-    position: relative;
-    width: 126px;
-    height: 80px;
-    /* Increase the height for larger hearts */
-    background: #fc9fbc;
-    border-radius: 50px 50px 0 0;
-    /* Top rounded parts of the heart */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.7s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    margin: 15px;
-    /* Add margin for spacing between hearts */
-}
-
-/* Create the bottom "V" of the heart using pseudo-elements */
-.heart::before,
-.heart::after {
-    content: '';
-    position: absolute;
-    width: 85px;
-    /* Increase the size of the circles */
-    height: 85px;
-    /* Match the height with the width for the circle */
-    background: #fc9fbc;
-    border-radius: 50%;
-    /* Rounded circle shape */
-    top: -42px;
-    /* Position the circles above the heart */
-}
-
-.heart::before {
-    left: -42px;
-    /* Position the left circle */
-}
-
-.heart::after {
-    right: -42px;
-    /* Position the right circle */
-}
-
-.heart {
-    position: relative;
-    width: 126px;
-    height: 80px;
-    /* Increase the height for larger hearts */
-    background: #fc9fbc;
-    border-radius: 50px 50px 0 0;
-    /* Top rounded parts of the heart */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.7s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    margin: 15px;
-    /* Add margin for spacing between hearts */
-}
-
-/* Create the bottom "V" of the heart using pseudo-elements */
-.heart::before,
-.heart::after {
-    content: '';
-    position: absolute;
-    width: 85px;
-    /* Increase the size of the circles */
-    height: 85px;
-    /* Match the height with the width for the circle */
-    background: #fc9fbc;
-    border-radius: 50%;
-    /* Rounded circle shape */
-    top: -42px;
-    /* Position the circles above the heart */
-}
-
-.heart::before {
-    left: -42px;
-    /* Position the left circle */
-}
-
-.heart::after {
-    right: -42px;
-    /* Position the right circle */
-}
-
-.heart {
-    position: relative;
-    width: 126px;
-    height: 80px;
-    /* Increase the height for larger hearts */
-    background: #fc9fbc;
-    border-radius: 50px 50px 0 0;
-    /* Top rounded parts of the heart */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.7s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-    margin: 15px;
-    /* Add margin for spacing between hearts */
-}
-
-/* Create the bottom "V" of the heart using pseudo-elements */
-.heart::before,
-.heart::after {
-    content: '';
-    position: absolute;
-    width: 85px;
-    /* Increase the size of the circles */
-    height: 85px;
-    /* Match the height with the width for the circle */
-    background: #fc9fbc;
-    border-radius: 50%;
-    /* Rounded circle shape */
-    top: -42px;
-    /* Position the circles above the heart */
-}
-
-.heart::before {
-    left: -42px;
-    /* Position the left circle */
-}
-
-.heart::after {
-    right: -42px;
-    /* Position the right circle */
-}
-
-/* Icon inside the heart */
+  background: #fc9fbc;
+  border-radius: 50px 50px 0 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.7s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin: 15px;
+} */
 
 
 .work-info h5 {
@@ -2551,6 +2344,97 @@ h6 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
+
+@media (max-width:767px) {
+    .main-nav {
+        display: none !important;
+    }
+    .nav.header-navbar-rht {
+        display: none !important;
+    }
+    .banner-content {
+        display: inline-block;
+        text-align: center;
+    }
+    .banner-content .banner-head {
+        font-size: 28px !important;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .banner-content p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .banner-content .btn {
+        font-size: 17px;
+    }
+   
+    .banner-img.aos.aos-init.aos-animate {
+        display: none;
+    }
+    .advice-section {
+        display: inline-block;
+        text-align: center;
+    }
+    .advic-headings {
+        font-size: 20px !important;
+    }
+    .advic-cont.aos.aos-init.aos-animate {
+        padding: 0;
+        text-align: center;
+    }
+    .advice-p {
+        font-size: 17px;
+        text-align: center !important;
+    }
+    .bg-color {
+        display: none;
+    }
+    .exp-bg-img img {
+       
+        max-width: 250px;
+    }
+    .Explore-section {
+        padding: 0px;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+    }
+    .section-title {
+        font-size: 32px !important;
+    }
+    .cont-hide {  
+     padding: 90px 20px;
+       
+    }
+    .Explore-SEC {
+        padding-bottom: 50px;
+    }
+    .bookus-img {
+        display: none;
+    }
+    .section-bg {
+    text-align: center;
+    }
+    .py-5 {
+        padding-top: 30px !important;
+        padding-bottom: 40px !important;
+    }
+    .row.justify-content-center.text-center.align-items-center.flex-wrap.mt-5 {
+        display: none;
+    }
+    .text-center.heading-fs.aos-init.aos-animate {
+        font-size: 32px !important;
+    }
+    .subheading-fs {
+        font-size: 18px !important;
+   
+    }
+    .btn.reg-btn.pink-btn {
+        margin-top: 11px;
+    }
+
+}
 .About-banner {
     background: #fbf2ed;
     position: relative;
@@ -2788,4 +2672,75 @@ h6 {
     font-size: 16px;
     color: #ffffff;
     margin-bottom: 40px;
+}
+.heart::before, .heart::after {
+position: absolute;
+content: "";
+left: 50px;
+top: 0;
+width: 50px;
+height: 80px;
+background: #fc9fbc;
+-moz-border-radius: 50px 50px 0 0;
+border-radius: 50px 50px 0 0;
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+transform: rotate(-45deg);
+-webkit-transform-origin: 0 100%;
+-moz-transform-origin: 0 100%;
+-ms-transform-origin: 0 100%;
+-o-transform-origin: 0 100%;
+transform-origin: 0 100%;
+z-index: -1;
+}
+.heart::after {
+left: 0;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+transform: rotate(45deg);
+-webkit-transform-origin: 100% 100%;
+-moz-transform-origin: 100% 100%;
+-ms-transform-origin: 100% 100%;
+-o-transform-origin: 100% 100%;
+transform-origin: 100% 100%;
+}
+.work-info {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.work-info .work-icon span {
+min-width: 70px;
+height: 70px;
+/* border-radius: 10px; */
+-webkit-transition: 0.7s;
+-ms-transition: 0.7s;
+transition: 0.7s;
+transform: rotate(0);
+-webkit-transform: rotate(0);
+-ms-transform: rotate(0);
+}
+.work-content {
+margin-left: 80px;
+}
+
+.work-content {
+margin-left: 80px;
+}
+
+.work-info {
+-webkit-box-align: start;
+-ms-flex-align: start;
+align-items: start;
+margin-bottom: 40px;
+margin-top: 60px;
+}
+
+.heart img{
+    background-image: url(../images/homes/pngwing.png);
 }
