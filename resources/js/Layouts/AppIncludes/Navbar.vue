@@ -4,118 +4,119 @@
       <nav class="navbar navbar-expand-lg header-nav" style="background-color:#F9FCFF !important"
         :class="{ 'shadow-sm': !view.topOfPage }">
         <div class="d-flex container ">
-          <!-- Left: Logo & Mobile Button -->
           <div class="d-flex align-items-center navbar-header me-4">
-            <a id="mobile_btn" href="javascript:void(0);" class="me-3">
-              <span class="bar-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </a>
-            <a href="index.html" class="navbar-brand logo">
-              <img src="@/images/icons/new-logo.png" class="img-fluid" alt="Logo" />
-            </a>
+
+            <Link :href="route('home')" class="navbar-brand logo">
+            <img src="@/images/icons/new-logo.png" class="img-fluid" alt="Logo" />
+            </Link>
           </div>
-
+          <!-- Mobile Toggle Button -->
+          <button class="navbar-toggler d-lg-none" type="button" @click="toggleMenu" :aria-expanded="isOpen.toString()"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <!-- Center: Navigation Menu -->
-          <div class="flex-grow-1 d-flex justify-content-center align-items-start main-menu-wrapper">
-            <ul class="main-nav">
-              <li class="has-submenu megamenu active">
-                <Link class="btn log-btn" :href="route('start.here')">Start Here</Link>
-              </li>
-              <li class="has-submenu"><Link :href="route('shop')">Shop</Link></li>
+          <div class="navbar-responsive d-none d-lg-flex w-100 justify-content-between">
+            <div class="w-full flex  justify-between">
+              <div class="flex-grow-1 d-flex justify-content-center align-items-start main-menu-wrapper">
+                <ul class="main-nav">
+                  <li class="has-submenu megamenu active">
+                    <Link class="btn log-btn" :href="route('start.here')">Start Here</Link>
+                  </li>
+                  <li class="has-submenu">
+                    <Link :href="route('shop')">Shop</Link>
+                  </li>
 
-              <!-- Her Well-Being Mega Menu -->
+                  <!-- Her Well-Being Mega Menu -->
 
-              <li class="has-submenu megamenu active">
-                <div class="textIcon">
-                  <span>Her Well-Being</span>
-                  <Icon icon="icon-park-outline:down" width="14" height="14" />
-                </div>
+                  <li class="has-submenu megamenu active">
+                    <div class="textIcon">
+                      <span>Her Well-Being</span>
+                      <Icon icon="icon-park-outline:down" width="14" height="14" />
+                    </div>
 
-                <ul class="submenu mega-submenu">
-                  <li>
-                    <div class="megamenu-wrapper">
-                      <div class="row">
-                        <div class="col-lg-3" v-for="(category, index) in herWellBeing" :key="index">
-                          <div class="single-demo">
-                            <div class="demo-info">
-                              <h4 class="inner-demo-img">{{ category.title }}</h4>
-                              <ul class="mega-menu">
-                                <li v-for="(item, i) in category.items" :key="i">
-                                  <a :href="item.link">{{ item.name }}</a>
-                                </li>
-                              </ul>
+                    <ul class="submenu mega-submenu">
+                      <li>
+                        <div class="megamenu-wrapper">
+                          <div class="row">
+                            <div class="col-lg-3" v-for="(category, index) in herWellBeing" :key="index">
+                              <div class="single-demo">
+                                <div class="demo-info">
+                                  <h4 class="inner-demo-img">{{ category.title }}</h4>
+                                  <ul class="mega-menu">
+                                    <li v-for="(item, i) in category.items" :key="i">
+                                      <a :href="item.link">{{ item.name }}</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="has-submenu">
+                    <Link :href="route('about')">
+                    About Us
+                    </Link>
+                  </li>
+
+                  <!-- Resources -->
+                  <li class="has-submenu">
+                    <div class="flex gap-2 items-center">Resources
+                      <!-- <Icon icon="icon-park-outline:down" width="14" height="14" /> -->
                     </div>
                   </li>
+                  <li class="has-submenu">  <Link :href="route('contact')" > Contact </Link></li>
                 </ul>
-              </li>
-              <li class="has-submenu">
-                <Link :href="route('about')">
-                  About Us
-                </Link>
-                </li>
-
-              <!-- Resources -->
-              <li class="has-submenu">
-                <div class="flex gap-2 items-center">Resources
-                  <!-- <Icon icon="icon-park-outline:down" width="14" height="14" /> -->
-                </div>
-              </li>
-              <li class="has-submenu"><a href="coming-soon.html">Contact</a></li>
-            </ul>
-          </div>
+              </div>
 
 
-          <div class="d-flex align-items-center" v-if="!$page.props.auth">
-            <ul class="nav header-navbar-rht">
-              <li class="register-btn" style="margin-right: 10px;">
-                <Link :href="route('register')"   class="btn reg-btn d-flex align-items-center gap-1">
-                  <Icon icon="lucide:user" width="18" height="18" class="feather-user" />
-                  Register
-                </Link>
-              </li>
-              <li class="register-btn">
-                <a href="/login" class="btn btn-primary log-btn d-flex align-items-center gap-1">
-                  <Icon icon="mynaui:lock" class="feather-lock" width="18" height="18" />
-                  Login
-                </a>
-              </li>
+              <div class="d-flex align-items-center" v-if="!$page.props.auth">
+                <ul class="nav header-navbar-rht">
+                  <li class="register-btn" style="margin-right: 10px;">
+                    <Link :href="route('register')" class="btn reg-btn d-flex align-items-center gap-1">
+                    <Icon icon="lucide:user" width="18" height="18" class="feather-user" />
+                    Register
+                    </Link>
+                  </li>
+                  <li class="register-btn">
+                    <a href="/login" class="btn btn-primary log-btn d-flex align-items-center gap-1">
+                      <Icon icon="mynaui:lock" class="feather-lock" width="18" height="18" />
+                      Login
+                    </a>
+                  </li>
 
-            </ul>
-          </div>
-          <div v-else>
-            <li class="nav-item list-unstyled d-none d-md-block"
-              v-if="$page.props.auth && $page.props.auth.logged_in_as != 'super_admin'">
-              <div>
-                <button
-                  class="d-flex dropdown-toggle align-items-center nav-link position-relative bg-transparent border-0"
-                  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                  aria-controls="offcanvasNavbar">
-                  <div v-if="
-                    $page.props.auth.user.patient
-                      ? $page.props.auth.user.patient
-                      : $page.props.auth.user.doctor
-                        ? $page.props.auth.user.doctor
-                        : $page.props.auth.user.clinic
-                  " class="avatar-icon me-3">
-                    <img class="img-fluid rounded-circle" :src="$page.props.auth.user.patient
-                      ? $page.props.auth.user.patient.image
-                      : $page.props.auth.user.doctor
-                        ? $page.props.auth.user.doctor.image
-                        : $page.props.auth.user.clinic.image
-                      " alt="" />
-                  </div>
-                  <div v-else class="avatar-icon me-3">
-                    <img class="img-fluid" src="@/images/icons/user.png" alt="" />
-                  </div>
+                </ul>
+              </div>
+              <div v-else>
+                <li class="nav-item list-unstyled d-none d-md-block"
+                  v-if="$page.props.auth && $page.props.auth.logged_in_as != 'super_admin'">
+                  <div>
+                    <button
+                      class="d-flex dropdown-toggle align-items-center nav-link position-relative bg-transparent border-0"
+                      type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                      aria-controls="offcanvasNavbar">
+                      <div v-if="
+                        $page.props.auth.user.patient
+                          ? $page.props.auth.user.patient
+                          : $page.props.auth.user.doctor
+                            ? $page.props.auth.user.doctor
+                            : $page.props.auth.user.clinic
+                      " class="avatar-icon me-3">
+                        <img class="img-fluid rounded-circle" :src="$page.props.auth.user.patient
+                          ? $page.props.auth.user.patient.image
+                          : $page.props.auth.user.doctor
+                            ? $page.props.auth.user.doctor.image
+                            : $page.props.auth.user.clinic.image
+                          " alt="" />
+                      </div>
+                      <div v-else class="avatar-icon me-3">
+                        <img class="img-fluid" src="@/images/icons/user.png" alt="" />
+                      </div>
 
-                  <!-- <span
+                      <!-- <span
                 class="position-absolute badge rounded-pill bg-primary"
                 style="right: 8px; top: -10px"
                 >{{
@@ -124,17 +125,50 @@
                     : $page.props.auth.logged_in_as
                 }}</span
               > -->
-                  {{
-                    $page.props.auth.logged_in_as != "super_admin" &&
-                    $page.props.auth[$page.props.auth.logged_in_as].name
-                  }}
-                </button>
+                      {{
+                        $page.props.auth.logged_in_as != "super_admin" &&
+                        $page.props.auth[$page.props.auth.logged_in_as].name
+                      }}
+                    </button>
+                  </div>
+                </li>
+
               </div>
-            </li>
-         
+            </div>
+
           </div>
+
         </div>
       </nav>
+      <transition name="fade">
+        <div v-show="isOpen" class="navbar-collapse d-lg-none mt-3 container">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <Link class="nav-link" :href="route('start.here')">Start Here</Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" :href="route('about')">About Us</Link>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link">Resources</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="coming-soon.html">Contact</a>
+            </li>
+
+            <!-- Auth buttons -->
+            <li class="nav-item mt-3" v-if="!$page.props.auth">
+              <Link :href="route('register')" class="btn w-100 mb-2 btn-outline-secondary">Register</Link>
+              <a href="/login" class="btn w-100 btn-primary">Login</a>
+            </li>
+            <li class="nav-item mt-3" v-else>
+              <span class="nav-link">
+                Logged in as: <strong>{{ $page.props.auth[$page.props.auth.logged_in_as].name }}</strong>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </transition>
     </div>
 
     <div class="profile-canvas" v-if="$page.props.auth">
@@ -266,96 +300,6 @@
               <Link :href="route('patients.ehr.listing ')" class="d-flex gap-3 align-items-center text-decoration-none">
               <i class="bi bi-clipboard2-pulse"></i>{{ __("Electronic Health Records") }}</Link>
             </li>
-
-            <!-- <Link :href="route('logout')" class="dropdown-item">
-                    <i class="bi bi-box-arrow-in-left"></i>
-                      {{__("logout")}}
-                    </Link> -->
-            <!-- <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                hasRole('doctor') &&
-                $page.props.auth.logged_in_as != 'doctor'
-              "
-              class="nav-items"
-            >
-              <button
-                @click="switchRole('doctor')"
-                class="dropdown-item new1 d-flex gap-3"
-              >
-                <img src="@/images/icons/userdoctor.svg" width="18" alt="" />
-                {{ __("switch to doctor") }}
-              </button>
-            </li>
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                !hasRole('doctor') &&
-                $page.props.auth.logged_in_as != 'doctor'
-              "
-              class="nav-items"
-            >
-              <button @click="becomeDoctor()" class="dropdown-item new1 d-flex gap-3">
-                <img src="@/images/icons/userdoctor.svg" width="18" alt="" />
-                {{ __("become a doctor") }}
-              </button>
-            </li>
-
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                hasRole('patient') &&
-                $page.props.auth.logged_in_as != 'patient'
-              "
-              class="nav-items"
-            >
-              <button
-                @click="switchRole('patient')"
-                class="dropdown-item new1 d-flex gap-3"
-              >
-                <i class="bi bi-person-circle"></i> {{ __("switch to user") }}
-              </button>
-            </li>
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                !hasRole('patient') &&
-                $page.props.auth.logged_in_as != 'patient'
-              "
-              class="nav-items"
-            >
-              <button @click="becomeUser()" class="dropdown-item new1 d-flex gap-3">
-                <i class="bi bi-person-circle"></i>{{ __("become a user") }}
-              </button>
-            </li>
-
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                hasRole('clinic') &&
-                $page.props.auth.logged_in_as != 'clinic'
-              "
-              class="nav-items"
-            >
-              <button
-                @click="switchRole('clinic')"
-                class="dropdown-item new1 d-flex gap-3"
-              >
-                <i class="bi bi-hospital"></i>{{ __("switch to clinic") }}
-              </button>
-            </li>
-            <li
-              v-if="
-                $page.props.auth.user.email_verified_at &&
-                !hasRole('clinic') &&
-                $page.props.auth.logged_in_as != 'clinic'
-              "
-              class="nav-items"
-            >
-              <button @click="becomeClinic()" class="dropdown-item new1 d-flex gap-3">
-                <i class="bi bi-hospital"></i>{{ __("become a clinic") }}
-              </button>
-            </li> -->
             <li class="nav-items">
               <button style="cursor: pointer" @click="logout()" class="dropdown-item new1 d-flex gap-3">
                 <i class="bi bi-box-arrow-in-left"></i> {{ __("logout") }}
@@ -591,7 +535,7 @@ export default {
         {
           title: "Health",
           items: [
-            { name: "Essentials", link: route("essentials")  },
+            { name: "Essentials", link: route("essentials") },
             { name: "Gynaecology", link: route("gynecology") },
             { name: "Physiotherapy", link: route("physiotherapy") },
           ],
@@ -608,7 +552,7 @@ export default {
           title: "Evolve & Elevate",
           items: [
             { name: "Personal Growth", link: route("personal-growth") },
-            { name: "Style & Fashion", link: route("style-fashion")},
+            { name: "Style & Fashion", link: route("style-fashion") },
             { name: "Future", link: route("futureinsights") },
           ],
         },
@@ -617,7 +561,7 @@ export default {
           items: [
             { name: "Sexual Well Being", link: route("sexualwellbeing") },
             { name: "Mental Well Being", link: route("mentalwellbeing") },
-            { name: "Nutritional Well Being", link: route("nutritionalwellbeing")},
+            { name: "Nutritional Well Being", link: route("nutritionalwellbeing") },
           ],
         },
       ],
@@ -637,6 +581,7 @@ export default {
         doctors: false,
         // Add other dropdowns as needed
       },
+      isOpen: false,
       hoverTimeout: null,
     };
   },
@@ -659,6 +604,7 @@ export default {
         }
       }, 200);
     },
+    toggleMenu() { this.isOpen = !this.isOpen},
 
     hideDropdown(type) {
       clearTimeout(this.hoverTimeout);
@@ -788,3 +734,12 @@ export default {
   }
 }
 </style>
+
+
+<!-- <a id="mobile_btn" href="javascript:void(0);" class="me-3">
+              <span class="bar-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </a> -->
