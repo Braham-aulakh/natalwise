@@ -1,7 +1,7 @@
 <template>
   <app-layout title="blogs">
     <template #default>
-      <div class="bg-primary">
+      <div class="Top-Border">
         <pages-heading
           :textwhite="'true'"
           :heading="'blog details'"

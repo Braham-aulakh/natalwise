@@ -40,12 +40,10 @@
             >{{ post.name }}</a
           >
         </h4>
-        <span v-if="post.doctor_id" class="badge bg-primary fs-5">{{
+        <span v-if="post.doctor_id" class="badge bg-pink fs-5">{{
           __("doctor")
         }}</span>
-        <span v-else-if="post.clinic_id" class="badge bg-primary fs-5">{{
-          __("clinic")
-        }}</span>
+      
         <span v-else class="badge bg-primary fs-5">{{ __("admin") }}</span>
         <p class="mb-0 mt-3 line-clamp" v-html="post.description"></p>
       </div>

@@ -193,30 +193,34 @@
               <!-- v-if="Object.keys(doctor.doctor_reviews).length > 0" -->
               <div class="accordion profile-accordian" id="accordionExample">
                 <div class="accordion-item mb-3">
-                  <h2 class="accordion-header overflow-hidden">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapsetwo"
-                      aria-expanded="false"
-                      aria-controls="collapsetwo"
-                    >
-                      {{ __("Rating & Reviews") }}
-                    </button>
-                  </h2>
-                  <div
-                    id="collapsetwo"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <doctor-profile-reviews-section
-                      :doctor_id="doctor.id"
-                      :doctor="doctor"
-                      :reviews="doctor.doctor_reviews"
-                    ></doctor-profile-reviews-section>
-                  </div>
-                </div>
+    <h2 class="accordion-header overflow-hidden">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsetwo"
+        aria-expanded="false"
+        aria-controls="collapsetwo"
+        @click="toggleInnerContent"
+      >
+        {{ __("Rating & Reviews") }}
+      </button>
+    </h2>
+
+    <div
+      id="collapsetwo"
+      class="accordion-collapse collapse"
+      data-bs-parent="#accordionExample"
+    >
+      <!-- Show content only when showContent is true -->
+      <doctor-profile-reviews-section
+        v-if="showContent"
+        :doctor_id="doctor.id"
+        :doctor="doctor"
+        :reviews="doctor.doctor_reviews"
+      />
+    </div>
+  </div>
                 <div
                   class="accordion-item mb-3"
                   v-if="Object.keys(doctor.appointment_types).length > 0"
@@ -241,7 +245,7 @@
                     </div>
                   </div>
                 </div>
-                <div
+                <!-- <div
                   class="accordion-item mb-3"
                   v-if="Object.keys(doctor.doctor_podcasts).length > 0"
                 >
@@ -282,8 +286,8 @@
                       >
                     </div>
                   </div>
-                </div>
-                <div
+                </div> -->
+                <!-- <div
                   class="accordion-item mb-3"
                   v-if="Object.keys(doctor.doctor_events).length > 0"
                 >
@@ -326,8 +330,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
+                </div> -->
+                <!-- <div
                   class="accordion-item mb-3"
                   v-if="Object.keys(doctor.doctor_archives).length > 0"
                 >
@@ -369,7 +373,7 @@
                       >
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <div
                   class="accordion-item mb-3"
                   v-if="Object.keys(doctor.doctor_posts).length > 0"
@@ -1096,8 +1100,15 @@ export default defineComponent({
     Head,
     Link,
   },
+  props: {
+    doctor: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
+      showContent: false,
       doctor: this.$page.props.doctor,
       showAll: false,
       breadcrums: [
@@ -1209,6 +1220,9 @@ export default defineComponent({
         qrcodeContainer.innerHTML = "";
         // alert("Please enter a valid URL");
       }
+    },
+    toggleInnerContent() {
+      this.showContent = !this.showContent;
     },
   },
 });

@@ -98,7 +98,7 @@
             <button
               :href="route('broadcasts.listing')"
               @click="submit"
-              class="btn btn-primary rounded-4 fs-3 fw-bold"
+              class="viewMore_btn"
               :disabled="isLoading"
               type="submit"
             >

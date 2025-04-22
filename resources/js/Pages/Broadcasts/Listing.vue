@@ -1,6 +1,6 @@
 <template>
   <app-layout title="My Profile">
-    <div class="bg-primary">
+    <div class="Top-Border">
       <pages-heading
         :heading="'broadcast'"
         :breadcrums="breadcrums"

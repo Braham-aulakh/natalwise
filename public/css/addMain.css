@@ -2884,3 +2884,7 @@ h6 {
 .darkBlue{
     color: #294481 !important;
 }
+.bg-pink{
+    background-color:#fc9fbc !important ;
+    color: white !important;
+}

@@ -160,7 +160,7 @@
             <button
               :href="route('blogs.listing')"
               @click="submit"
-              class="btn btn-primary rounded-4 fs-3 fw-bold"
+              class="viewMore_btn"
               type="submit"
               :disabled="isLoading"
             >
