@@ -106,7 +106,7 @@
                                             class="feature-content-two flex flex-col items-center justify-center gap-2">
                                             <h5>{{ feature.title }}</h5>
                                             <p>{{ feature.description }}</p>
-                                            <a href="/personal-growth2" class="read-more-btn">Read More</a>
+                                            <a href="doctors" class="read-more-btn">Read More</a>
                                             <Icon icon="meteor-icons:angle-down" width="24" height="24"
                                                 style="color: #ffffff " />
                                         </div>

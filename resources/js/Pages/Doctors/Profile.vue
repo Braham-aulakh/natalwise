@@ -3,7 +3,7 @@
     <div class="Top-Border">
       <pages-heading
         :textwhite="'true'"
-        :heading="'Doctors Details'"
+        :heading="`Expert's Details`"
         :breadcrums="breadcrums"
       ></pages-heading>
     </div>
