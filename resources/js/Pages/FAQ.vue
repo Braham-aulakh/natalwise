@@ -2,13 +2,9 @@
   <app-layout :title="__n('faq')">
     <template #default>
       <div class="Top-Border">
-        <pages-heading
-          :heading="'faqs'"
-          :breadcrums="breadcrums"
-          :textwhite="'true'"
-        ></pages-heading>
+        <pages-heading :heading="'faqs'" :breadcrums="breadcrums" :textwhite="'true'"></pages-heading>
       </div>
-      <div class="py-5">
+      <div class="pt-5">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
@@ -38,122 +34,33 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-12">
-              <div
-                v-if="getPageContentType('faq_page_description') == 'textarea'"
-              >
+              <div v-if="getPageContentType('faq_page_description') == 'textarea'">
                 <div v-html="getPageContent('faq_page_description')"></div>
               </div>
-              <div
-                v-else-if="getPageContentType('faq_page_description') == 'text'"
-              >
+              <div v-else-if="getPageContentType('faq_page_description') == 'text'">
                 <p>{{ getPageContent("faq_page_description") ?? "-" }}</p>
               </div>
               <div v-else class="col-12">----------------------</div>
             </div>
-
             <div class="col-12" v-if="faq_categories.length > 0">
               <div v-for="cat in faq_categories" :key="cat.id">
                 <h3 class="fw-bold my-4">{{ cat.name }}</h3>
                 <div class="accordion" id="accordionExample2">
-                  <div
-                    class="accordion-item rounded-4 mb-3 border-0 shadow"
-                    v-for="faq in cat.faqs"
-                    :key="faq.id"
-                  >
-                    <h2
-                      class="accordion-header border-0"
-                      :id="'faq-heading' + faq.id"
-                    >
-                      <button
-                        class="accordion-button rounded-4 bg-transparent border-0 shadow-none collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        :data-bs-target="'#collapse-faq' + faq.id"
-                        aria-expanded="true"
-                        aria-controls="collapseTwo"
-                      >
-                        <div
-                          class="d-flex align-items-start align-items-md-center gap-2 px-0 px-md-3"
-                        >
-                          <i
-                            class="bi bi-question-octagon-fill text-primary mt-1 mt-md-0 fs-1"
-                          ></i>
-                          <span
-                            class="fw-bold fs-3 text-primary ms-md-2 ms-0"
-                            >{{ faq.name }}</span
-                          >
-                        </div>
+                  <div class="accordion-item mb-2" v-for="(faq, index) in cat.faqs" :key="faq.id">
+                    <h2 class="accordion-header" :id="'faq-heading' + faq.id">
+                      <button class="accordion-button" :class="{ collapsed: activeIndex !== faq.id }"
+                        @click="toggle(faq.id)">
+                        {{ faq.name }}
                       </button>
                     </h2>
-                    <div
-                      :id="'collapse-faq' + faq.id"
-                      class="accordion-collapse collapse"
-                      :aria-labelledby="'#collapse-faq' + faq.id"
-                      data-bs-parent="#accordionExample2"
-                    >
-                      <div
-                        class="accordion-body text-black fw-bold fs-4 px-4"
-                        v-html="faq.description"
-                      ></div>
+                    <div class="accordion-collapse" v-show="activeIndex === faq.id">
+                      <div class="accordion-body">
+                        <span v-html="faq.description"></span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <!-- <div class="accordion" id="accordionExample">
-                                <div class="accordion-item accordion-item mb-3 border-0 shadow" v-for="cat in faq_categories" :key="cat.id">
-                                    <h2 class="accordion-header border-0" :id="'heading' + cat.id">
-                                        <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse"
-                                            :data-bs-target="'#collapse' + cat.id" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                            <div
-                                                class="d-flex w-100 flex-column flex-lg-row align-items-lg-center justify-content-between px-3">
-
-                                                <div class="d-flex align-items-center">
-                                                    <i class="bi bi-question-square  me-3 text-primary fs-2"></i>
-                                                    <span  class="fw-bold fs-3 text-primary">{{ cat.name }}</span>
-                                                </div>
-
-
-
-                                            </div>
-                                        </button>
-                                    </h2>
-                                    <div :id="'collapse' + cat.id" class="accordion-collapse collapse show"
-                                        :aria-labelledby="'#collapse' + cat.id" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div class="accordion" id="accordionExample2">
-                                                <div class="accordion-item accordion-item mb-3 border-0 shadow" v-for="faq in cat.faqs" :key="faq.id">
-                                                    <h2 class="accordion-header border-0" :id="'faq-heading' + faq.id">
-                                                        <button class="accordion-button bg-white collapsed" type="button"
-                                                            data-bs-toggle="collapse"
-                                                            :data-bs-target="'#collapse-faq' + faq.id" aria-expanded="true"
-                                                            aria-controls="collapseTwo">
-                                                            <div
-                                                                class="d-flex w-100 flex-column flex-lg-row align-items-lg-center justify-content-between px-3">
-
-
-                                                                    <span  class="fw-bold fs-3 text-primary">{{ faq.name }}</span>
-
-
-
-                                                            </div>
-                                                        </button>
-                                                    </h2>
-                                                    <div :id="'collapse-faq' + faq.id"
-                                                        class="accordion-collapse collapse show"
-                                                        :aria-labelledby="'#collapse-faq' + faq.id"
-                                                        data-bs-parent="#accordionExample2">
-                                                        <div class="accordion-body  border-top text-black fw-bold fs-5 px-4" v-html="faq.description">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
             </div>
             <div v-else class="col-12 text-center">
               <record-not-found></record-not-found>
@@ -181,11 +88,24 @@ export default defineComponent({
     PagesHeading,
   },
   props: ["faq_categories"],
-});
+  data: () => ({
+    activeIndex: null,
+  }),
+  methods: {
+    toggle(id) {
+      this.activeIndex = this.activeIndex === id ? null : id;
+    },
+  }
+})
+
 </script>
 <style scoped>
 .fqz-heading {
-    font-size: 45px;
-    font-weight: 600;
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.section {
+  padding-top: 0px !important;
 }
 </style>

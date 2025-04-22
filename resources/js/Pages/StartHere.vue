@@ -19,9 +19,6 @@
                     <div class="banner-arrow-img">
                         <!-- <img src="assets/img/banner/Ellipse2.png" class="img-fluid" alt="doctor-slide"> -->
                     </div>
-
-
-
                 </div>
             </section>
 

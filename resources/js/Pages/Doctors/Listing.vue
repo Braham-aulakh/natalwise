@@ -2,12 +2,9 @@
   <app-layout title="Experts">
     <div class="stats">
       <div class="Top-Border">
-        <pages-heading
-        :heading="`Find Your Expert`"
-        :breadcrums="breadcrums"
-      ></pages-heading>
+        <pages-heading :heading="`Find Your Expert`" :breadcrums="breadcrums"></pages-heading>
       </div>
-     
+
       <!-- <find-doctor-bar
         @updateFormData="updateFormData"
         :title="'Search Related Experts near by you'"
@@ -19,18 +16,14 @@
         <div class="container mb-3">
           <div class="row">
             <div class="col-md-12">
-              <div
-                v-if="
-                  getPageContentType('doctors_page_description') == 'textarea'
-                "
-              >
+              <div v-if="
+                getPageContentType('doctors_page_description') == 'textarea'
+              ">
                 <div v-html="getPageContent('doctors_page_description')"></div>
               </div>
-              <div
-                v-else-if="
-                  getPageContentType('doctors_page_description') == 'text'
-                "
-              >
+              <div v-else-if="
+                getPageContentType('doctors_page_description') == 'text'
+              ">
                 <p>{{ getPageContent("doctors_page_description") ?? "-" }}</p>
               </div>
               <div v-else>
@@ -51,89 +44,55 @@
           <div class="row bg-white rounded-4 p-2">
             <div class="col-md-12">
               <div class="row align-items-center py-4 py-md-2">
-                <div class="col-md-4">
-                  <div class="d-flex gap-3">
-                    <span class="pe-3" style="border-right: 1px solid #e5e5e5">
+                <div class="col-md-4 d-flex justify-content-left">
+                  <div class="d-flex gap-3 p-2" style="border: 1px solid #e5e5e5; border-radius: 8px;">
+                    <!-- List Button -->
+                    <span class="pe-3" style="border-right: 1px solid #e5e5e5;">
                       <button
-                        :class="
-                          list_view
-                            ? 'btn fs-3 btn-primary rounded-custom px-4 border-0'
-                            : 'btn fs-3 text-black btn-transparent rounded-custom px-4 border-0'
-                        "
-                        @click="listView()"
-                      >
-                        <i
-                          :class="list_view ? 'text-white' : 'text-dark'"
-                          class="bi bi-list me-2"
-                        ></i>
-                        {{
-                          getPageContent("general_list_btn_text") ?? "List View"
-                        }}
+                        class="btn fs-5 font-semibold rounded-md px-4 border-0 d-flex align-items-center button_list"
+                        :class="list_view ? 'btn-primary text-white' : 'btn-transparent text-black hover-btn'"
+                        @click="listView()">
+                        <Icon icon="lucide:list" width="22" height="22" class="me-2" />
+                        {{ getPageContent('general_list_btn_text') ?? 'List View' }}
                       </button>
                     </span>
-                    <button
-                      :class="
-                        grid_view
-                          ? 'btn fs-3 btn-primary rounded-custom px-4 border-0'
-                          : 'btn fs-3 text-black btn-transparent rounded-custom px-4 border-0'
-                      "
-                      @click="GridView()"
-                    >
-                      <i
-                        :class="grid_view ? 'text-white' : 'text-dark'"
-                        class="bi bi-columns-gap me-2"
-                      ></i>
-                      {{
-                        getPageContent("general_grid_btn_text") ?? "Grid View"
-                      }}
-                    </button>
+
+                    <!-- Grid Button -->
+                    <span>
+                      <button
+                        class="btn fs-5 font-semibold rounded-md px-4 border-0 d-flex align-items-center button_list"
+                        :class="grid_view ? 'btn-primary text-white' : 'btn-transparent text-black hover-btn'"
+                        @click="GridView()">
+                        <Icon icon="mynaui:grid-solid" width="22" height="22" class="me-2" />
+                        {{ getPageContent('general_grid_btn_text') ?? 'Grid View' }}
+                      </button>
+                    </span>
                   </div>
                 </div>
                 <div class="col-md-8">
-                  <div
-                    class="d-flex mt-3 mt-md-0 align-items-center justify-content-md-end"
-                  >
+                  <div class="d-flex mt-3 mt-md-0 align-items-center justify-content-md-end">
                     <div class="d-flex align-items-center col-md-5 col-8">
-                      <label
-                        for="exampleFormControlInput1"
-                        class="form-label text-black fs-3 fw-normal mb-0 pe-md-2"
-                        >{{ __("Show Result") }}:</label
-                      >
+                      <label for="exampleFormControlInput1" class="form-label text-black fs-5 fw-normal mb-0 pe-md-2">{{
+                        __("Show Result") }}:</label>
                       <div class="col-md-7 col-10">
-                        <select
-                          class="form-select fs-4 py-2 px-4 ms-3 text-black"
-                          style="
+                        <select class="form-select fs-4 py-2 px-4 ms-3 text-black" style="
                             border-radius: 12px;
                             border: 1px solid #294481 !important;
-                          "
-                          aria-label="Default select example"
-                          v-model="show_results"
-                          @change="getDoctors()"
-                        >
+                          " aria-label="Default select example" v-model="show_results" @change="getDoctors()">
                           <option>10</option>
                           <option>20</option>
                           <option>30</option>
                         </select>
                       </div>
                     </div>
-                    <button
-                      class="btn px-3 py-2 ms-5 ms-md-3 btn-primary rounded-4"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasRight"
-                      aria-controls="offcanvasRight"
-                    >
+                    <button class="btn px-3 py-2 ms-5 ms-md-3 btn-primary rounded-4" data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                       <img width="25" src="@/images/icons/Union.png" alt="" />
                     </button>
 
-                    <div
-                      class="offcanvas p-4 custom-offcanvas offcanvas-end"
-                      tabindex="-1"
-                      id="offcanvasRight"
-                      aria-labelledby="offcanvasRightLabel"
-                    >
-                      <div
-                        class="offcanvas-header align-items-start border-bottom border-2"
-                      >
+                    <div class="offcanvas p-4 custom-offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                      aria-labelledby="offcanvasRightLabel">
+                      <div class="offcanvas-header align-items-start border-bottom border-2">
                         <div class="d-flex flex-column">
                           <h5 class="display-6 text-black">
                             {{ __("Filters") }}
@@ -146,48 +105,26 @@
                             }}
                           </p>
                         </div>
-                        <button
-                          type="button"
-                          class="btn-close d-block d-md-none"
-                          data-bs-dismiss="offcanvas"
-                          aria-label="Close"
-                        ></button>
+                        <button type="button" class="btn-close d-block d-md-none" data-bs-dismiss="offcanvas"
+                          aria-label="Close"></button>
                       </div>
                       <div class="offcanvas-body">
-                        <find-doctor-bar
-                          @getDoctors="onSearch"
-                          :is_redirect="false"
-                          :is_doctor_page="true"
-                        ></find-doctor-bar>
+                        <find-doctor-bar @getDoctors="onSearch" :is_redirect="false"
+                          :is_doctor_page="true"></find-doctor-bar>
 
                         <div class="row flex-column align-items-start">
                           <div class="col-md-12">
                             <Label class="fs-2 text-black fw-bold mb-2">{{
                               __("Select Categories")
                             }}</Label>
-                            <Multiselect
-                              class="py-2 px-3"
-                              v-model="form.doctor_category"
-                              valueProp="id"
-                              label="name"
-                              groupLabel="name"
-                              :placeholder="__('Select Category')"
-                              groupOptions="categories"
-                              :groupSelect="true"
-                              :groups="true"
-                              mode="tags"
-                              :close-on-select="false"
-                              :searchable="true"
-                              :options="this.doctor_main_categories"
-                            />
+                            <Multiselect class="py-2 px-3" v-model="form.doctor_category" valueProp="id" label="name"
+                              groupLabel="name" :placeholder="__('Select Category')" groupOptions="categories"
+                              :groupSelect="true" :groups="true" mode="tags" :close-on-select="false" :searchable="true"
+                              :options="this.doctor_main_categories" />
                           </div>
                           <div class="custom2">
-                            <button
-                              type="button"
-                              class="btn-close bg-white rounded-circle me-0"
-                              data-bs-dismiss="offcanvas"
-                              aria-label="Close"
-                            ></button>
+                            <button type="button" class="btn-close bg-white rounded-circle me-0"
+                              data-bs-dismiss="offcanvas" aria-label="Close"></button>
                           </div>
 
                           <hr class="mt-4 border-bottom border-2" />
@@ -196,33 +133,17 @@
                             <Label class="fs-2 text-black fw-bold mb-2">{{
                               __("Sort By Price")
                             }}</Label>
-                            <div
-                              class="d-flex gap-4 align-item-center justify-content-between"
-                            >
+                            <div class="d-flex gap-4 align-item-center justify-content-between">
                               <div class="d-flex flex-column">
-                                <Label
-                                  class="fs-3 mb-2 text-black fw-normal"
-                                  >{{ __("from") }}</Label
-                                >
-                                <input
-                                  v-model="form.start_price"
-                                  type="number"
-                                  class="form-control fs-4 py-3 px-3"
-                                  placeholder="$20"
-                                />
+                                <Label class="fs-3 mb-2 text-black fw-normal">{{ __("from") }}</Label>
+                                <input v-model="form.start_price" type="number" class="form-control fs-4 py-3 px-3"
+                                  placeholder="$20" />
                               </div>
                               <div class="d-flex flex-column">
                                 <div class="d-flex flex-column">
-                                  <Label
-                                    class="fs-3 mb-2 text-black fw-normal"
-                                    >{{ __("to") }}</Label
-                                  >
-                                  <input
-                                    v-model="form.end_price"
-                                    type="number"
-                                    class="form-control fs-4 py-3 px-3"
-                                    placeholder="$200"
-                                  />
+                                  <Label class="fs-3 mb-2 text-black fw-normal">{{ __("to") }}</Label>
+                                  <input v-model="form.end_price" type="number" class="form-control fs-4 py-3 px-3"
+                                    placeholder="$200" />
                                 </div>
                               </div>
                             </div>
@@ -233,11 +154,8 @@
                             <Label class="fs-2 text-black fw-bold mb-2">{{
                               __("Sort by Reivews")
                             }}</Label>
-                            <select
-                              v-model="form.review"
-                              class="form-select py-3 px-3"
-                              aria-label="Default select example"
-                            >
+                            <select v-model="form.review" class="form-select py-3 px-3"
+                              aria-label="Default select example">
                               <option value="0">0 +</option>
                               <option value="5">5 +</option>
                               <option value="10">10 +</option>
@@ -254,11 +172,8 @@
                             <Label class="fs-2 text-black fw-bold my-3">{{
                               __("Sort by Rating")
                             }}</Label>
-                            <select
-                              class="form-select py-3 px-3"
-                              v-model="form.rating"
-                              aria-label="Default select example"
-                            >
+                            <select class="form-select py-3 px-3" v-model="form.rating"
+                              aria-label="Default select example">
                               <option value="">
                                 {{ __("select Rating") }}
                               </option>
@@ -270,36 +185,16 @@
                             </select>
                           </div>
                           <div class="col-md-12">
-                            <div
-                              class="d-flex flex-md-row flex-column justify-content-around my-4 gap-md-4 gap-3"
-                            >
-                              <button
-                                @click="clearFilters()"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                                class="btn btn-primary d-flex justify-content-center justify-content-md-start rounded-4 fs-3 shadow-find"
-                              >
+                            <div class="d-flex flex-md-row flex-column justify-content-around my-4 gap-md-4 gap-3">
+                              <button @click="clearFilters()" data-bs-dismiss="offcanvas" aria-label="Close"
+                                class="btn btn-primary d-flex justify-content-center justify-content-md-start rounded-4 fs-3 shadow-find">
                                 {{ __("clear all") }}
-                                <img
-                                  class="ms-4"
-                                  src="@/images/icons/group.svg"
-                                  alt=""
-                                  width="30"
-                                />
+                                <img class="ms-4" src="@/images/icons/group.svg" alt="" width="30" />
                               </button>
-                              <button
-                                @click="getDoctors()"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                                class="btn btn-secondary d-flex justify-content-center justify-content-md-start rounded-4 fs-3 shadow-find"
-                              >
+                              <button @click="getDoctors()" data-bs-dismiss="offcanvas" aria-label="Close"
+                                class="btn btn-secondary d-flex justify-content-center justify-content-md-start rounded-4 fs-3 shadow-find">
                                 {{ __("search") }}
-                                <img
-                                  class="ms-4"
-                                  src="@/images/icons/group.svg"
-                                  alt=""
-                                  width="30"
-                                />
+                                <img class="ms-4" src="@/images/icons/group.svg" alt="" width="30" />
                               </button>
                             </div>
                           </div>
@@ -333,30 +228,18 @@
               </div>
               <div class="col-12" v-if="!fetching">
                 <div v-if="doctors.data.length > 0" class="row">
-                  <div
-                    :class="
-                      list_view
-                        ? 'col-md-12'
-                        : grid_view
-                        ? 'col-md-3'
-                        : 'col-md-12'
-                    "
-                    class="mb-4"
-                    v-for="(doctor, index) in doctors.data"
-                    :key="index"
-                  >
+                  <div :class="list_view
+                    ? 'col-md-12'
+                    : grid_view
+                      ? 'col-md-3'
+                      : 'col-md-12'
+                    " class="mb-4" v-for="(doctor, index) in doctors.data" :key="index">
                     <div v-if="list_view">
-                      <doctor-listing-card
-                        :key="doctor.id"
-                        :doctor="doctor"
-                      ></doctor-listing-card>
+                      <doctor-listing-card :key="doctor.id" :doctor="doctor"></doctor-listing-card>
                     </div>
 
                     <div v-if="grid_view">
-                      <doctor-grid-card
-                        :key="doctor.id"
-                        :doctor="doctor"
-                      ></doctor-grid-card>
+                      <doctor-grid-card :key="doctor.id" :doctor="doctor"></doctor-grid-card>
                     </div>
                   </div>
                 </div>
@@ -369,31 +252,16 @@
               </div>
               <!-- v-if="doctors.meta.last_page != this.filter.page" -->
               <div class="col-12" v-if="!fetching">
-                <div
-                  class="d-flex align-items-center justify-content-center mt-5"
-                  v-if="doctors.length > 10"
-                >
-                  <button
-                    v-if="doctors.meta.last_page != this.filter.page"
-                    @click="loadMore()"
-                    class="btn btn-primary fs-2 fw-bold shadow-find rounded-4 px-4 py-2 mb-3"
-                    :disabled="loading_more"
-                  >
-                    <span
-                      :class="{
-                        loader: loading_more,
-                      }"
-                      class="position-absolute"
-                    ></span>
+                <div class="d-flex align-items-center justify-content-center mt-5" v-if="doctors.length > 10">
+                  <button v-if="doctors.meta.last_page != this.filter.page" @click="loadMore()"
+                    class="btn btn-primary fs-2 fw-bold shadow-find rounded-4 px-4 py-2 mb-3" :disabled="loading_more">
+                    <span :class="{
+                      loader: loading_more,
+                    }" class="position-absolute"></span>
                     {{
                       getPageContent("general_load_btn_text") ?? __("load more")
                     }}
-                    <img
-                      width="30"
-                      class="ms-4 mb-1"
-                      src="@/images/icons/loginbtnicon.png"
-                      alt=""
-                    />
+                    <img width="30" class="ms-4 mb-1" src="@/images/icons/loginbtnicon.png" alt="" />
                   </button>
                 </div>
               </div>
@@ -421,7 +289,7 @@ import RecordNotFound from "../../Components/Shared/RecordNotFound.vue";
 import PagesHeading from "../../Components/PagesHeading.vue";
 import Multiselect from "@vueform/multiselect";
 import route from "../../../../vendor/tightenco/ziggy/src/js";
-
+import { Icon } from '@iconify/vue'
 export default defineComponent({
   mixins: [PaginationMixin],
   components: {
@@ -437,6 +305,7 @@ export default defineComponent({
     SpotlightCardSkeleton,
     RecordNotFound,
     Multiselect,
+    Icon
   },
   data() {
     return {
@@ -616,8 +485,8 @@ export default defineComponent({
         }, 1000);
       });
       fetchDataPromise
-        .then((data) => {})
-        .catch((error) => {})
+        .then((data) => { })
+        .catch((error) => { })
         .finally(() => {
           this.isLoading = false;
         });
@@ -675,13 +544,28 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style scoped>
 .rounded-custom {
   border-radius: 15px;
 }
-.find_doctor_para{
+
+.find_doctor_para {
   color: black !important;
   font-size: 16px !important;
   font-weight: bold !important;
+}
+
+.hover-btn:hover {
+  background-color: #fbf2ed;
+  /* or your preferred hover color */
+  color: black !important;
+}
+
+.hover-btn:hover .icon-hover {
+  color: black !important;
+}
+
+.hover-btn:hover .icon-hover {
+  color: black !important;
 }
 </style>
