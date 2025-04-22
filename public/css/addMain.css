@@ -2440,9 +2440,56 @@ h6 {
     .work-section.py-5 {
         margin-top: 100px;
     }
-
+    .work-info {
+        padding: 0 20px;
+    }
+    .work-info {
+        padding-right: 0 !important; 
+    }
+    .work-section {
+      
+        display: none;
+    }
+    .row.pt-md-5.justify-content-center {
+        position: inherit;
+    }
+    .btn.d-flex.align-items-center.gap-1.reg-btn.pink-btn.fw-medium.fs-3.px-md-5.px-3.rounded-4 {
+        z-index: 1;
+    }
+    .our-blog-fourteen {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    .footer-widget.footer-menu {
+        padding-top: 20px;
+    }
+    .subscribe-form h6 {
+        font-size: 18px !important;
+    }
+  
 
 }
+
+@media (max-width: 1024px) {
+    .banner-img.aos.aos-init.aos-animate {
+        display: none;
+    }
+    .banner-content.aos-init.aos-animate {
+        text-align: center;
+    }
+    .advic-cont.aos.aos-init.aos-animate {
+        padding: 0 !important;
+    }
+    .advice-p {
+       
+        text-align: left;
+    }
+    .bg-color {
+         background-size: contain;
+    }
+
+}
+
 .About-banner {
     background: #fbf2ed;
     position: relative;
@@ -2733,8 +2780,4 @@ h6 {
             margin-bottom: 80px;
             padding-right: 70px;
         }
-        .heart:hover .heart::before, .heart::after {
-
-
-
-        }
+       
