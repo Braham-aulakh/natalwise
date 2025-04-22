@@ -117,7 +117,7 @@
                                 <h5>Skincare</h5>
                                 <p>Receive expert skincare advice with customized product recommendations and efficient
                                     skin prep methods to attain healthy, radiant skin.</p>
-                                <a href="booking.html" class="read-more-btn">Read More
+                                <a href="doctors" class="read-more-btn">Read More
                                 </a>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                 <h5>Makeup</h5>
                                 <p> Master makeup application for any situation, from easy day-to-day looks to elegant
                                     party looks, with customized product recommendations.</p>
-                                <a href="booking.html" class="read-more-btn">Read More
+                                <a href="doctors" class="read-more-btn">Read More
 
                                 </a>
                             </div>
@@ -162,7 +162,7 @@
                                 <h5>Personalized styling</h5>
                                 <p>Find fashion advice appropriate for your age and body type, so you can dress
                                     confidently and project your own style easily.</p>
-                                <a href="booking.html" class="read-more-btn">Read More</a>
+                                <a href="doctors" class="read-more-btn">Read More</a>
                             </div>
                         </div>
                     </div>

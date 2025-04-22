@@ -70,7 +70,7 @@
 
               <div class="about-contact">
 
-                <a href="contact-us.html" class="btn btn-primary">Contact With Us</a>
+                <a href="/contact" class="btn btn-primary">Contact With Us</a>
 
 
 

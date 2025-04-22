@@ -7,27 +7,15 @@
           <div class="bookus-img">
             <!-- Main Image -->
             <div class="mb-3">
-              <img
-                src="../images/icons/ourComit.jpg"
-                alt="Wellness Image"
-                class="img-fluid rounded shadow w-100"
-              />
+              <img src="../images/icons/ourComit.jpg" alt="Wellness Image" class="img-fluid rounded shadow w-100" />
             </div>
             <!-- Two Smaller Images Underneath -->
             <div class="row g-3">
               <div class="col-sm-6 aos" data-aos="fade-up">
-                <img
-                  src="../images/icons/ourComit-2.jpg"
-                  alt="img"
-                  class="img-fluid rounded shadow w-100"
-                />
+                <img src="../images/icons/ourComit-2.jpg" alt="img" class="img-fluid rounded shadow w-100" />
               </div>
               <div class="col-sm-6 aos" data-aos="fade-up">
-                <img
-                  src="../images/icons/ourcomit-3.jpg"
-                  alt="img"
-                  class="img-fluid rounded shadow w-100"
-                />
+                <img src="../images/icons/ourcomit-3.jpg" alt="img" class="img-fluid rounded shadow w-100" />
               </div>
             </div>
           </div>
@@ -42,22 +30,16 @@
                 <h2 class="section-title">Why Choose Us for Women’s Wellness</h2>
               </div>
               <p class="section-description mb-4">
-                When it comes to women’s health and well-being, we go beyond just information—we provide a comprehensive, supportive, expert-driven approach, creating a safe space to help women thrive in every aspect of life. Here’s why we stand out:
+                When it comes to women’s health and well-being, we go beyond just information—we provide a
+                comprehensive, supportive, expert-driven approach, creating a safe space to help women thrive in every
+                aspect of life. Here’s why we stand out:
               </p>
 
               <!-- Accordion -->
               <div class="accordion">
-                <div
-                  class="accordion-item mb-2"
-                  v-for="(item, index) in accordionItems"
-                  :key="index"
-                >
+                <div class="accordion-item mb-2" v-for="(item, index) in accordionItems" :key="index">
                   <h2 class="accordion-header">
-                    <button
-                      class="accordion-button"
-                      :class="{ collapsed: openIndex !== index }"
-                      @click="toggle(index)"
-                    >
+                    <button class="accordion-button" :class="{ collapsed: openIndex !== index }" @click="toggle(index)">
                       {{ item.title }}
                     </button>
                   </h2>
@@ -75,33 +57,27 @@
 
       <!-- Stats Section -->
       <!-- Stats Section -->
-<div class="row justify-content-center text-center align-items-center flex-wrap mt-5">
-  <template v-for="(item, index) in stats" :key="index">
-    <!-- Stat Card -->
-    <div class="col-12 col-md-3 mb-4 d-flex justify-content-center">
-      <div class="d-flex flex-column align-items-center">
-        <div class="icon-square mb-3 p-2">
-          <img :src="item.icon" :alt="item.alt" class="stat-icon" />
-        </div>
-        <h6 class="mb-1 fs-3 fw-bold text-dark">{{ item.value }}</h6>
-        <p class="mb-0 fs-14 text-muted">{{ item.description }}</p>
-      </div>
-    </div>
+      <div class="row justify-content-center text-center align-items-center flex-wrap mt-5">
+        <template v-for="(item, index) in stats" :key="index">
+          <!-- Stat Card -->
+          <div class="col-12 col-md-3 mb-4 d-flex justify-content-center">
+            <div class="d-flex flex-column align-items-center">
+              <div class="icon-square mb-3 p-2">
+                <img :src="item.icon" :alt="item.alt" class="stat-icon" />
+              </div>
+              <h6 class="mb-1 fs-3 fw-bold text-dark">{{ item.value }}</h6>
+              <p class="mb-0 fs-14 text-muted">{{ item.description }}</p>
+            </div>
+          </div>
 
-    <!-- Arrow Icon Between Cards -->
-    <div
-      v-if="index < stats.length - 1"
-      class="d-none d-md-flex col-md-1 align-items-center justify-content-center"
-      style="padding: 20px 0px;height: 140px;width: 150px;margin-bottom: 40px;;"
-    >
-      <img
-        src="/images/homes/way-icon.svg"
-        alt="way"
-        class="way-icon"
-      />
-    </div>
-  </template>
-</div>
+          <!-- Arrow Icon Between Cards -->
+          <div v-if="index < stats.length - 1"
+            class="d-none d-md-flex col-md-1 align-items-center justify-content-center"
+            style="padding: 20px 0px;height: 140px;width: 150px;margin-bottom: 40px;;">
+            <img src="/images/homes/way-icon.svg" alt="way" class="way-icon" />
+          </div>
+        </template>
+      </div>
 
     </div>
   </div>
@@ -155,4 +131,3 @@ export default {
   },
 };
 </script>
-

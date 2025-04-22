@@ -210,11 +210,13 @@
     font-size: 12px;
     transition: all 0.4s ease;
 }
+
 .cont-hide h3 {
-font-size: 18px !important;
+    font-size: 18px !important;
 }
+
 .cont-hide p {
-font-size: 15px !important;
+    font-size: 15px !important;
 }
 
 @media (min-width: 992px) {
@@ -817,7 +819,7 @@ section.banner-section {
 
 [data-aos^=fade][data-aos^=fade].aos-animate {
     opacity: 1;
- 
+
 }
 
 [data-aos^=fade][data-aos^=fade].aos-animate img {
@@ -1318,7 +1320,7 @@ h6 {
 
 .work-img img {
     border-radius: 16px;
-   
+
     max-width: 100%;
     height: auto;
 }
@@ -2009,6 +2011,7 @@ h6 {
     font-weight: 500;
     cursor: pointer !important;
 }
+
 /* Optional icon spacing */
 .feature-content-six span {
     display: block;
@@ -2353,90 +2356,113 @@ h6 {
     .main-nav {
         display: none !important;
     }
+
     .nav.header-navbar-rht {
         display: none !important;
     }
+
     .banner-content {
         display: inline-block;
         text-align: center;
     }
+
     .banner-content .banner-head {
         font-size: 28px !important;
         text-align: center;
         margin-bottom: 20px;
     }
+
     .banner-content p {
         font-size: 1rem;
         text-align: center;
     }
+
     .banner-content .btn {
         font-size: 17px;
     }
-   
+
     .banner-img.aos.aos-init.aos-animate {
         display: none;
     }
+
     .advice-section {
         display: inline-block;
         text-align: center;
     }
+
     .advic-headings {
         font-size: 20px !important;
     }
+
     .advic-cont.aos.aos-init.aos-animate {
         padding: 0;
         text-align: center;
     }
+
     .advice-p {
         font-size: 17px;
         text-align: center !important;
     }
+
     .bg-color {
         display: none;
     }
+
     .exp-bg-img img {
-       
+
         max-width: 250px;
     }
+
     .Explore-section {
         padding: 0px;
         display: inline-block;
         width: 100%;
         position: relative;
     }
+
     .section-title {
         font-size: 32px !important;
     }
-    .cont-hide {  
-     padding: 90px 20px;
-       
+
+    .cont-hide {
+        padding: 90px 20px;
+
     }
+
     .Explore-SEC {
         padding-bottom: 50px;
     }
+
     .bookus-img {
         display: none;
     }
+
     .section-bg {
-    text-align: center;
+        text-align: center;
     }
+
     .py-5 {
         padding-top: 30px !important;
         padding-bottom: 40px !important;
     }
+
     .row.justify-content-center.text-center.align-items-center.flex-wrap.mt-5 {
         display: none;
     }
+
     .text-center.heading-fs.aos-init.aos-animate {
         font-size: 32px !important;
     }
+
     .subheading-fs {
         font-size: 18px !important;
-   
+
     }
+
     .btn.reg-btn.pink-btn {
         margin-top: 30px;
     }
+
     .work-section.py-5 {
         margin-top: 100px;
     }
@@ -2470,7 +2496,7 @@ h6 {
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
     .banner-img.aos.aos-init.aos-animate {
         display: none;
     }
@@ -2486,6 +2512,9 @@ h6 {
     }
     .bg-color {
          background-size: contain;
+    }
+    .row.justify-content-center.text-center.align-items-center.flex-wrap.mt-5 {
+        display: none;
     }
 
 }
@@ -2545,6 +2574,7 @@ h6 {
     overflow: hidden;
     -webkit-transform: translate3d(0, 0, 0);
 }
+
 .testimonial-section-ten.need-to-know-section {
     background-color: #F8FAFC;
     position: relative;
@@ -2552,7 +2582,8 @@ h6 {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-  }
+}
+
 .page-breadcrumb ol li a {
     color: #000;
     font-size: 14px;
@@ -2691,6 +2722,7 @@ h6 {
     position: absolute;
     right: 0;
 }
+
 .way-inner-header {
     margin: 0;
     padding: 60px;
@@ -2704,8 +2736,9 @@ h6 {
 .section-inner-header h2 {
     font-weight: 600 !important;
     font-size: 40px !important;
-    color: #1F2937 ;
+    color: #1F2937;
 }
+
 .way-inner-header .btn {
     font-weight: 600 !important;
     font-size: 15px !important;
@@ -2716,17 +2749,21 @@ h6 {
     border-radius: 8px !important;
     box-shadow: inset 0 0 0 0 #FC9FBC !important;
 }
+
 .way-img {
     position: relative;
     top: 10px;
 }
+
 .way-inner-header p {
     font-weight: 500;
     font-size: 16px;
     color: #ffffff;
     margin-bottom: 40px;
 }
-.heart::before, .heart::after {
+
+.heart::before,
+.heart::after {
     position: absolute;
     content: "";
     left: 50px;
@@ -2747,7 +2784,7 @@ h6 {
     -o-transform-origin: 0 100%;
     transform-origin: 0 100%;
     z-index: -1;
-    }
+}
 
     .heart::after {
         left: 0;

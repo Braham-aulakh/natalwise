@@ -3,7 +3,7 @@
     <div class="stats">
       <div class="Top-Border">
         <pages-heading
-        :heading="'Find the Doctors'"
+        :heading="`Find Your Expert`"
         :breadcrums="breadcrums"
       ></pages-heading>
       </div>

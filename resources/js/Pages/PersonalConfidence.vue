@@ -63,6 +63,47 @@
                 </div>
             </div>
         </section>
+        <section class="personal-part">
+            <div class="container">
+
+
+                <div class="row align-items-center">
+                    <div class="col-lg-6  aos" data-aos="fade-up">
+                        <div class="faq-cont">
+                            <h2>Creative Healing</h2>
+                            <p>Art therapy is a powerful way to explore emotions, relieve stress, and promote mental
+                                healing through creative expression. It fosters self-awareness, emotional resilience,
+                                and personal growth, helping you process feelings and gain a deeper
+                                understanding of yourself.
+
+                            </p>
+                            <a href="#" class="book-now">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+
+                        <div class="accordion">
+                            <div class="accordion-item mb-2" v-for="(item, index) in accordionItems" :key="index">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" :class="{ collapsed: openItems !== index }"
+                                        @click="toggleItems(index)">
+                                        {{ item.title }}
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse" v-show="openItems === index">
+                                    <div class="accordion-body">
+                                        <span v-html="item.content"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- Aging Gracefully -->
         <section class="faq-sec-fourteen">
             <div class="container">
@@ -97,6 +138,44 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="personal-part">
+            <div class="container">
+
+
+                <div class="row align-items-center">
+                    <div class="col-lg-6  aos" data-aos="fade-up">
+                        <div class="faq-cont">
+                            <h2>Fitness for all</h2>
+                            <p>Fitness is not about age or ability—it’s about finding the right approach for your body
+                                and your goals.
+
+                            </p>
+                            <a href="#" class="book-now">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+
+                        <div class="accordion">
+                            <div class="accordion-item mb-2" v-for="(item, index) in fitnessItems" :key="index">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" :class="{ collapsed: openFitnessItems !== index }"
+                                        @click="toggleFitItems(index)">
+                                        {{ item.title }}
+                                    </button>
+                                </h2>
+                                <div class="accordion-collapse" v-show="openFitnessItems === index">
+                                    <div class="accordion-body">
+                                        <span v-html="item.content"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -141,6 +220,14 @@
                 </div>
             </div>
         </section>
+        <!-- Our Experts -->
+        <spotlight-doctor-section></spotlight-doctor-section>
+
+        <!-- our blogs  -->
+        <OurBlog></OurBlog>
+        <!-- Testimonials Sections  -->
+        <review-section></review-section>
+
     </app-layout>
 </template>
 
@@ -170,6 +257,8 @@ export default {
             openIndex: null,
             openAgingIndex: null,
             openPositiveIndex: null,
+            openItems: 0,
+            openFitnessItems: 0,
             faqItems:
                 [{
                     question: 'Set Achievable Goals',
@@ -196,7 +285,47 @@ export default {
                 { question: 'Build Empathy', points: ['Understand others perspectives by practicing empathy. When you actively listen and show compassion, your relationships become stronger.'] },
                 { question: 'Set Healthy Boundaries', points: ["Healthy boundaries are essential for mutual respect and maintaining emotional balance. They prevent burnout and help both parties feel understood.   "] },
                 { question: 'Shared Experiences', points: [' Spending time together through shared experiences strengthens the bond and creates lasting memories, whether it’s through conversation or activities.	Positive relationships are built on respect, understanding, and connection, nurturing your mental and emotional well-being.'] },
-                ]
+                ],
+            accordionItems: [
+                {
+                    title: 'Express Emotions Through Art ',
+                    content: `Engage in creative activities like painting, journaling, or music to process emotions and express your inner feelings.`,
+                },
+                {
+                    title: 'Develop a Routine ',
+                    content: `Consistently incorporating creativity into your life can help you relax and reconnect with yourself, fostering emotional healing.`,
+                },
+                {
+                    title: 'Express Emotions Through Art ',
+                    content: `Engage in creative activities like painting, journaling, or music to process emotions and express your inner feelings.`,
+                },
+                {
+                    title: 'Develop a Routine ',
+                    content: `Consistently incorporating creativity into your life can help you relax and reconnect with yourself, fostering emotional healing.`,
+                },
+                {
+                    title: 'Unlock Personal Growth',
+                    content: `Art can reveal deeper insights into your personal journey, encouraging self-awareness and growth.`,
+                },
+            ],
+            fitnessItems: [
+                {
+                    title: '	Tailored to You',
+                    content: `Our fitness programs are designed for different age groups and fitness levels, ensuring everyone can participate and benefit.`,
+                },
+                {
+                    title: 'Strength and Flexibility ',
+                    content: `Focus on exercises that promote strength, flexibility, and cardiovascular health to maintain a balanced, healthy body.`,
+                },
+                {
+                    title: 'Consistency is Key ',
+                    content: `Regular physical activity boosts mood, energy, and helps with long-term health. Consistency is what makes a lasting difference.`,
+                },
+                {
+                    title: '	Achieve Your Goals',
+                    content: `Whether you’re new to fitness or an experienced athlete, there’s always room for growth. Fitness should be fun, accessible, and beneficial for everyone. It’s a lifelong journey to feel better, stronger, and healthier.`,
+                },
+            ],
         }
     },
     methods: {
@@ -208,7 +337,13 @@ export default {
         },
         togglePositive(index) {
             this.openPositiveIndex = this.openPositiveIndex === index ? null : index;
-        }
+        },
+        toggleItems(index) {
+            this.openItems = this.openItems === index ? null : index;
+        },
+        toggleFitItems(index) {
+            this.openFitnessItems = this.openFitnessItems === index ? null : index;
+        },
     },
 }
 
@@ -220,5 +355,10 @@ export default {
     align-items: start !important;
     margin-bottom: 8px;
     color: #374151 !important;
+}
+
+.faq-cont p {
+    font-size: 18px;
+    padding-bottom: 30px;
 }
 </style>
