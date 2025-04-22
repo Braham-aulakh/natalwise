@@ -1,5 +1,5 @@
 <template>
-  <app-layout title="Doctors">
+  <app-layout title="Experts">
     <div class="stats">
       <div class="Top-Border">
         <pages-heading
@@ -8,14 +8,14 @@
       ></pages-heading>
       </div>
      
-      <find-doctor-bar
+      <!-- <find-doctor-bar
         @updateFormData="updateFormData"
-        :title="'Search Related Doctors near by you'"
+        :title="'Search Related Experts near by you'"
         :home="true"
         :search="search"
         :is_doctor_page="true"
-      ></find-doctor-bar>
-      <div class="pt-7">
+      ></find-doctor-bar> -->
+      <div class="pt-5">
         <div class="container mb-3">
           <div class="row">
             <div class="col-md-12">
@@ -34,7 +34,7 @@
                 <p>{{ getPageContent("doctors_page_description") ?? "-" }}</p>
               </div>
               <div v-else>
-                <p class="fs-4 text-center text-black">
+                <p class="fs-4 text-center find_doctor_para">
                   Our team of highly skilled attorneys comprises seasoned
                   professionals with extensive experience in their respective
                   fields. We pride ourselves<br />
@@ -678,5 +678,10 @@ export default defineComponent({
 <style lang="scss">
 .rounded-custom {
   border-radius: 15px;
+}
+.find_doctor_para{
+  color: black !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
 }
 </style>

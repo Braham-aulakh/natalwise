@@ -451,6 +451,11 @@ Route::get('/shop', function () {
         // dd('ok');
         return Inertia::render('PersonalConfidence');
     })->name('personal-confidence-building');
+
+    Route::get('/resources', function () {
+        // dd('ok');
+        return Inertia::render('Resources');
+    })->name('resources');
 //     return Inertia::render('Dashboard');
 // })->name('dashboard');
 
