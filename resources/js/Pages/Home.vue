@@ -65,7 +65,7 @@
         <div class="row">
           <div class="col-md-5">
             <div class="rounded-5 mb-4 mb-md-0 overflow-hidden">
-              <img class="faq-img" src="/images/homes/faq-img.png" alt="FAQ Image" />
+              <img class="faq-img" src="../../../public/images/homes/faq-img.png" alt="FAQ Image" />
             </div>
           </div>
 

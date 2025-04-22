@@ -64,7 +64,7 @@
 
                   <!-- Resources -->
                   <li class="has-submenu">
-                    <div class="flex gap-2 items-center">Resources
+                    <div class="flex gap-2 items-center" > <Link :href="route('resources')">  Resources </Link>
                       <!-- <Icon icon="icon-park-outline:down" width="14" height="14" /> -->
                     </div>
                   </li>
@@ -523,6 +523,7 @@ import { Link } from "@inertiajs/inertia-vue3";
 import CategoriesSkeleton from "@/Components/Skeleton/CategoriesSkeleton.vue";
 import "./navbar.css";
 import { Icon } from "@iconify/vue";
+import route from "../../../../vendor/tightenco/ziggy/src/js";
 export default {
   components: {
     Link,

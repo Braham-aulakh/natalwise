@@ -13,16 +13,16 @@
 
               <div class="app-scan">
                 <p>Scan the QR code to get the app now</p>
-                <img src="/images/hompage/scan-img.png" alt="scan-image">
+                <img src="../../../public/images/homes/scan-img.png" alt="scan-image">
               </div>
 
               <!-- Only ONE google-imgs div -->
               <div class="google-imgs d-flex gap-2 mt-3">
                 <button type="button" class="store-btn">
-                  <img src="/images/hompage/google-play-icon.svg" alt="Google Play">
+                  <img src="../../../public/images/homes/google-play-icon.svg" alt="Google Play">
                 </button>
                 <button type="button" class="store-btn">
-                  <img src="/images/hompage/app-store-icon.svg" alt="App Store">
+                  <img src="../../../public/images/homes/app-store-icon.svg" alt="App Store">
                 </button>
               </div>
 
