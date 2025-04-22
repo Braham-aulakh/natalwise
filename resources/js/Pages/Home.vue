@@ -65,12 +65,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="rounded-5 mb-4 mb-md-0 overflow-hidden">
               <img class="faq-img" src="../../../public/images/homes/faq-img.png" alt="faqImg" />
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="accordion" id="accordionPanelsStayOpenExample">
               <div class="accordion-item mb-2" v-for="(item, index) in faqs" :key="item.id">
                 <h2 class="accordion-header" :id="`panelsStayOpen-headingOne${item.id}`"> <button

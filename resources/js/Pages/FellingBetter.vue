@@ -31,3 +31,64 @@
         </section>
 </template>
 
+<style>
+@media (max-width:767px) {
+
+.way-img {
+        display: none;
+    }
+    .way-shapes-left {
+        display: none;
+    }
+    .section-inner-header.way-inner-header.mb-0 {
+        text-align: center !important;
+    }
+    .section-inner-header h2 {
+	font-weight: 600 !important;
+	font-size: 28px !important;
+	color: #1F2937;
+}
+    .way-section {
+     margin-top: 40px;
+    }
+
+    .section-inner-header.way-inner-header.mb-0 h2 {
+	font-size: 28px !important;
+}
+.section-inner-header h2 {
+	font-weight: 600 !important;
+	font-size: 28px !important;
+	color: #1F2937;
+}
+}
+@media (max-width: 1080px) {
+ 
+.way-img[data-v-bcf9defe] {
+	display: none !important; 
+}
+.way-shapes-left {
+	display: none;
+}
+.way-section[data-v-bcf9defe] {
+	
+	padding: 0 !important;
+	margin-top: 40px;
+    text-align: center;
+}
+.way-img {
+	display: none;
+}
+
+.way-inner-header {
+	
+	text-align: center;
+}
+.way-inner-header p {
+	font-weight: 500;
+	font-size: 18px;
+	color: #fff;
+	margin-bottom: 40px;
+}
+}
+
+</style>

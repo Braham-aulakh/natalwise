@@ -86,7 +86,7 @@
             </div>
         </section>
         <spotlight-doctor-section></spotlight-doctor-section>
-        <section class="way-section">
+        <!-- <section class="way-section">
 			<div class="container">
 				<div class="way-bg">
 					<div class="way-shapes-img">
@@ -113,7 +113,8 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
+        <FellingBetter/>
         <!-- Our blogs section  -->
         <OurBlog></OurBlog>
 
@@ -131,6 +132,7 @@ import Navbar from "@/Layouts/AppIncludes/Navbar.vue";
 import SpotlightDoctorSection from "@/Components/Doctors/SpotlightDoctorSection.vue";
 import OurBlog from '../Components/ourblog.vue';
 import ReviewSection from "@/Components/ReviewSection.vue";
+import FellingBetter from "./FellingBetter.vue";
 export default defineComponent({
     components: {
         AppLayout,
@@ -138,7 +140,9 @@ export default defineComponent({
         PageHeader,
         SpotlightDoctorSection,
         OurBlog,
-        ReviewSection
+        ReviewSection,
+        FellingBetter
+        
     },
 });
 </script>
@@ -261,4 +265,44 @@ export default defineComponent({
     color: #ffffff;
     margin-bottom: 40px;
 }
+@media (max-width: 1080px) {
+    .wellness-cont {
+	margin-top: 25px;
+}
+.way-img[data-v-bcf9defe] {
+	display: none !important; 
+}
+.way-shapes-left {
+	display: none;
+}
+.way-section[data-v-bcf9defe] {
+	
+	padding: 0 !important;
+	margin-top: 40px;
+    text-align: center;
+}
+
+}
+
+@media (max-width:767px) {
+    .Essentials[data-v-bcf9defe] {
+	padding-top: 40px;
+}
+.section-inner-header h2[data-v-bcf9defe] {
+	
+	font-size: 28px !important;
+}
+
+	
+
+
+
+
+
+
+
+
+}
+
+
 </style>

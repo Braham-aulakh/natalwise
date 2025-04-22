@@ -91,7 +91,7 @@
 
 .section-subtitle {
     font-size: 22px !important;
-    font-family: 'Style Script', cursive !important;
+   font-family: 'Style Script', cursive !important; 
     text-align: center !important;
 }
 
@@ -250,10 +250,9 @@
     text-decoration: none !important;
 }
 
-.explore_main {
+.explore_main{
     width: 200px !important;
 }
-
 /* .service-sec-one {
     display: flex;
     justify-content: center;
