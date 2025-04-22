@@ -1,5 +1,5 @@
 <template>
-  <div class="section spotlight p-6">
+  <div class="section spotlight">
     <div class="container-fluid px-0 overflow-hidden">
       <div class="container">
         <div class="row">

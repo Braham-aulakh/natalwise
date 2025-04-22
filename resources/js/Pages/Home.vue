@@ -39,15 +39,18 @@
     <!-- Faqs Section -->
     <!-- <div class="section stats p-6" v-if="faqs.length > 0">  -->
 
-    <div class="section stats p-6" v-show="faqs.length > 0">
-
+    <div class="section stats p-6" v-if="faqs.length > 0">
       <div class="container">
         <div class="row">
           <div class="col-12 mb-5 text-center">
-            <div v-if="getPageContentType('faqs_section_description') == 'textarea'">
+            <div v-if="
+              getPageContentType('faqs_section_description') == 'textarea'
+            ">
               <div v-html="getPageContent('faqs_section_description')"></div>
             </div>
-            <div v-else-if="getPageContentType('faqs_section_description') == 'text'">
+            <div v-else-if="
+              getPageContentType('faqs_section_description') == 'text'
+            ">
               <p>{{ getPageContent("faqs_section_description") ?? "-" }}</p>
             </div>
             <div v-else>
@@ -56,46 +59,42 @@
               <p>
                 When you choose Elite Legal Services, you are choosing a trusted
                 partner dedicated to your success. Here are some frequently
-                asked questions by some users. Feel free to add your questions.
+                asked questions by some users. Feel free to add your questions
               </p>
             </div>
           </div>
         </div>
-
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div class="rounded-5 mb-4 mb-md-0 overflow-hidden">
-              <img class="faq-img" src="../../../public/images/homes/faq-img.png" alt="FAQ Image" />
+              <img class="faq-img" src="../../../public/images/homes/faq-img.png" alt="faqImg" />
             </div>
           </div>
-
-          <div class="col-md-7">
-            <div class="accordion" id="faqAccordion">
+          <div class="col-md-6">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
               <div class="accordion-item mb-2" v-for="(item, index) in faqs" :key="item.id">
-                <h2 class="accordion-header" :id="`heading-${index}`">
-                  <button class="accordion-button" :class="{ collapsed: activeIndex !== index }" type="button"
-                    @click="toggle(index)" :aria-expanded="activeIndex === index" :aria-controls="`collapse-${index}`">
-                    <span class="fw-bold home-faqs-text">{{ item.name }}</span>
-                  </button>
-                </h2>
-
-                <div :id="`collapse-${index}`" class="accordion-collapse collapse"
-                  :class="{ show: activeIndex === index }" :aria-labelledby="`heading-${index}`">
-                  <div class="accordion-body subheading-fs fw-bold">
-                    <div v-html="item.description"></div>
-                  </div>
+                <h2 class="accordion-header" :id="`panelsStayOpen-headingOne${item.id}`"> <button
+                    class="accordion-button" :class="{ collapsed: activeIndex !== index }" @click="toggle(index)"> {{
+                    item.name }} </button> </h2>
+                <div class="accordion-collapse" v-show="activeIndex === index">
+                  <div class="accordion-body"> <span v-html="item.description"></span> </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-
-
-
+        <div class="row pt-5 justify-content-center">
+          <div class="col-md-3 d-flex justify-content-center">
+            <Link :href="route('faqs')" class="btn  d-flex align-items-center gap-1 btn reg-btn pink-btn fw-medium fs-3 px-md-5 px-3 rounded-4">
+            <span class="button-text">{{
+              getPageContent("general_view_more_btn_text") ?? __("view more")
+            }}</span>
+            </Link>
+          </div>
+        </div>
       </div>
-
     </div>
+   
   </app-layout>
 </template>
 
@@ -233,179 +232,11 @@ export default defineComponent({
         modalButton.click();
       }
     },
-    toggle(index) {
-      this.activeIndex = this.activeIndex === index ? null : index;
-    }
+    toggle(index) { this.activeIndex = this.activeIndex === index ? null : index; }, 
+    // toggle(index) {
+    //   this.activeIndex = this.activeIndex === index ? null : index;
+    // }
   },
 
 });
 </script>
-
-<style scoped>
-/* Accordion Button */
-.accordion-button {
-  background-color: #f4a0b2 !important;
-  color: #fff !important;
-  font-weight: bold;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #f29cbf !important;
-  /* When not collapsed */
-  color: #fff !important;
-}
-
-.accordion-button.collapsed {
-  background-color: #f4a0b2 !important;
-  /* Collapsed state */
-  color: #fff !important;
-}
-
-.accordion-button:hover {
-  background-color: #ec8da3 !important;
-}
-
-.accordion-button:focus {
-  outline: none;
-}
-
-/* Accordion Body */
-.accordion-body {
-  background-color: #fff !important;
-  color: #444 !important;
-  padding: 1rem !important;
-  font-size: 0.95rem !important;
-  border-top: 1px solid #eee !important;
-  display: block;
-}
-
-.accordion-body p {
-  margin: 0;
-}
-
-.accordion-header {
-  padding: 0;
-  margin: 0;
-}
-
-/* Accordion Collapse */
-.accordion-collapse {
-  transition: max-height 0.3s ease;
-}
-
-/* Focus on first accordion button */
-.accordion-button:first-of-type {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.accordion-button:last-of-type {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-/* Styling the FAQ section container */
-.faq-img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.section {
-  padding: 3rem 1.5rem;
-  background-color: #f9f9f9;
-}
-
-.home-faqs-text {
-  font-size: 1.2rem;
-  color: #333;
-  font-weight: bold;
-}
-
-/* Special Container for accordion */
-.accordion-item {
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  background-color: #fff;
-}
-
-.accordion-item+.accordion-item {
-  margin-top: 10px;
-}
-
-.accordion-header {
-  background-color: #f4a0b2;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-}
-
-.accordion-header .accordion-button {
-  text-align: left;
-  font-size: 1.1rem;
-}
-
-.accordion-body {
-  padding: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Hover Effect */
-.accordion-button:hover {
-  background-color: #ec8da3 !important;
-  cursor: pointer;
-}
-
-.accordion-collapse {
-  padding: 0;
-}
-
-/* General Styles for FAQ Text */
-.faqs-section-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Styling for FAQ description text */
-.accordion-body .subheading-fs {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #444;
-}
-
-/* Styling for paragraphs in FAQ body */
-.accordion-body .subheading-fs p {
-  margin: 0;
-}
-
-/* Styling for the accordion container */
-.accordion {
-  margin-top: 20px;
-}
-
-.accordion-item {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-}
-
-.accordion-item .accordion-button {
-  font-size: 1.1rem;
-  padding: 1rem;
-}
-
-/* Accordion collapse when clicked */
-.accordion-collapse.show {
-  display: block;
-}
-
-.accordion-collapse {
-  display: none;
-}
-</style>

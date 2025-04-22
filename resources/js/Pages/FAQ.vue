@@ -1,7 +1,7 @@
 <template>
   <app-layout :title="__n('faq')">
     <template #default>
-      <div class="bg-primary">
+      <div class="Top-Border">
         <pages-heading
           :heading="'faqs'"
           :breadcrums="breadcrums"
@@ -12,13 +12,13 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <div class="text-center">
-                <h2 class="display-6 text-primary">
+              <div class="text-center section-header-sixteen ">
+                <h2 class="">
                   {{ __("frequently asked questions") }}
                 </h2>
-                <span class="fw-bold fs-3 text-black">{{
+                <p class="">{{
                   __("answer to commonly asked questions")
-                }}</span>
+                }}</p>
                 <!-- <p class="text-center mb-0">Discover The Best Doctors Near You</p> -->
               </div>
 
@@ -183,3 +183,9 @@ export default defineComponent({
   props: ["faq_categories"],
 });
 </script>
+<style scoped>
+.fqz-heading {
+    font-size: 45px;
+    font-weight: 600;
+}
+</style>
