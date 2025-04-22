@@ -87,7 +87,7 @@
                   <div
                     v-if="checkObjectValuesIsNotNull(doctor.doctor_settings)"
                   >
-                    <ul
+                    <!-- <ul
                       class="d-flex ps-0 mb-0 social flex-wrap flex-md-nowrap gap-1 gap-md-0 mt-2 mt-md-0"
                     >
                       <li
@@ -180,7 +180,7 @@
                           ><i class="bi bi-pinterest"></i
                         ></a>
                       </li>
-                    </ul>
+                    </ul> -->
                   </div>
                 </div>
               </div>

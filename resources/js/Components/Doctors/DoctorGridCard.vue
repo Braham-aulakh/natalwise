@@ -35,14 +35,14 @@
 
           <img
             v-if="doctor.is_featured"
-            src="@/images/icons/medal.svg"
+            src="../../../../public/images/homes/medal.png"
             width="30"
             class="mt-2"
             alt=""
           />
         </span>
 
-        <div class="left-side">
+        <!-- <div class="left-side">
           <div class="socialhvr">
             <a
               class="icon-container"
@@ -66,64 +66,7 @@
               ><i class="bi bi-linkedin text-white ms-2"></i
             ></a>
           </div>
-
-          <!-- <ul class="d-flex ps-0 mb-0 social flex-wrap flex-md-nowrap gap-1 gap-md-0 mt-2 mt-md-0">
-                                        <li class="list-group-item border-0" v-if="doctor.doctor_settings.facebook_url
-                                            ">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .facebook_url
-                                                "><i class="bi bi-facebook"></i></a>
-                                        </li>
-                                        <li class="list-group-item border-0" v-if="doctor.doctor_settings.youtube_url
-                                            ">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .youtube_url
-                                                "><i class="bi bi-youtube"></i></a>
-                                        </li>
-                                        <li class="list-group-item border-0" v-if="doctor.doctor_settings.twitter_url
-                                            ">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .twitter_url
-                                                "><i class="bi  bi-twitter"></i></a>
-                                        </li>
-                                        <li class="list-group-item  border-0" v-if="doctor.doctor_settings.linkedin_url
-                                            ">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .linkedin_url
-                                                "><i class="bi  bi-linkedin"></i></a>
-                                        </li>
-                                        <li class="list-group-item border-0" v-if="doctor.doctor_settings.whatsapp_url
-                                            ">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .whatsapp_url
-                                                "><i class="bi bi-whatsapp"></i></a>
-                                        </li>
-                                        <li class="list-group-item border-0" v-if="doctor.doctor_settings.instagram_url
-                                            ">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .instagram_url
-                                                "><i class="bi bi-instagram"></i></a>
-                                        </li>
-                                        <li class="list-group-item border-0"
-                                            v-if="doctor.doctor_settings.tiktok_url">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .tiktok_url
-                                                "><i class="bi bi-tiktok"></i></a>
-                                        </li>
-                                        <li class="list-group-item border-0" v-if="doctor.doctor_settings.snapchat_url
-                                            ">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .snapchat_url
-                                                "><i class="bi bi-snapchat"></i></a>
-                                        </li>
-                                        <li class="list-group-item border-0" v-if="doctor.doctor_settings.pinterest_url
-                                            ">
-                                            <a  target="_blank" :href="doctor.doctor_settings
-                                                .pinterest_url
-                                                "><i class="bi bi-pinterest"></i></a>
-                                        </li>
-                                    </ul> -->
-        </div>
+        </div> -->
       </div>
       <div class="card-body">
         <div class="d-flex flex-column align-items-start mb-1">
@@ -131,7 +74,7 @@
             class="text-decoration-none pt-2"
             :href="route('doctor.profile', { user_name: doctor.user_name })"
           >
-            <h2 class="fs-2 fw-bold text-primary mb-2">{{ doctor.name }}</h2>
+            <h2 class="fs-2 fw-bold color-pink mb-2">{{ doctor.name }}</h2>
           </Link>
 
           <h6 class="fs-3 fw-normal text-black">

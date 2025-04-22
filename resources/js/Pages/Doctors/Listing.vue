@@ -71,24 +71,26 @@
                 </div>
                 <div class="col-md-8">
                   <div class="d-flex mt-3 mt-md-0 align-items-center justify-content-md-end">
-                    <div class="d-flex align-items-center col-md-5 col-8">
+                    <div class="d-flex align-items-center col-md-5 col-8 gap-2">
                       <label for="exampleFormControlInput1" class="form-label text-black fs-5 fw-normal mb-0 pe-md-2">{{
                         __("Show Result") }}:</label>
-                      <div class="col-md-7 col-10">
-                        <select class="form-select fs-4 py-2 px-4 ms-3 text-black" style="
+                      <div class="col-md-5 ">
+                        <select class="form-select fs-4 py-2 px-4 text-black" style="
                             border-radius: 12px;
-                            border: 1px solid #294481 !important;
+                            border: 1px solid #e5e5e5 !important;
                           " aria-label="Default select example" v-model="show_results" @change="getDoctors()">
                           <option>10</option>
                           <option>20</option>
                           <option>30</option>
                         </select>
                       </div>
-                    </div>
-                    <button class="btn px-3 py-2 ms-5 ms-md-3 btn-primary rounded-4" data-bs-toggle="offcanvas"
+                      <button class="btn px-3 py-2 btn-primary rounded-4 filter_btn" data-bs-toggle="offcanvas"
                       data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                      <img width="25" src="@/images/icons/Union.png" alt="" />
+                      <Icon icon="solar:filter-bold" width="24" height="24" />
+                      <!-- <img width="25" src="@/images/icons/Union.png" alt="" />s -->
                     </button>
+                    </div>
+                   
 
                     <div class="offcanvas p-4 custom-offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                       aria-labelledby="offcanvasRightLabel">
@@ -555,7 +557,7 @@ export default defineComponent({
   font-weight: bold !important;
 }
 
-.hover-btn:hover {
+.hover-btn {
   background-color: #fbf2ed;
   /* or your preferred hover color */
   color: black !important;
@@ -568,4 +570,5 @@ export default defineComponent({
 .hover-btn:hover .icon-hover {
   color: black !important;
 }
+
 </style>

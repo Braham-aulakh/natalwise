@@ -91,7 +91,7 @@
 
 .section-subtitle {
     font-size: 22px !important;
-   font-family: 'Style Script', cursive !important; 
+    font-family: 'Style Script', cursive !important;
     text-align: center !important;
 }
 
@@ -250,9 +250,10 @@
     text-decoration: none !important;
 }
 
-.explore_main{
+.explore_main {
     width: 200px !important;
 }
+
 /* .service-sec-one {
     display: flex;
     justify-content: center;
@@ -2835,7 +2836,7 @@ h6 {
     padding-right: 70px;
 }
 
-.faqs-section .accordion-button{
+.faqs-section .accordion-button {
     border-radius: 3px !important;
 }
 
@@ -2849,9 +2850,37 @@ h6 {
     background-repeat: no-repeat;
     background-size: var(--bs-accordion-btn-icon-width);
     transition: var(--bs-accordion-btn-icon-transition);
-  }
+}
 
-  .accordion-button:not(.collapsed)::after {
+.accordion-button:not(.collapsed)::after {
     background-image: url(../images/homes/minus.png) !important;
     transform: var(--bs-accordion-btn-icon-transform);
+}
+
+.filter_btn {
+    background-color: #fc9fbc;
+    color: white !important;
+}
+
+.filter_btn:hover {
+    background-color: #fbf2ed !important;
+    color: #000 !important;
+}
+
+.viewMore_btn {
+    background-color: #fc9fbc !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 8px;
+    padding: 7px 10px;
+    text-align: center;
+}
+
+.viewMore_btn:hover {
+    background-color: #fbf2ed !important;
+    color: #000 !important;
+}
+.darkBlue{
+    color: #294481 !important;
 }

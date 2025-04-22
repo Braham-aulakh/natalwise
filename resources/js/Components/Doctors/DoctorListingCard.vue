@@ -53,7 +53,7 @@
                     route('doctor.profile', { user_name: doctor.user_name })
                   "
                 >
-                  <span class="fs-1 text-primary fw-bold">{{
+                  <span class="fs-1 fw-bold color-pink">{{
                     doctor.name
                   }}</span>
                 </Link>
@@ -140,7 +140,7 @@
                 :increment="0.01"
                 :show-rating="false"
               ></star-rating>
-              <ul
+              <!-- <ul
                 v-if="checkObjectValuesIsNotNull(doctor.doctor_settings)"
                 class="d-flex gap-2 flex-wrap ps-0 mb-0 list-group list-group-horizontal"
               >
@@ -155,17 +155,6 @@
                     ><i class="bi bi-facebook fs-3"></i
                   ></a>
                 </li>
-                <!-- <li
-                  class="list-group-item rounded-2 d-flex align-items-center justify-content-center bg-primary border-0 listing-card-icons"
-                  v-if="doctor.doctor_settings.youtube_url"
-                >
-                  <a
-                    target="_blank"
-                    class="text-white"
-                    :href="doctor.doctor_settings.youtube_url"
-                    ><i class="bi bi-youtube fs-3"></i
-                  ></a>
-                </li> -->
                 <li
                   class="list-group-item rounded-2 d-flex align-items-center justify-content-center bg-primary border-0 listing-card-icons"
                   v-if="doctor.doctor_settings.twitter_url"
@@ -188,62 +177,7 @@
                     ><i class="bi bi-linkedin fs-3"></i
                   ></a>
                 </li>
-                <!-- <li
-                  class="list-group-item rounded-2 d-flex align-items-center justify-content-center bg-primary border-0 listing-card-icons"
-                  v-if="doctor.doctor_settings.whatsapp_url"
-                >
-                  <a
-                    target="_blank"
-                    class="text-white"
-                    :href="doctor.doctor_settings.whatsapp_url"
-                    ><i class="bi bi-whatsapp fs-3"></i
-                  ></a>
-                </li> -->
-                <!-- <li
-                  class="list-group-item rounded-2 d-flex align-items-center justify-content-center bg-primary border-0 listing-card-icons"
-                  v-if="doctor.doctor_settings.instagram_url"
-                >
-                  <a
-                    target="_blank"
-                    class="text-white"
-                    :href="doctor.doctor_settings.instagram_url"
-                    ><i class="bi bi-instagram fs-3"></i
-                  ></a>
-                </li> -->
-                <!-- <li
-                  class="list-group-item rounded-2 d-flex align-items-center justify-content-center bg-primary border-0 listing-card-icons"
-                  v-if="doctor.doctor_settings.tiktok_url"
-                >
-                  <a
-                    target="_blank"
-                    class="text-white"
-                    :href="doctor.doctor_settings.tiktok_url"
-                    ><i class="bi bi-tiktok fs-3"></i
-                  ></a>
-                </li> -->
-                <!-- <li
-                  class="list-group-item rounded-2 d-flex align-items-center justify-content-center bg-primary border-0 listing-card-icons"
-                  v-if="doctor.doctor_settings.snapchat_url"
-                >
-                  <a
-                    target="_blank"
-                    class="text-white"
-                    :href="doctor.doctor_settings.snapchat_url"
-                    ><i class="bi bi-snapchat fs-3"></i
-                  ></a>
-                </li>
-                <li
-                  class="list-group-item rounded-2 d-flex align-items-center justify-content-center bg-primary border-0 listing-card-icons"
-                  v-if="doctor.doctor_settings.pinterest_url"
-                >
-                  <a
-                    target="_blank"
-                    class="text-white"
-                    :href="doctor.doctor_settings.pinterest_url"
-                    ><i class="bi bi-pinterest fs-3"></i
-                  ></a>
-                </li> -->
-              </ul>
+              </ul> -->
 
               <!-- <span class="text-dark small mt-1 ps-1 fs-5"
                   >({{ doctor.rating }})</span
@@ -281,10 +215,13 @@
             <div class="col-md-3 justify-content-end py-2 py-md-0">
               <Link
                 :href="route('doctor.profile', { user_name: doctor.user_name })"
-                class="btn btn-secondary fs-3 fw-bold shadow-find rounded-4 ps-md-3 py-2 d-inline-flex align-items-center"
+                class="btn gap-1 d-inline-flex align-items-center viewMore_btn"
                 >{{ __("View Detail")
-                }}<img width="30" class="ms-3" src="@/images/icons/down1.svg"
-              /></Link>
+                }} 
+                <Icon icon="mingcute:right-fill" width="24" height="24" />
+                <!-- <img width="30" class="ms-3" src="../../../../public/images/homes/down1.png"
+              /> -->
+            </Link>
             </div>
           </div>
         </div>
@@ -335,10 +272,12 @@
 <script>
 import { defineComponent } from "vue";
 import { Link } from "@inertiajs/inertia-vue3";
+import { Icon } from '@iconify/vue'
 
 export default defineComponent({
   components: {
     Link,
+    Icon
   },
   props: ["doctor"],
   created() {},
