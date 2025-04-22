@@ -1,45 +1,36 @@
 <template>
-  <section class="app-section pt-0">
-    <div class="container">
-      <div class="app-bg">
-        <div class="row align-items-end">
-          <!-- Left Content Section -->
-          <div class="left-col col-lg-6">
-            <div class="app-content">
-              <div class="app-header">
-                <h5>Working for Your Better Health.</h5>
-                <h2>Download the Natal Wise App today!</h2>
-              </div>
+ <section class="app-section pt-0">
+				<div class="container">
+					<div class="app-bg">
+						<div class="row align-items-end">
+							<div class="col-lg-6 col-md-12">
+								<div class="app-content">
+									<div class="app-header aos" data-aos="fade-up">
+										<h5>Working for Your Better Health.</h5>
+										<h2>Download the Natal Wise App today!</h2>
+									</div>
+									<div class="app-scan aos" data-aos="fade-up">
+										<p>Scan the QR code to get the app now</p>
+                    <div class="scaner">
+                    <img src="../../../public/images/homes/scan-img.png" alt="scan-image">
+                  </div>
+									</div>
+									<div class="google-imgs aos" data-aos="fade-up">
+										<a href="#"><img src="../../../public/images/homes/google-play-icon.svg" alt="Google Play"></a>
+										<a href="#"> <img src="../../../public/images/homes/app-store-icon.svg" alt="App Store"></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-12 aos" data-aos="fade-up">
+								<div class="mobile-img">
+                  <img src="../../../public/images/homes/mobile-img.png" alt="App Preview">
 
-              <div class="app-scan">
-                <p>Scan the QR code to get the app now</p>
-                <img src="../../../public/images/homes/scan-img.png" alt="scan-image">
-              </div>
-
-              <!-- Only ONE google-imgs div -->
-              <div class="google-imgs d-flex gap-2 mt-3">
-                <button type="button" class="store-btn">
-                  <img src="../../../public/images/homes/google-play-icon.svg" alt="Google Play">
-                </button>
-                <button type="button" class="store-btn">
-                  <img src="../../../public/images/homes/app-store-icon.svg" alt="App Store">
-                </button>
-              </div>
-
-            </div> <!-- .app-content -->
-          </div> <!-- .left-col -->
-
-          <!-- Right Image Section -->
-          <div class=" col-lg-6">
-            <div class="mobile-img text-center">
-              <img src="../../../public/images/homes/mobile-img.png" alt="App Preview">
-            </div>
-          </div>
-
-        </div> <!-- .row -->
-      </div> <!-- .app-bg -->
-    </div> <!-- .container -->
-  </section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 </template>
 
 <script>
@@ -48,90 +39,48 @@ export default {
 }
 </script>
 
-<style scoped>
-    .app-section {
-        padding: 0 0 80px;}
-
-.app-header h5 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 10px;
+<style>
+.app-section.pt-0 {
+	margin-bottom: 80px;
 }
-.app-header h2 {
-    font-size: 40px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 0;
-    max-width: 565px;
+.google-imgs.aos.aos-init.aos-animate {
+	display: flex;
+	gap: 20px;
 }
-
-.app-scan p {
-    font-size: 14px;
-    font-weight: 500;
-    color: #ffffff;
-    margin-bottom: 10px;
+.scaner {
+	padding: 40px 0;
 }
-
-.app-scan img {
-  max-width: 100%;
-  height: auto;
-}
-.google-imgs img {
-    max-width: 100%;
-    height: auto;
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    }
-
 .mobile-img {
-    position: relative;
-    top: 40px;
-    max-width: 120%;
-        width: 470px;
+	position: absolute;
+	right: 0;
+	width: 440px;
+	top: -352px !important;
+	bottom: 0 !important;
+}
+@media (max-width: 1080px) {
+.mobile-img {
+	display: none;
+}
+.app-content {
+	text-align: center;
+}
+.google-imgs.aos.aos-init.aos-animate {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+}
+.scaner {
+	display: inline-flex;
+	justify-content: center;
+	padding: 25px 0;
 }
 
-.custom-container {
-  --gutter-x: 1.5rem;
-  --gutter-y: 0;
-  width: 100%;
-  max-width: 1140px; /* or whatever size you want */
-  padding-right: calc(var(--gutter-x) * 0.5);
-  padding-left: calc(var(--gutter-x) * 0.5);
-  margin-left: auto;
-  margin-right: auto;
-}
-.align-items-end {
-    align-items: flex-end !important;
+
+
 }
 
-@media (max-width: 1199.98px) {
-    .app-bg {
-        margin: 0;
-        padding: 30px;
-    }
-}
 
-.app-bg {
-    background: #FC9FBC;
-    background-image: url('/images/homes/aap-img-bg.png');
-    background-position: right top;
-    background-repeat: no-repeat;
-    border-radius: 6px;
-      padding: 40px  50px;
-}
-.app-scan {
-    padding-bottom: 40px;
-}
-@media (min-width: 992px) {
-    .col-lg-6 {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-}
-@media (max-width: 1199.98px) {
-    .mobile-img img {
-        max-width: 370px;
-    }
-}
+
+
+
 </style>

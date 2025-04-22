@@ -212,4 +212,77 @@ export default {
     box-shadow: rgb(251, 242, 237) -5px 5px, rgb(255, 184, 206) -10px 10px, rgba(252, 159, 188, 0.48) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
 }
 
+@media (max-width:767px){
+    .wellness-cont{
+	padding-top: 30px;
+}
+.gynacology-section[data-v-de386981] {
+	padding-top: 40px;
+}
+.Gynecology-part[data-v-de386981] {
+	padding-top: 0;
+}
+.gynacology-img[data-v-de386981] {
+	padding-right: 0 !important;
+	padding: 20px 0;
+}
+.way-img {
+        display: none;
+    }
+    .way-shapes-left {
+        display: none;
+    }
+    .section-inner-header.way-inner-header.mb-0 {
+        text-align: center !important;
+    }
+    .section-inner-header h2 {
+	font-weight: 600 !important;
+	font-size: 28px !important;
+	color: #1F2937;
+}
+    .way-section {
+     margin-top: 40px;
+    }
+
+    .section-inner-header.way-inner-header.mb-0 h2 {
+	font-size: 28px !important;
+}
+.section-inner-header h2 {
+	font-weight: 600 !important;
+	font-size: 28px !important;
+	color: #1F2937;
+}
+
+.our-blog-fourteen {
+	padding-top: 0;
+	padding-bottom: 50px;
+}
+.way-section {
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0 0 40px !important;
+}
+}
+@media (max-width: 1080px) {
+
+    .wellness-cont {
+	padding-top: 40px;
+}
+.Gynecology-part[data-v-de386981] {
+	padding-top: 0px !important;
+}
+.way-section {
+	background-color: #ffffff;
+	margin: 0;
+	padding: 40px 0;
+}
+.our-blog-fourteen {
+	position: relative;
+	padding: 40px 0;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+
+}
 </style>

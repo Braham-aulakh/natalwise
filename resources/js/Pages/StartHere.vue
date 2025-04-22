@@ -49,7 +49,7 @@
 
 
                             <div class="col-lg-6">
-                                <div class="cont-section" data-aos="fade-up">
+                                <div class="cont-section" >
                                     <div class="natal-cont">
                                         <h3 class="advic-headings"><span class="color-pink">Meet Dr. Pratibha </span>-
                                             <br>The
@@ -312,5 +312,77 @@ export default {
 }
 .start-cont .para{
     color: #6B7280 !important;
+}
+
+@media (max-width:767px) {
+    .banner-content.aos.aos-init.aos-animate h1 {
+        font-size: 28px !important;
+    }
+    .start-cont h3[data-v-7f8a9efe] {
+	font-size: 28px !important;
+	font-weight: 600 !important;
+	color: #272b41 !important;
+}
+.start[data-v-7f8a9efe] {
+	display: inline-block !important;
+	width: 100% !important;
+	padding: 40px 0 !important;
+}
+.cont-section[data-v-7f8a9efe] {
+	padding-right: 0 !important;
+}
+.natal-cont h3[data-v-7f8a9efe] {
+	font-size: 35px !important;
+
+}
+.start-intro[data-v-7f8a9efe] {
+	padding-top: 40px !important;
+}
+.advic-heading.aos-init.aos-animate {
+	text-align: center;
+}
+.Connected[data-v-7f8a9efe] {
+	
+	padding: 20px 0 !important;
+}
+.Connected h5[data-v-7f8a9efe] {
+	font-size: 20px !important;
+	
+}
+
+
+}
+
+@media (max-width: 1080px) {
+
+    .note-heading {
+	text-align: center;
+}
+.start[data-v-7f8a9efe] {
+	
+	padding: 40px 0 !important;
+}
+.start-intro[data-v-7f8a9efe] {
+	padding-top: 40px !important;
+}
+.cont-section[data-v-7f8a9efe] {
+	padding-right: 0px !important;
+}
+.natal-cont h3[data-v-7f8a9efe] {
+	font-size: 40px !important;
+	
+}
+.Connected[data-v-7f8a9efe] {
+	
+	padding: 20px 0 !important;
+}
+.Connected h5[data-v-7f8a9efe] {
+	font-size: 22px !important;
+	
+}
+
+
+
+
 }
 </style>
