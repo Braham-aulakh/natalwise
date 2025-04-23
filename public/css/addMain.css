@@ -2502,6 +2502,10 @@ h6 {
     .subscribe-form h6 {
         font-size: 18px !important;
     }
+    section.banner-section {
+        background: #fbf2ed;
+        text-align: center !important;
+    }
 
 
 }
@@ -2531,6 +2535,7 @@ h6 {
     .row.justify-content-center.text-center.align-items-center.flex-wrap.mt-5 {
         display: none;
     }
+    
 
 }
 
