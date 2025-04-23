@@ -31,7 +31,7 @@
         </section>
 </template>
 
-<style>
+<style scoped>
 @media (max-width:767px) {
 
 .way-img {
@@ -63,13 +63,13 @@
 }
 @media (max-width: 1080px) {
  
-.way-img[data-v-bcf9defe] {
+.way-img {
 	display: none !important; 
 }
 .way-shapes-left {
 	display: none;
 }
-.way-section[data-v-bcf9defe] {
+.way-section {
 	
 	padding: 0 !important;
 	margin-top: 40px;

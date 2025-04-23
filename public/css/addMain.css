@@ -2506,7 +2506,37 @@ h6 {
         background: #fbf2ed;
         text-align: center !important;
     }
+    .explore_main {
+        width: 320px !important;
+    }
+    element {
+        text-align: center;
+    }
 
+    .owl-prev[data-v-6d5e509e] {
+        left: -22px;
+    }
+    .owl-next[data-v-6d5e509e] {
+        right: -23px;
+    }
+     /* home-page end*/
+     .way-img {
+        display: none;
+    }
+    .way-shapes-left {
+        display: none;
+    }
+    .section-inner-header.way-inner-header.mb-0 {
+        text-align: center !important;
+    }
+    .section-inner-header h2 {
+        font-weight: 600 !important;
+        font-size: 28px !important;
+        color: #1F2937;
+    }
+    .way-section {
+     margin-top: 40px;
+    }
 
 }
 
@@ -2535,7 +2565,32 @@ h6 {
     .row.justify-content-center.text-center.align-items-center.flex-wrap.mt-5 {
         display: none;
     }
-    
+    .work-img {
+        display: none;
+    }
+    .section-header-two.aos.aos-init.aos-animate {
+        text-align: center;
+    }
+    .work-section {
+        padding: 40px 0;
+      
+    }
+    .work-info {
+        margin-bottom: 50px;
+        padding-right: 0 !important;
+    }
+    .mobile-img.text-center {
+        display: none;
+    }
+    .carousel .carousel__prev {
+        margin-left: 35px;
+    }
+    .carousel .carousel__next {
+        margin-right: 35px;
+    }
+    #accordionPanelsStayOpenExample {
+        margin-top: 50px;
+    }
 
 }
 
