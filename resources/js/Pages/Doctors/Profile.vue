@@ -1,11 +1,7 @@
 <template>
   <app-layout title="Profile">
     <div class="Top-Border">
-      <pages-heading
-        :textwhite="'true'"
-        :heading="`Expert's Details`"
-        :breadcrums="breadcrums"
-      ></pages-heading>
+      <pages-heading :textwhite="'true'" :heading="`Expert's Details`" :breadcrums="breadcrums"></pages-heading>
     </div>
     <!-- <div class="profile-cover py-5">
             <div class="container">
@@ -28,65 +24,33 @@
             <div class="col-md-7">
               <div class="position-relative mb-4">
                 <div class="dp-profile overflow-hidden rounded-5">
-                  <img
-                    v-if="doctor.image"
-                    class="img-fluid w-100"
-                    :src="doctor.image"
-                    alt="image"
-                    style="object-fit: cover"
-                  />
-                  <img
-                    v-else
-                    class="img-fluid"
-                    src="@/images/account/default_avatar_men.png"
-                    alt="image"
-                    style="object-fit: cover"
-                  />
+                  <img v-if="doctor.image" class="img-fluid w-100" :src="doctor.image" alt="image"
+                    style="object-fit: cover" />
+                  <img v-else class="img-fluid" src="@/images/account/default_avatar_men.png" alt="image"
+                    style="object-fit: cover" />
                 </div>
 
-                <span
-                  class="d-flex align-items-center position-absolute top-0 end-0 m-md-4 m-3"
-                >
-                  <span
-                    v-if="doctor.is_online"
-                    class="d-flex fs-3 p-3 align-items-center"
-                    style="color: #24ff00"
-                  >
-                    <i class="bi bi-circle-fill me-2"></i
-                    ><span style="color: #32ae1e">{{ __("Online") }}</span>
+                <span class="d-flex align-items-center position-absolute top-0 end-0 m-md-4 m-3">
+                  <span v-if="doctor.is_online" class="d-flex fs-3 p-3 align-items-center" style="color: #24ff00">
+                    <i class="bi bi-circle-fill me-2"></i><span style="color: #32ae1e">{{ __("Online") }}</span>
                   </span>
-                  <span
-                    v-else
-                    class="d-flex fs-3 text-muted align-items-center"
-                  >
-                    <i class="bi bi-circle-fill me-3"></i
-                    ><span>{{ __("Offline") }}</span>
+                  <span v-else class="d-flex fs-3 text-muted align-items-center">
+                    <i class="bi bi-circle-fill me-3"></i><span>{{ __("Offline") }}</span>
                   </span>
                 </span>
               </div>
 
-              <div
-                class="d-flex flex-md-row flex-column align-items-center justify-content-between mt-md-5 mt-3"
-              >
-                <h1 class="text-primary fs-1 fw-bold">
+              <div class="d-flex flex-md-row flex-column align-items-center justify-content-between mt-md-5 mt-3">
+                <h1 class="text-pink fs-1 fw-bold">
                   {{ doctor.name }}
                 </h1>
-                <div
-                  class="d-flex flex-md-row flex-column align-items-center gap-md-3"
-                >
+                <div class="d-flex flex-md-row flex-column align-items-center gap-md-3">
                   <div class="d-flex align-items-center mb-1">
-                    <star-rating
-                      :rating="doctor.rating"
-                      :star-size="16"
-                      :read-only="true"
-                      :increment="0.01"
-                      :show-rating="false"
-                    ></star-rating>
+                    <star-rating :rating="doctor.rating" :star-size="16" :read-only="true" :increment="0.01"
+                      :show-rating="false"></star-rating>
                     <span class="small mt-1 ps-1">({{ doctor.rating }})</span>
                   </div>
-                  <div
-                    v-if="checkObjectValuesIsNotNull(doctor.doctor_settings)"
-                  >
+                  <div v-if="checkObjectValuesIsNotNull(doctor.doctor_settings)">
                     <!-- <ul
                       class="d-flex ps-0 mb-0 social flex-wrap flex-md-nowrap gap-1 gap-md-0 mt-2 mt-md-0"
                     >
@@ -185,280 +149,182 @@
                 </div>
               </div>
 
-              <div
-                v-html="doctor.description"
-                class="fs-3 mb-md-5 mt-md-4 my-3"
-                style="color: #696868; line-height: 30px; font-weight: normal"
-              ></div>
+              <div v-html="doctor.description" class="fs-3 mb-md-5 mt-md-4 my-3"
+                style="color: #696868; line-height: 30px; font-weight: normal"></div>
               <!-- v-if="Object.keys(doctor.doctor_reviews).length > 0" -->
-              <div class="accordion profile-accordian" id="accordionExample">
+              <div class="accordion" id="accordionExample">
                 <div class="accordion-item mb-3">
-    <h2 class="accordion-header overflow-hidden">
-      <button
-        class="accordion-button collapsed"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapsetwo"
-        aria-expanded="false"
-        aria-controls="collapsetwo"
-        @click="toggleInnerContent"
-      >
-        {{ __("Rating & Reviews") }}
-      </button>
-    </h2>
-
-    <div
-      id="collapsetwo"
-      class="accordion-collapse collapse"
-      data-bs-parent="#accordionExample"
-    >
-      <!-- Show content only when showContent is true -->
-      <doctor-profile-reviews-section
-        v-if="showContent"
-        :doctor_id="doctor.id"
-        :doctor="doctor"
-        :reviews="doctor.doctor_reviews"
-      />
-    </div>
-  </div>
-                <div
-                  class="accordion-item mb-3"
-                  v-if="Object.keys(doctor.appointment_types).length > 0"
-                >
                   <h2 class="accordion-header overflow-hidden">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapsethree"
-                      aria-expanded="true"
-                      aria-controls="collapsethree"
-                    >
+                    <button class="accordion-button" :class="{
+                      collapsed: isCollapsed,
+                      'text-white bg-primary': isCollapsed,
+                      'text-dark bg-white': !isCollapsed
+                    }" type="button" @click="toggleCollapse" aria-expanded="!isCollapsed">
+                      {{ __("Rating & Reviews") }}
+                    </button>
+                  </h2>
+                  <div id="collapseone" class="accordion-collapse collapse" :class="{ show: !isCollapsed }">
+                    <doctor-profile-reviews-section :doctor_id="doctor.id" :doctor="doctor"
+                      :reviews="doctor.doctor_reviews" />
+                  </div>
+                </div>
+                <div class="accordion-item mb-3" v-if="Object.keys(doctor.appointment_types).length > 0">
+                  <h2 class="accordion-header overflow-hidden">
+                    <button class="accordion-button" :class="{
+                      collapsed: isopned,
+                      'text-white bg-primary': isopned,
+                      'text-dark bg-white': !isopned
+                    }" type="button" @click="toggleOpned" aria-expanded="!isopned">
+                      {{ __("Doctor's Timetable") }}
+                    </button>
+                  </h2>
+                  <div id="collapsetwo" class="accordion-collapse collapse" :class="{ show: !isopned }">
+                    <doctor-timetable :doctor_appointments="doctor.appointment_schedules"></doctor-timetable>
+                  </div>
+                </div>
+                <!-- <div class="accordion-item mb-3" v-if="Object.keys(doctor.appointment_types).length > 0">
+                  <h2 class="accordion-header overflow-hidden">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
                       {{ __("Doctor's Timetable") }}
                     </button>
                   </h2>
                   <div id="collapsethree" class="accordion-collapse collapse">
                     <div class="accordion-body">
-                      <doctor-timetable
-                        :doctor_appointments="doctor.appointment_schedules"
-                      ></doctor-timetable>
+                      <doctor-timetable :doctor_appointments="doctor.appointment_schedules"></doctor-timetable>
                     </div>
                   </div>
-                </div>
-                <!-- <div
-                  class="accordion-item mb-3"
-                  v-if="Object.keys(doctor.doctor_podcasts).length > 0"
-                >
+                </div> -->
+                <!-- <div class="accordion-item mb-3" v-if="Object.keys(doctor.doctor_podcasts).length > 0">
                   <h2 class="accordion-header overflow-hidden">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapsefourth"
-                      aria-expanded="true"
-                      aria-controls="collapsefourth"
-                    >
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsefourth" aria-expanded="true" aria-controls="collapsefourth">
                       {{ __("podcast") }}
                     </button>
                   </h2>
-                  <div
-                    id="collapsefourth"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                  >
+                  <div id="collapsefourth" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="col-md-12 p-3">
                       <div class="row">
-                        <podcast-card
-                          v-for="podcast in doctor.doctor_podcasts.slice(0, 2)"
-                          :podcast="podcast"
-                          :key="podcast.id"
-                          :profile="true"
-                        ></podcast-card>
+                        <podcast-card v-for="podcast in doctor.doctor_podcasts.slice(0, 2)" :podcast="podcast"
+                          :key="podcast.id" :profile="true"></podcast-card>
                       </div>
-                      <Link
-                        class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
-                        :href="
-                          route('podcasts.listing', {
-                            doctor: doctor.user_name,
-                          })
-                        "
-                        >{{ __("view all") }}</Link
-                      >
+                      <Link class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold" :href="route('podcasts.listing', {
+                        doctor: doctor.user_name,
+                      })
+                        ">{{ __("view all") }}</Link>
                     </div>
                   </div>
                 </div> -->
-                <!-- <div
-                  class="accordion-item mb-3"
-                  v-if="Object.keys(doctor.doctor_events).length > 0"
-                >
+                <!-- <div class="accordion-item mb-3" v-if="Object.keys(doctor.doctor_events).length > 0">
                   <h2 class="accordion-header overflow-hidden">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapsefifth"
-                      aria-expanded="true"
-                      aria-controls="collapsefifth"
-                    >
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsefifth" aria-expanded="true" aria-controls="collapsefifth">
                       {{ __("events") }}
                     </button>
                   </h2>
-                  <div
-                    id="collapsefifth"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                  >
+                  <div id="collapsefifth" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="row">
-                      <event-card
-                        class="my-4"
-                        :add_col="true"
-                        v-for="event in doctor.doctor_events.slice(0, 2)"
-                        :event="event"
-                        :profile="true"
-                        :key="event.id"
-                      ></event-card>
+                      <event-card class="my-4" :add_col="true" v-for="event in doctor.doctor_events.slice(0, 2)"
+                        :event="event" :profile="true" :key="event.id"></event-card>
                       <div class="col-md-4">
-                        <Link
-                          class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold m-4"
-                          :href="
-                            route('events.listing', {
-                              doctor: doctor.user_name,
-                            })
-                          "
-                          >{{ __("view all") }}</Link
-                        >
+                        <Link class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold m-4" :href="route('events.listing', {
+                          doctor: doctor.user_name,
+                        })
+                          ">{{ __("view all") }}</Link>
                       </div>
                     </div>
                   </div>
                 </div> -->
-                <!-- <div
-                  class="accordion-item mb-3"
-                  v-if="Object.keys(doctor.doctor_archives).length > 0"
-                >
+                <!-- <div class="accordion-item mb-3" v-if="Object.keys(doctor.doctor_archives).length > 0">
                   <h2 class="accordion-header overflow-hidden">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapsesixth"
-                      aria-expanded="true"
-                      aria-controls="collapsesixth"
-                    >
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsesixth" aria-expanded="true" aria-controls="collapsesixth">
                       {{ __("archives") }}
                     </button>
                   </h2>
-                  <div
-                    id="collapsesixth"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                  >
+                  <div id="collapsesixth" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="col-md-12 p-3">
                       <div class="row">
-                        <archive-card
-                          v-for="archive in doctor.doctor_archives.slice(0, 2)"
-                          :archive="archive"
-                          :key="archive.id"
-                          :profile="true"
-                        >
+                        <archive-card v-for="archive in doctor.doctor_archives.slice(0, 2)" :archive="archive"
+                          :key="archive.id" :profile="true">
                         </archive-card>
                       </div>
-                      <Link
-                        class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
-                        :href="
-                          route('archives.listing', {
-                            doctor: doctor.user_name,
-                          })
-                        "
-                        >{{ __("view all") }}</Link
-                      >
+                      <Link class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold" :href="route('archives.listing', {
+                        doctor: doctor.user_name,
+                      })
+                        ">{{ __("view all") }}</Link>
                     </div>
                   </div>
                 </div> -->
-                <div
-                  class="accordion-item mb-3"
-                  v-if="Object.keys(doctor.doctor_posts).length > 0"
-                >
+                <div class="accordion-item mb-3" v-if="Object.keys(doctor.doctor_posts).length > 0">
                   <h2 class="accordion-header overflow-hidden">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseseventh"
-                      aria-expanded="true"
-                      aria-controls="collapseseventh"
-                    >
+                    <button class="accordion-button" :class="{
+                      collapsed: isBlogeOpen,
+                      'text-white bg-primary': isBlogeOpen,
+                      'text-dark bg-white': !isBlogeOpen
+                    }" type="button" @click="toggleBlogOpned" aria-expanded="!isBlogeOpen">
                       {{ __("blogs") }}
                     </button>
                   </h2>
-                  <div
-                    id="collapseseventh"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                  >
+                  <div id="collapsethree" class="accordion-collapse collapse" :class="{ show: !isBlogeOpen }">
                     <div class="col-md-12 p-3">
                       <div class="row">
-                        <post-card
-                          v-for="post in doctor.doctor_posts.slice(0, 2)"
-                          :post="post"
-                          :key="post.id"
-                          :profile="true"
-                        ></post-card>
+                        <post-card v-for="post in doctor.doctor_posts.slice(0, 2)" :post="post" :key="post.id"
+                          :profile="true" />
                       </div>
-                      <Link
-                        class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
-                        :href="
-                          route('blogs.listing', { doctor: doctor.user_name })
-                        "
-                        >{{ __("view all") }}</Link
-                      >
+                      <Link class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
+                        :href="route('blogs.listing', { doctor: doctor.user_name })">
+                      {{ __("view all") }}
+                      </Link>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="accordion-item mb-3"
-                  v-if="Object.keys(doctor.doctor_posts).length > 0"
-                >
+
+                <div class="accordion-item mb-3" v-if="Object.keys(doctor.doctor_broadcasts).length > 0">
                   <h2 class="accordion-header overflow-hidden">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseeighth"
-                      aria-expanded="true"
-                      aria-controls="collapseeighth"
-                    >
+                    <button class="accordion-button" :class="{
+                      collapsed: isMediaOpen,
+                      'text-white bg-primary': isMediaOpen,
+                      'text-dark bg-white': !isMediaOpen
+                    }" type="button" @click="toggleMediaOpned" aria-expanded="!isMediaOpen">
                       {{ __("broadcast") }}
                     </button>
                   </h2>
-                  <div
-                    id="collapseeighth"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                  >
+                  <div id="collapsefour" class="accordion-collapse collapse" :class="{ show: !isMediaOpen }">
                     <div class="col-md-12 p-3">
                       <div class="row">
-                        <broadcast-card
-                          v-for="broadcast in doctor.doctor_broadcasts.slice(
-                            0,
-                            2
-                          )"
-                          :broadcast="broadcast"
-                          :key="broadcast.id"
-                          :profile="true"
-                        ></broadcast-card>
+                        <broadcast-card v-for="broadcast in doctor.doctor_broadcasts.slice(0, 2)" :broadcast="broadcast"
+                          :key="broadcast.id" :profile="true" />
                       </div>
-                      <Link
-                        class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
-                        :href="
-                          route('broadcasts.listing', {
-                            doctor: doctor.user_name,
-                          })
-                        "
-                        >{{ __("view all") }}</Link
-                      >
+                      <Link class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
+                        :href="route('broadcasts.listing', { doctor: doctor.user_name })">
+                      {{ __("view all") }}
+                      </Link>
                     </div>
                   </div>
                 </div>
+                <!-- <div class="accordion-item mb-3" v-if="Object.keys(doctor.doctor_posts).length > 0">
+                  <h2 class="accordion-header overflow-hidden">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseeighth" aria-expanded="true" aria-controls="collapseeighth">
+                      {{ __("broadcast") }}
+                    </button>
+                  </h2>
+                  <div id="collapseeighth" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="col-md-12 p-3">
+                      <div class="row">
+                        <broadcast-card v-for="broadcast in doctor.doctor_broadcasts.slice(
+                          0,
+                          2
+                        )" :broadcast="broadcast" :key="broadcast.id" :profile="true"></broadcast-card>
+                      </div>
+                      <Link class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold" :href="route('broadcasts.listing', {
+                        doctor: doctor.user_name,
+                      })
+                        ">{{ __("view all") }}</Link>
+                    </div>
+                  </div>
+                </div> -->
               </div>
             </div>
 
@@ -556,82 +422,52 @@
                 </ul>
               </div> -->
             <div class="col-md-5">
-              <div
-                class="card py-md-3 px-2 pink-bg"
-                style="position: sticky; top: 120px"
-              >
+              <div class="card py-md-3 px-2 pink-bg" style="position: sticky; top: 120px">
                 <div class="card-body mb-2">
                   <h1 class="text-start text-white mb-4">
                     {{ __("Quick Profile") }}
                   </h1>
                   <div
-                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between"
-                  >
+                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between">
                     <span>{{ __("name") }}:</span>
                     <span>Dr.{{ doctor.name }}</span>
                   </div>
                   <div
-                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between"
-                  >
+                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between">
                     <span>{{ __("category") }}:</span>
                     <span>{{
                       getCategoryNames(doctor.doctor_categories)
                     }}</span>
                   </div>
                   <div
-                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between"
-                  >
+                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between">
                     <span>{{ __("Certificate") }}:</span>
                     <span>{{
                       formattedCertificates ? formattedCertificates : "N/A"
                     }}</span>
                   </div>
                   <div
-                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between"
-                  >
+                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between">
                     <span>{{ __("experience") }}:</span>
                     <span>{{ doctor.experience }} {{ __("years") }}</span>
                   </div>
                   <div
-                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between"
-                  >
+                    class="d-flex align-items-center border-bottom borer-white pb-4 mb-4 fs-3 fw-normal text-white justify-content-between">
                     <span>{{ __("speciality") }}:</span>
                     <span>{{ doctor.speciality }}</span>
                   </div>
-                  <div
-                    class="d-flex flex-column gap-4 my-5"
-                    v-if="doctor.appointment_types"
-                  >
-                    <button
-                      type="button"
-                      v-for="(schedule_type, index) in doctor.appointment_types"
-                      :key="index"
+                  <div class="d-flex flex-column gap-4 my-5" v-if="doctor.appointment_types">
+                    <button type="button" v-for="(schedule_type, index) in doctor.appointment_types" :key="index"
                       @click="
                         checkLoginAndRedirect(
                           doctor,
                           schedule_type.appointment_type
                         )
-                      "
-                      class="btn-appointment d-flex px-4 py-2 align-items-center justify-content-start"
-                    >
-                      <div
-                        class="d-flex align-items-center justify-content-center"
-                      >
-                        <img
-                          v-if="schedule_type.type == 'video'"
-                          src="@/images/icons/Video3.svg"
-                          alt=""
-                        />
-                        <img
-                          v-if="schedule_type.type == 'audio'"
-                          src="@/images/icons/audio2.svg"
-                          alt=""
-                        />
-                        <img
-                          v-if="schedule_type.type == 'chat'"
-                          src="@/images/icons/chat2.svg"
-                          alt=""
-                        />
+                        " class="btn-appointment d-flex px-4 py-2 align-items-center justify-content-start">
+                      <div class="d-flex align-items-center justify-content-center">
+                        <img v-if="schedule_type.type == 'video'" src="@/images/icons/Video3.svg" alt="" />
+                        <img v-if="schedule_type.type == 'audio'" src="@/images/icons/audio2.svg" alt="" />
+                        <img v-if="schedule_type.type == 'chat'" src="@/images/icons/chat2.svg" alt="" />
                         <span class="fw-bold ps-4">{{
                           __(schedule_type.appointment_type.display_name)
                         }}</span>
@@ -645,18 +481,18 @@
                         </span>
                       </div> -->
                     </button>
-                    <button
-                      v-if="doctor.doctor_settings.calendly_link"
+                    <button v-if="doctor.doctor_settings.calendly_link"
                       :onclick="`Calendly.initPopupWidget({url: '${doctor.doctor_settings.calendly_link}'});return false;`"
-                      class="btn btn-light me-0 me-md-3 px-5 ms-2 ms-md-0 px-md-4 shadow-none fw-bold py-3"
-                    >
+                      class="btn btn-light me-0 me-md-3 px-5 ms-2 ms-md-0 px-md-4 shadow-none fw-bold py-3">
                       {{ __("book with calendly") }}
                     </button>
                   </div>
                   <p class="subheading-fs text-white text-center">
                     {{
                       __(
-                        "Discover a wide range of online doctors, specialized in various fields, offering diverse treatments and services."
+                        ` Discover a wide range of online doctors, specialized in various fields, offering diverse
+                    treatments
+                    and services.`
                       )
                     }}
                   </p>
@@ -1108,7 +944,10 @@ export default defineComponent({
   },
   data() {
     return {
-      showContent: false,
+      isCollapsed: true,  // Start collapsed
+      isopned: true,
+      isBlogeOpen: true,
+      isMediaOpen: true,
       doctor: this.$page.props.doctor,
       showAll: false,
       breadcrums: [
@@ -1150,9 +989,22 @@ export default defineComponent({
 
   mounted() {
     this.generateQRCode();
+
   },
   props: ["appointment_types"],
   methods: {
+    toggleCollapse() {
+      this.isCollapsed = !this.isCollapsed;
+    },
+    toggleOpned() {
+      this.isopned = !this.isopned;
+    },
+    toggleBlogOpned() {
+      this.isBlogeOpen = !this.isBlogeOpen;
+    },
+    toggleMediaOpned() {
+      this.isMediaOpen = !this.isMediaOpen;
+    },
     checkLoginAndRedirect(doctor, appointment_type) {
       if (this.$page.props.auth) {
         if (this.$page.props.auth.logged_in_as == "patient") {
@@ -1180,7 +1032,7 @@ export default defineComponent({
         .map((category) => category.name)
         .join(" | ");
     },
-    submit() {},
+    submit() { },
     logEvent(evt) {
       // Here you can handle the emitted events with custom code
       if (evt === "calendly.profile_page_viewed") {
@@ -1221,10 +1073,9 @@ export default defineComponent({
         // alert("Please enter a valid URL");
       }
     },
-    toggleInnerContent() {
-      this.showContent = !this.showContent;
-    },
   },
 });
 </script>
 
+
+<style scoped></style>

@@ -36,13 +36,13 @@
             >{{ broadcast.name }}</a
           >
         </h4>
-        <span v-if="broadcast.doctor_id" class="badge bg-primary fs-5">{{
+        <span v-if="broadcast.doctor_id" class="badge bg-pink fs-5">{{
           __("doctor")
         }}</span>
-        <span v-else-if="broadcast.clinic_id" class="badge bg-primary fs-5">{{
+        <!-- <span v-else-if="broadcast.clinic_id" class="badge bg-primary fs-5">{{
           __("clinic")
-        }}</span>
-        <span v-else class="badge bg-primary fs-5">{{ __("admin") }}</span>
+        }}</span> -->
+        <span v-else class="badge bg-pink fs-5">{{ __("admin") }}</span>
         <p class="mb-0 mt-3 line-clamp" v-html="broadcast.description"></p>
       </div>
     </div>

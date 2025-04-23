@@ -88,85 +88,51 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-header-sixteen text-center">
-                            <h2 class="book-heading">
-                                Our Fashion & Styling
-                                <span class="color-pink">Solutions</span>
-                            </h2>
-                            <p>
-                                Expert skincare, makeup, and personalized styling services to enhance your beauty and
-                                confidence at every stage of life.
-                            </p>
+
+                            <h2 class="book-heading">Our Fashion & Styling<span class="color-pink
+									">Solutions</span></h2>
+                            <p>Build confidence, embrace creativity, stay active, nurture relationships, and age
+                                gracefully with a positive mindset.</p>
                         </div>
                     </div>
                 </div>
+                <div>
+                    <Carousel ref="carousel" :items-to-show="3" :wrap-around="true" :autoplay="0"
+                        class="features-slider-sixteen" :breakpoints="breakpoints" :transition="500">
+                        <Slide v-for="(feature, index) in features" :key="index">
+                            <div class="feature-sixteen-main">
+                                <div class="feature-six-img">
+                                    <img :src="feature.img" alt="Feature" class="img-fluid" />
+                                    <h5 class="feature-content-one ">
+                                        {{ feature.title }} </h5>
 
-                <div class="owl-carousel features-slider-sixteen owl-theme owl-loaded owl-drag">
-                    <!-- Card 1 -->
-                    <div class="feature-sixteen-main">
-                        <div class="feature-six-img">
-                            <img src="../../../public/images/homes/Skincare.jpg" alt="Pre-Natal" class="img-fluid" />
-
-                            <!-- Always visible title -->
-                            <div class="feature-content-one">
-                                <h5>Skincare</h5>
-                                <span><i class="fa-solid fa-angle-up"></i></span>
+                                    <div class="feature-content-six">
+                                        <div
+                                            class="feature-content-two flex flex-col items-center justify-center gap-2">
+                                            <h5>{{ feature.title }}</h5>
+                                            <p>{{ feature.description }}</p>
+                                            <a href="/personal-confidence-building" class="read-more-btn">Read More</a>
+                                            <Icon icon="meteor-icons:angle-down" width="24" height="24"
+                                                style="color: #ffffff " />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </Slide>
+                    </Carousel>
 
-                            <!-- Hidden content on hover -->
-                            <div class="feature-content-two">
-                                <h5>Skincare</h5>
-                                <p>Receive expert skincare advice with customized product recommendations and efficient
-                                    skin prep methods to attain healthy, radiant skin.</p>
-                                <a href="doctors" class="read-more-btn">Read More
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Card 2 -->
-                    <div class="feature-sixteen-main">
-                        <div class="feature-six-img">
-                            <img src="../../../public/images/homes/Makeup-2.jpg" alt="Pre-Natal" class="img-fluid" />
+                    <div class="carousel-nav text-center mb-3 ">
+                        <button class="dot custom-icon-btn" @click="goPrev">
+                            <Icon icon="iconamoon:arrow-left-2" width="24" height="24" class="custom-icon" />
+                        </button>
 
-                            <!-- Always visible title -->
-                            <div class="feature-content-one">
-                                <h5>Makeup</h5>
-                                <span><i class="fa-solid fa-angle-up"></i></span>
-                            </div>
-
-                            <!-- Hidden content on hover -->
-                            <div class="feature-content-two">
-                                <h5>Makeup</h5>
-                                <p> Master makeup application for any situation, from easy day-to-day looks to elegant
-                                    party looks, with customized product recommendations.</p>
-                                <a href="doctors" class="read-more-btn">Read More
-
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="feature-sixteen-main">
-                        <div class="feature-six-img">
-                            <img src="../../../public/images/homes/Personalized-styling.jpg" alt="Pre-Natal"
-                                class="img-fluid" />
-
-                            <!-- Always visible title -->
-                            <div class="feature-content-one text-center">
-                                <h5>Personalized styling</h5>
-                            </div>
-
-                            <!-- Hidden content on hover -->
-                            <div class="feature-content-two">
-                                <h5>Personalized styling</h5>
-                                <p>Find fashion advice appropriate for your age and body type, so you can dress
-                                    confidently and project your own style easily.</p>
-                                <a href="doctors" class="read-more-btn">Read More</a>
-                            </div>
-                        </div>
+                        <button class="dot custom-icon-btn" @click="goNext">
+                            <Icon icon="iconamoon:arrow-right-2-light" width="24" height="24" class="custom-icon" />
+                        </button>
                     </div>
                 </div>
+            
             </div>
         </div>
         <!-- section 3  -->
@@ -294,14 +260,66 @@ import { Icon } from "@iconify/vue";
 import SpotlightDoctorSection from "@/Components/Doctors/SpotlightDoctorSection.vue";
 import OurBlog from '../Components/ourblog.vue';
 import ReviewSection from "@/Components/ReviewSection.vue";
+import { Carousel, Slide } from "vue3-carousel";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "vue3-carousel/dist/carousel.css";
 export default {
     components: {
         AppLayout,
+        Carousel,
+        Slide,
         Icon,
         SpotlightDoctorSection,
         OurBlog,
         ReviewSection
+    },
+    data() {
+        return {
+            features: [
+                {
+                    img: "/images/homes/Skincare.jpg",
+                    title: "Skincare",
+                    description:
+                        "Receive expert skincare advice with customized product recommendations and efficient skin prep methods to attain healthy, radiant skin.",
+                },
+                {
+                    img: "/images/homes/Makeup-2.jpg",
+                    title: "Makeup",
+                    description:
+                        "Master makeup application for any situation, from easy day-to-day looks to elegant party looks, with customized product recommendations.",
+                },
+                {
+                    img: "/images/homes/Personalized-styling.jpg",
+                    title: "Personalized styling",
+                    description:
+                        "Find fashion advice appropriate for your age and body type, so you can dress confidently and project your own style easily.",
+                },
+            ],
+            breakpoints: {
+      0: {
+        itemsToShow: 1
+      },
+      640: {
+        itemsToShow: 2
+      },
+      1024: {
+        itemsToShow: 3
+      }
     }
+        };
+    },
+    methods: {
+        goPrev() {
+            this.$refs.carousel.prev();
+        },
+        goNext() {
+            this.$refs.carousel.next();
+        },
+    },
+    mounted() {
+        AOS.init();
+    },
 }
 </script>
 

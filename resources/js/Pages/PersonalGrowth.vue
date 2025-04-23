@@ -349,13 +349,16 @@ export default {
                 },
             ],
             breakpoints: {
-                768: {
-                    itemsToShow: 2,
-                },
-                1024: {
-                    itemsToShow: 3,
-                },
-            },
+      0: {
+        itemsToShow: 1
+      },
+      640: {
+        itemsToShow: 2
+      },
+      1024: {
+        itemsToShow: 3
+      }
+    }
         };
     },
     methods: {
@@ -371,7 +374,7 @@ export default {
     },
 };
 </script>
-<style scoped>
+<style >
 .About-banner {
     background: #fbf2ed;
     position: relative;
