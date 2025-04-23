@@ -15,14 +15,14 @@
               <div class="card-body pb-0">
                 <div class="row">
                   <div class="col-md-6">
-                    <h2 class="display-1 fw-bold ms-md-5 ms-2" style="color: #5f5e5e">
+                    <h2 class="display-1 fw-bold ms-md-5 ms-2" style="color: #000">
                       {{ $page.props.auth[$page.props.auth.logged_in_as].name }}
                     </h2>
 
                     <div class="d-flex gap-4">
                       <div class="d-flex flex-column ms-md-5 ms-2 mt-4 gap-3">
                         <div>
-                          <h6 class="fs-3 fw-bold text-primary">
+                          <h6 class="fs-5 fw-bold text-blue">
                             {{ __("Date of Birth") }}
                           </h6>
                           <h6 class="fs-3 fw-normal text-black">
@@ -35,7 +35,7 @@
                           </h6>
                         </div>
                         <div>
-                          <h6 class="fs-3 fw-bold text-primary">
+                          <h6 class="fs-5 fw-bold text-blue">
                             {{ __("Sex Type") }}
                           </h6>
                           <h6 class="fs-3 fw-normal text-black">
@@ -47,7 +47,7 @@
                           </h6>
                         </div>
                         <div>
-                          <h6 class="fs-3 mt-4 fw-bold text-primary">
+                          <h6 class="fs-5 fw-bold text-blue">
                             {{ __("Blood Group") }}
                           </h6>
                           <h6 class="fs-3 fw-normal text-black">
@@ -61,7 +61,7 @@
                       </div>
                       <div class="d-flex flex-column ms-md-5 ms-2 mt-4 gap-3">
                         <div>
-                          <h6 class="fs-3 fw-bold text-primary">
+                          <h6 class="fs-5 fw-bold text-blue">
                             {{ __("Father Name") }}
                           </h6>
                           <h6 class="fs-3 fw-normal text-black">
@@ -73,7 +73,7 @@
                           </h6>
                         </div>
                         <div>
-                          <h6 class="fs-3 fw-bold text-primary">
+                          <h6 class="fs-5 fw-bold text-blue">
                             {{ __("email") }}
                           </h6>
                           <h6 class="fs-3 fw-normal text-black">
@@ -93,7 +93,7 @@
                         class="d-flex flex-column gap-4 justify-content-start my-4 my-md-0"
                       >
                         <div
-                          class="card text-center text-primary px-5 py-4 rounded-5"
+                          class="card text-center text-blue px-5 py-4 rounded-5"
                           style="background-color: #d6e8f8"
                         >
                           <div class="d-flex flex-column">
@@ -106,7 +106,7 @@
                           </div>
                         </div>
                         <div
-                          class="card text-center text-primary px-5 py-4 rounded-5"
+                          class="card text-center text-blue px-5 py-4 rounded-5"
                           style="background-color: #d6e8f8"
                         >
                           <div class="d-flex flex-column">
@@ -202,7 +202,7 @@
                     data-bs-target="#offcanvasRight"
                     aria-controls="offcanvasRight"
                   >
-                    <img width="25" src="@/images/icons/Union.png" alt="" />
+                  <Icon icon="solar:filter-bold" width="24" height="24" />
                   </button>
 
                   <div
@@ -285,19 +285,15 @@
                         />
                       </div>
                       <div class="d-flex justify-content-center my-4 gap-4">
+                        
                         <button
                           @click="clearFilters()"
                           data-bs-dismiss="offcanvas"
                           aria-label="Close"
                           class="btn btn-primary d-flex rounded-4 fs-3 shadow-find"
                         >
-                          {{ __("clear all") }}
-                          <img
-                            class="ms-4"
-                            src="@/images/icons/group.svg"
-                            alt=""
-                            width="30"
-                          />
+                          {{ __("clear all") }}sssss
+                          <Icon icon="mingcute:right-line" width="24" height="24" />
                         </button>
                         <button
                           @click="submit()"
@@ -306,12 +302,7 @@
                           class="btn btn-secondary d-flex rounded-4 fs-3 shadow-find"
                         >
                           {{ __("search") }}
-                          <img
-                            class="ms-4"
-                            src="@/images/icons/group.svg"
-                            alt=""
-                            width="30"
-                          />
+                          <Icon icon="mingcute:right-line" width="24" height="24" />
                         </button>
                       </div>
                     </div>
@@ -614,12 +605,7 @@
                           @click="selectDoctor(doctor.id)"
                           class="border-0 shadow-0 bg-transparent"
                         >
-                          <img
-                            src="@/images/icons/group.svg"
-                            alt=""
-                            width="40"
-                            height="40"
-                          />
+                        <Icon icon="mingcute:right-line" width="24" height="24" />
                         </button>
                       </div>
                     </div>
@@ -685,7 +671,7 @@
                       </div>
                       <div class="d-flex justify-content-between align-items-center">
                         <div
-                          style="width: 200px; height: 75px; background-color: #f4f9fd"
+                          style="width: 200px; height: 75px; "
                           class="radius-15 d-flex align-items-center ps-1"
                         >
                           <div
@@ -720,12 +706,7 @@
                           "
                           class="border-0 shadow-0 bg-transparent"
                         >
-                          <img
-                            src="@/images/icons/group.svg"
-                            alt=""
-                            width="40"
-                            height="40"
-                          />
+                        <Icon icon="mingcute:right-line" width="36" height="36" style="background-color: #f4f9fd; padding: 5px; border-radius: 50%;"/>
                         </a>
                       </div>
                     </div>
@@ -754,7 +735,7 @@ import PageHeader from "@/Components/PageHeader.vue";
 import PagesHeading from "@/Components/PagesHeading.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import Multiselect from "@vueform/multiselect";
-
+import { Icon } from "@iconify/vue";
 export default defineComponent({
   components: {
     AppLayout,
@@ -763,6 +744,7 @@ export default defineComponent({
     PagesHeading,
     Link,
     Multiselect,
+    Icon
   },
   props: [
     "patient_appointments",

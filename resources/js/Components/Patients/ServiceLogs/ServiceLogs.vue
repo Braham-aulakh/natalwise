@@ -23,7 +23,7 @@
         <div class="col-md-5 right-side-bars p-md-0">
           <div class="d-flex mt-3 mt-md-0 gap-3 align-items-md-center flex-column flex-md-row">
             <select v-model="filter.column"
-              class="form-select shadow-none rounded-4 fs-3 text-black border-primary border"
+              class="form-select shadow-none rounded-4 fs-5 text-black border-primary border"
               aria-label="Select Filter">
               <option value selected>
                 {{ __("select") }}
@@ -61,15 +61,15 @@
               </div> -->
             <div v-else class="form-group me-md-1">
               <input v-model="filter.search"
-                class="w-100 fs-3 shadow-none form-control rounded-4 px-3 border-primary border" style="width: 300px"
+                class="w-100 fs-5 shadow-none form-control rounded-4 px-3 border-primary border" style="width: 300px"
                 :placeholder="__('search')" type="text" />
             </div>
 
             <div>
-              <button type="button" class="btn btn-primary d-flex px-4 rounded-4 me-2 w-100 fs-3"
+              <button type="button" class="btn btn-primary d-flex px-2 rounded-4 me-2 fs-4 justify-content-center"
                 @click="getPaginatedData(false)">
                 {{ __("search") }}
-                <img src="@/images/icons/loginbtnicon.png" width="30" class="ms-3" alt="" />
+                <Icon icon="mingcute:right-line" width="24" height="24" />
               </button>
             </div>
           </div>
@@ -104,6 +104,7 @@ import SideTabsPageSkeleton from "@/Components/Skeleton/SideTabsPageSkeleton.vue
 import PatientServiceListCard from "@/Components/Patients/ServiceLogs/PatientServiceListCard.vue";
 import Breadcrums from "@/Components/Shared/Breadcrums.vue";
 import PagesHeading from "../../PagesHeading.vue";
+import { Icon } from "@iconify/vue";
 
 export default defineComponent({
   components: {
@@ -119,6 +120,7 @@ export default defineComponent({
     PatientServiceListCard,
     SideTabsPageSkeleton,
     Breadcrums,
+    Icon
   },
   mixins: [PaginationMixin],
   props: ["service_statuses"],

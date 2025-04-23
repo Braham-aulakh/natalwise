@@ -49,7 +49,7 @@
           >
             <select
               v-model="filter.column"
-              class="form-select shadow-none rounded-4 fs-3 text-black border-primary border"
+              class="form-select shadow-none rounded-4 fs-5 text-black border-primary border"
               aria-label="Select Filter"
             >
               <option value selected>
@@ -108,7 +108,7 @@
             <div v-else class="form-group me-md-1">
               <input
                 v-model="filter.search"
-                class="w-100 fs-3 shadow-none form-control rounded-4 px-3 border-primary border"
+                class="w-100 fs-4 shadow-none form-control rounded-4 px-3 border-primary border"
                 style="width: 300px"
                 :placeholder="__('Search')"
                 type="text"
@@ -122,12 +122,7 @@
                 @click="getPaginatedData(false, status.status_code)"
               >
                 {{ __("Search") }}
-                <img
-                  src="@/images/icons/loginbtnicon.png"
-                  width="30"
-                  class="ms-3"
-                  alt=""
-                />
+                <Icon icon="mingcute:right-line" width="24" height="24" />
               </button>
             </div>
           </div>

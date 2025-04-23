@@ -123,12 +123,13 @@
                 >
                   {{ __("Search") }}
 
-                  <img
+                  <!-- <img
                     src="@/images/icons/loginbtnicon.png"
                     width="30"
                     class="ms-3"
                     alt=""
-                  />
+                  /> -->
+                  <Icon icon="mingcute:right-line" width="24" height="24" />
                 </button>
               </div>
             </div>

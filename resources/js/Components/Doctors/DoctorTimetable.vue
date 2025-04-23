@@ -1,20 +1,20 @@
 <template>
   <div class="container">
-    <div class="row mb-3">
+    <div class="row my-3 border-bottom">
       <div class="col-md-3 col-4">
-        <h4 class="text-primary fs-2 fw-bold">{{ __("days") }}</h4>
+        <h4 class="text-pink fs-3 fw-bold">{{ __("days") }}</h4>
       </div>
       <div class="col-md-6 col-4">
-        <h4 class="text-primary fs-2 fw-bold">{{ __("timings") }}</h4>
+        <h4 class="text-pink fs-3 fw-bold">{{ __("timings") }}</h4>
       </div>
       <div class="col-md-3 col-4">
-        <h4 class="text-primary fs-2 fw-bold">{{ __("status") }}</h4>
+        <h4 class="text-pink fs-3 fw-bold">{{ __("status") }}</h4>
       </div>
     </div>
 
     <div v-for="day in days" :key="day" class="row mb-2 border-bottom pb-2">
       <div class="col-md-3 col-4">
-        <h5 class="fs-3 fw-normal">{{ __(day) }}</h5>
+        <h5 class="fs-4 fw-normal">{{ __(day) }}</h5>
       </div>
 
       <div class="col-md-6 col-4">
@@ -26,7 +26,7 @@
             "
             class="d-flex align-items-center gap-4"
           >
-            <h5 class="fs-3 fw-normal">
+            <h5 class="fs-4 fw-normal">
               {{ formatTimeWithAMPM(appointment.start_time) }} -
               {{ formatTimeWithAMPM(appointment.end_time) }}
             </h5>

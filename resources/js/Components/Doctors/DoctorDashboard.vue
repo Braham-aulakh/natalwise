@@ -94,7 +94,7 @@
                                                 $page.props.doctor.is_active
                                             " class="badge bg-active rounded-pill px-2 py-1 fs-5">{{ __("active")
                                                 }}</span>
-                                            <span v-else class="badge bg-inactive px-4 rounded-pill py-2 fs-3">{{
+                                            <span v-else class="badge bg-inactive px-4 rounded-pill py-2 fs-5">{{
                                                 __("inactive") }}</span>
                                         </div>
                                         <div class="d-flex flex-column align-items-start ms-3 ms-md-0">
@@ -102,7 +102,7 @@
                                                 __("Package") }}</label>
                                             <Link :href="route('pricing', { type: 'doctor' })">
                                             <span style="background-color: #ffa928"
-                                                class="badge rounded-pill px-3 py-2 fs-3 text-capitalize">{{
+                                                class="badge rounded-pill px-3 py-2 fs-4 text-capitalize">{{
                                                     $page.props.doctor.pricing_plan_name ?? "N/A" }}
                                             </span>
                                             </Link>
@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="card rounded-20 p-4 ms-md-3" style="background: #f9fbfd">
+                                    <div class="card rounded-8 p-4 ms-md-3" style="background: #f9fbfd">
                                         <div class="d-flex gap-3 align-items-center about-modal">
                                             <h3 class="fw-bold text-pink fs-2 mb-0">About</h3>
                                             <!-- <button
@@ -165,7 +165,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card shadow px-4 py-4 bg-white rounded-20 mb-4 mb-md-0">
+                        <div class="card shadow px-4 py-4 bg-white rounded-8 mb-4 mb-md-0">
                             <ul class="nav flex-column nav-pills account-tabs my-5" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" :class="{ active: active_tab == 'notifications' }"

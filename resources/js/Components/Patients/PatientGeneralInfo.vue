@@ -106,9 +106,9 @@
                     {{ __("Personal information") }}
                   </h3>
                   <button type="button"
-                    class="btn btn-primary fs-3 me-md-3 rounded-4 shadow px-3 py-2 fw-bold d-flex justify-content-center align-items-center"
+                    class="btn btn-primary fs-4 me-md-3 rounded-4 shadow px-3 py-2 fw-bold d-flex justify-content-center align-items-center"
                     data-bs-toggle="modal" data-bs-target="#personalInformationModel">
-                    <img class="me-2" src="@/images/icons/pen.svg" alt="" />
+                    <!-- <Icon icon="material-symbols:edit-outline" width="20" height="20"  /> -->
                     {{ __("Edit") }}
                   </button>
                   <Modal :id="'personalInformationModel'" tabindex="-1"
@@ -122,7 +122,8 @@
                       </div>
                       <div class="modal-body">
                         <!-- <validation-errors></validation-errors> -->
-                        <div class="form-group mb-3">
+                         <div class="flex gap-2 w-full">
+                          <div class="form-group mb-3 w-full">
                           <label for="first_name">{{ __("first name")
                           }}<span class="text-danger">*</span></label>
                           <input v-model="form.first_name" class="form-control px-3 fw-bold text-black"
@@ -131,8 +132,7 @@
                             {{ form.errors.first_name }}
                           </div>
                         </div>
-
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-3 w-full">
                           <label for="last_name">{{ __("last name")
                           }}<span class="text-danger">*</span></label>
                           <input v-model="form.last_name" class="form-control px-3 fw-bold text-black"
@@ -141,6 +141,8 @@
                             {{ form.errors.last_name }}
                           </div>
                         </div>
+                         </div>
+                        
                         <div class="form-group dob-picker mb-3">
                           <label for="dob">{{ __("Date of Birth")
                           }}<span class="text-danger">*</span></label>
@@ -170,7 +172,8 @@
                             {{ form.errors.father_name }}
                           </div>
                         </div>
-                        <div class="form-group mb-3">
+                        <div class="flex gap-2 w-full">
+                          <div class="form-group mb-3 w-full">
                           <label for="user_name">{{ __("blood group")
                           }}<span class="text-danger">*</span></label>
                           <input class="form-control px-3 fw-bold text-black" :placeholder="__('Please Enter')"
@@ -179,7 +182,7 @@
                             {{ form.errors.blood_group }}
                           </div>
                         </div>
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-3 w-full">
                           <label for="user_name">{{ __("gender") }}<span class="text-danger">*</span></label>
                           <select v-model="form.gender" class="form-select" aria-label="Default select example">
                             <option value="" disabled selected>
@@ -193,6 +196,9 @@
                             {{ form.errors.gender }}
                           </div>
                         </div>
+
+                        </div>
+                     
                       </div>
                       <div class="modal-footer border-0 pt-0">
                         <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">
@@ -286,9 +292,9 @@
                   <h3 class="fw-bold mb-0 fs-3 ms-md-4">{{ __("address") }}</h3>
 
                   <button type="button"
-                    class="btn btn-primary fs-3 me-md-3 rounded-4 shadow px-3 py-2 fw-bold d-flex justify-content-center align-items-center"
+                    class="btn btn-primary fs-4 me-md-3 rounded-4 shadow px-3 py-2 fw-bold d-flex justify-content-center align-items-center"
                     data-bs-toggle="modal" data-bs-target="#addressModel">
-                    <img class="me-2" src="@/images/icons/pen.svg" alt="" />
+                    <!-- <Icon icon="material-symbols:edit-outline" width="20" height="20"  /> -->
                     {{ __("Edit") }}
                   </button>
                   <Modal :id="'addressModel'" tabindex="-1" :aria-labelledby="'addressModelLabel'">

@@ -34,12 +34,13 @@
 
                         <button
                           class="border-0 position-absolute bg-transparent"
-                          style="right: 3px; top: 15px"
+                          style="right: 3px; top: -10px"
                           type="button"
                           :data-bs-target="'#profileuploadModal'"
                           data-bs-toggle="modal"
                         >
-                          <img src="@/images/icons/Group1.svg" alt="" width="35" />
+                        <Icon icon="material-symbols:edit-outline" width="32" height="32"  style="color: #fff; background-color: #fc9fbc;
+                        padding:6px; border-radius: 50%;" />
                         </button>
                         <Modal
                           :id="'profileuploadModal'"
@@ -53,25 +54,25 @@
                               >
                                 <img
                                   width="100"
-                                  src="@/images/icons/uploadfile.svg"
+                                  src="../../../../public/images/homes/uploadfile.png"
                                   alt="upload-icon"
                                 />
                                 <h6 class="fs-3 fw-normal text-black">
                                   {{ __("Drag and drop files here") }}
                                 </h6>
                                 <button
-                                  class="btn btn-primary shadow-find rounded-4 fs-3 fw-bold py-2"
+                                  class="btn btn-primary  rounded-4 fs-3 fw-bold py-2"
                                   @click="triggerFileUpload"
                                   data-bs-dismiss="modal"
                                 >
                                   {{ __("Upload") }}
-                                  <img
+                                  <!-- <img
                                     src="@/images/icons/up.svg"
                                     width="30"
                                     class="mb-1 ms-2"
                                     alt="up-icon"
                                     data-bs-dismiss="modal"
-                                  />
+                                  /> -->
                                 </button>
                                 <!-- Hidden file input -->
                                 <input
@@ -91,7 +92,7 @@
                           class="nav-link"
                           target="_blank"
                         >
-                          <h2 class="text-primary fw-bold mt-2 mb-1 fs-2">
+                          <h2 class="text-pink fw-bold mt-2 mb-1 fs-2">
                             {{ $page.props.doctor.first_name }}
                           </h2>
                           <h6 class="fs-4 text-paragraphcolor fw-normal mb-0">
@@ -120,25 +121,25 @@
                   </div>
                   <div class="col-md-2 border-status my-2">
                     <div class="d-flex flex-md-column flex-row mt-3 ms-2">
-                      <div class="d-flex flex-column align-items-start mb-3">
+                      <div class="d-flex  align-items-start justify-content-between mb-3">
                         <label
                           for="status"
-                          class="fw-normal mb-2 fs-4 text-paragraphcolor"
+                          class="fw-normal mb-2 fs-5 text-paragraphcolor"
                           >{{ __("status") }}</label
                         >
-
+:
                         <span
                           v-if="
                             $page.props &&
                             $page.props.doctor &&
                             $page.props.doctor.is_active
                           "
-                          class="badge bg-active rounded-pill px-4 py-2 fs-3"
+                          class="badge bg-active rounded-pill px-2 py-1 fs-5"
                           >{{ __("active") }}</span
                         >
                         <span
                           v-else
-                          class="badge bg-inactive px-4 rounded-pill py-2 fs-3"
+                          class="badge bg-inactive px-4 rounded-pill py-2 fs-5"
                           >{{ __("inactive") }}</span
                         >
                       </div>
@@ -158,22 +159,22 @@
                             :href="route('pricing', { type: 'doctor' })"
                           >
                             <i
-                              class="bi bi-pencil-square mb-1 text-primary ms-2 fs-3"
+                              class="bi bi-pencil-square mb-1 text-pink ms-2 fs-3"
                             ></i>
                           </Link>
                         </div>
                         <span
                           style="background-color: #ffa928"
-                          class="badge rounded-pill px-3 py-2 fs-3 text-capitalize"
+                          class="badge rounded-pill px-3 py-2 fs-4 text-capitalize"
                           >{{ $page.props.doctor.pricing_plan_name ?? "N/A" }}
                         </span>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-5">
-                    <div class="card bg-lightPink rounded-20 p-4 ms-md-3" style="background: #fbf2ed">
+                    <div class="card bg-lightPink  p-4 ms-md-3" style="background: #fbf2ed; border-radius: 8px;">
                       <div class="d-flex gap-3 align-items-center about-modal">
-                        <h3 class="fw-bold text-primary fs-2 mb-0">
+                        <h3 class="fw-bold text-pink fs-2 mb-0">
                           {{ __("about") }}
                         </h3>
                         <button
@@ -182,7 +183,8 @@
                           data-bs-toggle="modal"
                           :data-bs-target="'#aboutModal'"
                         >
-                          <img src="@/images/icons/Group1.svg" alt="" width="30" />
+                        <Icon icon="material-symbols:edit-outline" width="32" height="32"  style="color: #fff; background-color: #fc9fbc;
+                        padding:6px; border-radius: 50%;" />
                         </button>
                         <!-- Modal -->
                         <Modal :id="'aboutModal'" :aria-labelledby="'aboutModalLabel'">
@@ -338,7 +340,7 @@
                     aria-selected="true"
                   >
                     <div class="icon-background ms-2">
-                      <i class="bi bi-info-circle"></i>
+                      <Icon icon="lucide:info" width="24" height="24" />
                     </div>
                     {{ __("general info") }}
                   </button>
@@ -405,7 +407,7 @@
                     aria-selected="false"
                   >
                     <div class="icon-background ms-2">
-                      <i class="bi bi-person-check-fill"></i>
+                      <Icon icon="cil:user-plus" width="24" height="24" />
                     </div>
                     {{ __("experiences") }}
                   </button>
@@ -728,8 +730,10 @@ import PagesHeading from "../PagesHeading.vue";
 import Modal from "../Modal.vue";
 import DoctorExperiences from "./Experiences/DoctorExperiences.vue";
 import ImageCropperModal from "../Shared/ImageCropperModal.vue";
+import { Icon } from "@iconify/vue";
 export default defineComponent({
   components: {
+    Icon,
     Head,
     AuthenticationCard,
     AuthenticationCardLogo,

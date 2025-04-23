@@ -177,6 +177,7 @@
         <ValidationErrors></ValidationErrors>
         <div class="card">
           <div class="card-body px-0 info-tabs">
+            
             <ul class="nav nav-pills mt-2 gap-md-4 gap-2" id="pills-tab" role="tablist">
               <li class="nav-item ms-md-4 ms-2" role="presentation">
                 <button
@@ -1557,15 +1558,15 @@
       </div>
     </div>
 
-    <div class="col-12 mt-4 text-end">
+    <div class="col-12 text-end">
       <button
         type="submit"
         :disabled="form.processing"
-        class="btn btn-primary rounded-4 fs-2 fw-bold px-4"
+        class="btn btn-primary rounded-4 fs-4 fw-bold px-4"
       >
         <SpinnerLoader v-if="form.processing" />
         {{ __("save") }}
-        <img src="@/images/icons/loginbtnicon.png" width="30" class="ms-2 mb-1" alt="" />
+        <!-- <img src="@/images/icons/loginbtnicon.png" width="30" class="ms-2 mb-1" alt="" /> -->
       </button>
     </div>
   </form>

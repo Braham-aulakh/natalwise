@@ -6,11 +6,11 @@
         <div class="container">
            <div class="row">
             <div class="col-md-12 px-0">
-                <div class="card bg-white px-2 pb-4 d-flex flex-column mt-3 mt-md-5">
+                <div class="card bg-white  pb-4 d-flex flex-column mt-3 mt-md-5">
                     <div class="card-body">
                         <div class="row">
                             <div class="d-flex py-3 align-items-center justify-content-between">
-                                <h4 class="text-primary fw-bolder fs-2">
+                                <h4 class="text-pink fw-bolder fs-2">
                                     {{ __("your appointment summary") }}
                                 </h4>
                                 <h4 class="badge" :style="{
@@ -21,8 +21,8 @@
                                     {{ __(appointment.appointment_status_name) }}
                                 </h4>
                             </div>
-
-                            <div class="d-flex gap-2 px-4">
+<div class="d-flex flex-column gap-4 w-full" style="padding: 20px; background-color: #FBF2ED; border-radius: 8px ;">
+    <div class="d-flex gap-2 px-4 mt-3">
                                 <div class="d-flex col-md-3 p-3 flex-column mb-3 align-content-start rounded-4 stats">
                                     <h6 class="fs-5 mb-2 fw-bolder text-black">
                                         {{ __("booking date") }}
@@ -128,6 +128,9 @@
                                         }}</span>
                                 </div>
                             </div>
+
+</div>
+                          
 
 
                         </div>
