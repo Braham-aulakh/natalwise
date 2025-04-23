@@ -1,6 +1,6 @@
 <template>
     <app-layout title="My Profile">
-        <div class="bg-primary">
+        <div class="Top-Border">
             <pages-heading :textwhite="'true'" :heading="`${doctor.name} ${__n('Review')}`"
                 :breadcrums="breadcrums"></pages-heading>
         </div>

@@ -12185,11 +12185,11 @@ textarea.form-control-lg {
   border-radius: 20px;
 }
 .profile-accordian .accordion-header {
-  border-radius: 20px;
+  border-radius: 8px ;
 }
 .profile-accordian .accordion-header .accordion-button.collapsed {
   background-color: #ebf3f6;
-  border-radius: 20px;
+  border-radius: 8px !important;
   color: #294481;
   font-weight: bold;
   font-size: 1.35rem;
@@ -12198,7 +12198,7 @@ textarea.form-control-lg {
 }
 .profile-accordian .accordion-header .accordion-button:not(.collapsed) {
   background-color: #294481;
-  border-radius: 20px;
+  border-radius: 8px ;
   color: #f2f2f2;
   font-weight: bold;
   font-size: 1.35rem;

@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-12 mb-3">
     <div
-      class="card w-100 bg-white d-flex align-items-center justify-content-center overflow-hidden shadow-sm rounded-md"
+      class="card w-100 lightpink d-flex align-items-center justify-content-center overflow-hidden shadow-sm rounded-md"
       style="min-height: 200px"
     >
       <div

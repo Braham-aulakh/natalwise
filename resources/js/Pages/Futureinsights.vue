@@ -364,13 +364,16 @@ export default {
                 },
             ],
             breakpoints: {
-                768: {
-                    itemsToShow: 2,
+                0: {
+                    itemsToShow: 1
+                },
+                640: {
+                    itemsToShow: 2
                 },
                 1024: {
-                    itemsToShow: 3,
-                },
-            },
+                    itemsToShow: 3
+                }
+            }
         };
     },
     methods: {

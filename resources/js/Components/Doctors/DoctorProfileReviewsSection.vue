@@ -95,7 +95,7 @@
           <div class="col-md-3">
             <Link
               :href="route('doctor.reviews', { user_name: doctor.user_name })"
-              class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
+              class="btn btn-primary  rounded-4 fs-4 fw-bold"
             >
               <span>{{ __("view all") }}</span>
             </Link>

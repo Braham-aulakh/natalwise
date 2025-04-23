@@ -30,6 +30,7 @@
     {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9LFi2PVQgj6rue5HuILx-gXtoha9_H-g&libraries=places"></script> --}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9LFi2PVQgj6rue5HuILx-gXtoha9_H-g&libraries=places">
     </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
 

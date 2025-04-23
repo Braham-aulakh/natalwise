@@ -50,7 +50,7 @@
 
 
                 <button type="Book-an-Appointment
-											t" class="btn">Book an Appointment
+											t" class="btn"> <a href="doctors">  Book an Appointment </a>
                 </button>
                 <h6>Stay in Touch:</h6>
 
@@ -373,5 +373,9 @@ export default {
     /* flex: 0 0 auto; */
     width: 250px !important;
   }
+}
+.subscribe-form .btn a{
+  text-decoration: none !important;
+  color: white !important;
 }
 </style>
