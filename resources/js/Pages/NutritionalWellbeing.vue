@@ -150,3 +150,52 @@ export default {
     },
 }
 </script>
+<style scoped>
+@media (max-width:767px) {
+    .banner-content h1[data-v-33607e24] {
+	
+	font-size: 30px !important;
+	
+}
+.faq-cont h2[data-v-33607e24] {
+	font-size: 28px;
+	
+}
+
+
+
+
+}
+@media (max-width: 1080px) {
+    .faq-sec-fourteen {
+	padding-top: 40px;
+	
+}
+.faq-main-cards {
+	padding-top: 50px;
+}
+.banner-content.aos-init.aos-animate {
+	text-align: start;
+}
+.faq-cont h2 {
+	font-size: 33px;
+	font-weight: 600 !important;
+	color: #272b41;
+}
+.banner-content h1 {
+	font-family: "Prata", serif !important;
+	font-weight: 400 !important;
+	font-style: normal;
+	font-size: 40px !important;
+	margin-bottom: 15px !important;
+	color: #404040 !important;
+}
+
+
+
+}
+
+
+
+
+</style>

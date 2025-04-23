@@ -425,6 +425,61 @@ export default {
 .post-natal {
     padding: 80px;
 }
+.our-blog-fourteen {
+	position: relative;
+	padding: 0px 0;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+@media (max-width:767px) {
+
+    .banner-content h1[data-v-d95b1f62] {
+	
+	font-style: normal;
+	font-size: 33px !important;
+	
+
+}
+.pre-post[data-v-d95b1f62] {
+	padding-top: 40px;
+}
+.post-natal[data-v-d95b1f62] {
+	padding: 0 !important;
+}
+.pre-post-cont h3[data-v-d95b1f62] {
+	font-size: 28px;
+	font-weight: 600 !important;
+}
+
+
+}
+
+
+@media (max-width: 1080px) {
+
+    .banner-content.aos-init.aos-animate {
+	text-align: start;
+}
+.pre-post[data-v-d95b1f62] {
+	padding-top: 40px;
+}
+.pre-post-cont {
+	padding-top: 50px;
+}
+.pre-post-cont h3[data-v-d95b1f62] {
+	font-size: 28px;
+	font-weight: 600 !important;
+}
+.post-natal[data-v-d95b1f62] {
+	padding: 0 !important;
+}
+.book-heading {
+	font-size: 33px;
+	font-weight: 600 !important;
+}
+
+}
 
 
 

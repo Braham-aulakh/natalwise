@@ -374,7 +374,7 @@ export default {
     },
 };
 </script>
-<style >
+<style scoped>
 .About-banner {
     background: #fbf2ed;
     position: relative;
@@ -424,7 +424,7 @@ export default {
 }
 
 .personal-cont h3 {
-    font-size: 35px !important;
+    font-size: 35px;
     font-weight: 600 !important;
     padding-bottom: 10px !important;
 }
@@ -559,5 +559,27 @@ export default {
 
 .custom-icon-btn:hover .custom-icon {
     color: #ffffff;
+}
+@media (max-width:767px) {
+
+    .btn.reg-btn.pink-btn {
+	margin-top: 0px !important;
+}
+.personal-cont h3[data-v-31a087d0] {
+	font-size: 28px;
+	font-weight: 600 !important;
+	padding-bottom: 10px !important;
+}
+.pt-md-5 {
+	padding-top: 0px !important;
+}
+.banner-content h1[data-v-31a087d0] {
+	font-family: "Prata", serif !important;
+	font-weight: 400 !important;
+	font-style: normal;
+	font-size: 30px !important;
+	margin-bottom: 15px !important;
+	color: #404040 !important;
+}
 }
 </style>

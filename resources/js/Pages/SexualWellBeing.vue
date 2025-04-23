@@ -122,4 +122,63 @@ export default {
 
 
 
-<style scoped></style>
+<style scoped>
+@media (max-width:767px) {
+    .banner-content h1 {
+	
+	font-size: 33px !important;
+
+}
+.faq-cont h2 {
+	font-size: 28px !important;
+	font-weight: 600 !important;
+	color: #272b41;
+}
+
+.faq-sec-fourteen {
+	
+	padding-top: 40px;
+
+}
+.faq-main-cards {
+	padding-top: 50px;
+}
+.our-blog-fourteen {
+	margin-top: 40px !important;
+}
+
+
+
+
+}
+@media (max-width: 1080px) {
+    .banner-content.aos-init.aos-animate {
+	text-align: start;
+}
+.faq-sec-fourteen {
+	
+	padding-top: 40px;
+	
+}
+.faq-main-cards {
+	padding-top: 50px;
+}
+.faq-cont h2 {
+	font-size: 33px;
+	font-weight: 600 !important;
+	color: #272b41;
+}
+.our-blog-fourteen {
+	
+	margin-top: 40px;
+}
+
+
+}
+
+
+
+
+
+
+</style>

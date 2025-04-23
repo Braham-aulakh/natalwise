@@ -292,6 +292,9 @@ export default defineComponent({
 	
 	font-size: 28px !important;
 }
+.Essentials[data-v-bcf9defe][data-v-bcf9defe] {
+	padding-top: 0;
+}
 
 	
 

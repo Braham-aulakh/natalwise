@@ -364,16 +364,16 @@ export default {
                 },
             ],
             breakpoints: {
-                0: {
-                    itemsToShow: 1
-                },
-                640: {
-                    itemsToShow: 2
-                },
-                1024: {
-                    itemsToShow: 3
-                }
-            }
+      0: {
+        itemsToShow: 1
+      },
+      640: {
+        itemsToShow: 1
+      },
+      1024: {
+        itemsToShow: 3
+      }
+    }
         };
     },
     methods: {
@@ -554,5 +554,38 @@ export default {
     font-size: 1rem;
     margin-bottom: 1rem;
     line-height: 1.4;
+}
+
+
+@media (max-width:767px) {
+.book-heading {
+	font-size: 28px !important;
+	font-weight: 600 !important;
+}
+.banner-content h1 {
+	font-family: "Prata", serif !important;
+	font-weight: 400 !important;
+	font-style: normal;
+	font-size: 33px !important;
+	margin-bottom: 15px !important;
+	color: #404040 !important;
+}
+
+}
+
+
+@media (max-width: 1080px) {
+    .book-heading {
+	font-size: 32px !important;
+	font-weight: 600 !important;
+}
+.section-header-sixteen {
+	margin-bottom: 0 !important;
+}
+.banner-content.aos-init.aos-animate {
+	text-align: start;
+}
+
+
 }
 </style>
