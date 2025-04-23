@@ -127,4 +127,50 @@ export default {
 
 
 
-<style scoped></style>
+<style scoped>
+@media (max-width:767px) { 
+    .banner-content h1 {
+	
+	font-size: 33px !important;
+}
+.faq-cont h2[data-v-62d0147a] {
+	font-size: 28px !important;
+}
+
+
+
+
+}
+
+@media (max-width: 1080px) {
+    .faq-sec-fourteen {
+	
+	padding-top: 40px;
+}
+.faq-cont h2 {
+	font-size: 33px !important;
+	
+}
+.faq-main-cards {
+	padding-top: 50px;
+}
+.our-blog-fourteen {
+	
+	margin-top: 40px;
+}
+.banner-content.aos-init.aos-animate {
+	text-align: start;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+</style>
