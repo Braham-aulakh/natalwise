@@ -323,17 +323,17 @@
                         >
                           <img
                             v-if="schedule_type.type == 'video'"
-                            src="@/images/icons/Video3.svg"
+                            src="../../../../public/images/homes/video3.png"
                             alt=""
                           />
                           <img
                             v-if="schedule_type.type == 'audio'"
-                            src="@/images/icons/audio2.svg"
+                            src="../../../../public/images/homes/audio2.png"
                             alt=""
                           />
                           <img
                             v-if="schedule_type.type == 'chat'"
-                            src="@/images/icons/chat2.svg"
+                            src="../../../../public/images/homes/chat2.png"
                             alt=""
                           />
                           <span class="fw-bold ps-4">{{

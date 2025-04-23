@@ -3176,12 +3176,6 @@ h6 {
     border: 1px dashed #FC9FBC;
 }
 
-.About-banner {
-    background: #fbf2ed;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
 
 .banner-content h1 {
     font-family: "Prata", serif !important;
@@ -3361,3 +3355,14 @@ h6 {
 .custom-icon-btn:hover .custom-icon {
     color: #ffffff;
 }
+.btn-appointment {
+    background-color: #f2f2f2;
+    box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.38);
+    color:#000 !important;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    height: 58px;
+  }

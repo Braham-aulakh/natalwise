@@ -272,7 +272,7 @@
                         <post-card v-for="post in doctor.doctor_posts.slice(0, 2)" :post="post" :key="post.id"
                           :profile="true" />
                       </div>
-                      <Link class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
+                      <Link class="btn btn-primary  rounded-4 fs-4 fw-bold"
                         :href="route('blogs.listing', { doctor: doctor.user_name })">
                       {{ __("view all") }}
                       </Link>
@@ -296,7 +296,7 @@
                         <broadcast-card v-for="broadcast in doctor.doctor_broadcasts.slice(0, 2)" :broadcast="broadcast"
                           :key="broadcast.id" :profile="true" />
                       </div>
-                      <Link class="btn btn-primary shadow-find rounded-4 fs-4 fw-bold"
+                      <Link class="btn btn-primary  rounded-4 fs-4 fw-bold"
                         :href="route('broadcasts.listing', { doctor: doctor.user_name })">
                       {{ __("view all") }}
                       </Link>
@@ -465,9 +465,10 @@
                         )
                         " class="btn-appointment d-flex px-4 py-2 align-items-center justify-content-start">
                       <div class="d-flex align-items-center justify-content-center">
-                        <img v-if="schedule_type.type == 'video'" src="@/images/icons/Video3.svg" alt="" />
-                        <img v-if="schedule_type.type == 'audio'" src="@/images/icons/audio2.svg" alt="" />
-                        <img v-if="schedule_type.type == 'chat'" src="@/images/icons/chat2.svg" alt="" />
+                        <img v-if="schedule_type.type == 'video'" src="../../../../public/images/homes/video3.png" alt="" class="call_img"/>
+                        <img v-if="schedule_type.type == 'audio'" src="../../../../public/images/homes/audio2.png" alt="" class="call_img"/>
+                        <img v-if="schedule_type.type == 'chat'" src="../../../../public/images/homes/chat2.png" alt="" class="call_img"/>
+                       
                         <span class="fw-bold ps-4">{{
                           __(schedule_type.appointment_type.display_name)
                         }}</span>
@@ -1078,4 +1079,13 @@ export default defineComponent({
 </script>
 
 
-<style scoped></style>
+<style scoped>
+.call_img{
+  width: 26px !important;
+  height: 26px !important;
+}
+/* .video_img{
+  width: 30px !important;
+  height:30px !important;
+} */
+</style>

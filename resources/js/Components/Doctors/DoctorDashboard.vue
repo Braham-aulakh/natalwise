@@ -1,7 +1,7 @@
 <template>
     <app-layout title="Dashboard">
         <div class="Top-Border">
-            <pages-heading :dashboard="true" :textwhite="'true'" :heading="'Welcome As a Doctor'"
+            <pages-heading :dashboard="true" :textwhite="'true'" :heading="'Welcome as an Expert'"
                 :breadcrums="breadcrums">
             </pages-heading>
         </div>
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="d-flex flex-column ms-md-2">
                                             <a :href="route('doctor.my_profile')" class="nav-link" target="_blank">
-                                                <h2 class="text-primary fw-bold mt-2 mb-1 fs-2">
+                                                <h2 class="text-pink fw-bold mt-2 mb-1 fs-2">
                                                     {{ $page.props.doctor.name }}
                                                 </h2>
                                                 <h6 class="fs-4 text-paragraphcolor fw-normal mb-0">
@@ -84,15 +84,15 @@
                                 </div>
                                 <div class="col-md-2 border-status my-2">
                                     <div class="d-flex flex-md-column flex-row mt-3 ms-2">
-                                        <div class="d-flex flex-column align-items-start mb-3">
-                                            <label for="status" class="fw-normal mb-2 fs-4 text-paragraphcolor">{{
+                                        <div class="d-flex  align-items-start justify-content-between mb-3">
+                                            <label for="status" class="fw-normal mb-2 fs-5 text-paragraphcolor">{{
                                                 __("status") }}</label>
-
+:
                                             <span v-if="
                                                 $page.props &&
                                                 $page.props.doctor &&
                                                 $page.props.doctor.is_active
-                                            " class="badge bg-active rounded-pill px-4 py-2 fs-3">{{ __("active")
+                                            " class="badge bg-active rounded-pill px-2 py-1 fs-5">{{ __("active")
                                                 }}</span>
                                             <span v-else class="badge bg-inactive px-4 rounded-pill py-2 fs-3">{{
                                                 __("inactive") }}</span>
@@ -110,9 +110,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="card rounded-20 p-4 ms-md-3" style="background: #f0f7fa">
+                                    <div class="card rounded-20 p-4 ms-md-3" style="background: #f9fbfd">
                                         <div class="d-flex gap-3 align-items-center about-modal">
-                                            <h3 class="fw-bold text-primary fs-2 mb-0">About</h3>
+                                            <h3 class="fw-bold text-pink fs-2 mb-0">About</h3>
                                             <!-- <button
                         class="border-0"
                         type="button"
@@ -125,7 +125,7 @@
                                             <Modal :id="'aboutModal'" :aria-labelledby="'aboutModalLabel'">
                                                 <div class="modal-content p-4 radius-50">
                                                     <div class="modal-header border-0">
-                                                        <h1 class="display-6 fw-bold text-primary mb-0"
+                                                        <h1 class="display-6 fw-bold text-pink mb-0"
                                                             id="exampleModalLabel">
                                                             {{ __("about") }}
                                                         </h1>
