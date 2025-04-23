@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row align-items-center">
           <!-- Left Content -->
-          <div class="col-lg-6 text-start">
+          <div class="col-lg-6">
             <div class="banner-content" data-aos="fade-up">
               <h1 class="banner-head">
                 Natalwise: Your <br />

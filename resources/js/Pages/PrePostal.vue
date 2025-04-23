@@ -412,7 +412,7 @@ export default {
 }
 
 .pre-post-cont h3 {
-    font-size: 35px !important;
+    font-size: 35px ;
     font-weight: 600 !important;
 }
 

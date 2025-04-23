@@ -218,6 +218,10 @@ h2 {
   transform: scale(1.05); /* Slightly enlarge the card */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
    background-color: #FC9FBC;
+   color: white !important; 
+}
+.review-card:hover h2,h6{
+  color: white !important; 
 }
 
 /* Hover Effect on Custom Carousel Nav Buttons */
