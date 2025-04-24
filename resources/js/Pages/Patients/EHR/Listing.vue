@@ -869,5 +869,27 @@ export default defineComponent({
 .ehr-buttons .nav-pills .nav-link.active, .ehr-buttons .nav-pills .show > .nav-link{
   color: white !important;
 }
+.text-center {
+	text-align: start !important;
+}
 
+
+@media (max-width: 1080px) {
+
+.ehr-img {
+width: 200px !important;
+position: absolute;
+bottom: 0;
+right: 0;
+}
+.text-blue {
+	color: #272b41 !important;
+	text-align: start !important;
+}
+
+
+.display-6 {
+	text-align: start !important;
+}
+}
 </style>

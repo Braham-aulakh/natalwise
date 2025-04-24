@@ -8,7 +8,7 @@
           <div class="d-flex flex-column align-items-start">
             <h2
               :class="textwhite ? 'text-blue' : 'text-black'"
-              class="text-center display-6"
+              class="display-6"
             >
               {{ __(heading) }}
             </h2>

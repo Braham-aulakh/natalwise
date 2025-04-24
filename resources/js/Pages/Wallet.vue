@@ -623,4 +623,29 @@ background-color:#fc9fbc;
     color: white;
     background-color: #fb90b1;
 }
+
+
+
+@media (max-width:767px) {
+    .stats {
+	padding-top: 0 !important;
+	padding-bottom: 40px !important;
+}
+#pills-tab {
+	padding-top: 20px;
+}
+table th {
+	vertical-align: top;
+}
+table td {
+	vertical-align: top;
+}
+.img-card {
+	background-color: #fc9fbc;
+	width: 103px !important;
+	height: 80px !important;
+}
+
+
+}
 </style>

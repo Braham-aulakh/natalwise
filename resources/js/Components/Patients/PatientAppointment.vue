@@ -6,7 +6,7 @@
         <div class="stats ">
             <div class="container mt-md-5 p-md-0">
                 <div class="row align-items-center">
-                    <div class="col-md-7">
+                    <div class="col-md-6 colo-lg-7 ">
                         <div class="nav nav-pills appoint-navs gap-2 gap-md-3 fs-4 fw-bold" id="v-pills-tab"
                             role="tablist" aria-orientation="vertical">
                             <li class="nav-item" role="presentation" @click="() => (currentTab = appIndex)"
@@ -22,7 +22,7 @@
                             </li>
                         </div>
                     </div>
-                    <div class="col-md-5 right-side-bars p-md-0">
+                    <div class=" colo-lg-7 col-md-6 right-side-bars p-md-0">
                         <div class="d-flex mt-3 mt-md-0 gap-3 align-items-md-center flex-column flex-md-row">
                             <select v-model="filter.column"
                                 class="form-select shadow-none rounded-4 fs-5 text-black border-primary border"

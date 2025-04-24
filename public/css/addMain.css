@@ -2664,6 +2664,13 @@ h6 {
     .submit.btn.w-100.fs-2.fw-bold.rounded-4.btn-primary {
         font-size: 18px !important;
     }
+
+    .row.px-0 {
+        margin-bottom: 40px !important;
+    }
+    .stats {
+        padding-top: 40px !important;
+    }
  
 }
 
@@ -2803,6 +2810,10 @@ h6 {
         z-index: 1;
         position: relative;
     }
+    .row.px-0 {
+        margin-bottom: 40px !important;
+    }
+    
    
 
 }
@@ -3647,4 +3658,7 @@ input::placeholder{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#v-pills-tab {
+	padding-bottom: 30px;
 }
