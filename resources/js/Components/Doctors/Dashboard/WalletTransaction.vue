@@ -30,16 +30,16 @@
                         </div>
                         <div class="col-md-4">
                             <button
-                                class="btn bg-white text-primary fs-3 rounded-4 shadow-find px-4 fw-bold btn1 d-flex align-items-center"
+                                class="btn bg-white text-pink fs-3 rounded-4 shadow-find px-4 fw-bold btn1 d-flex align-items-center"
                                 data-bs-toggle="modal" :data-bs-target="'#withdrawAmountModal'"
                                 :disabled="current_balance == 0" @click="walletPage">
-                                <img class="w2-icon me-2" src="@/images/icons/tick.svg" alt="wallet-icon" />
+                                <Icon icon="ic:round-plus" width="22" height="22" />
                                 {{ __("Withdraw") }}
                             </button>
                             <button v-if="$page.props.auth.logged_in_as == 'student'"
-                                class="btn bg-white text-primary fs-3 rounded-4 shadow-find px-4 fw-bold btn1 d-flex align-items-center"
+                                class="btn bg-white text-pink fs-3 rounded-4 shadow-find px-4 fw-bold btn1 d-flex align-items-center"
                                 @click="renderCarousal" data-bs-toggle="modal" :data-bs-target="'#walletAddModal'">
-                                <img class="w2-icon me-2" src="@/images/icons/tick.svg" alt="wallet-icon" />
+                                <Icon icon="ic:round-plus" width="22" height="22" />
                                 {{ __("Add top up") }}
                             </button>
                         </div>
@@ -158,6 +158,7 @@
 <script>
 import { defineComponent } from "vue";
 import { Bar } from "vue-chartjs";
+import { Icon } from "@iconify/vue";
 import {
     Chart as ChartJS,
     Title,
@@ -166,6 +167,7 @@ import {
     BarElement,
     CategoryScale,
     LinearScale,
+    
 } from "chart.js";
 
 ChartJS.register(
@@ -181,6 +183,7 @@ export default defineComponent({
     name: "wallettransaction",
     components: {
         Bar,
+        Icon
     },
     data() {
         return {

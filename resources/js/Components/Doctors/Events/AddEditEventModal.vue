@@ -3,8 +3,8 @@
     <!-- Modal -->
     <Modal maxWidth="lg" :id="id">
       <div class="modal-content rounded-50">
-        <div class="modal-header py-4 px-5 border-0">
-          <h5 class="modal-title text-primary fs-1 fw-bold" id="exampleModalLabel">
+        <div class="modal-header p-4 border-0">
+          <h5 class="modal-title text-balck fs-1 fw-bold" id="exampleModalLabel">
             {{ modalData ? __("update") : __("create") }} {{ __("event") }}
           </h5>
           <button

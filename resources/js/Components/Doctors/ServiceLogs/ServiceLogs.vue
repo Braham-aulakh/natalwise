@@ -49,7 +49,7 @@
             >
               <select
                 v-model="filter.column"
-                class="form-select shadow-none rounded-4 fs-3 text-black border-primary border"
+                class="form-select shadow-none rounded-4 fs-4 text-black border-primary border"
                 aria-label="Select Filter"
               >
                 <option value selected>
@@ -98,7 +98,7 @@
               <div v-else class="form-group me-md-1">
                 <input
                   v-model="filter.search"
-                  class="w-100 fs-3 shadow-none form-control rounded-4 px-3 border-primary border"
+                  class="w-100 fs-4 shadow-none form-control rounded-4 px-3 border-primary border"
                   style="width: 300px"
                   :placeholder="__('search')"
                   type="text"
@@ -108,16 +108,11 @@
               <div>
                 <button
                   type="button"
-                  class="btn btn-primary d-flex px-4 rounded-4 me-2 w-100 fs-3"
+                  class="btn btn-primary d-flex px-4 rounded-4 me-2 w-100 fs-4"
                   @click="getPaginatedData(false)"
                 >
                   {{ __("search") }}
-                  <img
-                    src="@/images/icons/loginbtnicon.png"
-                    width="30"
-                    class="ms-3"
-                    alt=""
-                  />
+                  <Icon icon="mingcute:right-line" width="22" height="22" />
                 </button>
               </div>
             </div>
@@ -153,7 +148,7 @@ import SideTabsPageSkeleton from "@/Components/Skeleton/SideTabsPageSkeleton.vue
 import DoctorServiceListCard from "@/Components/Doctors/ServiceLogs/DoctorServiceListCard.vue";
 import Breadcrums from "@/Components/Shared/Breadcrums.vue";
 import PagesHeading from "../../PagesHeading.vue";
-
+import { Icon } from "@iconify/vue";
 export default defineComponent({
   components: {
     Head,
@@ -169,6 +164,7 @@ export default defineComponent({
     SideTabsPageSkeleton,
     DoctorServiceListCard,
     Breadcrums,
+    Icon
   },
   mixins: [PaginationMixin],
   props: ["service_statuses"],

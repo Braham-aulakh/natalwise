@@ -1663,12 +1663,7 @@
                                       class="btn btn-dark fs-3 fw-bold rounded-4"
                                     >
                                       {{ __("Back") }}
-                                      <img
-                                        src="@/images/icons/loginbtnicon.png"
-                                        class="ms-2 mb-1"
-                                        width="26"
-                                        alt=""
-                                      />
+                                      <Icon icon="mingcute:right-line" width="22" height="22" />
                                     </button>
                                   </div>
                                 </div>

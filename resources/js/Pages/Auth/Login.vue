@@ -22,7 +22,7 @@
         <!-- <clinic-login :active="tab === 'clinic'"></clinic-login> -->
       </div>
     </div>
-  </guest-layout>
+</guest-layout>
   <Footer></Footer>
 </template>
 

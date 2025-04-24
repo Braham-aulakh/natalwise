@@ -97,7 +97,7 @@
                                             <span v-else class="badge bg-inactive px-4 rounded-pill py-2 fs-5">{{
                                                 __("inactive") }}</span>
                                         </div>
-                                        <div class="d-flex flex-column align-items-start ms-3 ms-md-0">
+                                        <!-- <div class="d-flex flex-column align-items-start ms-3 ms-md-0">
                                             <label for="subscription" class="mb-2 fs-4 fw-normal text-paragraphcolor">{{
                                                 __("Package") }}</label>
                                             <Link :href="route('pricing', { type: 'doctor' })">
@@ -106,7 +106,7 @@
                                                     $page.props.doctor.pricing_plan_name ?? "N/A" }}
                                             </span>
                                             </Link>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="col-md-5">
@@ -201,7 +201,7 @@
                                         {{ __n("Wallet Transaction") }}
                                     </button>
                                 </li>
-                                <li class="nav-item" role="presentation">
+                                <!-- <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-plan-tab" data-bs-toggle="pill"
                                         :class="{ active: active_tab == 'subscription-plan' }"
                                         @click="changeTab('subscription-plan')" data-bs-target="#pills-plan"
@@ -211,7 +211,7 @@
                                         </div>
                                         {{ __n("Subscription Plan") }}
                                     </button>
-                                </li>
+                                </li> -->
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-message-tab" data-bs-toggle="pill"
                                         :class="{ active: active_tab == 'messages' }" @click="changeTab('messages')"
@@ -276,12 +276,12 @@
 
                                     :active="active_tab == 'messages'"></dashboard-message>
                             </div>
-                            <div class="tab-pane fade scrollbar-custom" id="pills-plan" role="tabpanel"
+                            <!-- <div class="tab-pane fade scrollbar-custom" id="pills-plan" role="tabpanel"
                                 aria-labelledby="pills-plan-tab"
                                 :class="{ 'active show': active_tab == 'subscription-plan' }">
                                 <pricing-plans v-if="active_tab == 'subscription-plan'"
                                     :active="active_tab == 'subscription-plan'"></pricing-plans>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

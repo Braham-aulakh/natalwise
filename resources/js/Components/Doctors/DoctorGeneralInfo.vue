@@ -858,7 +858,7 @@
                                     <button
                                       type="button"
                                       class="btn position-absolute shadow-none"
-                                      style="right: 4px; top: 4px"
+                                      style="right: 4px; top: -2px"
                                       @click="getCurrentLocation()"
                                     >
                                       <i class="bi bi-geo-alt-fill"></i>
@@ -912,24 +912,32 @@
                                 </div>
                               </div>
                             </div>
-
-                            <div class="col-12">
+                            <div class="flex justify-content-end gap-4">
+                              <div class=" text-end">
+      <button
+        type="submit"
+        :disabled="form.processing"
+        class="btn btn-primary rounded-4 fs-4 fw-bold px-4"
+      >
+        <SpinnerLoader v-if="form.processing" />
+        {{ __("save") }}
+        <!-- <img src="@/images/icons/loginbtnicon.png" width="30" class="ms-2 mb-1" alt="" /> -->
+      </button>
+    </div>
+                            <div class="">
                               <div class="d-md-flex justify-content-end">
                                 <button
                                   type="button"
                                   @click="onChangeCurrentTab(1)"
-                                  class="btn btn-primary rounded-4 fs-3 fw-bold"
+                                  class="btn btn-primary rounded-4 fs-4 fw-bold d-flex items-center gap-1"
                                 >
                                   {{ __("next") }}
-                                  <img
-                                    src="@/images/icons/loginbtnicon.png"
-                                    class="ms-2 mb-1"
-                                    width="25"
-                                    alt=""
-                                  />
+                                  <Icon icon="mingcute:right-line" width="22" height="22" />
                                 </button>
                               </div>
                             </div>
+                            </div>
+
                           </div>
                         </div>
                       </div>
@@ -1107,29 +1115,19 @@
                                   <button
                                     type="button"
                                     @click="onChangeCurrentTab(0)"
-                                    class="btn btn-dark rounded-4 fs-3 fw-bold"
+                                    class="btn btn-dark rounded-4 fs-4 fw-bold d-flex items-center gap-1"
                                   >
+                                  <Icon icon="mingcute:left-line" width="22" height="22" />
                                     {{ __("Back") }}
-                                    <img
-                                      src="@/images/icons/loginbtnicon.png"
-                                      class="ms-2 mb-1"
-                                      width="26"
-                                      alt=""
-                                    />
                                   </button>
 
                                   <button
                                     type="button"
                                     @click="onChangeCurrentTab(2)"
-                                    class="btn btn-primary rounded-4 fs-3 fw-bold"
+                                    class="btn btn-primary rounded-4 fs-4 fw-bold d-flex items-center gap-1"
                                   >
                                     {{ __("next") }}
-                                    <img
-                                      src="@/images/icons/loginbtnicon.png"
-                                      class="ms-2 mb-1"
-                                      width="26"
-                                      alt=""
-                                    />
+                                    <Icon icon="mingcute:right-line" width="22" height="22" />
                                   </button>
                                 </div>
                               </div>
@@ -1310,28 +1308,18 @@
                                   <button
                                     type="button"
                                     @click="onChangeCurrentTab(1)"
-                                    class="btn btn-dark rounded-4 fs-3 fw-bold"
+                                    class="btn btn-dark rounded-4 fs-4 fw-bold d-flex items-center gap-1"
                                   >
+                                  <Icon icon="mingcute:left-line" width="22" height="22" />
                                     {{ __("Back") }}
-                                    <img
-                                      src="@/images/icons/loginbtnicon.png"
-                                      class="ms-2 mb-1"
-                                      width="26"
-                                      alt=""
-                                    />
                                   </button>
                                   <button
                                     type="button"
                                     @click="onChangeCurrentTab(3)"
-                                    class="btn btn-primary rounded-4 fs-3 fw-bold"
+                                    class="btn btn-primary rounded-4 fs-4 fw-bold d-flex items-center gap-1"
                                   >
                                     {{ __("next") }}
-                                    <img
-                                      src="@/images/icons/loginbtnicon.png"
-                                      class="ms-2 mb-1"
-                                      width="26"
-                                      alt=""
-                                    />
+                                    <Icon icon="mingcute:right-line" width="22" height="22" />
                                   </button>
                                 </div>
                               </div>
@@ -1522,15 +1510,10 @@
                                   <button
                                     type="button"
                                     @click="onChangeCurrentTab(2)"
-                                    class="btn btn-dark fs-3 fw-bold rounded-4"
+                                    class="btn btn-dark rounded-4 fs-4 fw-bold d-flex items-center gap-1"
                                   >
+                                  <Icon icon="mingcute:left-line" width="22" height="22" />
                                     {{ __("Back") }}
-                                    <img
-                                      src="@/images/icons/loginbtnicon.png"
-                                      class="ms-2 mb-1"
-                                      width="26"
-                                      alt=""
-                                    />
                                   </button>
                                 </div>
                               </div>
@@ -1558,17 +1541,7 @@
       </div>
     </div>
 
-    <div class="col-12 text-end">
-      <button
-        type="submit"
-        :disabled="form.processing"
-        class="btn btn-primary rounded-4 fs-4 fw-bold px-4"
-      >
-        <SpinnerLoader v-if="form.processing" />
-        {{ __("save") }}
-        <!-- <img src="@/images/icons/loginbtnicon.png" width="30" class="ms-2 mb-1" alt="" /> -->
-      </button>
-    </div>
+   
   </form>
 </template>
 <script>
@@ -1576,7 +1549,7 @@ import { defineComponent } from "vue";
 import ValidationErrors from "@/Components/ValidationErrors.vue";
 import ImageCropperModal from "@/Components//Shared/ImageCropperModal.vue";
 import SpinnerLoader from "@/Components/Shared/SpinnerLoader.vue";
-
+import { Icon } from "@iconify/vue";
 import DoctorEducations from "@/Components/Doctors/Educations/DoctorEducations.vue";
 
 import { Head, Link } from "@inertiajs/inertia-vue3";
@@ -1593,7 +1566,7 @@ export default defineComponent({
     ImageCropperModal,
     Multiselect,
     VueGoogleAutocomplete,
-
+    Icon,
     DoctorEducations,
   },
   props: ["active", "doctor", "image", "description"],
