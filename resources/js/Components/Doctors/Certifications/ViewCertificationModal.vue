@@ -3,9 +3,9 @@
     <!-- Modal -->
     <Modal maxWidth="lg" :id="id">
       <div class="modal-content rounded-50">
-        <div class="modal-header border-0 px-5 mt-3">
+        <div class="modal-header border-0 p-4">
           <h5
-            class="modal-title text-primary fs-1 fw-bold"
+            class="modal-title text-black fs-1 fw-bold"
             id="exampleModalLabel"
           >
             {{ __("view") }} {{ __("certification") }}

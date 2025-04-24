@@ -37,17 +37,12 @@
           <button
             type="button"
             id="addEditExperienceModalButton"
-            class="border-0 fs-3 fw-bold bg-transparent text-primary"
+            class="border-0 fs-3 fw-bold bg-transparent text-pink d-flex items-center"
             data-bs-toggle="modal"
             @click="modal_experience = null"
             data-bs-target="#addEditExperienceModal"
           >
-            <img
-              src="@/images/icons/plus.svg"
-              width="25"
-              class="mb-1 me-2"
-              alt=""
-            />
+          <Icon icon="ic:round-plus" width="22" height="22" />
             {{ __("Add Experience") }}
           </button>
           <add-edit-experience-modal
@@ -172,7 +167,7 @@ import TablePagination from "@/Components/Shared/DataTable/TablePagination.vue";
 import PaginationMixin from "@/Mixins/PaginationMixin.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import axios from "axios";
-
+import { Icon } from "@iconify/vue";
 export default defineComponent({
   components: {
     Head,
@@ -183,6 +178,7 @@ export default defineComponent({
     TablePagination,
     ViewExperienceModal,
     DeleteExperienceModal,
+    Icon
   },
   props: ["active"],
   mixins: [PaginationMixin],
@@ -273,3 +269,14 @@ export default defineComponent({
   },
 });
 </script>
+
+
+<style scoped>
+th {
+    background-color: #fbf2ed !important;
+    color: #fc9fbc !important;
+    font-size: 16px;
+    font-weight: 700;
+    
+}
+</style>

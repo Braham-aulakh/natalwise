@@ -3,8 +3,8 @@
     <!-- Modal -->
     <Modal maxWidth="lg" :id="id">
             <div class="modal-content rounded-50">
-            <div class="modal-header border-0 px-5 mt-3">
-                <h5 class="modal-title modal-title text-primary fs-1 fw-bold" id="exampleModalLabel">{{ __('view') }} {{ __('post') }}</h5>
+            <div class="modal-header border-0 p-4">
+                <h5 class="modal-title modal-title text-black fs-1 fw-bold" id="exampleModalLabel">{{ __('view') }} {{ __('post') }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

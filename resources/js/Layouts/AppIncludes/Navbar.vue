@@ -260,7 +260,7 @@
               <Link :href="route('service_log')" class="dropdown-item d-flex gap-3">
               <i class="bi bi-briefcase"></i>{{ __("my services") }}</Link>
             </li>
-            <li v-if="
+            <!-- <li v-if="
               ($page.props.auth.user.email_verified_at &&
                 hasRole('doctor') &&
                 $page.props.auth.logged_in_as == 'doctor') ||
@@ -271,7 +271,7 @@
               <Link :href="route('dashboard', { active_tab: 'subscription-plan' })" class="dropdown-item d-flex gap-3">
               <i class="bi bi-currency-dollar"></i>{{ __("subscription") }}
               </Link>
-            </li>
+            </li> -->
 
             <li v-if="
               parseInt(this.$page.props.settings.enable_wallet_system) &&
@@ -379,7 +379,7 @@
                 <Link :href="route('service_log')" class="nav-link">
                 {{ __("my services") }}</Link>
               </li>
-              <li v-if="
+              <!-- <li v-if="
                 $page.props.auth.user.email_verified_at &&
                 hasRole('doctor') &&
                 $page.props.auth.logged_in_as == 'doctor'
@@ -394,7 +394,7 @@
               " class="nav-item">
                 <Link :href="route('pricing', { type: 'clinic' })" class="nav-link">{{ __("subscription") }}
                 </Link>
-              </li>
+              </li> -->
 
               <li v-if="
                 (parseInt(this.$page.props.settings.enable_wallet_system) &&
