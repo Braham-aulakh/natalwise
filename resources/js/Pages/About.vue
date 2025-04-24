@@ -226,7 +226,7 @@ export default defineComponent({
 }
 
 .why-heading {
-  font-size: 45px !important;
+  font-size: 45px ;
   font-weight: 600 !important;
 }
 
@@ -313,5 +313,125 @@ export default defineComponent({
     background: #FBF2ED;
     border-color: #FBF2ED;
     transition: 0.5s all;
+}
+
+
+
+@media (max-width:767px) {
+  .about-img {
+	display: none;
+}
+.about-section[data-v-94f3455e] {
+
+	padding: 40px 0;
+}
+.about-box {
+	display: none;
+}
+.why-heading {
+	font-size: 28px !important;
+	
+}
+.faq-heading[data-v-94f3455e] {
+
+	font-size: 20px !important;
+	
+}
+.about-cont p[data-v-94f3455e] {
+	font-size: 17px;
+	color: #6B7280 !important;
+}
+.way-section {
+	margin-bottom: 40px;
+}
+.lab-service-section .servive-provider-content h2[data-v-94f3455e] {
+
+	font-size: 28px;
+text-align: center;
+	padding-top: 20px;
+}
+.lab-service-section[data-v-94f3455e] {
+	padding: 40px 0;
+}
+.lab-service-section .servive-provider-content[data-v-94f3455e] {
+	padding: 0;
+}
+.banner-content h1 {
+	font-family: "Prata", serif !important;
+	font-weight: 400 !important;
+	font-style: normal;
+	font-size: 33px !important;
+	margin-bottom: 15px !important;
+	color: #404040 !important;
+}
+
+}
+
+
+@media (max-width: 1080px) {
+
+  .banner-content.aos-init.aos-animate {
+	text-align: start;
+}
+.banner-content.aos-init.aos-animate {
+	text-align: start;
+}
+.about-section[data-v-94f3455e] {
+	background-color: #ffffff;
+	margin: 0;
+	padding: 40px 0;
+}
+.why-heading[data-v-94f3455e] {
+	font-size: 33px;
+
+}
+.about {
+	padding-top: 30px;
+}
+
+.faq-heading[data-v-94f3455e] {
+
+	font-size: 28px !important;
+
+
+}
+.way-section {
+	margin-bottom: 40px;
+}
+.spotlight {
+	height: auto;
+}
+.lab-service-section[data-v-94f3455e] {
+	background-color: #fc9fbc;
+	padding: 50px 0;
+	position: relative;
+}
+.lab-service-section .servive-provider-content[data-v-94f3455e][data-v-94f3455e] {
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.section {
+
+	padding-bottom: 0px;
+}
+.section-title {
+	font-family: Montserrat;
+	font-weight: 600 !important;
+	font-size: 34px !important;
+	color: #272b41 !important;
+}
+.lab-service-title.aos-init.aos-animate {
+	padding-top: 30px;
+}
+.about-section .about-img-info[data-v-94f3455e] {
+	padding-right: 0;
+}
+
+
+
+
+
+
 }
 </style>

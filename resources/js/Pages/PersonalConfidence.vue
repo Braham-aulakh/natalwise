@@ -361,4 +361,53 @@ export default {
     font-size: 18px;
     padding-bottom: 30px;
 }
+
+@media (max-width:767px) {
+    
+    .faq-content h6 {
+	padding-top: 10px;
+	font-size: 18px;
+	color: #000000 !important;
+	font-weight: 500 !important;
+	margin-bottom: 0;
+}
+
+}
+
+@media (max-width: 1080px) {
+    .banner-content.aos-init.aos-animate {
+	text-align: start;
+}
+.banner-content h1 {
+	font-family: "Prata", serif !important;
+	font-weight: 400 !important;
+	font-style: normal;
+	font-size: 40px !important;
+	margin-bottom: 15px !important;
+	color: #404040 !important;
+}
+.faq-cont h2 {
+	font-size: 33px;
+	font-weight: 600 !important;
+	color: #272b41;
+}
+.faq-main-cards {
+	padding-top: 40px;
+}
+.accordion {
+	padding-top: 40px;
+}
+.section {
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 60px;
+	padding-bottom: 0 !important;
+}
+.spotlight {
+	height: auto;
+}
+
+
+
+}
 </style>

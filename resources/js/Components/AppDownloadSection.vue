@@ -78,6 +78,10 @@ export default {
 
 
 }
+[data-aos^="fade"][data-aos^="fade"] {
+	opacity: 1 !important;
+	transition-property: opacity,transform;
+}
 
 
 

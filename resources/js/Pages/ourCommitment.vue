@@ -131,3 +131,16 @@ export default {
   },
 };
 </script>
+<style scoped> 
+@media (max-width: 1080px) {
+
+  .section-title {
+	font-family: Montserrat;
+	font-weight: 600 !important;
+	font-size: 34px !important;
+	color: #272b41 !important;
+}
+
+
+}
+</style>

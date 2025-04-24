@@ -62,43 +62,7 @@
 
 
         </section>
-        <section class="post-natal">
-            <div class="container">
-
-                <div class="row ">
-                    <div class="col-lg-6">
-                        <div data-aos="fade-up">
-                            <div class="pre-post-cont">
-
-                                <h3>Post-Natal Care Healing, Strength, and Confidence <span class="color-pink">Your
-                                        Postpartum Wellness Starts Here!</span></h3>
-                                <P>Our post-natal care focuses on recovery, rehabilitation, and overall well-being after
-                                    childbirth. We offer C-section recovery, diastasis recti treatment, and pelvic floor
-                                    rehabilitation to help restore your body’s strength. Our lactation consultations
-                                    ensure a smooth breastfeeding journey, while safe post-pregnancy exercise plans
-                                    support a gradual return to activity. We also provide postpartum sexual wellness
-                                    guidance, including intimacy-building techniques and relaxation exercises. Emotional
-                                    and mental health support is essential, and we offer stress management, self-care
-                                    strategies, and postpartum dietary nutrition plans to aid healing and energy
-                                    restoration. We’re here to nurture you through every stage of motherhood.
-
-                                </P>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="pre-post-img" data-aos="fade-up">
-                            <img src="../../../public/images/homes/pre-netel.jpg" />
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </section>
+        
         <!-- Services Section -->
         <div class="features-section-sixteen">
             <div class="container">

@@ -195,4 +195,19 @@ export default defineComponent({
   -ms-transition: 0.7s;
   transition: 0.7s;
 }
+
+
+@media (max-width:767px) {
+  .fqz-heading[data-v-46abcc56] {
+        font-size: 28px !important;
+        font-weight: 600 !important;
+        color: #272b41;
+    }
+    .contact-section[data-v-46abcc56] {
+	margin: 0;
+	padding: 40px 0 55px;
+}
+
+
+}
 </style>

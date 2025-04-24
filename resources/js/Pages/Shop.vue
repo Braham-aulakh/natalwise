@@ -124,4 +124,30 @@ export default defineComponent({
     max-width: 100%;
     height: auto;
 }
+
+@media (max-width:767px) {
+.banner-content h1[data-v-848d3ba1] {
+        font-family: "Prata", serif !important;
+        font-weight: 400 !important;
+        font-style: normal !important;
+        font-size: 35px !important;
+        margin-bottom: 15px !important;
+        color: #404040 !important;
+    }
+    .error-img img[data-v-848d3ba1] {
+	max-width: 100%;
+	height: auto !important;
+}
+
+.error-section[data-v-848d3ba1] {
+	margin: 0 auto !important;
+	padding: 40px 0;
+}
+.error-content h2[data-v-848d3ba1] {
+	font-weight: 600 !important;
+	font-size: 28px;
+	color: #0A0B0D;
+	margin-bottom: 10px;
+}
+}
 </style>

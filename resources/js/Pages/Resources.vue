@@ -44,4 +44,21 @@ export default {
 .our-blog-fourteen{
     background-color: #F8FBFF  !important;
 }
+
+@media (max-width: 1080px) {
+    .our-blog-fourteen {
+	padding: 0px 0 !important;
+	padding-bottom: 20px !important;
+	padding-top: 20px !important;
+}
+.spotlight {
+	height: auto;
+}
+
+
+
+
+
+}
+
 </style>
