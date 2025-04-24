@@ -71,76 +71,43 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <Carousel ref="carousel" :items-to-show="3" :wrap-around="true" :autoplay="0"
+                        class="features-slider-sixteen" :breakpoints="breakpoints" :transition="500">
+                        <Slide v-for="(feature, index) in features" :key="index">
+                            <div class="feature-sixteen-main">
+                                <div class="feature-six-img">
+                                    <img :src="feature.img" alt="Feature" class="img-fluid" />
+                                    <h5 class="feature-content-one ">
+                                        {{ feature.title }} </h5>
 
-                <div class="owl-carousel features-slider-sixteen owl-theme flex">
-                    <!-- Card 1 -->
-                    <div class="feature-sixteen-main">
-                        <div class="feature-six-img">
-                            <img src="../../../public/images/homes/Journey-Begins.jpg" alt="Pre-Natal"
-                                class="img-fluid" />
-
-                            <!-- Always visible title -->
-                            <div class="feature-content-one">
-                                <h5>Journey Begins</h5>
-                                <span><i class="fa-solid fa-angle-up"></i></span>
+                                    <div class="feature-content-six">
+                                        <div
+                                            class="feature-content-two flex flex-col items-center justify-center gap-2">
+                                            <h5>{{ feature.title }}</h5>
+                                            <p>{{ feature.description }}</p>
+                                            <a href="/doctors" class="read-more-btn">Book Now</a>
+                                            <Icon icon="meteor-icons:angle-down" width="24" height="24"
+                                                style="color: #ffffff " />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </Slide>
+                    </Carousel>
 
-                            <!-- Hidden content on hover -->
-                            <div class="feature-content-two">
-                                <h5>Journey Begins</h5>
-                                <p>Expert support to help women start their motherhood journey with confidence,
-                                    providing essential guidance for a healthy transition.</p>
-                                <a href="doctors" class="read-more-btn">Read More
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Card 2 -->
-                    <div class="feature-sixteen-main">
-                        <div class="feature-six-img">
-                            <img src="../../../public/images/homes/pre-natal-2.jpg" alt="Pre-Natal" class="img-fluid" />
+                    <div class="carousel-nav text-center mb-3 ">
+                        <button class="dot custom-icon-btn" @click="goPrev">
+                            <Icon icon="iconamoon:arrow-left-2" width="24" height="24" class="custom-icon" />
+                        </button>
 
-                            <!-- Always visible title -->
-                            <div class="feature-content-one">
-                                <h5>Pre-Natal</h5>
-                                <span><i class="fa-solid fa-angle-up"></i></span>
-                            </div>
-
-                            <!-- Hidden content on hover -->
-                            <div class="feature-content-two">
-                                <h5>Pre-Natal</h5>
-                                <p>Comprehensive care focusing on maternal health, baby development, and emotional
-                                    well-being for a smooth and joyful pregnancy.</p>
-                                <a href="doctors" class="read-more-btn">Read More
-
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="feature-sixteen-main">
-                        <div class="feature-six-img">
-                            <img src="../../../public/images/homes/Post-Natal-3.jpg" alt="Pre-Natal"
-                                class="img-fluid" />
-
-                            <!-- Always visible title -->
-                            <div class="feature-content-one">
-                                <h5>Post-Natal</h5>
-                                <span><i class="fa-solid fa-angle-up"></i></span>
-                            </div>
-
-                            <!-- Hidden content on hover -->
-                            <div class="feature-content-two">
-                                <h5>Post-Natal</h5>
-                                <p>Recovery support, newborn care, and emotional well-being to help mothers regain
-                                    strength and confidence.</p>
-                                <a href="doctors" class="read-more-btn">Read More</a>
-                            </div>
-                        </div>
+                        <button class="dot custom-icon-btn" @click="goNext">
+                            <Icon icon="iconamoon:arrow-right-2-light" width="24" height="24" class="custom-icon" />
+                        </button>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -327,16 +294,67 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 import SpotlightDoctorSection from "@/Components/Doctors/SpotlightDoctorSection.vue";
 import OurBlog from '../Components/ourblog.vue';
 import ReviewSection from "@/Components/ReviewSection.vue";
-
+import { Carousel, Slide } from "vue3-carousel";
+import "vue3-carousel/dist/carousel.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Icon } from "@iconify/vue";
 export default {
     components: {
+        Carousel,
+        Slide,
         AppLayout,
         SpotlightDoctorSection,
         OurBlog,
         ReviewSection,
         Icon
+    },
+    data() {
+        return {
+            features: [
+                {
+                    img: "/images/homes/Journey-Begins.jpg",
+                    title: "Journey Begins",
+                    description:
+                        "Expert support to help women start their motherhood journey with confidence, providing essential guidance for a healthy transition.",
+                },
+                {
+                    img: "/images/homes/pre-natal-2.jpg",
+                    title: "Pre-Natal",
+                    description:
+                        "Comprehensive care focusing on maternal health, baby development, and emotional well-being for a smooth and joyful pregnancy.",
+                },
+                {
+                    img: "/images/homes/Post-Natal-3.jpg",
+                    title: "Post-Natal",
+                    description:
+                        "Recovery support, newborn care, and emotional well-being to help mothers regain strength and confidence.",
+                },
+            ],
+            breakpoints: {
+      0: {
+        itemsToShow: 1
+      },
+      640: {
+        itemsToShow: 2
+      },
+      1024: {
+        itemsToShow: 3
+      }
     }
+        };
+    },
+    methods: {
+        goPrev() {
+            this.$refs.carousel.prev();
+        },
+        goNext() {
+            this.$refs.carousel.next();
+        },
+    },
+    mounted() {
+        AOS.init();
+    },
 }
 </script>
 
