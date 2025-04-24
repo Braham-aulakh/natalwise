@@ -20,7 +20,7 @@
         </div>
         <div class="modal-body">
           <ul
-            class="nav modal-tabs nav-tabs gap-3 px-3 border-bottom border-primary border-2 border-opacity-25 my-2"
+            class="nav modal-tabs nav-tabs gap-3 px-3 border-bottom border-primary border border-opacity-25 my-2 rounded"
             id="myTab"
             role="tablist"
           >
@@ -106,7 +106,7 @@
                     <div class="col-12">
                       <button
                         type="button"
-                        class="btn btn-dark btn-sm"
+                        class="btn btn-dark btn-sm fs-5 font-weight-normal"
                         @click="addFaq"
                       >
                         {{ __("add faq") }}
@@ -255,7 +255,7 @@
                   class="text-black d-flex align-items-center px-5 mb-0"
                 >
                   <img
-                    src="@/images/icons/uploadfile.svg"
+                    src="../../../../../public/images/homes/uploadfile.png"
                     class="me-2"
                     width="30"
                     alt=""
@@ -290,11 +290,11 @@
                 :image_url="image_url"
                 @cropImage="cropImage"
               ></ImageCropperModal>
-              <img
+              <!-- <img
                 style="width: 120px; height: 120px"
                 class="mx-auto m-2 rounded-4 bg-light"
                 :src="croppedImageSrc"
-              />
+              /> -->
             </div>
 
             <!-- <div class="form-group mb-3">

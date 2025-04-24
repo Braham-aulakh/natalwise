@@ -3565,3 +3565,41 @@ input::placeholder{
     flex: 1 1 auto;
     padding: 10px 30px !important;
 }
+.nav-tab .active {
+    color: white;
+    background: #fc9fbc !important;
+}
+.modal-tabs .nav-link {
+    background-color: #fbf2ed;
+    color: black;
+    padding: 9px 25px !important;
+    font-size: 14px;
+}
+.modal-tabs .nav-link:hover {
+    background: #fc9fbc;
+    color: white;
+}
+.modal-content .form-control::placeholder{
+    font-size: 14px !important ;
+}
+.modal-content .multiselect {
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
+    border-radius: 8px !important;
+    min-height: 42px !important;
+}
+.modal-content .multiselect .multiselect-tag {
+    background-color: #fc9fbc;
+    border-radius: 100px;
+    height: 32px;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 8px;
+}
+.icon-dashboard {
+    width: 30px;
+    height: 30px;
+    background-color: #fc9fbc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

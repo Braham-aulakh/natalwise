@@ -41,16 +41,16 @@
                                                 <button v-if="
                                                     $page.props.auth.logged_in_as == 'doctor' ||
                                                     $page.props.auth.logged_in_as == 'clinic'
-                                                " class="btn bg-white text-primary fs-3 rounded-4 shadow-find px-4 fw-bold btn1 d-flex align-items-center"
+                                                " class="btn bg-white text-pink fs-3 rounded-4 px-4 fw-bold btn1 d-flex align-items-center gap-2"
                                                     data-bs-toggle="modal" :data-bs-target="'#withdrawAmountModal'"
                                                     :disabled="current_balance == 0">
-                                                    <Icon icon="zondicons:add-solid" width="12" height="12"  style="color: #fc9fbc " />
-                                                    <img class="w2-icon me-2" src="@/images/icons/tick.svg"
-                                                        alt="wallet-icon" />
+                                                    <Icon icon="zondicons:add-solid" width="20" height="20"  style="color: #fc9fbc " />
+                                                    <!-- <img class="w2-icon me-2" src="@/images/icons/tick.svg"
+                                                        alt="wallet-icon" /> -->
                                                     {{ __("Withdraw") }}
                                                 </button>
                                                 <button v-if="$page.props.auth.logged_in_as == 'patient'"
-                                                    class="btn bg-white text-blue fs-3 rounded-4 px-4 fw-bold btn1 d-flex align-items-center gap-2"
+                                                    class="btn bg-white text-pink fs-3 rounded-4 px-4 fw-bold btn1 d-flex align-items-center gap-2"
                                                     @click="renderCarousal" data-bs-toggle="modal"
                                                     :data-bs-target="'#walletAddModal'">
                                                     <Icon icon="zondicons:add-solid" width="24" height="24"  style="color: #fc9fbc " />

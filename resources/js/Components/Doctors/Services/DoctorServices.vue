@@ -34,17 +34,12 @@
           <button
             type="button"
             id="addEditServiceModalButton"
-            class="border-0 fs-3 fw-bold bg-transparent text-primary"
+            class="border-0 fs-3 fw-bold bg-transparent text-pink d-flex items-center"
             data-bs-toggle="modal"
             @click="modal_service = null"
             data-bs-target="#addEditServiceModal"
           >
-            <img
-              src="@/images/icons/plus.svg"
-              width="25"
-              class="mb-1 me-2"
-              alt=""
-            />
+          <Icon icon="ic:round-plus" width="22" height="22" />
             {{ __("add") }} {{ __("services") }}
           </button>
           <add-edit-service-modal
@@ -169,6 +164,7 @@ import TablePagination from "@/Components/Shared/DataTable/TablePagination.vue";
 import PaginationMixin from "@/Mixins/PaginationMixin.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import axios from "axios";
+import { Icon } from "@iconify/vue";
 
 export default defineComponent({
   components: {
@@ -180,6 +176,7 @@ export default defineComponent({
     TablePagination,
     ViewServiceModal,
     DeleteServiceModal,
+    Icon
   },
   props: ["active"],
   mixins: [PaginationMixin],
@@ -266,3 +263,12 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+th {
+    background-color: #fbf2ed !important;
+    color: #fc9fbc !important;
+    font-size: 16px;
+    font-weight: 700;
+    
+}
+</style>

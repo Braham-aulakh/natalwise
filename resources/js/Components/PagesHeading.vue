@@ -26,7 +26,7 @@
             <Link
               v-if="account"
               :href="route('dashboard')"
-              class="btn bg-white d-flex align-items-center fs-3 fw-bold gap-2 px-md-4 rounded-4 text-primary position-absolute top-50 start-75 translate-middle"
+              class="btn bg-white d-flex align-items-center fs-3 fw-bold gap-2 px-md-4 rounded-4 text-pink position-absolute top-50 start-75 translate-middle"
             >
               <div class="icon-dashboard rounded-circle">
                 <img src="@/images/icons/dashboard.svg" alt="" />
@@ -36,7 +36,7 @@
             <Link
               v-if="dashboard"
               :href="route('account')"
-              class="btn bg-white d-flex align-items-center fs-3 fw-bold gap-2 px-md-4 rounded-4 text-primary position-absolute top-50 start-75 translate-middle"
+              class="btn bg-white d-flex align-items-center fs-3 fw-bold gap-2 px-md-4 rounded-4 text-pink position-absolute top-50 start-75 translate-middle"
             >
               <div class="icon-dashboard rounded-circle">
                 <img src="@/images/icons/dashboard.svg" alt="" />
