@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="inner">
                                     <p class="text-dark fw-bold mb-0">Total Patients</p>
-                                    <h3 class="fw-bold mb-0" style="color: #294481;">{{ $data['totalUsers'] ?? 0 }} Patients
+                                    <h3 class="fw-bold mb-0" style="color:  #FC9FBC;">{{ $data['totalUsers'] ?? 0 }} Patients
                                     </h3>
                                 </div>
 
@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="inner">
                                     <p class="text-dark fw-bold mb-0">Total Subscriptions</p>
-                                    <h3 class="fw-bold mb-0" style="color: #294481;">{{ $data['totalSubscriptions'] }}
+                                    <h3 class="fw-bold mb-0" style="color:  #FC9FBC;">{{ $data['totalSubscriptions'] }}
                                         Subscriptions</h3>
                                 </div>
 
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="inner">
                                     <p class="text-dark fw-bold mb-0">Total Events</p>
-                                    <h3 class="fw-bold mb-0" style="color: #294481;">{{ $data['totalEvents'] ?? 0 }}
+                                    <h3 class="fw-bold mb-0" style="color:  #FC9FBC;">{{ $data['totalEvents'] ?? 0 }}
                                         Events
                                         </h4>
                                 </div>

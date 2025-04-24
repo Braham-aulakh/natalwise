@@ -91,13 +91,13 @@ export default {
       openIndex: 0,
       accordionItems: [
         {
-          title: '01 . Our Vision',
+          title: 'Our Vision',
           content: `Welcome to Natal Wise, where every woman can unlock her potential through the
             <span class="color-pink fw-bold">Sis Code</span> support, strength, and sisterhood
             while embracing her uniqueness and cultivating a positive outlook.`,
         },
         {
-          title: '02 . Our Mission',
+          title: 'Our Mission',
           content: `Stronger women, brighter tomorrow—at Natal Wise, we foster strength, sisterhood,
             and growth, ensuring every woman feels heard, supported, safe, confident, and enlightened.`,
         },
