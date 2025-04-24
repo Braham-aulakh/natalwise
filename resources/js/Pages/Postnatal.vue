@@ -5,7 +5,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="banner-content aos" data-aos="fade-up">
-                            <h1>Pre Natal</h1>
+                            <h1>Post Natal</h1>
 
                         </div>
 
@@ -16,52 +16,7 @@
         </section>
 
 
-        <section class="pre-post">
-            <div class="container">
 
-                <div class="row ">
-                    <div class="col-lg-6">
-                        <div class="pre-post-img" data-aos="fade-up">
-                            <img src="../../../public/images/homes/post-natal.jpg" />
-                            <!-- <img src="  assets/img/post-natal.jpg" /> -->
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div data-aos="fade-up">
-                            <div class="pre-post-cont">
-
-                                <h3>Pre-Natal Care Empowering Your Pregnancy Journey with
-                                    <span class="color-pink">Expert Care and Support!</span>
-                                </h3>
-
-                                <P>At Natal Wise, we provide comprehensive pre-natal care to guide you through the
-                                    transformative journey of pregnancy. From early pregnancy symptoms to high-risk
-                                    pregnancy consultations, we ensure you receive the right medical guidance and
-                                    emotional support. Our prenatal care includes essential supplements, personalized
-                                    diet plans, and expert advice to promote a healthy pregnancy. We also offer
-                                    pregnancy physiotherapy, with exercises to maintain strength, improve flexibility,
-                                    and manage discomforts like back pain, pelvic girdle pain, and sciatica.
-                                    Additionally, we provide guidance on safe sleeping and movement habits to prepare
-                                    your body for labor and ensure a smooth pregnancy experience.
-                                </P>
-
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div>
-
-
-        </section>
         <section class="post-natal">
             <div class="container">
 

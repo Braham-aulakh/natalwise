@@ -546,7 +546,7 @@ export default {
           items: [
             { name: "Journey Begins", link: "#" },
             { name: "Pre Natal", link: route("pre-postal") },
-            { name: "Post Natal", link: route("pre-postal") },
+            { name: "Post Natal", link: route("Post-natal") },
           ],
         },
         {

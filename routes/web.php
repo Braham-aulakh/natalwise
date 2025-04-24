@@ -407,6 +407,11 @@ Route::get('/shop', function () {
         return Inertia::render('PrePostal');
     })->name('pre-postal');
 
+    Route::get('/Post-natal', function () {
+        // dd('ok');
+        return Inertia::render('Postnatal');
+    })->name('Post-natal');
+
     Route::get('/personal-growth', function () {
         // dd('ok');
         return Inertia::render('PersonalGrowth');
