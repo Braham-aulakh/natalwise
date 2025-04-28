@@ -2817,6 +2817,51 @@ h6 {
    
 
 }
+/* Styles for MacBooks */
+@media (max-width: 1280px) {
+    .bg-color {
+        background-image: url(http://[::1]:5173/public/images/homes/exlopre.jpg);
+        background-attachment: fixed;
+        padding: 200px 0;
+        background-repeat: no-repeat;
+        background-size: contain !important;
+    }
+    .section-title {
+        font-family: Montserrat;
+        font-weight: 600 !important;
+        font-size: 42px !important;
+        color: #272b41 !important;
+    }
+    .explore_main {
+        width: 182px !important;
+    }
+    .col-md-3 {
+        flex: 0 0 auto;
+        width: 24% !important;
+    }
+    .work-info {
+        margin-bottom: 30px !important;
+        padding-right: 70px;
+    }
+    .main-nav .mega-submenu {
+        position: absolute;
+        top: 64px !important;
+        right: 0px !important;
+        left: -250px !important;
+        background-color: #fff;
+        width: 100%;
+        padding: 30px 40px;
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+  }
+  /* Styles for MacBooks */
+  
 
 .About-banner {
     background: #fbf2ed;

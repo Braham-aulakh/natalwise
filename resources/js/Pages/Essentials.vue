@@ -51,28 +51,28 @@
 
                                 <p>An integrated approach bringing together the essential elements of gynecology and
                                     physiotherapy to promote overall women's health.</p>
-                                <p>1. Menstrual & Hormonal Health
+                                <p class="d-flex"><Icon icon="akar-icons:circle-fill" width="50" height="50" style="padding-right:20px ;"/> Menstrual & Hormonal Health
                                     Management of irregular periods, PMS, and menstrual cramps
                                     Correction of hormonal imbalances that impact fertility and well-being
                                     PCOS and endometriosis care.
 
 
                                 </p>
-                                <p>2. Sexual & Reproductive Well-being
+                                <p class="d-flex"><Icon icon="akar-icons:circle-fill" width="50" height="50" style="padding-right:20px ;"/>Sexual & Reproductive Well-being
                                     Fertility advice and conception support
                                     Contraception counseling and family planning
                                     Sexual health education and prevention of STIs.
 
 
                                 </p>
-                                <p>3. Pain & Mobility Management
+                                <p class="d-flex"><Icon icon="akar-icons:circle-fill" width="50" height="50" style="padding-right:20px ;"/>Pain & Mobility Management
                                     Chronic pelvic pain, fibromyalgia, and endometriosis discomfort management
                                     Lower back, hip, and joint pain management techniques
                                     Movement therapy and posture correction for daily living.
 
 
                                 </p>
-                                <p>4. Post-Surgical & Recovery Support
+                                <p class="d-flex"><Icon icon="akar-icons:circle-fill" width="50" height="50" style="padding-right:20px ;"/> Post-Surgical & Recovery Support
                                     Gynecological or breast surgery recovery rehabilitation
                                     Mobility and strength recovery for increased function and comfort
                                     The Essentials section combines the most important aspects of gynecology and
@@ -133,6 +133,7 @@ import SpotlightDoctorSection from "@/Components/Doctors/SpotlightDoctorSection.
 import OurBlog from '../Components/ourblog.vue';
 import ReviewSection from "@/Components/ReviewSection.vue";
 import FellingBetter from "./FellingBetter.vue";
+import { Icon } from "@iconify/vue";
 export default defineComponent({
     components: {
         AppLayout,
@@ -141,7 +142,8 @@ export default defineComponent({
         SpotlightDoctorSection,
         OurBlog,
         ReviewSection,
-        FellingBetter
+        FellingBetter,
+        Icon
         
     },
 });

@@ -301,10 +301,10 @@ export default {
         itemsToShow: 1
       },
       640: {
-        itemsToShow: 2
+        itemsToShow: 1
       },
-      1024: {
-        itemsToShow: 3
+      1080: {
+        itemsToShow: 2
       }
     }
         };
